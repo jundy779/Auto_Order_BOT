@@ -6,7 +6,7 @@
     },
     "exported_at": "2025-11-24T17:01:48+01:00",
     "name": "NodeJS Auto Order Bot",
-    "author": "arivpnstore@gmail.com",
+    "author": "fusionifydigital@gmail.com",
     "description": "Egg untuk menjalankan bot Telegram auto-order (Node.js + Express dengan Pakasir\/OrderKuota)",
     "features": null,
     "docker_images": {
