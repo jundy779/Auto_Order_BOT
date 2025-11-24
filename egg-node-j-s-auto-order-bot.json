@@ -1,0 +1,153 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2025-11-24T17:01:48+01:00",
+    "name": "NodeJS Auto Order Bot",
+    "author": "arivpnstore@gmail.com",
+    "description": "Egg untuk menjalankan bot Telegram auto-order (Node.js + Express dengan Pakasir\/OrderKuota)",
+    "features": null,
+    "docker_images": {
+        "ghcr.io\/parkervcp\/yolks:nodejs_20": "ghcr.io\/parkervcp\/yolks:nodejs_20",
+        "ghcr.io\/parkervcp\/yolks:nodejs_18": "ghcr.io\/parkervcp\/yolks:nodejs_18"
+    },
+    "file_denylist": [],
+    "startup": "npm install --production && node ${JS_FILE}",
+    "config": {
+        "files": "{}",
+        "startup": "{\"done\": \"Bot Server berjalan di port\"}",
+        "logs": "{\"custom\": true, \"location\": \"logs\/latest.log\"}",
+        "stop": "^^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\ncd \/home\/container\r\n\r\nif [ -n \"$GIT_ADDRESS\" ]; then\r\n    if [ -n \"$GIT_USERNAME\" ] && [ -n \"$GIT_PASSWORD\" ]; then\r\n        git clone -b ${BRANCH} https:\/\/${GIT_USERNAME}:${GIT_PASSWORD}@${GIT_ADDRESS} \/home\/container\r\n    else\r\n        git clone -b ${BRANCH} https:\/\/${GIT_ADDRESS} \/home\/container\r\n    fi\r\nelse\r\n    echo \"Upload files via SFTP atau gunakan Git Clone manual.\"\r\nfi\r\n\r\nnpm install",
+            "container": "alpine:3.4",
+            "entrypoint": "ash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Entry File",
+            "description": "Nama file utama yang dijalankan (mis. bot.js).",
+            "env_variable": "JS_FILE",
+            "default_value": "bot.js",
+            "user_viewable": true,
+            "user_editable": false,
+            "rules": "required|string|max:60",
+            "field_type": "text"
+        },
+        {
+            "name": "Bot Port",
+            "description": "Port yang digunakan Express\/webhook, otomatis mengikuti port server.",
+            "env_variable": "BOT_PORT",
+            "default_value": "{{SERVER_PORT}}",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "required|string|max:5",
+            "field_type": "text"
+        },
+        {
+            "name": "Telegram Bot Token",
+            "description": "Token dari BotFather.",
+            "env_variable": "BOT_TOKEN",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": false,
+            "rules": "required|string",
+            "field_type": "text"
+        },
+        {
+            "name": "MongoDB URI",
+            "description": "Connection string MongoDB Atlas\/server.",
+            "env_variable": "MONGO_URI",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "required|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Server Base URL",
+            "description": "URL publik bot (mis. https:\/\/bot.domain.com) untuk webhook.",
+            "env_variable": "SERVER_BASE_URL",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "required|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Admin IDs",
+            "description": "Daftar Telegram user ID admin, pisahkan dengan koma.",
+            "env_variable": "ADMIN_IDS",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Channel ID",
+            "description": "ID atau @username channel untuk notifikasi penjualan (opsional).",
+            "env_variable": "CHANNEL_ID",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Support Group ID",
+            "description": "ID grup Telegram untuk support (opsional).",
+            "env_variable": "SUPPORT_GROUP_ID",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Pakasir Project Slug",
+            "description": "Slug project dari dashboard Pakasir.",
+            "env_variable": "PAKASIR_PROJECT_SLUG",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Pakasir API Key",
+            "description": "API key dari Pakasir.",
+            "env_variable": "PAKASIR_API_KEY",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Pakasir Redirect URL",
+            "description": "URL redirect setelah pembayaran (opsional)",
+            "env_variable": "PAKASIR_REDIRECT_URL",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Pakasir QRIS Only Flag",
+            "description": "Isi 1 untuk hanya QRIS, kosongkan jika tidak.",
+            "env_variable": "PAKASIR_QRIS_ONLY",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        }
+    ]
+}
