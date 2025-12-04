@@ -86,13 +86,24 @@ fi
 
 print_info "Memulai instalasi untuk: ${APP_URL}"
 
-# 1. Update sistem
+# 1. Fix repository issues (Alibaba Cloud)
+print_info "Memperbaiki repository..."
+# Disable backports jika menyebabkan error
+if grep -q "bullseye-backports" /etc/apt/sources.list /etc/apt/sources.list.d/* 2>/dev/null; then
+    sed -i 's/^deb.*bullseye-backports/# &/' /etc/apt/sources.list /etc/apt/sources.list.d/* 2>/dev/null || true
+    print_info "Repository backports dinonaktifkan"
+fi
+
+# 2. Update sistem
 print_info "Mengupdate sistem..."
 export DEBIAN_FRONTEND=noninteractive
-apt-get update -qq
+apt-get update -qq || {
+    print_warn "Update gagal, mencoba tanpa backports..."
+    apt-get update -qq -o Acquire::Check-Valid-Until=false || true
+}
 apt-get upgrade -y -qq
 
-# 2. Install dependencies dasar
+# 3. Install dependencies dasar
 print_info "Menginstall dependencies..."
 apt-get install -y -qq \
     curl \
@@ -106,7 +117,7 @@ apt-get install -y -qq \
     gnupg \
     lsb-release
 
-# 3. Setup Swap File (penting untuk RAM 1GB)
+# 4. Setup Swap File (penting untuk RAM 1GB)
 print_info "Membuat swap file 1GB..."
 if [ ! -f /swapfile ]; then
     fallocate -l 1G /swapfile
@@ -119,7 +130,7 @@ else
     print_warn "Swap file sudah ada, dilewati"
 fi
 
-# 4. Install PHP 8.1
+# 5. Install PHP 8.1
 print_info "Menginstall PHP 8.1..."
 apt-get install -y -qq \
     php8.1 \
@@ -143,7 +154,7 @@ sed -i 's/pm.min_spare_servers = 1/pm.min_spare_servers = 1/' /etc/php/8.1/fpm/p
 sed -i 's/pm.max_spare_servers = 3/pm.max_spare_servers = 2/' /etc/php/8.1/fpm/pool.d/www.conf
 sed -i 's/;pm.max_requests = 500/pm.max_requests = 200/' /etc/php/8.1/fpm/pool.d/www.conf
 
-# 5. Install MariaDB
+# 6. Install MariaDB
 print_info "Menginstall MariaDB..."
 apt-get install -y -qq mariadb-server mariadb-client
 
@@ -165,7 +176,7 @@ mysql -e "CREATE USER IF NOT EXISTS '${DB_USER}'@'127.0.0.1' IDENTIFIED BY '${DB
 mysql -e "GRANT ALL PRIVILEGES ON ${DB_NAME}.* TO '${DB_USER}'@'127.0.0.1' WITH GRANT OPTION;"
 mysql -e "FLUSH PRIVILEGES;"
 
-# 6. Install Redis
+# 7. Install Redis
 print_info "Menginstall Redis..."
 apt-get install -y -qq redis-server
 
@@ -173,15 +184,15 @@ apt-get install -y -qq redis-server
 sed -i 's/# maxmemory <bytes>/maxmemory 128mb/' /etc/redis/redis.conf
 sed -i 's/# maxmemory-policy noeviction/maxmemory-policy allkeys-lru/' /etc/redis/redis.conf
 
-# 7. Install Nginx
+# 8. Install Nginx
 print_info "Menginstall Nginx..."
 apt-get install -y -qq nginx
 
-# 8. Install Composer
+# 9. Install Composer
 print_info "Menginstall Composer..."
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# 9. Install Node.js 20.x (LTS)
+# 10. Install Node.js 20.x (LTS)
 print_info "Menginstall Node.js 20.x (LTS)..."
 curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
 apt-get install -y -qq nodejs
@@ -190,7 +201,7 @@ apt-get install -y -qq nodejs
 print_info "Menginstall Yarn..."
 npm install -g yarn
 
-# 10. Clone Pterodactyl Panel
+# 11. Clone Pterodactyl Panel
 print_info "Mengclone Pterodactyl Panel..."
 if [ -d "$PANEL_DIR" ]; then
     print_warn "Direktori panel sudah ada, menghapus..."
@@ -203,11 +214,11 @@ cd "$PANEL_DIR"
 git clone https://github.com/pterodactyl/panel.git .
 git checkout $(curl -s https://api.github.com/repos/pterodactyl/panel/releases/latest | grep 'tag_name' | cut -d '"' -f 4)
 
-# 11. Install dependencies PHP
+# 12. Install dependencies PHP
 print_info "Menginstall dependencies PHP..."
 composer install --no-dev --optimize-autoloader --no-interaction
 
-# 12. Setup environment
+# 13. Setup environment
 print_info "Menyiapkan file .env..."
 cp .env.example .env
 php artisan key:generate --force
@@ -228,16 +239,16 @@ sed -i "s|SESSION_DRIVER=file|SESSION_DRIVER=redis|g" .env
 sed -i "s|REDIS_HOST=127.0.0.1|REDIS_HOST=127.0.0.1|g" .env
 sed -i "s|REDIS_PORT=6379|REDIS_PORT=6379|g" .env
 
-# 13. Build assets
+# 14. Build assets
 print_info "Membangun assets frontend..."
 yarn install --production
 yarn build:production
 
-# 14. Setup database
+# 15. Setup database
 print_info "Menjalankan migrasi database..."
 php artisan migrate --force --seed
 
-# 15. Buat user admin
+# 16. Buat user admin
 print_info "Membuat user admin..."
 php artisan p:user:make \
     --email="${ADMIN_EMAIL}" \
@@ -247,13 +258,13 @@ php artisan p:user:make \
     --admin \
     --password="${ADMIN_PASSWORD}" || true
 
-# 16. Setup permissions
+# 17. Setup permissions
 print_info "Mengatur permissions..."
 chown -R www-data:www-data "$PANEL_DIR"
 chmod -R 755 "$PANEL_DIR"
 chmod -R 775 storage bootstrap/cache
 
-# 17. Setup Nginx
+# 18. Setup Nginx
 print_info "Mengkonfigurasi Nginx..."
 cat > /etc/nginx/sites-available/pterodactyl.conf << EOF
 server {
@@ -295,7 +306,7 @@ rm -f /etc/nginx/sites-enabled/default
 # Test Nginx config
 nginx -t
 
-# 18. Setup Queue Worker
+# 19. Setup Queue Worker
 print_info "Mengkonfigurasi Queue Worker..."
 cat > /etc/systemd/system/pteroq.service << EOF
 [Unit]
@@ -314,11 +325,11 @@ StartLimitBurst=5
 WantedBy=multi-user.target
 EOF
 
-# 19. Setup Schedule (Cron)
+# 20. Setup Schedule (Cron)
 print_info "Mengkonfigurasi Cron..."
 (crontab -u www-data -l 2>/dev/null; echo "* * * * * php ${PANEL_DIR}/artisan schedule:run >> /dev/null 2>&1") | crontab -u www-data -
 
-# 20. Start services
+# 21. Start services
 print_info "Menjalankan services..."
 systemctl enable --now php8.1-fpm
 systemctl enable --now mariadb
@@ -331,7 +342,7 @@ systemctl restart redis-server
 systemctl restart nginx
 systemctl restart pteroq
 
-# 21. Setup firewall (jika UFW terinstall)
+# 22. Setup firewall (jika UFW terinstall)
 if command -v ufw &> /dev/null; then
     print_info "Mengkonfigurasi firewall..."
     ufw allow 22/tcp
