@@ -1,0 +1,389 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2025-12-05T00:00:00+07:00",
+    "name": "NodeJS Auto Order Bot",
+    "author": "fusionifydigital@gmail.com",
+    "description": "Egg untuk menjalankan bot Telegram auto-order (Node.js + Express dengan Pakasir/OrderKuota/Qiospay + Voucher + Pterodactyl)",
+    "features": null,
+    "docker_images": {
+        "ghcr.io/parkervcp/yolks:nodejs_24": "ghcr.io/parkervcp/yolks:nodejs_24",
+        "ghcr.io/parkervcp/yolks:nodejs_23": "ghcr.io/parkervcp/yolks:nodejs_23",
+        "ghcr.io/parkervcp/yolks:nodejs_22": "ghcr.io/parkervcp/yolks:nodejs_22",
+        "ghcr.io/parkervcp/yolks:nodejs_21": "ghcr.io/parkervcp/yolks:nodejs_21",
+        "ghcr.io/parkervcp/yolks:nodejs_20": "ghcr.io/parkervcp/yolks:nodejs_20",
+        "ghcr.io/parkervcp/yolks:nodejs_19": "ghcr.io/parkervcp/yolks:nodejs_19",
+        "ghcr.io/parkervcp/yolks:nodejs_18": "ghcr.io/parkervcp/yolks:nodejs_18"
+    },
+    "file_denylist": [],
+    "startup": "if [ ! -d \"node_modules\" ]; then npm install --production; fi && node ${JS_FILE}",
+    "config": {
+        "files": "{}",
+        "startup": "{\r\n    \"done\": \"Bot Server berjalan di port\"\r\n}",
+        "logs": "{\r\n    \"custom\": true,\r\n    \"location\": \"logs/latest.log\"\r\n}",
+        "stop": "^^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!/bin/bash\r\ncd /home/container\r\n\r\nif [ -n \"$GIT_ADDRESS\" ]; then\r\n    if [ -n \"$GIT_USERNAME\" ] && [ -n \"$GIT_PASSWORD\" ]; then\r\n        git clone -b ${BRANCH} https://${GIT_USERNAME}:${GIT_PASSWORD}@${GIT_ADDRESS} /home/container\r\n    else\r\n        git clone -b ${BRANCH} https://${GIT_ADDRESS} /home/container\r\n    fi\r\nelse\r\n    echo \"Upload files via SFTP atau gunakan Git Clone manual.\"\r\nfi\r\n\r\nnpm install --production",
+            "container": "alpine:3.4",
+            "entrypoint": "ash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Entry File",
+            "description": "Nama file utama yang dijalankan (mis. bot.js).",
+            "env_variable": "JS_FILE",
+            "default_value": "bot.js",
+            "user_viewable": true,
+            "user_editable": false,
+            "rules": "required|string|max:60",
+            "field_type": "text"
+        },
+        {
+            "name": "Bot Port",
+            "description": "Port yang digunakan Express/webhook, otomatis mengikuti port server.",
+            "env_variable": "BOT_PORT",
+            "default_value": "{{SERVER_PORT}}",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "required|string|max:5",
+            "field_type": "text"
+        },
+        {
+            "name": "Telegram Bot Token",
+            "description": "Token dari BotFather.",
+            "env_variable": "BOT_TOKEN",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": false,
+            "rules": "required|string",
+            "field_type": "text"
+        },
+        {
+            "name": "MongoDB URI",
+            "description": "Connection string MongoDB Atlas/server.",
+            "env_variable": "MONGO_URI",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "required|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Server Base URL",
+            "description": "URL publik bot (mis. https://bot.domain.com) untuk webhook.",
+            "env_variable": "SERVER_BASE_URL",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "required|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Admin IDs",
+            "description": "Daftar Telegram user ID admin, pisahkan dengan koma.",
+            "env_variable": "ADMIN_IDS",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Channel ID",
+            "description": "ID atau @username channel untuk notifikasi penjualan (opsional).",
+            "env_variable": "CHANNEL_ID",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Support Group ID",
+            "description": "ID grup Telegram untuk support (opsional).",
+            "env_variable": "SUPPORT_GROUP_ID",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "QRIS Fee Percentage",
+            "description": "Persentase fee QRIS (default: 0.8 untuk 0.8%).",
+            "env_variable": "QRIS_FEE_PERCENTAGE",
+            "default_value": "0.8",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|numeric|min:0|max:100",
+            "field_type": "text"
+        },
+        {
+            "name": "Pakasir Project Slug",
+            "description": "Slug project dari dashboard Pakasir.",
+            "env_variable": "PAKASIR_PROJECT_SLUG",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Pakasir API Key",
+            "description": "API key dari Pakasir.",
+            "env_variable": "PAKASIR_API_KEY",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Pakasir Redirect URL",
+            "description": "URL redirect setelah pembayaran (opsional)",
+            "env_variable": "PAKASIR_REDIRECT_URL",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Pakasir QRIS Only Flag",
+            "description": "Isi 1 untuk hanya QRIS, kosongkan jika tidak.",
+            "env_variable": "PAKASIR_QRIS_ONLY",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "OrderKuota Base QR String",
+            "description": "Base QR string dari OrderKuota.",
+            "env_variable": "ORDERKUOTA_BASE_QR_STRING",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "OrderKuota Auth Username",
+            "description": "Username untuk autentikasi OrderKuota.",
+            "env_variable": "ORDERKUOTA_AUTH_USERNAME",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "OrderKuota Auth Token",
+            "description": "Token autentikasi dari OrderKuota.",
+            "env_variable": "ORDERKUOTA_AUTH_TOKEN",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "OrderKuota Store Name",
+            "description": "Nama store untuk OrderKuota (opsional).",
+            "env_variable": "ORDERKUOTA_STORE_NAME",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "OrderKuota Logo Path",
+            "description": "Path ke logo untuk OrderKuota (opsional).",
+            "env_variable": "ORDERKUOTA_LOGO_PATH",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "OrderKuota Theme",
+            "description": "Theme OrderKuota (theme1, theme2, dll).",
+            "env_variable": "ORDERKUOTA_THEME",
+            "default_value": "theme1",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "OrderKuota Cron Secret",
+            "description": "Secret untuk cron job OrderKuota (opsional).",
+            "env_variable": "ORDERKUOTA_CRON_SECRET",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Qiospay Merchant Code",
+            "description": "Merchant code dari Qiospay.",
+            "env_variable": "QIOSPAY_MERCHANT_CODE",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Qiospay API Key",
+            "description": "API key dari Qiospay.",
+            "env_variable": "QIOSPAY_API_KEY",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Qiospay QR Static",
+            "description": "QR code static dari dashboard Qiospay.",
+            "env_variable": "QIOSPAY_QR_STATIC",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Pterodactyl Panel URL",
+            "description": "URL panel Pterodactyl (opsional, untuk integrasi panel).",
+            "env_variable": "PTERO_PANEL_URL",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Pterodactyl API Key",
+            "description": "Client API key dari Pterodactyl (opsional).",
+            "env_variable": "PTERO_API_KEY",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Pterodactyl Server ID",
+            "description": "Server ID untuk kontrol server (opsional).",
+            "env_variable": "PTERO_SERVER_ID",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Pterodactyl App API Key",
+            "description": "Application API key untuk create user & server (opsional).",
+            "env_variable": "PTERO_APP_API_KEY",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Pterodactyl Nest ID",
+            "description": "Nest ID untuk server panel (opsional).",
+            "env_variable": "PTERO_NEST_ID",
+            "default_value": "0",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|numeric",
+            "field_type": "text"
+        },
+        {
+            "name": "Pterodactyl Egg ID Panel",
+            "description": "Egg ID untuk server panel (opsional).",
+            "env_variable": "PTERO_EGG_ID_PANEL",
+            "default_value": "0",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|numeric",
+            "field_type": "text"
+        },
+        {
+            "name": "Pterodactyl Location ID",
+            "description": "Location ID untuk deploy server (opsional).",
+            "env_variable": "PTERO_LOCATION_ID",
+            "default_value": "1",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|numeric",
+            "field_type": "text"
+        },
+        {
+            "name": "Pterodactyl Email Domain",
+            "description": "Domain email untuk user panel (opsional).",
+            "env_variable": "PTERO_EMAIL_DOMAIN",
+            "default_value": "fusionify.biz.id",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Pterodactyl Panel Description",
+            "description": "Deskripsi panel untuk ditampilkan ke user (opsional).",
+            "env_variable": "PTERO_PANEL_DESCRIPTION",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Store Name",
+            "description": "Nama store/toko (opsional, default dari OrderKuota).",
+            "env_variable": "STORE_NAME",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Review Pending Minutes",
+            "description": "Menit sebelum transaksi pending di-flag untuk review (default: 30).",
+            "env_variable": "REVIEW_PENDING_MINUTES",
+            "default_value": "30",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|numeric|min:5",
+            "field_type": "text"
+        },
+        {
+            "name": "Invoice Banner Path",
+            "description": "Path ke banner image untuk invoice (opsional).",
+            "env_variable": "INVOICE_BANNER_PATH",
+            "default_value": "",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "nullable|string",
+            "field_type": "text"
+        }
+    ]
+}
+

@@ -36,7 +36,7 @@ ORDERKUOTA_THEME=theme1
 **Username autentikasi untuk API OrderKuota.**
 
 **Cara mendapatkan:**
-1. Buka bot Telegram: @orderkuotaBot
+1. Buka bot Telegram: @TokenOrkutBot
 2. Login: `/login username password`
 3. Verifikasi OTP: `/otp kode_otp`
 4. Bot akan menampilkan `auth_username` setelah login berhasil
@@ -45,7 +45,7 @@ ORDERKUOTA_THEME=theme1
 **Token autentikasi untuk API OrderKuota.**
 
 **Cara mendapatkan:**
-1. Buka bot Telegram: @orderkuotaBot
+1. Buka bot Telegram: @TokenOrkutBot
 2. Login: `/login username password`
 3. Verifikasi OTP: `/otp kode_otp`
 4. Bot akan menampilkan `auth_token` setelah login berhasil
@@ -163,7 +163,7 @@ Default: `theme1`
 **Solusi:**
 1. **Auto-polling akan cek otomatis setiap 30 detik** - tunggu maksimal 30 detik setelah bayar
 2. Pastikan `ORDERKUOTA_AUTH_TOKEN` masih valid (tidak expired)
-3. Token expired setelah 1 jam - login ulang di @orderkuotaBot
+3. Token expired setelah 1 jam - login ulang di @TokenOrkutBot
 4. Atau klik manual "⏳ Cek Status" untuk instant check
 5. Cek log bot untuk error messages - harus muncul: `🔍 [ORDERKUOTA POLLING] ...`
 
@@ -187,7 +187,7 @@ Default: `theme1`
 
 2. **Token Expired:**
    - Token OrderKuota expired setelah 1 jam
-   - Jika bot error "unauthorized", login ulang di @orderkuotaBot
+   - Jika bot error "unauthorized", login ulang di @TokenOrkutBot
    - Ambil token baru dan update di `.env`
    - Auto-polling akan berhenti jika token invalid
 
@@ -210,7 +210,7 @@ Default: `theme1`
 ## 🚀 Quick Start
 
 1. Dapatkan `ORDERKUOTA_BASE_QR_STRING` dari QRIS scanner
-2. Login di @orderkuotaBot untuk dapatkan `auth_username` dan `auth_token`
+2. Login di @TokenOrkutBot untuk dapatkan `auth_username` dan `auth_token`
 3. Set semua variabel di `.env`
 4. (Opsional) Tambahkan logo jika ingin
 5. Restart bot
