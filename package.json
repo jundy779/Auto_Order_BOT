@@ -1,0 +1,46 @@
+{
+  "name": "auto-order-payment-bot",
+  "version": "4.5.0",
+  "description": "Telegram bot for digital product sales with Qiospay and OrderKuota integration.",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "telegraf",
+    "mongodb",
+    "autopayment",
+    "pakasir",
+    "orderkuota",
+    "qris"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@misterdevs/qris-static-to-dynamic": "^1.1.2",
+    "autoft-orkut": "^0.0.2",
+    "axios": "^1.13.2",
+    "basic-auth": "^2.0.1",
+    "bcryptjs": "^3.0.3",
+    "body-parser": "^1.20.2",
+    "canvas": "^2.11.2",
+    "check-disk-space": "^3.4.0",
+    "crypto": "^1.0.1",
+    "dana-node": "^1.5.11",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jimp": "^0.22.12",
+    "mongodb": "^7.0.0",
+    "mongoose": "^8.3.2",
+    "multer": "^2.0.2",
+    "nodemon": "^3.1.11",
+    "pakasir-client": "^1.0.0",
+    "qrcode": "^1.5.3",
+    "socket.io": "^4.7.5",
+    "speakeasy": "^2.0.0",
+    "telegraf": "^4.16.3",
+    "web-push": "^3.6.7"
+  }
+}

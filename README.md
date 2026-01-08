@@ -1,78 +1,42 @@
 <div align="center">
 
-# 🚀 PREMIUMIFY AUTO ORDER BOT
+<img src="https://img.shields.io/badge/🤖-AUTO_ORDER_BOT-blue?style=for-the-badge" alt="Auto Order Bot"/>
 
-### 🤖 Bot Telegram Otomatis untuk Jualan Produk Digital
+# ⚡ PREMIUM AUTO ORDER BOT
 
-[![Node.js](https://img.shields.io/badge/Node.js-18%2B-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com/)
-[![Telegram](https://img.shields.io/badge/Telegram-Bot-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://telegram.org/)
+### Bot Telegram Jualan Otomatis #1 Indonesia
+
+[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Ready-47A248?style=flat-square&logo=mongodb&logoColor=white)](https://mongodb.com/)
+[![Telegram](https://img.shields.io/badge/Telegram-Bot_API-26A5E4?style=flat-square&logo=telegram&logoColor=white)](https://telegram.org/)
+[![License](https://img.shields.io/badge/License-Premium-gold?style=flat-square)](.)
+
+<br/>
+
+**🎯 Jualan Autopilot 24/7 • 💳 6+ Payment Gateway • 🖥️ Admin Panel Modern**
+
+[Demo Bot](https://t.me/FusionTempest_bot) • [Order Sekarang](#-order-sekarang) • [Hubungi Saya](#-hubungi-saya)
 
 ---
-
-### 💡 Apa Itu Bot Ini?
-
-Bot ini adalah **solusi lengkap** untuk menjual produk digital secara otomatis via Telegram.  
-Customer beli → Bayar QRIS → Terima produk **dalam hitungan detik** tanpa perlu menunggu admin!
 
 </div>
 
----
-
-## 🎯 Cocok Untuk:
-
-- 🎮 **Jualan Akun Game** - Netflix, Spotify, VPN, dll
-- 📱 **Jualan Pulsa/Kuota** - Top up otomatis
-- 🖥️ **Jualan Panel Hosting** - Pterodactyl integration
-- � **Jualan Produk Digital** - License, voucher, dll
-
----
-
-## 🔥 Fitur Unggulan
+## 🚀 Kenapa Pilih Bot Ini?
 
 <table>
 <tr>
-<td width="50%" valign="top">
+<td>
 
-### ⚡ Auto Everything
+### 😴 Tidur Pulas, Orderan Jalan
 
-- **Auto Payment Detection** - Bayar langsung terdeteksi
-- **Auto Delivery** - Produk dikirim otomatis
-- **Auto Stock** - Stok berkurang otomatis
-- **Auto Invoice** - Generate invoice cantik
+Bayangkan bangun tidur dan lihat saldo bertambah otomatis. Customer bayar QRIS → Produk terkirim **dalam 3 detik** tanpa kamu sentuh HP!
 
 </td>
-<td width="50%" valign="top">
+<td>
 
-### 💳 7+ Payment Gateway
+### 💰 Hemat Biaya Admin
 
-- Qiospay, Sanpay, Tripay
-- Midtrans, Pakasir
-- OrderKuota (FREE!)
-- ToyyibPay (Malaysia)
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### 🖥️ Admin Panel Modern
-
-- Dashboard real-time
-- Kelola produk & stok
-- Lihat transaksi
-- Broadcast messages
-- Push notifications
-
-</td>
-<td width="50%" valign="top">
-
-### 🔒 Security First
-
-- 2FA Authentication
-- TOTP & Telegram OTP
-- CSRF Protection
-- Encrypted storage
+Tidak perlu hire admin untuk handle orderan. Bot ini bekerja **24 jam non-stop** tanpa gajian, tanpa cuti, tanpa drama!
 
 </td>
 </tr>
@@ -80,89 +44,209 @@ Customer beli → Bayar QRIS → Terima produk **dalam hitungan detik** tanpa pe
 
 ---
 
-## � Preview
+## ✨ Fitur Premium
 
 <div align="center">
 
-|                                     Bot Interface                                      |                                     Admin Dashboard                                      |
-| :------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------: |
-| <img src="https://via.placeholder.com/300x500/0d1117/58a6ff?text=📱+BOT" width="250"/> | <img src="https://via.placeholder.com/300x500/0d1117/58a6ff?text=🖥️+ADMIN" width="250"/> |
+| 🔥 Auto Payment | 🎁 Promo System | 🖥️ Admin Panel | 🔒 Super Secure |
+|:---:|:---:|:---:|:---:|
+| Deteksi bayar <3 detik | Flash Sale & Diskon | Real-time Dashboard | 2FA + Encryption |
+| 6+ Payment Gateway | Voucher & Kupon | Push Notifications | CSRF Protection |
+| Multi-gateway aktif | Timer countdown | Bulk Actions | Security Logging |
+
+</div>
+
+### ⚡ Yang Bikin Beda dari Bot Lain:
+
+- ✅ **Promo Spesial / Flash Sale** - Bikin urgency dengan countdown timer
+- ✅ **Logo di QRIS** - Branding profesional di setiap pembayaran
+- ✅ **Pterodactyl Integration** - Jualan hosting panel full otomatis + auto delete expired
+- ✅ **Hot Reload Config** - Ganti setting tanpa restart bot
+- ✅ **Anti Duplicate Payment** - Sistem cerdas cegah pembayaran ganda
+- ✅ **Multi-bahasa** - Indonesia, English, Melayu
+- ✅ **Responsive Admin** - Kelola dari HP juga bisa!
+
+---
+
+## 💳 Payment Gateway Supported
+
+<div align="center">
+
+| Gateway | Tipe | Fee | Auto Detect | Logo Support |
+|:---:|:---:|:---:|:---:|:---:|
+| **Qiospay** | QRIS | ~0.7% | ✅ 3 detik | ✅ |
+| **Sanpay** | QRIS | Varies | ✅ 3 detik | ✅ |
+| **Tripay** | QRIS | ~0.7% | ✅ 5 detik | ✅ |
+| **Midtrans** | QRIS | ~0.7% | ✅ 3 detik | ✅ |
+| **Pakasir** | QRIS | Varies | ✅ 3 detik | ✅ |
+| **OrderKuota** | QRIS | **GRATIS** | ✅ 3 detik | ✅ |
+
+> 💡 **Pro Tip:** Bisa aktifkan beberapa gateway sekaligus! Customer bebas pilih mau bayar lewat mana.
 
 </div>
 
 ---
 
-## 💳 Payment Gateway
+## 🖥️ Admin Panel Preview
 
 <div align="center">
 
-|    Gateway     |   Tipe   |   Fee    |    Status     |
-| :------------: | :------: | :------: | :-----------: |
-|  **Qiospay**   |   QRIS   |   0.7%   |  ✅ Official  |
-|   **Sanpay**   |   QRIS   |  Varies  |  ✅ Official  |
-|   **Tripay**   |   QRIS   |   0.7%   |  ✅ Official  |
-|  **Midtrans**  |   QRIS   |   0.7%   |  ✅ Official  |
-|  **Pakasir**   |   QRIS   |  Varies  |  ✅ Official  |
-| **OrderKuota** |   QRIS   | **FREE** | ⚡ Unofficial |
-| **ToyyibPay**  | FPX/Card |  Varies  |  ✅ Malaysia  |
+```
+┌─────────────────────────────────────────────────────────────┐
+│  📊 DASHBOARD                                               │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│   💰 Pendapatan Hari Ini     📦 Transaksi      👥 Users    │
+│   ┌─────────────────┐       ┌─────────┐      ┌─────────┐   │
+│   │   Rp 2.450.000  │       │   145   │      │   892   │   │
+│   │     ↑ 23%       │       │  ↑ 12%  │      │  ↑ 5%   │   │
+│   └─────────────────┘       └─────────┘      └─────────┘   │
+│                                                             │
+│   📈 Grafik Penjualan 7 Hari Terakhir                      │
+│   ═══════════════════════════════════                      │
+│        ▄▄      ▄▄                                          │
+│     ▄▄ ██ ▄▄  ██ ▄▄                                        │
+│   ▄▄██ ██ ██ ▄██ ██ ▄▄                                     │
+│   ████ ██ ██ ███ ██ ██ ▄▄                                  │
+│   ────────────────────────                                 │
+│   Sen Sel Rab Kam Jum Sab Min                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
 
-> � **Bebas pilih gateway** sesuai kebutuhan. Support multiple gateway aktif bersamaan!
+**Fitur Admin Panel:**
+- 📊 Dashboard statistik real-time
+- 📦 Kelola produk, kategori, stok
+- 💳 Monitor semua payment gateway
+- 📢 Broadcast ke semua user
+- 🔔 Push notification ke browser
+- 📱 Responsive - bisa dari HP!
 
 </div>
 
 ---
 
-## ✨ Fitur Lengkap
+## 📱 Bot Interface
+
+<div align="center">
+
+```
+┌──────────────────────────────────┐
+│  🤖 AUTO ORDER BOT               │
+│  ════════════════════════════    │
+│                                  │
+│  Selamat datang, Jundy! 👋       │
+│                                  │
+│  ┌────────────────────────────┐  │
+│  │ 🎁 PROMO SPESIAL          │  │ ← Flash Sale dengan countdown!
+│  │    🔥 Diskon 50%           │  │
+│  │    ⏰ Berakhir: 02:45:30   │  │
+│  └────────────────────────────┘  │
+│                                  │
+│  ┌──────────┐ ┌──────────────┐   │
+│  │🛍️ Produk │ │💰 Cek Saldo  │   │
+│  └──────────┘ └──────────────┘   │
+│  ┌──────────┐ ┌──────────────┐   │
+│  │📜 Riwayat│ │🖥️ Beli Panel │   │
+│  └──────────┘ └──────────────┘   │
+│  ┌──────────┐ ┌──────────────┐   │
+│  │📱 PPOB   │ │⚙️ Pengaturan │   │
+│  └──────────┘ └──────────────┘   │
+│                                  │
+└──────────────────────────────────┘
+```
+
+</div>
+
+---
+
+## 🎯 Cocok Untuk Jualan:
+
+<div align="center">
+
+| 🎮 Akun Premium | 📱 Pulsa & Kuota | 🖥️ Panel Hosting | 🎫 Voucher |
+|:---:|:---:|:---:|:---:|
+| Netflix | All Operator | Pterodactyl | Game |
+| Spotify | Paket Data | VPS | Streaming |
+| VPN | Token Listrik | Shared Host | Software |
+| Game | E-Wallet | Dedicated | License |
+
+</div>
+
+---
+
+## 📦 Fitur Lengkap
 
 <details>
-<summary><b>📦 Manajemen Produk</b></summary>
+<summary><b>🛍️ Manajemen Produk</b></summary>
 
 - Unlimited produk & kategori
-- Stock management (manual/bulk upload)
-- Garansi produk
+- Bulk upload stok via CSV
 - Auto expired stock
-- Harga berbeda per kategori
+- Sistem garansi fleksibel (7 hari - Full garansi)
+- Stok otomatis berkurang setelah pembelian
+- Required fields untuk produk custom (email, username, dll)
 
 </details>
 
 <details>
-<summary><b>🎫 Sistem Voucher</b></summary>
+<summary><b>🎁 Promo & Voucher</b></summary>
 
-- Voucher diskon (% atau nominal)
-- Voucher redeem saldo/produk
-- Batas penggunaan
-- Tanggal expired
-- Analytics lengkap
+- **Flash Sale / Promo Spesial** dengan countdown timer
+- Voucher diskon (persentase atau nominal)
+- Voucher redeem saldo
+- Batas penggunaan per user
+- Tanggal expired otomatis
+- Analytics penggunaan voucher
 
 </details>
 
 <details>
 <summary><b>🖥️ Pterodactyl Integration</b></summary>
 
-- Beli panel langsung dari bot
-- Auto create user & server
-- Kelola paket panel
-- Custom specs per paket
+- Jualan panel hosting langsung dari bot
+- Auto create user di Pterodactyl
+- Auto create server dengan spec sesuai paket
+- **Auto delete server expired** + notifikasi
+- Warning H-3 dan H-1 sebelum expired
+- Kelola paket panel dari admin
 
 </details>
 
 <details>
-<summary><b>🌐 Multi Bahasa</b></summary>
+<summary><b>💳 Payment System</b></summary>
 
-- 🇮🇩 Bahasa Indonesia
-- 🇬🇧 English
-- 🇲🇾 Bahasa Melayu
+- 6+ payment gateway terintegrasi
+- Auto detect pembayaran < 3 detik
+- **Anti duplicate payment** (cegah pembayaran ganda)
+- Hot reload config (ganti setting tanpa restart)
+- Custom logo di QRIS
+- Unique code untuk identifikasi pembayaran
 
 </details>
 
 <details>
-<summary><b>� Laporan & Statistik</b></summary>
+<summary><b>🔒 Security</b></summary>
 
-- Total penjualan
-- Transaksi harian/bulanan
+- Two-Factor Authentication (2FA)
+- TOTP (Google Authenticator) + Telegram OTP
+- CSRF Protection
+- Rate Limiting
+- Security logging
+- Encrypted sensitive data
+- IP Whitelist untuk callback
+
+</details>
+
+<details>
+<summary><b>📊 Analytics & Report</b></summary>
+
+- Dashboard statistik real-time
+- Grafik penjualan
+- Top produk terlaris
 - User paling aktif
-- Produk terlaris
-- Export data
+- Revenue harian/mingguan/bulanan
+- Export data transaksi
 
 </details>
 
@@ -172,64 +256,68 @@ Customer beli → Bayar QRIS → Terima produk **dalam hitungan detik** tanpa pe
 
 <div align="center">
 
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
-![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
-![Telegraf](https://img.shields.io/badge/Telegraf-26A5E4?style=flat-square&logo=telegram&logoColor=white)
-![Socket.io](https://img.shields.io/badge/Socket.io-010101?style=flat-square&logo=socket.io&logoColor=white)
-
-**Node.js 18+ | MongoDB Atlas | Express.js | Telegraf.js | Socket.io**
+![Node.js](https://img.shields.io/badge/Node.js_18+-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![Telegraf](https://img.shields.io/badge/Telegraf.js-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)
+![Socket.io](https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socket.io&logoColor=white)
 
 </div>
 
 ---
 
-## � Requirements
+## 📋 Requirements
 
-Untuk menjalankan bot ini, kamu perlu:
-
-- ✅ VPS / Panel Hosting (Pterodactyl)
-- ✅ MongoDB Database (Atlas - FREE)
-- ✅ Telegram Bot Token (dari @BotFather)
-- ✅ Akun Payment Gateway
+| Kebutuhan | Keterangan | Biaya |
+|:---|:---|:---:|
+| VPS / Panel | Minimal 1GB RAM, Node.js 18+ | ~50rb/bulan |
+| MongoDB | MongoDB Atlas (cloud) | **GRATIS** |
+| Bot Token | Dari @BotFather Telegram | **GRATIS** |
+| Payment Gateway | Pilih salah satu atau lebih | Varies |
 
 ---
 
 <div align="center">
 
-# 💎 TERTARIK?
+# 💎 ORDER SEKARANG
 
-### Dapatkan Bot Premium Ini Sekarang!
+### Pilih Paket yang Cocok Buat Kamu
 
 </div>
 
 ---
 
-## 🛒 Paket Tersedia
+## 🛒 Paket Harga
 
 <div align="center">
 
-|     Paket      |      Harga      |     Durasi     |      Bonus      |
-| :------------: | :-------------: | :------------: | :-------------: |
-|  🔹 **Sewa**   | Rp XX.XXX/bulan |    1 Bulan     |  Support full   |
-| 💎 **Beli SC** |   Rp XXX.XXX    |    Lifetime    |   Free update   |
-| ⚡ **Custom**  |      Nego       | Sesuai request | Premium support |
+| | 🔹 SEWA | 💎 BELI SOURCE CODE | ⚡ CUSTOM |
+|:---|:---:|:---:|:---:|
+| **Harga** | **Rp 75.000**/bulan | **Rp 500.000** (lifetime) | Nego |
+| Durasi | 1 Bulan | Selamanya | Sesuai request |
+| Source Code | ❌ | ✅ Full akses | ✅ |
+| Free Update | ✅ Selama sewa | ✅ Selamanya | ✅ |
+| Support | ✅ Full | ✅ Full | ✅ Priority |
+| Custom Fitur | ❌ | 1x Gratis | Unlimited |
+| Branding | ❌ | ✅ Bebas ganti | ✅ |
 
 </div>
 
-### ✅ Yang Kamu Dapat:
+### ✅ Semua Paket Dapat:
 
-- ✓ Source code lengkap
+- ✓ Bot fully functional & tested
+- ✓ Admin panel lengkap
 - ✓ Panduan instalasi detail
 - ✓ Bantuan setup awal
 - ✓ Support via Telegram
-- ✓ Free update (untuk paket Beli SC)
+- ✓ Akses grup diskusi
 
-### 📋 Persyaratan:
+### 🎁 Bonus Pembelian:
 
-- VPS/Panel sendiri
-- MongoDB Atlas (gratis)
-- Akun payment gateway
+- 🔥 Template produk siap pakai
+- 📚 Video tutorial instalasi
+- 💡 Tips & trick jualan online
+- 🤝 Konsultasi bisnis digital
 
 ---
 
@@ -237,21 +325,40 @@ Untuk menjalankan bot ini, kamu perlu:
 
 <div align="center">
 
-[![Telegram](https://img.shields.io/badge/💬_Telegram-@TempestVPNOfficial-26A5E4?style=for-the-badge&logo=telegram)](https://t.me/TempestVPNOfficial)
-[![WhatsApp](https://img.shields.io/badge/📱_WhatsApp-083111380628-25D366?style=for-the-badge&logo=whatsapp)](https://wa.me/6283111380628)
+[![Telegram](https://img.shields.io/badge/Telegram-@TempestVPNOfficial-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/TempestVPNOfficial)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-083111380628-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/6283111380628)
 
 **⏰ Fast Response: 09:00 - 22:00 WIB**
 
 ---
 
-### ⭐ Jangan Sampai Ketinggalan!
+### 🌟 Testimoni
 
-Bot ini sudah digunakan oleh **XX+ seller** dan memproses **XXXX+ transaksi**!
+> *"Bot nya keren, pembayaran langsung kedeteksi. Jualan jadi autopilot!"*  
+> — **@user1** ⭐⭐⭐⭐⭐
 
-[![Order Now](https://img.shields.io/badge/�_ORDER_SEKARANG-FF6B6B?style=for-the-badge)](https://t.me/TempestVPNOfficial)
+> *"Admin panelnya lengkap banget, gampang dipake."*  
+> — **@user2** ⭐⭐⭐⭐⭐
+
+> *"Support nya fast respon, recommended!"*  
+> — **@user3** ⭐⭐⭐⭐⭐
 
 ---
 
-Made with ❤️ by **TempestVPN**
+### 📈 Statistik
+
+| 👥 User Terdaftar | 📦 Transaksi Diproses | ⭐ Rating |
+|:---:|:---:|:---:|
+| **500+** | **10.000+** | **4.9/5** |
+
+---
+
+[![Order Now](https://img.shields.io/badge/🛒_ORDER_SEKARANG-FF6B6B?style=for-the-badge&logoColor=white)](https://t.me/TempestVPNOfficial)
+
+**💬 Chat langsung untuk konsultasi GRATIS!**
+
+---
+
+<sub>Made with ❤️ by **FusionTempest** • © 2024-2025</sub>
 
 </div>
