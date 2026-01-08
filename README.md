@@ -293,10 +293,10 @@ Tidak perlu hire admin untuk handle orderan. Bot ini bekerja **24 jam non-stop**
 
 | | 🚀 INSTALASI | 🔄 PERPANJANGAN | 💎 BELI SC | ⚡ CUSTOM |
 |:---|:---:|:---:|:---:|:---:|
-| **Harga** | **Rp 40.000** | **Rp 25.000**/bulan | **Rp 500.000** | Nego |
+| **Harga** | **Rp 40.000** | **Rp 25.000**/bulan | **Rp 575.000** | Nego |
 | Keterangan | Bulan pertama | Bulan ke-2 dst | Lifetime | Request |
 | Source Code | ❌ | ❌ | ✅ Full akses | ✅ |
-| Free Update | ✅ | ✅ | ❌ | ✅ |
+| Free Update | ✅ | ✅ | ❌ | ❌ |
 | Support | ✅ Full | ✅ Full | ✅ Full | ✅ Priority |
 | Custom Fitur | ❌ | ❌ | 1x Gratis | Unlimited |
 
