@@ -291,15 +291,17 @@ Tidak perlu hire admin untuk handle orderan. Bot ini bekerja **24 jam non-stop**
 
 <div align="center">
 
-| | 🔹 SEWA | 💎 BELI SOURCE CODE | ⚡ CUSTOM |
-|:---|:---:|:---:|:---:|
-| **Harga** | **Rp 75.000**/bulan | **Rp 500.000** (lifetime) | Nego |
-| Durasi | 1 Bulan | Selamanya | Sesuai request |
-| Source Code | ❌ | ✅ Full akses | ✅ |
-| Free Update | ✅ Selama sewa | ✅ Selamanya | ✅ |
-| Support | ✅ Full | ✅ Full | ✅ Priority |
-| Custom Fitur | ❌ | 1x Gratis | Unlimited |
-| Branding | ❌ | ✅ Bebas ganti | ✅ |
+| | 🚀 INSTALASI | 🔄 PERPANJANGAN | 💎 BELI SC | ⚡ CUSTOM |
+|:---|:---:|:---:|:---:|:---:|
+| **Harga** | **Rp 40.000** | **Rp 25.000**/bulan | **Rp 500.000** | Nego |
+| Keterangan | Bulan pertama | Bulan ke-2 dst | Lifetime | Request |
+| Source Code | ❌ | ❌ | ✅ Full akses | ✅ |
+| Free Update | ✅ | ✅ | ✅ Selamanya | ✅ |
+| Support | ✅ Full | ✅ Full | ✅ Full | ✅ Priority |
+| Custom Fitur | ❌ | ❌ | 1x Gratis | Unlimited |
+
+> 💡 **Instalasi Rp 40.000** sudah termasuk setup lengkap + 1 bulan pertama!  
+> 🔄 **Perpanjangan hanya Rp 25.000/bulan** - Lebih hemat!
 
 </div>
 
