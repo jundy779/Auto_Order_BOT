@@ -296,7 +296,7 @@ Tidak perlu hire admin untuk handle orderan. Bot ini bekerja **24 jam non-stop**
 | **Harga** | **Rp 40.000** | **Rp 25.000**/bulan | **Rp 500.000** | Nego |
 | Keterangan | Bulan pertama | Bulan ke-2 dst | Lifetime | Request |
 | Source Code | ❌ | ❌ | ✅ Full akses | ✅ |
-| Free Update | ✅ | ✅ | ✅ Selamanya | ✅ |
+| Free Update | ✅ | ✅ | ❌ | ✅ |
 | Support | ✅ Full | ✅ Full | ✅ Full | ✅ Priority |
 | Custom Fitur | ❌ | ❌ | 1x Gratis | Unlimited |
 
