@@ -2,18 +2,19 @@
 
 <img src="https://img.shields.io/badge/🤖-AUTO_ORDER_BOT-blue?style=for-the-badge" alt="Auto Order Bot"/>
 
-# ⚡ PREMIUM AUTO ORDER BOT
+# ⚡ PREMIUM AUTO ORDER BOT v5.2.0
 
-### Bot Telegram Jualan Otomatis #1 Indonesia
+### Bot Telegram Jualan Otomatis #1 Indonesia & Malaysia
 
 [![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Ready-47A248?style=flat-square&logo=mongodb&logoColor=white)](https://mongodb.com/)
 [![Telegram](https://img.shields.io/badge/Telegram-Bot_API-26A5E4?style=flat-square&logo=telegram&logoColor=white)](https://telegram.org/)
 [![License](https://img.shields.io/badge/License-Premium-gold?style=flat-square)](.)
+[![Version](https://img.shields.io/badge/Version-5.2.0-brightgreen?style=flat-square)](.)
 
 <br/>
 
-**🎯 Jualan Autopilot 24/7 • 💳 6+ Payment Gateway • 🖥️ Admin Panel Modern**
+**🎯 Jualan Autopilot 24/7 • 💳 8+ Payment Gateway • 🌏 Indonesia & Malaysia • 🖥️ Admin Panel Modern**
 
 [Demo Bot](https://t.me/FusionTempest_bot) • [Order Sekarang](#-order-sekarang) • [Hubungi Saya](#-hubungi-saya)
 
@@ -40,6 +41,22 @@ Tidak perlu hire admin untuk handle orderan. Bot ini bekerja **24 jam non-stop**
 
 </td>
 </tr>
+<tr>
+<td>
+
+### 🌏 Multi-Region & Multi-Bahasa
+
+Support pembayaran **Indonesia (QRIS)** dan **Malaysia (FPX/DuitNow)**. Bot tersedia dalam 3 bahasa: Indonesia, English, Melayu.
+
+</td>
+<td>
+
+### 🔄 Hot Reload Tanpa Restart
+
+Ganti setting payment gateway, promo, atau konfigurasi lainnya **langsung dari admin panel** — tanpa perlu restart bot!
+
+</td>
+</tr>
 </table>
 
 ---
@@ -51,19 +68,22 @@ Tidak perlu hire admin untuk handle orderan. Bot ini bekerja **24 jam non-stop**
 | 🔥 Auto Payment | 🎁 Promo System | 🖥️ Admin Panel | 🔒 Super Secure |
 |:---:|:---:|:---:|:---:|
 | Deteksi bayar <3 detik | Flash Sale & Diskon | Real-time Dashboard | 2FA + Encryption |
-| 6+ Payment Gateway | Voucher & Kupon | Push Notifications | CSRF Protection |
-| Multi-gateway aktif | Timer countdown | Bulk Actions | Security Logging |
+| 8+ Payment Gateway | Voucher & Kupon | Push Notifications | CSRF Protection |
+| ID + MY support | Timer countdown | Hot Reload Config | Security Logging |
 
 </div>
 
 ### ⚡ Yang Bikin Beda dari Bot Lain:
 
+- ✅ **8+ Payment Gateway** - Pakasir, Qiospay, Sanpay, Midtrans, Tripay, Violetpay, ToyyibPay (MY), iPaymu
 - ✅ **Promo Spesial / Flash Sale** - Bikin urgency dengan countdown timer
 - ✅ **Logo di QRIS** - Branding profesional di setiap pembayaran
 - ✅ **Pterodactyl Integration** - Jualan hosting panel full otomatis + auto delete expired
-- ✅ **Hot Reload Config** - Ganti setting tanpa restart bot
+- ✅ **Hot Reload Config** - Ganti setting dari admin panel tanpa restart bot
 - ✅ **Anti Duplicate Payment** - Sistem cerdas cegah pembayaran ganda
 - ✅ **Multi-bahasa** - Indonesia, English, Melayu
+- ✅ **Reseller API (H2H)** - Jadi supplier, buka reseller dengan API terintegrasi
+- ✅ **Exchange Rate** - Otomatis convert harga untuk user internasional
 - ✅ **Responsive Admin** - Kelola dari HP juga bisa!
 
 ---
@@ -72,16 +92,19 @@ Tidak perlu hire admin untuk handle orderan. Bot ini bekerja **24 jam non-stop**
 
 <div align="center">
 
-| Gateway | Tipe | Fee | Auto Detect | Logo Support |
+| Gateway | Region | Tipe | Auto Detect | Logo/QR |
 |:---:|:---:|:---:|:---:|:---:|
-| **Qiospay** | QRIS | ~0.7% | ✅ 3 detik | ✅ |
-| **Sanpay** | QRIS | Varies | ✅ 3 detik | ✅ |
-| **Tripay** | QRIS | ~0.7% | ✅ 5 detik | ✅ |
-| **Midtrans** | QRIS | ~0.7% | ✅ 3 detik | ✅ |
-| **Pakasir** | QRIS | Varies | ✅ 3 detik | ✅ |
-| **OrderKuota** | QRIS | **GRATIS** | ✅ 3 detik | ✅ |
+| **Pakasir** | 🇮🇩 Indonesia | QRIS | ✅ 3 detik | ✅ |
+| **Qiospay** | 🇮🇩 Indonesia | QRIS Dynamic | ✅ 3 detik | ✅ |
+| **Sanpay** | 🇮🇩 Indonesia | QRIS | ✅ 3 detik | ✅ |
+| **Midtrans** | 🇮🇩 Indonesia | QRIS | ✅ 3 detik | ✅ |
+| **Tripay** | 🇮🇩 Indonesia | QRIS | ✅ 5 detik | ✅ |
+| **Violetpay** | 🇮🇩 Indonesia | QRIS | ✅ Auto | ✅ |
+| **iPaymu** | 🇮🇩 Indonesia | QRIS (Redirect) | ✅ Callback | ✅ |
+| **ToyyibPay** | 🇲🇾 Malaysia | FPX / DuitNow | ✅ Callback | - |
 
-> 💡 **Pro Tip:** Bisa aktifkan beberapa gateway sekaligus! Customer bebas pilih mau bayar lewat mana.
+> 💡 **Pro Tip:** Bisa aktifkan beberapa gateway sekaligus! Customer bebas pilih mau bayar lewat mana.  
+> 🌏 **Malaysia Support:** ToyyibPay untuk pembayaran FPX/DuitNow — customer Malaysia bisa bayar langsung!
 
 </div>
 
@@ -117,9 +140,12 @@ Tidak perlu hire admin untuk handle orderan. Bot ini bekerja **24 jam non-stop**
 **Fitur Admin Panel:**
 - 📊 Dashboard statistik real-time
 - 📦 Kelola produk, kategori, stok
-- 💳 Monitor semua payment gateway
-- 📢 Broadcast ke semua user
+- 💳 Payment gateway management (8+ gateway, hot reload)
+- 🎫 Voucher management
+- 🖥️ Panel package management (Pterodactyl)
+- 📢 Broadcast ke semua user (filter, media)
 - 🔔 Push notification ke browser
+- 🔒 Security: 2FA, audit log, CSRF
 - 📱 Responsive - bisa dari HP!
 
 </div>
@@ -153,6 +179,8 @@ Tidak perlu hire admin untuk handle orderan. Bot ini bekerja **24 jam non-stop**
 │  │📱 PPOB   │ │⚙️ Pengaturan │   │
 │  └──────────┘ └──────────────┘   │
 │                                  │
+│  🌐 ID | EN | MS                 │
+│                                  │
 └──────────────────────────────────┘
 ```
 
@@ -164,12 +192,12 @@ Tidak perlu hire admin untuk handle orderan. Bot ini bekerja **24 jam non-stop**
 
 <div align="center">
 
-| 🎮 Akun Premium | 📱 Pulsa & Kuota | 🖥️ Panel Hosting | 🎫 Voucher |
+| 🎮 Akun Premium | 📱 Pulsa & Kuota | 🖥️ Panel Hosting | 🎫 Voucher & License |
 |:---:|:---:|:---:|:---:|
 | Netflix | All Operator | Pterodactyl | Game |
 | Spotify | Paket Data | VPS | Streaming |
 | VPN | Token Listrik | Shared Host | Software |
-| Game | E-Wallet | Dedicated | License |
+| Game | E-Wallet | Dedicated | License Key |
 
 </div>
 
@@ -181,11 +209,15 @@ Tidak perlu hire admin untuk handle orderan. Bot ini bekerja **24 jam non-stop**
 <summary><b>🛍️ Manajemen Produk</b></summary>
 
 - Unlimited produk & kategori
-- Bulk upload stok via CSV
+- Bulk upload stok via file/teks
 - Auto expired stock
 - Sistem garansi fleksibel (7 hari - Full garansi)
 - Stok otomatis berkurang setelah pembelian
 - Required fields untuk produk custom (email, username, dll)
+- Pagination produk per kategori
+- Best seller produk
+- Critical stock alert
+- Retrieve stock (download sisa stok)
 
 </details>
 
@@ -194,10 +226,12 @@ Tidak perlu hire admin untuk handle orderan. Bot ini bekerja **24 jam non-stop**
 
 - **Flash Sale / Promo Spesial** dengan countdown timer
 - Voucher diskon (persentase atau nominal)
-- Voucher redeem saldo
+- Voucher redeem saldo / produk
+- Maximum discount control
 - Batas penggunaan per user
 - Tanggal expired otomatis
 - Analytics penggunaan voucher
+- Channel notifications untuk promo
 
 </details>
 
@@ -209,19 +243,46 @@ Tidak perlu hire admin untuk handle orderan. Bot ini bekerja **24 jam non-stop**
 - Auto create server dengan spec sesuai paket
 - **Auto delete server expired** + notifikasi
 - Warning H-3 dan H-1 sebelum expired
-- Kelola paket panel dari admin
+- Kelola paket panel dari admin web
 
 </details>
 
 <details>
 <summary><b>💳 Payment System</b></summary>
 
-- 6+ payment gateway terintegrasi
+- **8+ payment gateway** terintegrasi
+- **Indonesia (QRIS):** Pakasir, Qiospay, Sanpay, Midtrans, Tripay, Violetpay, iPaymu
+- **Malaysia (FPX):** ToyyibPay
 - Auto detect pembayaran < 3 detik
 - **Anti duplicate payment** (cegah pembayaran ganda)
 - Hot reload config (ganti setting tanpa restart)
 - Custom logo di QRIS
-- Unique code untuk identifikasi pembayaran
+- QRIS fee otomatis (configurable)
+- Webhook callback dengan validasi signature
+- Saldo internal + top up via QRIS
+
+</details>
+
+<details>
+<summary><b>🌐 Multi-Language & Multi-Region</b></summary>
+
+- **3 Bahasa:** Indonesia, English, Bahasa Melayu
+- **Indonesia:** Semua QRIS gateway (Pakasir, Qiospay, Sanpay, Midtrans, Tripay, Violetpay, iPaymu)
+- **Malaysia:** ToyyibPay (FPX / DuitNow)
+- Exchange rate support untuk user internasional
+- Keyboard & pesan otomatis sesuai bahasa user
+
+</details>
+
+<details>
+<summary><b>🔗 Reseller API (H2H)</b></summary>
+
+- RESTful API untuk reseller
+- Endpoint: order, cek status, cek saldo, list produk
+- API key authentication
+- Rate limiting per reseller
+- Dokumentasi API lengkap
+- Cocok untuk supplier yang buka reseller
 
 </details>
 
@@ -232,9 +293,10 @@ Tidak perlu hire admin untuk handle orderan. Bot ini bekerja **24 jam non-stop**
 - TOTP (Google Authenticator) + Telegram OTP
 - CSRF Protection
 - Rate Limiting
-- Security logging
+- Security logging & audit trail
 - Encrypted sensitive data
 - IP Whitelist untuk callback
+- Admin audit log
 
 </details>
 
@@ -244,9 +306,38 @@ Tidak perlu hire admin untuk handle orderan. Bot ini bekerja **24 jam non-stop**
 - Dashboard statistik real-time
 - Grafik penjualan
 - Top produk terlaris
-- User paling aktif
+- User paling aktif (today & all-time)
 - Revenue harian/mingguan/bulanan
 - Export data transaksi
+- Push notification ke browser
+
+</details>
+
+<details>
+<summary><b>📄 Invoice & Notifikasi</b></summary>
+
+- Invoice generation (Canvas)
+- Custom logo & banner invoice
+- Large product delivery (.txt)
+- Channel notifications (pembelian, top-up, voucher)
+- Invoice image ke channel
+- Custom sticker/GIF notifikasi
+- Custom welcome sticker /start
+- Custom gambar /start
+
+</details>
+
+<details>
+<summary><b>⚙️ Fitur Tambahan</b></summary>
+
+- Full garansi langganan
+- Manual confirmation transaksi
+- Order admin tanpa pay
+- Support ticket system
+- Ban/unban user + banned list
+- Broadcast message (filter, media support)
+- Cancel transaksi oleh user
+- Cek status transaksi real-time
 
 </details>
 
@@ -276,6 +367,40 @@ Tidak perlu hire admin untuk handle orderan. Bot ini bekerja **24 jam non-stop**
 | Payment Gateway | Pilih salah satu atau lebih | Varies |
 
 ---
+
+## 🧭 Dokumentasi Teknis (Developer)
+
+Dokumen ini membantu kamu (atau tim) memahami alur logic, struktur, API, dan data model untuk maintenance/refactor ke depan:
+
+- `docs/PRD.md` — Product Requirement Documentation (source-of-truth requirement)
+- `docs/ARCHITECTURE.md` — arsitektur & alur order → payment → finalize → delivery
+- `docs/API.md` — ringkasan endpoint HTTP (public/admin/H2H/webhook)
+- `docs/DATA_MODEL.md` — ringkasan skema MongoDB (Mongoose)
+- `docs/RUNBOOK.md` — setup/run & troubleshooting operasional
+- `docs/REFACTOR_ROADMAP.md` — rencana refactor bertahap (tanpa ubah behavior)
+- `docs/PAYMENT_DESIGN.md` — arsitektur payment gateway
+- `CHANGELOG.md` — riwayat perubahan per versi
+
+## ▶️ Cara Menjalankan (Developer)
+
+1. Isi `.env` (lihat `docs/RUNBOOK.md`).
+2. Install dependency:
+
+```bash
+npm install
+```
+
+3. Jalankan bot:
+
+```bash
+npm run start
+```
+
+## 🔐 Catatan Keamanan
+
+- Jangan pernah membagikan atau meng-commit `.env` (bot token, API key, private key, password).
+- Endpoint webhook harus selalu memverifikasi signature (untuk provider yang mendukung).
+- Jika menambah fitur payment/delivery baru, pastikan flow finalisasi tetap **idempotent** (anti dobel-kirim/dobel-success).
 
 <div align="center">
 
@@ -308,7 +433,9 @@ Tidak perlu hire admin untuk handle orderan. Bot ini bekerja **24 jam non-stop**
 ### ✅ Semua Paket Dapat:
 
 - ✓ Bot fully functional & tested
-- ✓ Admin panel lengkap
+- ✓ Admin panel lengkap (responsive)
+- ✓ 8+ payment gateway siap pakai
+- ✓ Multi-bahasa (ID/EN/MS)
 - ✓ Panduan instalasi detail
 - ✓ Bantuan setup awal
 - ✓ Support via Telegram
@@ -349,9 +476,9 @@ Tidak perlu hire admin untuk handle orderan. Bot ini bekerja **24 jam non-stop**
 
 ### 📈 Statistik
 
-| 👥 User Terdaftar | 📦 Transaksi Diproses | ⭐ Rating |
-|:---:|:---:|:---:|
-| **500+** | **10.000+** | **4.9/5** |
+| 👥 User Terdaftar | 📦 Transaksi Diproses | ⭐ Rating | 💳 Gateway |
+|:---:|:---:|:---:|:---:|
+| **500+** | **10.000+** | **4.9/5** | **8+** |
 
 ---
 
@@ -361,6 +488,6 @@ Tidak perlu hire admin untuk handle orderan. Bot ini bekerja **24 jam non-stop**
 
 ---
 
-<sub>Made with ❤️ by **FusionTempest** • © 2024-2025</sub>
+<sub>Made with ❤️ by **FusionTempest** • v5.2.0 • © 2024-2026</sub>
 
 </div>
