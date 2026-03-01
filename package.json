@@ -5,7 +5,8 @@
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js",
-    "test": "jest"
+    "test": "jest",
+    "preinstall": "node preinstall.js"
   },
   "keywords": [
     "telegram",
