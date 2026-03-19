@@ -105,7 +105,7 @@ Ganti setting payment gateway, promo, atau konfigurasi lainnya **langsung dari a
 | **CHIP** | 🇲🇾 Malaysia | DuitNow QR | ✅ Callback | - |
 
 > 💡 **Pro Tip:** Bisa aktifkan beberapa gateway sekaligus! Customer bebas pilih mau bayar lewat mana.  
-> 🌏 **Malaysia Support:** ToyyibPay untuk pembayaran FPX/DuitNow — customer Malaysia bisa bayar langsung!
+> 🌏 **Malaysia Support:** ToyyibPay (FPX) & CHIP (DuitNow QR) — customer Malaysia bisa bayar langsung!
 
 </div>
 
