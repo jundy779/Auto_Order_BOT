@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&amp;color=gradient&amp;customColorList=6,11,20&amp;height=180&amp;section=header&amp;text=Auto%20Order%20Bot&amp;fontSize=70&amp;fontAlignY=35&amp;animation=twinkling&amp;fontColor=fff&amp;desc=Premium%20Telegram%20Bot%20Jualan%20Otomatis%20%231%20Indonesia%20%26%20Malaysia&amp;descAlignY=55&amp;descSize=16" width="100%" alt="Auto Order Bot" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Auto%20Order%20Bot&fontSize=70&fontAlignY=35&animation=twinkling&fontColor=fff&desc=Premium%20Telegram%20Bot%20Jualan%20Otomatis%20%231%20Indonesia%20%26%20Malaysia&descAlignY=55&descSize=16" width="100%" alt="Auto Order Bot" />
 
 [![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![Express](https://img.shields.io/badge/Express-4.x-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
@@ -675,7 +675,7 @@ npm run start
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&amp;color=gradient&amp;customColorList=6,11,20&amp;height=120&amp;section=footer&amp;text=Thank%20You!&amp;fontSize=40&amp;fontColor=ffffff&amp;animation=twinkling&amp;fontAlignY=75" width="100%" alt="Footer" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer&text=Thank%20You!&fontSize=40&fontColor=ffffff&animation=twinkling&fontAlignY=75" width="100%" alt="Footer" />
 
 <sub>Made with ❤️ by **FusionTempest** • v5.2.0 • © 2024-2026</sub>
 
