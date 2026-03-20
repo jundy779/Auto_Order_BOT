@@ -9,7 +9,7 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-Ready-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com/)
 [![Telegram](https://img.shields.io/badge/Telegram-Bot_API-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://telegram.org/)
 [![License](https://img.shields.io/badge/License-Premium-gold?style=for-the-badge)](.)
-[![Version](https://img.shields.io/badge/Version-5.2.0-brightgreen?style=for-the-badge)](.)
+[![Version](https://img.shields.io/badge/Version-6.5.0-brightgreen?style=for-the-badge)](.)
 [![GitHub Stars](https://img.shields.io/github/stars/jundy779/Auto_Order_BOT?style=for-the-badge&logo=github)](https://github.com/jundy779/Auto_Order_BOT)
 [![GitHub Forks](https://img.shields.io/github/forks/jundy779/Auto_Order_BOT?style=for-the-badge&logo=github)](https://github.com/jundy779/Auto_Order_BOT)
 
@@ -37,11 +37,12 @@
 
 ---
 
-## 🆕 Terbaru
+## 🆕 Terbaru (v6.5.0)
 
+- **Pterodactyl Panel Lengkap** — Renew server dari bot, link langsung ke server, extend/suspend dari admin
+- **Production Ready** — Health check endpoint, graceful shutdown, .env.example
+- **Keamanan** — Masking API key, .env di .gitignore
 - **CHIP (DuitNow QR)** — Support pembayaran Malaysia via DuitNow QR
-- **ToyyibPay** — FPX &amp; DuitNow untuk customer Malaysia
-- **Dokumentasi lengkap** — Lihat `docs/CHIP_INTEGRATION_PLAN.md` untuk integrasi CHIP
 - **9+ Payment Gateway** — Pilih sesuai kebutuhan bisnis kamu
 
 ---
@@ -656,6 +657,6 @@ npm run start
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer&text=Thank%20You!&fontSize=40&fontColor=ffffff&animation=twinkling&fontAlignY=75" width="100%" alt="Footer" />
 
-<sub>Made with ❤️ by **FusionTempest** • v5.2.0 • © 2024-2026</sub>
+<sub>Made with ❤️ by **FusionTempest** • v6.5.0 • © 2025-2026</sub>
 
 </div>
