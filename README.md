@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Auto%20Order%20Bot&fontSize=70&fontAlignY=35&animation=twinkling&fontColor=fff&desc=Premium%20Telegram%20Bot%20Jualan%20Otomatis%20%231%20Indonesia%20%26%20Malaysia&descAlignY=55&descSize=16" width="100%" alt="Auto Order Bot" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Auto%20Order%20Bot&fontSize=70&fontAlignY=35&animation=twinkling&fontColor=fff&desc=Premium%20Telegram%20Bot%20Jualan%20Otomatis%20%231%20Indonesia%20dan%20Malaysia&descAlignY=55&descSize=16" width="100%" alt="Auto Order Bot" />
 
 [![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![Express](https://img.shields.io/badge/Express-4.x-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
