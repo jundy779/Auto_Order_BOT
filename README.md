@@ -32,8 +32,8 @@
 | [🚀 Kenapa Pilih Bot Ini](#-kenapa-pilih-bot-ini) | [🎯 Cocok Untuk Jualan](#-cocok-untuk-jualan) |
 | [✨ Fitur Premium](#-fitur-premium) | [📦 Fitur Lengkap](#-fitur-lengkap) |
 | [⚖️ Perbandingan](#️-perbandingan) | [🛠️ Tech Stack](#️-tech-stack) |
-| [❓ FAQ](#-faq) | [🛒 Paket Harga](#-paket-harga) |
-| | [📞 Hubungi Saya](#-hubungi-saya) |
+| [🗺️ Roadmap](#-roadmap) | [🛒 Paket Harga](#-paket-harga) |
+| [❓ FAQ](#-faq) | [📞 Hubungi Saya](#-hubungi-saya) |
 
 ---
 
@@ -260,28 +260,9 @@ sequenceDiagram
 
 <div align="center">
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  📊 DASHBOARD                                               │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│   💰 Pendapatan Hari Ini     📦 Transaksi      👥 Users    │
-│   ┌─────────────────┐       ┌─────────┐      ┌─────────┐   │
-│   │   Rp 2.450.000  │       │   145   │      │   892   │   │
-│   │     ↑ 23%       │       │  ↑ 12%  │      │  ↑ 5%   │   │
-│   └─────────────────┘       └─────────┘      └─────────┘   │
-│                                                             │
-│   📈 Grafik Penjualan 7 Hari Terakhir                      │
-│   ═══════════════════════════════════                      │
-│        ▄▄      ▄▄                                          │
-│     ▄▄ ██ ▄▄  ██ ▄▄                                        │
-│   ▄▄██ ██ ██ ▄██ ██ ▄▄                                     │
-│   ████ ██ ██ ███ ██ ██ ▄▄                                  │
-│   ────────────────────────                                 │
-│   Sen Sel Rab Kam Jum Sab Min                              │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+<img src="assets/admin-dashboard.png" width="100%" alt="Admin Panel Dashboard - Statistik real-time, grafik penjualan, kelola produk" />
+
+<sub>*Dashboard Admin Panel — Statistik, grafik penjualan, kelola produk &amp; payment gateway*</sub>
 
 **Fitur Admin Panel:**
 - 📊 Dashboard statistik real-time
@@ -302,31 +283,11 @@ sequenceDiagram
 
 <div align="center">
 
-```
-┌──────────────────────────────────┐
-│  🤖 AUTO ORDER BOT               │
-│  ════════════════════════════    │
-│                                  │
-│  Selamat datang, Jundy! 👋       │
-│                                  │
-│  ┌────────────────────────────┐  │
-│  │  🎁 PROMO SPESIAL          │  │
-│  └────────────────────────────┘  │
-│                                  │
-│  ┌──────────┐ ┌──────────────┐   │
-│  │🛍️ Produk │ │💰 Cek Saldo  │  │
-│  └──────────┘ └──────────────┘   │
-│  ┌──────────┐ ┌──────────────┐   │
-│  │📜 Riwayat│ │🖥️ Beli Panel │  │
-│  └──────────┘ └──────────────┘   │
-│  ┌──────────┐ ┌──────────────┐   │
-│  │📱 PPOB   │ │⚙️ Pengaturan │  │
-│  └──────────┘ └──────────────┘   │
-│                                  │
-│  🌐 ID | EN | MS                 │
-│                                  │
-└──────────────────────────────────┘
-```
+<img src="assets/bot-interface.png" width="400" alt="Bot Interface - Menu utama, produk, saldo, riwayat" />
+
+<sub>*Interface bot — Menu utama, flow order, promo, multi-bahasa*</sub>
+
+> 💡 Simpan screenshot di `assets/admin-dashboard.png` &amp; `assets/bot-interface.png`. Opsional: tambah `assets/order-flow.gif` untuk animasi flow order.
 
 </div>
 
@@ -484,6 +445,24 @@ sequenceDiagram
 - Cek status transaksi real-time
 
 </details>
+
+---
+
+## 🗺️ Roadmap
+
+<div align="center">
+
+| Status | Fitur | Target |
+|:---:|:---|:---:|
+| 🔜 | **Payment Gateway** — BAYAR GG, Xendit | Q2 2025 |
+| 🔜 | **Admin Panel** — Dark mode, export Excel | Q2 2025 |
+| 📋 | **Bot** — Inline query search produk | Backlog |
+| 📋 | **Integrasi** — Discord bot (opsional) | Backlog |
+| 📋 | **Analytics** — Laporan PDF otomatis | Backlog |
+
+<sub>*Roadmap dapat berubah sesuai feedback &amp; prioritas development*</sub>
+
+</div>
 
 ---
 
