@@ -1,20 +1,5 @@
 <div align="center">
 
-<<<<<<< HEAD
-<img src="https://img.shields.io/badge/🤖-AUTO_ORDER_BOT-blue?style=for-the-badge" alt="Auto Order Bot"/>
-
-# ⚡ PREMIUM AUTO ORDER BOT v5.2.0
-
-### Bot Telegram Jualan Otomatis #1 Indonesia & Malaysia
-
-[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-Ready-47A248?style=flat-square&logo=mongodb&logoColor=white)](https://mongodb.com/)
-[![Telegram](https://img.shields.io/badge/Telegram-Bot_API-26A5E4?style=flat-square&logo=telegram&logoColor=white)](https://telegram.org/)
-[![License](https://img.shields.io/badge/License-Premium-gold?style=flat-square)](.)
-[![Version](https://img.shields.io/badge/Version-5.2.0-brightgreen?style=flat-square)](.)
-
-<br/>
-=======
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Auto%20Order%20Bot&fontSize=70&fontAlignY=35&animation=twinkling&fontColor=fff&desc=Premium%20Telegram%20Bot%20Jualan%20Otomatis%20%231%20Indonesia%20%26%20Malaysia&descAlignY=55&descSize=16" width="100%" />
 
 [![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
@@ -27,18 +12,11 @@
 [![Version](https://img.shields.io/badge/Version-5.2.0-brightgreen?style=for-the-badge)](.)
 [![GitHub Stars](https://img.shields.io/github/stars/jundy779/Auto_Order_BOT?style=for-the-badge&logo=github)](https://github.com/jundy779/Auto_Order_BOT)
 [![GitHub Forks](https://img.shields.io/github/forks/jundy779/Auto_Order_BOT?style=for-the-badge&logo=github)](https://github.com/jundy779/Auto_Order_BOT)
->>>>>>> 15b4d8d (Update README: TOC, Terbaru, FAQ, Perbandingan, badges GitHub)
 
 **🎯 Jualan Autopilot 24/7 • 💳 9+ Payment Gateway • 🌏 Indonesia & Malaysia • 🖥️ Admin Panel Modern**
 
 [Demo Bot](https://t.me/FusionTempest_bot) • [Order Sekarang](#-order-sekarang) • [Hubungi Saya](#-hubungi-saya)
 
-<<<<<<< HEAD
----
-
-</div>
-
-=======
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 </div>
@@ -152,7 +130,6 @@ MongoDB NoSQL
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
->>>>>>> 15b4d8d (Update README: TOC, Terbaru, FAQ, Perbandingan, badges GitHub)
 ## 🚀 Kenapa Pilih Bot Ini?
 
 <table>
@@ -190,8 +167,6 @@ Ganti setting payment gateway, promo, atau konfigurasi lainnya **langsung dari a
 </tr>
 </table>
 
-<<<<<<< HEAD
-=======
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## ⚖️ Perbandingan
@@ -201,7 +176,7 @@ Ganti setting payment gateway, promo, atau konfigurasi lainnya **langsung dari a
 | | Bot Auto Order | Jualan Manual | Bot Lain (Umum) |
 |:---|:---:|:---:|:---:|
 | **Order 24/7** | ✅ | ❌ | ✅ |
-| **Auto kirim produk** | ✅ <3 detik | ❌ | Varies |
+| **Auto kirim produk** | ✅ &lt;3 detik | ❌ | Varies |
 | **9+ Payment Gateway** | ✅ ID + MY | ❌ | Terbatas |
 | **Admin panel modern** | ✅ Real-time | ❌ | Sederhana |
 | **Hot reload config** | ✅ Tanpa restart | - | Jarang |
@@ -211,7 +186,6 @@ Ganti setting payment gateway, promo, atau konfigurasi lainnya **langsung dari a
 
 </div>
 
->>>>>>> 15b4d8d (Update README: TOC, Terbaru, FAQ, Perbandingan, badges GitHub)
 ---
 
 ## ✨ Fitur Premium
@@ -239,9 +213,6 @@ Ganti setting payment gateway, promo, atau konfigurasi lainnya **langsung dari a
 - ✅ **Exchange Rate** - Otomatis convert harga untuk user internasional
 - ✅ **Responsive Admin** - Kelola dari HP juga bisa!
 
-<<<<<<< HEAD
----
-=======
 **📊 Alur Order → Pembayaran → Pengiriman**
 
 ```mermaid
@@ -261,7 +232,6 @@ sequenceDiagram
 ```
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
->>>>>>> 15b4d8d (Update README: TOC, Terbaru, FAQ, Perbandingan, badges GitHub)
 
 ## 💳 Payment Gateway Supported
 
@@ -542,8 +512,6 @@ sequenceDiagram
 
 ---
 
-<<<<<<< HEAD
-=======
 ## ❓ FAQ
 
 <details>
@@ -584,7 +552,6 @@ Ya! ToyyibPay (FPX/DuitNow) dan CHIP (DuitNow QR) untuk Malaysia. Bot juga suppo
 
 ---
 
->>>>>>> 15b4d8d (Update README: TOC, Terbaru, FAQ, Perbandingan, badges GitHub)
 ## 🧭 Dokumentasi Teknis (Developer)
 
 Dokumen ini membantu kamu (atau tim) memahami alur logic, struktur, API, dan data model untuk maintenance/refactor ke depan:
@@ -704,15 +671,11 @@ npm run start
 
 **💬 Chat langsung untuk konsultasi GRATIS!**
 
-<<<<<<< HEAD
----
-=======
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer&text=Thank%20You!&fontSize=40&fontColor=ffffff&animation=twinkling&fontAlignY=75" width="100%" alt="Footer"/>
->>>>>>> 15b4d8d (Update README: TOC, Terbaru, FAQ, Perbandingan, badges GitHub)
 
 <sub>Made with ❤️ by **FusionTempest** • v5.2.0 • © 2024-2026</sub>
 
