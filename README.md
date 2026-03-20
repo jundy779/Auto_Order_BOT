@@ -261,7 +261,7 @@ sequenceDiagram
 
 <div align="center">
 
-<img src="assets/admin-dashboard.png" width="100%" alt="Admin Panel Dashboard - Statistik real-time, grafik penjualan, kelola produk" />
+<img width="1898" height="840" alt="image" src="https://github.com/user-attachments/assets/24af58d1-811c-4edd-bb64-d0911ba8b231" width="100%" alt="Admin Panel Dashboard - Statistik real-time, grafik penjualan, kelola produk" />
 
 <sub>*Dashboard Admin Panel — Statistik, grafik penjualan, kelola produk &amp; payment gateway*</sub>
 
@@ -284,11 +284,9 @@ sequenceDiagram
 
 <div align="center">
 
-<img src="assets/bot-interface.png" width="400" alt="Bot Interface - Menu utama, produk, saldo, riwayat" />
+<img width="794" height="496" alt="image" src="https://github.com/user-attachments/assets/104a6d04-051b-4a82-8f8f-93803dcc51d5" width="400" alt="Bot Interface - Menu utama, produk, saldo, riwayat" />
 
 <sub>*Interface bot — Menu utama, flow order, promo, multi-bahasa*</sub>
-
-> 💡 Simpan screenshot di `assets/admin-dashboard.png` &amp; `assets/bot-interface.png`. Opsional: tambah `assets/order-flow.gif` untuk animasi flow order.
 
 </div>
 
