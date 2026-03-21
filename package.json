@@ -1,6 +1,6 @@
 {
   "name": "auto-order-payment-bot",
-  "version": "5.2.0",
+  "version": "6.5.0",
   "description": "Telegram bot for digital product sales with QRIS integrations (Pakasir, Qiospay, Sanpay, Midtrans, Tripay).",
   "main": "bot.js",
   "scripts": {
