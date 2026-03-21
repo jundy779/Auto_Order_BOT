@@ -541,6 +541,7 @@ Dokumen ini membantu kamu (atau tim) memahami alur logic, struktur, API, dan dat
 - `docs/RUNBOOK.md` — setup/run &amp; troubleshooting operasional
 - `docs/REFACTOR_ROADMAP.md` — rencana refactor bertahap (tanpa ubah behavior)
 - `docs/PAYMENT_DESIGN.md` — arsitektur payment gateway
+- `docs/ARCHITECTURE.md` — arsitektur & alur order → payment → finalize → delivery
 - `docs/CHIP_INTEGRATION_PLAN.md` — rencana integrasi CHIP (DuitNow QR Malaysia)
 - `CHANGELOG.md` — riwayat perubahan per versi
 
