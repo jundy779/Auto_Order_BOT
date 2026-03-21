@@ -99,7 +99,7 @@ flowchart TD
     ViewOpt -->|Perpanjang| RenewFlow[Pilih paket renew]
     
     ListPkg --> SelectPkg[User Pilih Paket]
-    SelectPkg --> InputUser[⚠️ Input Username (wajib, min 3 char)]
+    SelectPkg --> InputUser[Input Username wajib min 3 char]
     InputUser --> CheckoutPanel[Checkout: paket, username, total]
     CheckoutPanel --> PayPanel[Pilih: Saldo / QRIS]
     
@@ -174,7 +174,7 @@ flowchart TD
         HasPending -->|Tidak| SleepPoll[Sleep, tunggu tick berikutnya]
         HasPending -->|Ya| CheckGateway{Cek status ke Gateway}
         CheckGateway --> GatewayResult{Status =<br/>paid/completed?}
-        GatewayResult -->|Ya| CallFinalize[finalizeTransaction(transaction)]
+        GatewayResult -->|Ya| CallFinalize[Panggil finalizeTransaction]
         GatewayResult -->|Tidak| SleepPoll
         CallFinalize --> SleepPoll
     end
