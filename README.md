@@ -483,7 +483,7 @@ sequenceDiagram
 
 | Kebutuhan | Keterangan | Biaya |
 |:---|:---|:---:|
-| VPS / Panel | Minimal 1GB RAM, Node.js 18+ | ~50rb/bulan |
+| VPS / Panel | Minimal 2GB RAM, Node.js 21+ | ~50rb/bulan (OPSIONAL)|
 | MongoDB | MongoDB Atlas (cloud) | **GRATIS** |
 | Bot Token | Dari @BotFather Telegram | **GRATIS** |
 | Payment Gateway | Pilih salah satu atau lebih | Varies |
