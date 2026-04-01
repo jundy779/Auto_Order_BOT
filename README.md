@@ -13,7 +13,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/jundy779/Auto_Order_BOT?style=for-the-badge&logo=github)](https://github.com/jundy779/Auto_Order_BOT)
 [![GitHub Forks](https://img.shields.io/github/forks/jundy779/Auto_Order_BOT?style=for-the-badge&logo=github)](https://github.com/jundy779/Auto_Order_BOT)
 
-**🎯 Jualan Autopilot 24/7 • 💳 9+ Payment Gateway • 🌏 Indonesia &amp; Malaysia • 🖥️ Admin Panel Modern**
+**🎯 Jualan Autopilot 24/7 • 💳 10+ Payment Gateway • 🌏 Indonesia & Malaysia • 🖥️ Admin Panel Modern**
 
 [Demo Bot](https://t.me/FusionTempest_bot) • [Order Sekarang](#-order-sekarang) • [Hubungi Saya](#-hubungi-saya)
 
@@ -37,13 +37,12 @@
 
 ---
 
-## 🆕 Terbaru (v6.5.0)
+## 🆕 Terbaru
 
-- **Pterodactyl Panel Lengkap** — Renew server dari bot, link langsung ke server, extend/suspend dari admin
-- **Production Ready** — Health check endpoint, graceful shutdown, .env.example
-- **Keamanan** — Masking API key, .env di .gitignore
 - **CHIP (DuitNow QR)** — Support pembayaran Malaysia via DuitNow QR
-- **9+ Payment Gateway** — Pilih sesuai kebutuhan bisnis kamu
+- **ToyyibPay** — FPX & DuitNow untuk customer Malaysia
+- **Dokumentasi lengkap** — Lihat `docs/CHIP_INTEGRATION_PLAN.md` untuk integrasi CHIP
+- **10+ Payment Gateway** — Pilih sesuai kebutuhan bisnis kamu (ID & MY)
 
 ---
 
@@ -203,12 +202,12 @@ Ganti setting payment gateway, promo, atau konfigurasi lainnya **langsung dari a
 
 ### ⚡ Yang Bikin Beda dari Bot Lain:
 
-- ✅ **9+ Payment Gateway** - Pakasir, Qiospay, Sanpay, Midtrans, Tripay, Violetpay, ToyyibPay (MY), CHIP (DuitNow QR), iPaymu
+- ✅ **10+ Payment Gateway** - Pakasir, Qiospay, Sanpay, Midtrans, Tripay, Violetpay, ToyyibPay (MY), CHIP (DuitNow QR), iPaymu, GoPay Merchant
 - ✅ **Promo Spesial / Flash Sale** - Bikin urgency dengan countdown timer
 - ✅ **Logo di QRIS** - Branding profesional di setiap pembayaran
 - ✅ **Pterodactyl Integration** - Jualan hosting panel full otomatis + auto delete expired
 - ✅ **Hot Reload Config** - Ganti setting dari admin panel tanpa restart bot
-- ✅ **Anti Duplicate Payment** - Sistem cerdas cegah pembayaran ganda
+- ✅ **Anti Duplicate Payment** - Sistem cerdas cegah pembayaran ganda (Mutation ID Tracking)
 - ✅ **Multi-bahasa** - Indonesia, English, Melayu
 - ✅ **Reseller API (H2H)** - Jadi supplier, buka reseller dengan API terintegrasi
 - ✅ **Exchange Rate** - Otomatis convert harga untuk user internasional
@@ -247,8 +246,9 @@ sequenceDiagram
 | **Tripay** | 🇮🇩 Indonesia | QRIS | ✅ 5 detik | ✅ |
 | **Violetpay** | 🇮🇩 Indonesia | QRIS | ✅ Auto | ✅ |
 | **iPaymu** | 🇮🇩 Indonesia | QRIS (Redirect) | ✅ Callback | ✅ |
-| **ToyyibPay** | 🇲🇾 Malaysia | FPX / DuitNow | ✅ Callback | - |
+| **ToyyibPay** | 🇲🇾 Malaysia | FPX / DuitNow QR | ✅ Auto | - |
 | **CHIP** | 🇲🇾 Malaysia | DuitNow QR | ✅ Callback | - |
+| **GOPAY MERCHANT** | 🇮🇩 Indonesia | QRIS (Mutation) | ✅ Auto | ✅ |
 
 > 💡 **Pro Tip:** Bisa aktifkan beberapa gateway sekaligus! Customer bebas pilih mau bayar lewat mana.  
 > 🌏 **Malaysia Support:** ToyyibPay (FPX) &amp; CHIP (DuitNow QR) — customer Malaysia bisa bayar langsung!
@@ -268,7 +268,7 @@ sequenceDiagram
 **Fitur Admin Panel:**
 - 📊 Dashboard statistik real-time
 - 📦 Kelola produk, kategori, stok
-- 💳 Payment gateway management (9+ gateway, hot reload)
+- 💳 Payment gateway management (10+ gateway, hot reload)
 - 🎫 Voucher management
 - 🖥️ Panel package management (Pterodactyl)
 - 📢 Broadcast ke semua user (filter, media)
@@ -354,11 +354,11 @@ sequenceDiagram
 <details>
 <summary><b>💳 Payment System</b></summary>
 
-- **9+ payment gateway** terintegrasi
-- **Indonesia (QRIS):** Pakasir, Qiospay, Sanpay, Midtrans, Tripay, Violetpay, iPaymu
+- **10+ payment gateway** terintegrasi
+- **Indonesia (QRIS):** Pakasir, Qiospay, Sanpay, Midtrans, Tripay, Violetpay, iPaymu, GoPay Merchant
 - **Malaysia (FPX/DuitNow):** ToyyibPay, CHIP (DuitNow QR)
-- Auto detect pembayaran &lt; 3 detik
-- **Anti duplicate payment** (cegah pembayaran ganda)
+- Auto detect pembayaran < 3 detik
+- **Anti duplicate payment** (Sistem Mutation ID tracking)
 - Hot reload config (ganti setting tanpa restart)
 - Custom logo di QRIS
 - QRIS fee otomatis (configurable)
@@ -598,7 +598,7 @@ npm run start
 
 - ✓ Bot fully functional & tested
 - ✓ Admin panel lengkap (responsive)
-- ✓ 9+ payment gateway siap pakai
+- ✓ 10+ payment gateway siap pakai
 - ✓ Multi-bahasa (ID/EN/MS)
 - ✓ Panduan instalasi detail
 - ✓ Bantuan setup awal
@@ -642,7 +642,7 @@ npm run start
 
 | 👥 User Terdaftar | 📦 Transaksi Diproses | ⭐ Rating | 💳 Gateway |
 |:---:|:---:|:---:|:---:|
-| **500+** | **10.000+** | **4.9/5** | **9+** |
+| **500+** | **10.000+** | **4.9/5** | **10+** |
 
 ---
 
