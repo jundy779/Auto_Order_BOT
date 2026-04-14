@@ -10,10 +10,10 @@
 [![Telegram](https://img.shields.io/badge/Telegram-Bot_API-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://telegram.org/)
 [![License](https://img.shields.io/badge/License-Premium-gold?style=for-the-badge)](.)
 [![Version](https://img.shields.io/badge/Version-7.5.0-brightgreen?style=for-the-badge)](.)
-[![GitHub Stars](https://img.shields.io/github/stars/jundy779/Auto_Order_BOT?style=for-the-badge&logo=github)](https://github.com/jundy779/Auto_Order_BOT)
+[![GitHub Stars](https://img.shields.io/github/stars/jundy780/Auto_Order_BOT?style=for-the-badge&logo=github)](https://github.com/jundy779/Auto_Order_BOT)
 [![GitHub Forks](https://img.shields.io/github/forks/jundy779/Auto_Order_BOT?style=for-the-badge&logo=github)](https://github.com/jundy779/Auto_Order_BOT)
 
-**🎯 Jualan Autopilot 24/7 • 💳 11+ Payment Gateway • 🌏 Indonesia & Malaysia • 🖥️ Admin Panel Modern**
+**🎯 Jualan Autopilot 24/7 • 💳 12+ Payment Gateway • 🌏 Indonesia & Malaysia • 🖥️ Admin Panel Modern**
 
 [Demo Bot](https://t.me/FusionTempest_bot) • [Order Sekarang](#-order-sekarang) • [Hubungi Saya](#-hubungi-saya)
 
@@ -39,11 +39,13 @@
 
 ## 🆕 Terbaru
 
+- **Panel Pterodactyl & gateway Malaysia** — Pembelian dan perpanjang panel memakai **urutan gateway yang sama** seperti checkout produk digital & top-up saldo (termasuk ToyyibPay, **Billplz**, CHIP, QRIS, dll. sesuai yang aktif di admin). Tombol metode bayar mengikuti prioritas `payment_gateway_order` / mode `BASE_CURRENCY=MYR`.
+- **Billplz (Malaysia)** — FPX & e-wallet; callback `x_signature`; konfigurasi di admin & `.env.example` (`BILLPLZ_*`).
 - **Orderkuota (Orkut API)** — QRIS dinamis Indonesia via mutasi (polling + `check_status`); logo/warna QR sama seperti gateway QRIS lain; lihat variabel `ORDERKUOTA_*` di `.env.example`
-- **CHIP (DuitNow QR)** — Support pembayaran Malaysia via DuitNow QR
+- **CHIP (DuitNow QR)** — Pembayaran Malaysia via DuitNow QR
 - **ToyyibPay** — FPX & DuitNow untuk customer Malaysia
 - **Dokumentasi lengkap** — Lihat `docs/CHIP_INTEGRATION_PLAN.md` untuk integrasi CHIP
-- **11+ Payment Gateway** — Pilih sesuai kebutuhan bisnis kamu (ID & MY)
+- **12+ Payment Gateway** — Pilih sesuai kebutuhan bisnis kamu (ID & MY)
 
 ---
 
@@ -62,7 +64,7 @@ graph LR
     end
     
     subgraph Payment[Payment Layer]
-        PG[11+ Payment Gateway<br/><sub>QRIS / FPX / DuitNow</sub>]
+        PG[12+ Payment Gateway<br/><sub>QRIS / FPX / DuitNow</sub>]
     end
     
     subgraph Data
@@ -101,7 +103,7 @@ graph LR
 
 Deteksi bayar &lt;3 detik
 <br>Webhook real-time
-<br>11+ gateway paralel
+<br>12+ gateway paralel
 
 </td>
 <td align="center" width="33%">
@@ -155,7 +157,7 @@ Tidak perlu hire admin untuk handle orderan. Bot ini bekerja **24 jam non-stop**
 
 ### 🌏 Multi-Region & Multi-Bahasa
 
-Support pembayaran **Indonesia (QRIS)** dan **Malaysia (FPX/DuitNow)**. Bot tersedia dalam 3 bahasa: Indonesia, English, Melayu.
+Support pembayaran **Indonesia (QRIS)** dan **Malaysia** (ToyyibPay, Billplz, CHIP — FPX / DuitNow / e-wallet). Bot tersedia dalam 3 bahasa: Indonesia, English, Melayu.
 
 </td>
 <td>
@@ -178,7 +180,7 @@ Ganti setting payment gateway, promo, atau konfigurasi lainnya **langsung dari a
 |:---|:---:|:---:|:---:|
 | **Order 24/7** | ✅ | ❌ | ✅ |
 | **Auto kirim produk** | ✅ <3 detik | ❌ | Varies |
-| **11+ Payment Gateway** | ✅ ID + MY | ❌ | Terbatas |
+| **12+ Payment Gateway** | ✅ ID + MY | ❌ | Terbatas |
 | **Admin panel modern** | ✅ Real-time | ❌ | Sederhana |
 | **Hot reload config** | ✅ Tanpa restart | - | Jarang |
 | **Pterodactyl integration** | ✅ Full | ❌ | Jarang |
@@ -196,14 +198,14 @@ Ganti setting payment gateway, promo, atau konfigurasi lainnya **langsung dari a
 | 🔥 Auto Payment | 🎁 Promo System | 🖥️ Admin Panel | 🔒 Super Secure |
 |:---:|:---:|:---:|:---:|
 | Deteksi bayar <3 detik | Flash Sale & Diskon | Real-time Dashboard | 2FA + Encryption |
-| 11+ Payment Gateway | Voucher & Kupon | Push Notifications | CSRF Protection |
+| 12+ Payment Gateway | Voucher & Kupon | Push Notifications | CSRF Protection |
 | ID + MY support | Timer countdown | Hot Reload Config | Security Logging |
 
 </div>
 
 ### ⚡ Yang Bikin Beda dari Bot Lain:
 
-- ✅ **11+ Payment Gateway** - Pakasir, Qiospay, Sanpay, Midtrans, Tripay, Violetpay, ToyyibPay (MY), CHIP (DuitNow QR), iPaymu, GoPay Merchant, Orderkuota
+- ✅ **12+ Payment Gateway** — Pakasir, Qiospay, Sanpay, Midtrans, Tripay, Violetpay, iPaymu, GoPay Merchant, Orderkuota (ID); **ToyyibPay**, **Billplz** (FPX / e-wallet), **CHIP** (DuitNow QR) untuk Malaysia
 - ✅ **Promo Spesial / Flash Sale** - Bikin urgency dengan countdown timer
 - ✅ **Logo di QRIS** - Branding profesional di setiap pembayaran
 - ✅ **Pterodactyl Integration** - Jualan hosting panel full otomatis + auto delete expired
@@ -248,12 +250,13 @@ sequenceDiagram
 | **Violetpay** | 🇮🇩 Indonesia | QRIS | ✅ Auto | ✅ |
 | **iPaymu** | 🇮🇩 Indonesia | QRIS (Redirect) | ✅ Callback | ✅ |
 | **ToyyibPay** | 🇲🇾 Malaysia | FPX / DuitNow | ✅ Auto Detect | - |
+| **Billplz** | 🇲🇾 Malaysia | FPX / e-wallet | ✅ Callback (`x_signature`) | - |
 | **CHIP** | 🇲🇾 Malaysia | DuitNow QR | ✅ Callback | - |
 | **GOPAY MERCHANT** | 🇮🇩 Indonesia | QRIS (Mutation) | ✅ Auto Detect | ✅ |
 | **Orderkuota** | 🇮🇩 Indonesia | QRIS Dynamic (mutasi) | ✅ Polling + cek status | ✅ |
 
 > 💡 **Pro Tip:** Bisa aktifkan beberapa gateway sekaligus! Customer bebas pilih mau bayar lewat mana.  
-> 🌏 **Malaysia Support:** ToyyibPay (FPX) & CHIP (DuitNow QR) — customer Malaysia bisa bayar langsung!
+> 🌏 **Malaysia Support:** ToyyibPay (FPX / DuitNow), Billplz (FPX / e-wallet), CHIP (DuitNow QR) — sama tersedia untuk **produk digital**, **top-up saldo**, dan **beli / perpanjang panel Pterodactyl** (sesuai gateway yang diaktifkan).
 
 </div>
 
@@ -289,7 +292,7 @@ sequenceDiagram
 **Fitur Admin Panel:**
 - 📊 Dashboard statistik real-time
 - 📦 Kelola produk, kategori, stok
-- 💳 Payment gateway management (11+ gateway, hot reload)
+- 💳 Payment gateway management (12+ gateway, hot reload)
 - 🎫 Voucher management
 - 🖥️ Panel package management (Pterodactyl)
 - 📢 Broadcast ke semua user (filter, media)
@@ -391,15 +394,16 @@ sequenceDiagram
 - **Auto delete server expired** + notifikasi
 - Warning H-3 dan H-1 sebelum expired
 - Kelola paket panel dari admin web
+- **Metode pembayaran panel** mengikuti gateway yang sama dengan checkout lain (QRIS Indonesia, ToyyibPay / Billplz / CHIP untuk Malaysia, dll.) — bukan hanya satu atau dua gateway tetap
 
 </details>
 
 <details>
 <summary><b>💳 Payment System</b></summary>
 
-- **11+ payment gateway** terintegrasi
+- **12+ payment gateway** terintegrasi
 - **Indonesia (QRIS):** Pakasir, Qiospay, Sanpay, Midtrans, Tripay, Violetpay, iPaymu, GoPay Merchant, Orderkuota
-- **Malaysia (FPX/DuitNow):** ToyyibPay, CHIP (DuitNow QR)
+- **Malaysia:** ToyyibPay (FPX / DuitNow), **Billplz** (FPX / e-wallet), CHIP (DuitNow QR)
 - Auto detect pembayaran < 3 detik
 - **Anti duplicate payment** (Sistem Mutation ID tracking)
 - Hot reload config (ganti setting tanpa restart)
@@ -415,7 +419,7 @@ sequenceDiagram
 
 - **3 Bahasa:** Indonesia, English, Bahasa Melayu
 - **Indonesia:** Semua QRIS gateway (Pakasir, Qiospay, Sanpay, Midtrans, Tripay, Violetpay, iPaymu, GoPay Merchant, Orderkuota)
-- **Malaysia:** ToyyibPay (FPX / DuitNow)
+- **Malaysia:** ToyyibPay, Billplz, CHIP (urutan & aktif/nonaktif lewat admin; mode `MYR` memfilter ke gateway Malaysia)
 - Exchange rate support untuk user internasional
 - Keyboard & pesan otomatis sesuai bahasa user
 
@@ -550,7 +554,7 @@ Bisa! Pterodactyl hanya untuk yang jual hosting/panel. Untuk produk digital (aku
 <details>
 <summary><b>Customer Malaysia bisa bayar?</b></summary>
 
-Ya! ToyyibPay (FPX/DuitNow) dan CHIP (DuitNow QR) untuk Malaysia. Bot juga support multi-bahasa (Melayu).
+Ya! Untuk Malaysia: ToyyibPay (FPX / DuitNow), Billplz (FPX / e-wallet), dan CHIP (DuitNow QR) — bisa dipakai untuk checkout produk, top-up saldo, dan panel Pterodactyl (yang diaktifkan). Bot juga support multi-bahasa (Melayu).
 </details>
 
 ---
@@ -567,6 +571,7 @@ Dokumen ini membantu kamu (atau tim) memahami alur logic, struktur, API, dan dat
 - `docs/REFACTOR_ROADMAP.md` — rencana refactor bertahap (tanpa ubah behavior)
 - `docs/PAYMENT_DESIGN.md` — arsitektur payment gateway
 - `docs/CHIP_INTEGRATION_PLAN.md` — rencana integrasi CHIP (DuitNow QR Malaysia)
+- `docs/PAYMENT_CALLBACK_URL.md` — URL callback webhook (termasuk Billplz & gateway lain)
 - `docs/ROLE_BASED_ACCESS_PLAN.md` — rencana RBAC admin panel (role, menu, owner dari env/Gmail)
 - `docs/ANTI-SPAM-CONFIG.md` — rate limit & anti-spam bot (`kill-port.bat` / `restart-bot.bat`)
 - `docs/MENGURANGI-BARIS-BOT-JS.md` — panduan modularisasi `bot.js`
@@ -626,7 +631,7 @@ npm run start
 
 - ✓ Bot fully functional & tested
 - ✓ Admin panel lengkap (responsive)
-- ✓ 11+ payment gateway siap pakai
+- ✓ 12+ payment gateway siap pakai
 - ✓ Multi-bahasa (ID/EN/MS)
 - ✓ Panduan instalasi detail
 - ✓ Bantuan setup awal
@@ -670,7 +675,7 @@ npm run start
 
 | 👥 User Terdaftar | 📦 Transaksi Diproses | ⭐ Rating | 💳 Gateway |
 |:---:|:---:|:---:|:---:|
-| **500+** | **10.000+** | **4.9/5** | **11+** |
+| **500+** | **10.000+** | **4.9/5** | **12+** |
 
 ---
 
