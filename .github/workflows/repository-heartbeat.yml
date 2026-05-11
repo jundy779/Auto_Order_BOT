@@ -1,0 +1,61 @@
+# Repository heartbeat — commit terjadwal (opsional)
+#
+# ⚠️ BACA INI DULU (penting):
+# 1) Frekuensi commit TIDAK menjamin peringkat #1 di Google untuk keyword seperti
+#    "bot auto order telegram". SEO organik bergantung pada konten berkualitas, backlink,
+#    relevansi halaman, Core Web Vitals (kalau ada situs web), reputasi domain, dll.
+#    GitHub "Recently updated" ≠ hasil pencarian Google.
+# 2) Interval 15 menit = ~96 commit/hari → riwayat git penuh noise, sulit dibaca `git log`,
+#    dan jika CI (test/lint) jalan tiap push bisa boros menit Actions (repo privat).
+# 3) Repo publik: menit Actions umumnya gratis, tapi tetap pertimbangkan etika & kejelasan
+#    untuk kontributor.
+#
+# Cara pakai:
+# - Push file ini ke repo GitHub kamu (mis. github.com/jundy779/Auto_Order_BOT).
+# - Pastikan Settings → Actions → General → "Workflow permissions" = Read and write
+#   (agar GITHUB_TOKEN bisa push).
+# - Ubah cron di bawah jika mau jarang (disarankan: 1×/hari atau 1×/minggu).
+#
+# Nonaktifkan: hapus file ini, atau comment seluruh `on.schedule`, atau set branch filter.
+
+name: Repository heartbeat
+
+on:
+  schedule:
+    # Setiap 15 menit (UTC). Ubah ke '0 2 * * *' = sekali sehari jam 02:00 UTC, dll.
+    - cron: '*/15 * * * *'
+  workflow_dispatch: {}
+
+concurrency:
+  group: repository-heartbeat
+  cancel-in-progress: false
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Write heartbeat timestamp
+        run: |
+          mkdir -p .github
+          printf '{"schema":1,"lastHeartbeatUtc":"%s","note":"Auto-update by GitHub Actions; see workflow repository-heartbeat.yml"}\n' "$(date -u +"%Y-%m-%dT%H:%M:%SZ")" > .github/repo-heartbeat.json
+
+      - name: Commit and push (skip if nothing changed — should not happen)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/repo-heartbeat.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore(repo): heartbeat $(date -u +%Y-%m-%dT%H:%MZ) [skip ci]"
+          git push
