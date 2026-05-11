@@ -1,12 +1,11 @@
 {
   "name": "auto-order-payment-bot",
-  "version": "6.5.0",
-  "description": "Telegram bot for digital product sales with QRIS integrations (Pakasir, Qiospay, Sanpay, Midtrans, Tripay).",
+  "version": "8.5.0",
+  "description": "Multi-tenant Telegram bot for digital product sales with 12+ payment gateways (Indonesia QRIS + Malaysia FPX/DuitNow/CHIP), real-time health monitoring, BI-ready CSV exports, anti double-order idempotency, multi-currency (IDR/MYR/USD), Pterodactyl integration, and Reseller H2H API.",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js",
-    "test": "jest",
-    "preinstall": "node preinstall.js"
+    "test": "jest"
   },
   "keywords": [
     "telegram",
@@ -15,37 +14,48 @@
     "mongodb",
     "autopayment",
     "pakasir",
-    "qris"
+    "qris",
+    "toyyibpay",
+    "billplz",
+    "duitnow",
+    "fpx",
+    "pterodactyl",
+    "reseller-api",
+    "multi-tenant",
+    "multi-currency",
+    "myr",
+    "idr",
+    "usd"
   ],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@misterdevs/qris-static-to-dynamic": "^1.1.2",
-    "autoft-qris": "^0.0.13",
-    "axios": "^1.13.2",
+    "axios": "^1.14.0",
     "basic-auth": "^2.0.1",
     "bcryptjs": "^3.0.3",
     "body-parser": "^1.20.2",
-    "canvas": "^2.11.2",
     "check-disk-space": "^3.4.0",
-    "cloudscraper": "^4.6.0",
     "crypto": "^1.0.1",
     "dana-node": "^1.5.11",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "express-rate-limit": "^8.2.1",
+    "dotenv": "^17.3.1",
+    "express": "^4.21.2",
+    "express-rate-limit": "^8.3.2",
     "jimp": "^0.22.12",
     "mongodb": "^7.0.0",
     "mongoose": "^8.3.2",
-    "multer": "^2.0.2",
+    "multer": "^2.1.1",
     "nodemon": "^3.1.11",
     "pakasir-client": "^1.0.0",
     "qrcode": "^1.5.3",
-    "socket.io": "^4.7.5",
+    "socket.io": "^4.8.3",
     "speakeasy": "^2.0.0",
     "telegraf": "^4.16.3",
-    "jest": "^30.2.0",
     "web-push": "^3.6.7"
+  },
+  "optionalDependencies": {
+    "@qr-styled/node": "^1.1.1",
+    "autoft-qris": "^0.0.13"
   },
   "devDependencies": {
     "jest": "^30.2.0"
