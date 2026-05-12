@@ -31,9 +31,11 @@
 | [🆕 Terbaru](#-terbaru) | [🖥️ Admin Panel](#️-admin-panel-preview) |
 | [🚀 Kenapa Pilih Bot Ini](#-kenapa-pilih-bot-ini) | [🎯 Cocok Untuk Jualan](#-cocok-untuk-jualan) |
 | [✨ Fitur Premium](#-fitur-premium) | [📦 Fitur Lengkap](#-fitur-lengkap) |
-| [⚖️ Perbandingan](#️-perbandingan) | [🛠️ Tech Stack](#️-tech-stack) |
-| [❓ FAQ](#-faq) | [🛒 Paket Harga](#-paket-harga) |
-| | [📞 Hubungi Saya](#-hubungi-saya) |
+| [⚖️ Perbandingan](#️-perbandingan) | [🔬 Engineering Deep-Dive](#-engineering-deep-dive) |
+| [🛠️ Tech Stack](#️-tech-stack) | [📈 Performance Benchmarks](#-performance-benchmarks) |
+| [🗺️ Roadmap](#-roadmap) | [📁 Folder Structure](#-folder-structure) |
+| [❓ FAQ](#-faq) | [🧭 Dokumentasi Teknis](#-dokumentasi-teknis-developer) |
+| [🛒 Paket Harga](#-paket-harga) | [📞 Hubungi Saya](#-hubungi-saya) |
 
 ---
 
@@ -614,6 +616,519 @@ sequenceDiagram
 - **Critical stock alert** ke admin channel
 
 </details>
+
+---
+
+## 🔬 Engineering Deep-Dive
+
+Bagian ini untuk **developer / buyer teknis / reseller H2H** yang mau lihat cara kerja dalemannya. Semua diagram di bawah ini merefleksikan kode di repo (`services/transactionFinalize.js`, `routes/resellerApi.js`, `routes/webhooks.js`, `services/userCache.js`, dll.).
+
+### 🏢 Multi-Tenant Architecture
+
+Satu source code bisa dijalankan jadi **banyak instance bot sekaligus** — beda `BOT_TOKEN`, beda `DB_NAME`, beda port. Tiap instance punya cache + heap sendiri, tidak saling rebutan.
+
+```mermaid
+flowchart TB
+    subgraph Customers[🧑‍🤝‍🧑 Customers Telegram]
+        C1[Bot ID Store]
+        C2[Bot MY Store]
+        CN[Bot N ...]
+    end
+
+    subgraph Instances[Bot Instances - 1 source code]
+        I1["Instance #1<br/>BOT_USERNAME=jual_id<br/>PORT=3000<br/>userCache LRU+TTL"]
+        I2["Instance #2<br/>BOT_USERNAME=jual_my<br/>PORT=3001<br/>userCache LRU+TTL"]
+        IN["Instance #N<br/>BOT_USERNAME=...<br/>PORT=...<br/>userCache LRU+TTL"]
+    end
+
+    subgraph Shared[🛢️ Shared Infrastructure]
+        DB[(MongoDB Atlas<br/>1 cluster<br/>DB per instance)]
+        FX[💱 Exchange Rate<br/>cached]
+    end
+
+    subgraph Mon[📡 External Monitor]
+        H["/admin/health endpoint<br/>per instance"]
+        UR[UptimeRobot /<br/>BetterStack]
+    end
+
+    C1 --> I1
+    C2 --> I2
+    CN --> IN
+
+    I1 -->|MONGO_URI + DB_NAME unik| DB
+    I2 -->|MONGO_URI + DB_NAME unik| DB
+    IN -->|MONGO_URI + DB_NAME unik| DB
+    I1 -.-> FX
+    I2 -.-> FX
+
+    I1 -.-> H
+    I2 -.-> H
+    IN -.-> H
+    H --> UR
+
+    style I1 fill:#e8f5e9,stroke:#4caf50
+    style I2 fill:#e3f2fd,stroke:#2196f3
+    style IN fill:#fff3e0,stroke:#ff9800
+    style DB fill:#e0f2f1,stroke:#00695c
+```
+
+**Yang menjamin instance tidak saling konflik:**
+
+- `userCache` LRU + TTL **per-process** → tidak ada shared mutable state antar instance
+- `DB_NAME` unik per `.env` → koleksi terisolasi
+- `refId` deterministik tetap unique-per-DB (bukan global), aman buat multi-tenant
+- Auto-migration index hanya jalan di startup tiap instance → tidak conflict
+
+> 📚 Detail performance & cache hit rate: lihat section [**Performance Benchmarks**](#-performance-benchmarks) dan endpoint `GET /admin/health`.
+
+---
+
+### 🛤️ User Journey End-to-End
+
+Apa yang user lihat dari `/start` sampai produk terkirim:
+
+```mermaid
+flowchart TD
+    Start([/start]) --> NewU{User baru?}
+    NewU -->|Ya| Reg[Auto-register +<br/>pilih bahasa ID/EN/MS]
+    NewU -->|Tidak| Cache[Load dari userCache<br/>LRU + TTL]
+    Reg --> Menu[Main Menu]
+    Cache --> Menu
+
+    Menu --> Browse[🛍️ Produk]
+    Menu --> Topup[💰 Top-Up Saldo]
+    Menu --> Manual[📝 Manual Order]
+    Menu --> Transfer[💸 Transfer Saldo]
+    Menu --> History[📜 Riwayat]
+    Menu --> Panel[🖥️ Beli Panel<br/>Pterodactyl]
+
+    Browse --> Pick[Pilih produk + qty]
+    Pick --> Method{Bayar pakai?}
+    Method -->|Saldo internal| AtomicDed[Atomic deduct<br/>$inc + $gte]
+    Method -->|Gateway| GW[Pilih payment gateway<br/>sesuai BASE_CURRENCY]
+
+    Topup --> GW
+    Panel --> GW
+
+    GW --> Pay[QR / Link bayar]
+    Pay --> WH[Webhook callback]
+    WH --> Verify{Signature OK?}
+    Verify -->|❌| Reject[Log + reject]
+    Verify -->|✅| Finalize
+
+    AtomicDed --> Finalize[Atomic finalize:<br/>claim stock + save tx]
+    Finalize --> Deliver[Kirim produk +<br/>invoice PNG]
+    Deliver --> Notif[Channel notif admin]
+    Notif --> Done([✓ Selesai])
+
+    Manual --> InputData[Input data tambahan<br/>email/username/server-id]
+    InputData --> AdminCh[Notif admin channel]
+    AdminCh --> AdminAct{Admin proses}
+    AdminAct -->|Selesai| Deliver
+    AdminAct -->|Tolak| Refund[Auto-refund saldo<br/>+ audit log]
+
+    Transfer --> AtomicTx[Atomic transfer<br/>sender $inc -amount<br/>receiver $inc +amount]
+    AtomicTx --> AuditLog[Audit log + notif]
+
+    style Done fill:#c8e6c9,stroke:#2e7d32
+    style Refund fill:#ffe0b2,stroke:#ef6c00
+    style Reject fill:#ffcdd2,stroke:#c62828
+```
+
+---
+
+### 🚦 State Machine Transaksi
+
+State machine yang dipakai `Transaction.status` di `services/transactionFinalize.js`:
+
+```mermaid
+stateDiagram-v2
+    [*] --> created: refId dibuat<br/>(deterministik SHA-1)
+    created --> pending: QR/Link gateway<br/>siap
+    pending --> paid: Webhook signature<br/>valid
+    pending --> expired: Timeout default<br/>15 menit
+    pending --> cancelled: User cancel
+    paid --> processing: Atomic finalize<br/>(claim stock + save)
+    processing --> delivered: Produk terkirim<br/>+ invoice + notif
+    processing --> failed: Stock habis /<br/>delivery error
+    failed --> refunded: Auto-refund saldo<br/>(audit log)
+    delivered --> [*]
+    refunded --> [*]
+    expired --> [*]
+    cancelled --> [*]
+
+    note right of created
+        refId = SHA-1(
+          userId, type, productKey,
+          qty, amount, messageId,
+          timeBucket
+        )
+    end note
+
+    note right of processing
+        User.updateOne({$inc:-saldo, $gte:saldo})
+        + Tx.save() dalam satu logical tx
+    end note
+```
+
+> 📚 State diagram lengkap (termasuk refund partial & manual order): [`docs/STATE_MACHINE.md`](docs/STATE_MACHINE.md).
+
+---
+
+### 🛡️ 3-Layer Anti Double-Order Idempotency
+
+Skenario: user **panik klik tombol "Bayar Sekarang" 5x dalam 2 detik** (atau race-condition dari multiple devices). Bot **tidak pernah** double-debit / double-deliver. Pertahanan berlapis:
+
+```mermaid
+flowchart LR
+    Click[👆 User klik 'Bayar'<br/>5x dalam 2 detik] --> L1{🛡️ Layer 1<br/>App cache<br/>checkoutInProgress?}
+    L1 -->|Sudah ada| B1[❌ Reject:<br/>processing_already]
+    L1 -->|Belum ada| L2[Generate refId<br/>= SHA-1 userId+productKey<br/>+messageId+timeBucket]
+    L2 --> L3{🛡️ Layer 2<br/>Transaction.refId<br/>unique-index save OK?}
+    L3 -->|11000 duplicate| B2[❌ Reject:<br/>processing_already]
+    L3 -->|Saved| L4{🛡️ Layer 3<br/>User.updateOne<br/>$inc -amount, $gte amount<br/>matched?}
+    L4 -->|0 matched| B3[❌ Reject:<br/>saldo_insufficient<br/>+ rollback tx]
+    L4 -->|1 matched| OK[✅ Proceed:<br/>claim stock + deliver]
+
+    style B1 fill:#ffebee,stroke:#c62828
+    style B2 fill:#ffebee,stroke:#c62828
+    style B3 fill:#ffe0b2,stroke:#ef6c00
+    style OK fill:#e8f5e9,stroke:#2e7d32
+```
+
+| Layer | Lokasi | Mekanisme | Apa yang dijaga |
+|:---|:---|:---|:---|
+| **L1 App Cache** | `Map` in-process | Set flag `checkoutInProgress` per `userId+productKey`, auto-expire setelah ms tertentu | Klik super cepat sebelum DB ke-hit |
+| **L2 DB Unique Index** | `Transaction.refId` | `refId` deterministik (SHA-1) + `unique: true` index | Race condition multi-process / multi-instance |
+| **L3 Atomic Balance** | `User.updateOne` | `{ $inc: { saldo: -amount } }` + `{ saldo: { $gte: amount } }` filter | Saldo minus + over-deduct + concurrent withdraw |
+
+> Implementasi: `services/transactionFinalize.js`, `services/transactionHelpers.js`, `models/Transaction.js`.
+
+---
+
+### 🌐 Webhook Callback Pipeline
+
+Tiap payment gateway punya format callback berbeda, tapi semua melalui pipeline standar:
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant G as 💳 Payment Gateway
+    participant W as POST /webhooks/:gateway
+    participant V as Signature Verifier<br/>(HMAC / x_signature /<br/>Bearer / IP allow-list)
+    participant D as Dedup Layer<br/>(refId / mutationId)
+    participant F as transactionFinalize.js
+    participant DB as MongoDB
+    participant U as User Telegram
+    participant Ch as Admin Channel
+
+    G->>W: POST callback (varies per gateway)
+    W->>V: Verify signature
+    alt Invalid signature
+        V-->>W: ❌ reject
+        W-->>G: 401 / 403
+    end
+    V-->>W: ✅ valid
+    W->>D: Lookup refId / mutationId
+    alt Already finalized
+        D-->>W: skip (idempotent)
+        W-->>G: 200 OK (no-op)
+    end
+    D-->>W: new event
+    W->>F: finalize(refId)
+    F->>DB: Atomic: deduct (if needed) +<br/>claim stock + save Tx
+    alt Stock habis
+        DB-->>F: failed
+        F->>DB: status=failed, auto-refund
+        F-->>W: failed
+        W->>U: 📩 produk tidak tersedia, refunded
+        W-->>G: 200 OK
+    end
+    DB-->>F: ✅ committed
+    F-->>W: delivered
+    W->>U: 📩 kirim produk + invoice PNG
+    W->>Ch: 🔔 notif channel admin
+    W-->>G: 200 OK
+```
+
+**Gateway yang aktif** mengikuti urutan di admin (`payment_gateway_order`) dan filter `BASE_CURRENCY`:
+
+```mermaid
+flowchart TD
+    Start[Customer klik 'Bayar'] --> CC{BASE_CURRENCY?}
+    CC -->|IDR| IDR[Tampilkan gateway IDR aktif:<br/>Pakasir / Qiospay / Sanpay /<br/>Midtrans / Tripay / Violetpay /<br/>iPaymu / GoPay / Orderkuota]
+    CC -->|MYR| MYR[Tampilkan gateway MYR aktif:<br/>ToyyibPay / Billplz / CHIP]
+    CC -->|USD| USD[Phase 1: display USD<br/>+ fallback ke IDR/MYR gateway<br/>Phase 3: native USD gateway]
+
+    IDR & MYR & USD --> Order[Urutan tombol = payment_gateway_order<br/>configurable di admin]
+    Order --> Adapter[Adapter spesifik<br/>generate QR / Link]
+    Adapter --> Bayar[User bayar → webhook pipeline]
+```
+
+---
+
+### 🤝 Reseller H2H Request Lifecycle
+
+Endpoint `/api/v2/order` di [`routes/resellerApi.js`](routes/resellerApi.js) dengan hardening signature + nonce + idempotency:
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant R as 🤝 Reseller<br/>(integrator)
+    participant API as POST /api/v2/order
+    participant N as Nonce Store<br/>(Mongo TTL 5min)
+    participant I as Idempotency Cache<br/>(15 min TTL)
+    participant DB as MongoDB
+
+    R->>R: Build payload<br/>signature = HMAC-SHA256(<br/>body + timestamp + nonce)
+    R->>API: POST<br/>X-Api-Key, X-Signature,<br/>X-Nonce, Idempotency-Key
+    API->>API: ✓ X-Api-Key valid & reseller aktif
+    API->>API: ✓ X-Signature cocok HMAC
+    API->>N: Claim X-Nonce
+    alt Nonce reused / replay
+        N-->>API: ❌ already-claimed
+        API-->>R: 409 replay_attack
+    end
+    API->>I: Lookup Idempotency-Key
+    alt Sama key + sama body
+        I-->>API: ✓ cached response
+        API-->>R: 200 (cached, no side-effect)
+    else Sama key + body beda
+        API-->>R: 409 idempotency_conflict
+    end
+    API->>DB: Atomic transaction:<br/>User.$inc saldo -amount, $gte<br/>+ Stock.claim()<br/>+ ResellerTransaction.save()
+    alt Atomic OK
+        DB-->>API: committed
+        API->>I: Cache response (15 min)
+        API-->>R: 200 { refId, status: 'pending'|'success' }
+    else Saldo kurang
+        DB-->>API: matched=0
+        API-->>R: 402 saldo_insufficient
+    else Stock habis
+        DB-->>API: stock=0
+        API-->>R: 409 stock_unavailable
+    end
+```
+
+> 📚 Spesifikasi lengkap (request/response schema, error codes, retry semantics): [`docs/RESELLER_H2H_API_V2_SPEC.md`](docs/RESELLER_H2H_API_V2_SPEC.md) · QA checklist: [`docs/RESELLER_H2H_CONTRACT_QA_CHECKLIST.md`](docs/RESELLER_H2H_CONTRACT_QA_CHECKLIST.md).
+
+---
+
+### 🗃️ Data Model (ER Diagram)
+
+Skema MongoDB (Mongoose) utama — disederhanakan, lihat folder [`models/`](models/) untuk versi lengkap (16+ schema):
+
+```mermaid
+erDiagram
+    User ||--o{ Transaction : "membeli"
+    User ||--o{ SecurityLog : "audit"
+    User ||--o{ Voucher : "redeem"
+    Product ||--o{ Transaction : "subject of"
+    Reseller ||--o{ ResellerTransaction : "submits"
+    Reseller ||--o{ ResellerIdempotency : "tracks"
+    Reseller ||--o{ ResellerRequestNonce : "claims"
+    Admin ||--o{ AdminAuditLog : "actions"
+
+    User {
+        BigInt telegramId PK
+        string username
+        number saldo
+        string lang "id|en|ms"
+        boolean banned
+        Date lastSeen
+    }
+    Product {
+        string sku PK
+        string name
+        number price
+        number stock
+        string category
+        json requiredFields
+        string ppobProvider "opt: digiflazz|okeconnect|..."
+    }
+    Transaction {
+        string refId PK "SHA-1 deterministik"
+        BigInt userId FK
+        string productSku FK
+        string status "pending|paid|processing|delivered|failed|refunded|expired|cancelled"
+        number amount
+        string gateway
+        string mutationId "anti-double webhook"
+        Date createdAt
+    }
+    Voucher {
+        string code PK
+        string type "percent|nominal|saldo"
+        number value
+        number maxUse
+        Date expiresAt
+    }
+    Reseller {
+        string apiKey PK
+        string secret "for HMAC"
+        number balance
+        number rateLimit
+        boolean active
+    }
+    ResellerIdempotency {
+        string key PK
+        string bodyHash
+        json cachedResponse
+        Date expiresAt
+    }
+    ResellerRequestNonce {
+        string nonce PK
+        Date claimedAt "TTL 5min"
+    }
+    SecurityLog {
+        ObjectId _id PK
+        BigInt userId FK
+        string event
+        json meta
+        Date at
+    }
+    AdminAuditLog {
+        ObjectId _id PK
+        string adminEmail
+        string action
+        json before
+        json after
+        Date at
+    }
+```
+
+> 📚 Skema lengkap & relasi semua model: [`docs/DATA_MODEL.md`](docs/DATA_MODEL.md).
+
+---
+
+## 📈 Performance Benchmarks
+
+Diukur di **baseline lab**: VPS 2 vCPU / 2 GB RAM, MongoDB Atlas M0 (free tier), Node.js 20 LTS, 1 instance bot, network normal (~50 ms RTT ke MongoDB). Angka di production realistis akan **lebih cepat** di RAM/CPU lebih besar, atau **lebih lambat** di MongoDB cluster yang sudah penuh.
+
+| Metric | Target | Baseline Observed | Catatan |
+|:---|:---:|:---:|:---|
+| **Deteksi pembayaran (webhook → user)** | <3 s | ~1.5–2.5 s | Sebagian besar latency dari verifikasi signature gateway + delivery Telegram |
+| **Order → invoice terkirim** | <5 s | ~3–4 s | Termasuk render invoice Canvas PNG ~300–700 ms |
+| **User cache hit rate** (steady state) | >80% | ~85–95% | LRU + TTL — lihat `GET /admin/health` |
+| **MongoDB round-trip per `/start`** | 0–1 | 0 (cache hit) / 1 (cache miss) | Fire-and-forget update untuk username/last_seen |
+| **Concurrent users tertangani / instance** | ≥500 | ~700–1000 (steady) | Tergantung berat handler & MongoDB cluster |
+| **Reseller H2H p95 latency** | <800 ms | ~400–600 ms | Atomic Mongo + verifikasi signature |
+| **Memory heap idle (1 instance)** | <200 MB | ~120–160 MB | Naik saat broadcast besar — auto-GC normal |
+| **Webhook idempotency reject** | 100% | 100% | 3-layer guard belum pernah gagal di test |
+
+> ⚠️ **Disclaimer**: angka di tabel adalah **observasi tipikal**, bukan garansi SLA. Skala produksi & spec server akan menggeser angka. Untuk uptime monitor production, hubungkan endpoint `GET /admin/health` ke UptimeRobot / BetterStack.
+
+**Cara verifikasi sendiri:**
+
+```bash
+# Health check + cache hit rate live
+curl -H "Authorization: Bearer $MONITOR_TOKEN" \
+  https://your-bot.example.com/admin/health | jq
+
+# Output:
+# {
+#   "mongo": "connected",
+#   "userCache": { "hits": 12480, "misses": 312, "hitRate": "97.6%", ... },
+#   "memory": { "heapUsed": "142 MB", ... },
+#   "uptimeSeconds": 86412
+# }
+```
+
+---
+
+## 🗺️ Roadmap
+
+```mermaid
+timeline
+    title Roadmap Auto Order Bot
+    section ✅ Sudah Release
+        v8.0.0 (2025) : 12+ Payment Gateway : Pterodactyl integration : Multi-bahasa ID/EN/MS
+        v8.3.0 (2026 Q1) : Multi-Currency IDR/MYR Phase 1-2 : Reseller H2H V2 hardened : Markdown-safe Telegram
+        v8.5.0 (2026 Q2) : Instance Health Dashboard : BI-Ready CSV Export 3-mode : Anti Double-Order 3-layer : Transfer Saldo + Manual Order
+    section 🚧 In Progress
+        v8.6.0 : PPOB Multi-Provider production-ready : DigiFlazz / OkeConnect / SanPay / QiosPay : Reconciliation report
+        v8.7.0 : Native USD Gateway (Phase 3) : USD smoke test e2e : Pricing auto-update
+    section 📋 Planned
+        v9.0.0 : WhatsApp Channel auto-order : Discord channel adapter : Unified inbox admin panel
+        v9.x : AI-powered customer support (OpenClaw deep integration) : Multi-region failover : Pgw decision engine A/B test
+```
+
+| Status | Versi | Highlight |
+|:---:|:---|:---|
+| ✅ | **v8.5.0** | Health dashboard, BI export, 3-layer idempotency, transfer saldo, manual order |
+| 🚧 | **v8.6.0** | PPOB go-live (DigiFlazz + OkeConnect + SanPay + QiosPay) |
+| 🚧 | **v8.7.0** | Native USD gateway (Phase 3) + reconciliation report |
+| 📋 | **v9.0.0** | WhatsApp + Discord auto-order |
+| 📋 | **v9.x** | AI customer support, multi-region failover |
+
+> Roadmap dapat berubah sesuai prioritas customer & ekosistem. Update terbaru selalu di [`CHANGELOG.md`](CHANGELOG.md).
+
+---
+
+## 📁 Folder Structure
+
+```
+auto-order-bot/
+├─ bot.js                          # Entry: Telegram + Express + Socket.io
+├─ bot/                            # Telegraf bot logic
+│  ├─ keyboards/                   # Reply keyboards (main menu, dll.)
+│  ├─ messages/                    # Message templates (i18n-aware)
+│  ├─ middlewares/                 # Telegram middlewares (auth, throttle, audit)
+│  └─ stateHelpers.js              # Conversation state machine
+│
+├─ features/                       # Feature flows (user-facing)
+│  ├─ user/                        # /produk, /saldo, /topup, /transfer, /history
+│  ├─ admin/                       # Broadcast, manual order, settings
+│  ├─ checkout/                    # Checkout pipeline + payment message
+│  └─ integrations/                # Pterodactyl, dll.
+│
+├─ services/                       # Business logic core
+│  ├─ payment/                     # 12+ gateway adapters (pakasir, billplz, dll.)
+│  │  ├─ INTERFACE.md              # Contract adapter baru
+│  │  └─ <gateway>.js              # Adapter masing-masing
+│  ├─ ppob/ 🚧                     # PPOB multi-provider (beta)
+│  │  ├─ core/                     # interfaces, statusMapper, syncScheduler
+│  │  └─ providers/                # digiflazz, okeconnect, sanpay, qiospay
+│  ├─ cs/                          # OpenClaw CS handoff
+│  ├─ transactionFinalize.js       # ⭐ Idempotent finalize (3-layer guard)
+│  ├─ transactionHelpers.js        # refId deterministik + helpers
+│  ├─ balanceTransfer.js           # Atomic transfer saldo
+│  ├─ userCache.js                 # LRU + TTL cache user
+│  └─ adminAnalytics.js            # Growth analytics + CSV 3-mode export
+│
+├─ models/                         # Mongoose schemas (16+)
+│  ├─ User.js, Transaction.js, Product.js
+│  ├─ Voucher.js, Reseller.js
+│  ├─ ResellerIdempotency.js, ResellerRequestNonce.js
+│  └─ SecurityLog.js, AdminAuditLog.js, dll.
+│
+├─ routes/                         # Express routes
+│  ├─ admin/                       # Admin panel API (auth-protected)
+│  │  ├─ analytics.js, products.js, gateways.js
+│  │  └─ security.js, broadcast.js, users.js
+│  ├─ resellerApi.js               # ⭐ H2H V2 (signature + nonce + idempotency)
+│  └─ webhooks.js                  # Gateway callbacks (HMAC verified)
+│
+├─ public/                         # Admin panel UI (HTML/JS/CSS)
+│  ├─ admin.html, admin-products.html
+│  ├─ monitor.html                 # Real-time monitor + Instance Health
+│  └─ js/, css/
+│
+├─ server/                         # Bootstrap & lifecycle
+│  ├─ botLifecycle.js, httpServer.js, shutdownHandler.js
+│
+├─ monitor/                        # Real-time monitor service (Socket.io)
+├─ config/                         # Payment gateways config catalog
+├─ utils/                          # Constants, role helpers, dll.
+├─ docs/                           # 📚 30+ technical docs (lihat docs/INDEX.md)
+├─ tests/                          # Jest unit + smoke tests
+│  ├─ broadcast/, cs/, payment/
+│  ├─ smoke/                       # Checkout, webhook signature
+│  └─ transaction/                 # refId, claim stock, finalize, getCheckAmount
+└─ assets/                         # Logo, icons, banner (di-track di git)
+```
+
+> Lihat juga: [`docs/RUNTIME_MAP.md`](docs/RUNTIME_MAP.md) untuk peta runtime per file → fungsi → tanggung jawab.
 
 ---
 

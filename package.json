@@ -3,6 +3,9 @@
   "version": "8.5.0",
   "description": "Multi-tenant Telegram bot for digital product sales with 12+ payment gateways (Indonesia QRIS + Malaysia FPX/DuitNow/CHIP), real-time health monitoring, BI-ready CSV exports, anti double-order idempotency, multi-currency (IDR/MYR/USD), Pterodactyl integration, and Reseller H2H API.",
   "main": "bot.js",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "start": "node bot.js",
     "test": "jest"
