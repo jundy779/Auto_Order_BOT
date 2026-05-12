@@ -1,0 +1,65 @@
+node_modules
+.env
+.env.*
+!.env.example
+
+# Runtime / local noise
+*.log
+
+# Private internal docs (not for public repo)
+# Vendor-specific integration plans
+docs/CHIP_INTEGRATION_PLAN.md
+docs/PAYMENT_QRISPY.md
+docs/PAYMENT_GATEWAY_CANDIDATES.md
+docs/TOYYIBPAY_OFFICIAL_NOTES.md
+docs/SANPAY_H2H_TRANSFER_BANK_PLAN.md
+# Internal architecture / roadmap
+docs/API.md
+docs/PAYMENT_DESIGN.md
+docs/REFACTOR_ROADMAP.md
+docs/BOT_JS_REDUCTION_PLAN.md
+docs/MENGURANGI-BARIS-BOT-JS.md
+docs/MULTI-PLATFORM-PLAN.md
+docs/WHATSAPP_WA_AUTO_ORDER.md
+docs/PAYMENT_CALLBACK_URL.md
+docs/JPM.md
+docs/I18N_PROGRESS.md
+docs/PROGRESS_DAN_ALUR.md
+docs/TEST_PLAN_MILESTONE_4.md
+# Vendor/business plans
+docs/USD_INTEGRATION_PLAN.md
+docs/USD_HYBRID_E2E_SMOKE_TEST.md
+docs/TRANSFER_SALDO_PLAN.md
+docs/MALAYSIA_RELEASE_CHECKLIST.md
+docs/FULL_MYR_MIGRATION_PLAN.md
+docs/PPOB_MULTI_PROVIDER_STRUCTURE.md
+docs/PPOB_CODE_REVIEW_CHECKLIST.md
+docs/DIGIFLAZZ_PPOB_PLAN.md
+docs/DIGIFLAZZ_BOT_FEATURE_ROADMAP.md
+docs/DIGIFLAZZ_GO_LIVE_CHECKLIST.md
+docs/DIGIFLAZZ_USER_JOURNEY_AWAM.md
+# H2H / Reseller API spec
+docs/RESELLER_H2H_API_V2_SPEC.md
+docs/RESELLER_H2H_CONTRACT_QA_CHECKLIST.md
+# Security / RBAC
+docs/OWNER_SECURITY_MITIGATION.md
+docs/ROLE_BASED_ACCESS_PLAN.md
+docs/ANTI-SPAM-CONFIG.md
+# CS / Openclaw integration
+docs/OPENCLAW_CS_FLOW.md
+docs/OPENCLAW_HTTP_CONTRACT.md
+# Internal client format
+docs/FORMAT_DATA_SEWA_BOT.md
+# Other internal
+docs/examples/
+
+# Internal task tracker
+task.md
+
+# Local archives & scripts
+*.zip
+kill-port.bat
+restart-bot.bat
+
+# Storage / encryption keys (NEVER push)
+storage/
