@@ -49,8 +49,8 @@
 - **📝 Manual Order System** — Untuk produk yang butuh data tambahan (username, email, server ID, dll.) — bot prompt user input → kirim ke channel admin → admin proses dari dashboard Pending Orders.
 - **🌏 Localization MS** — Term "garansi" diganti **"warranty"** di Bahasa Melayu (lebih natural untuk customer Malaysia).
 - **🇲🇾 Panel Pterodactyl & gateway Malaysia** — Pembelian & perpanjang panel memakai **urutan gateway yang sama** seperti checkout produk digital & top-up saldo (ToyyibPay, Billplz, CHIP, QRIS, dll. sesuai admin). Tombol metode bayar mengikuti `payment_gateway_order` / mode `BASE_CURRENCY=MYR`.
-- **💱 Multi-Currency Foundation (IDR/MYR/USD)** — `BASE_CURRENCY` switch toko, currency-aware formatter, & Phase 1 USD display ready. Native USD gateway = Phase 3+ ([`docs/USD_INTEGRATION_PLAN.md`](docs/USD_INTEGRATION_PLAN.md)).
-- **📱 PPOB Multi-Provider (Beta / In Development)** — Skeleton multi-provider PPOB (DigiFlazz, OkeConnect, SanPay, QiosPay) — adapter + admin sync + webhook **sudah dibuat tapi belum production-ready**, masih tahap hardening. Tidak default-on; dokumentasi lengkap di [`docs/PPOB_MULTI_PROVIDER_STRUCTURE.md`](docs/PPOB_MULTI_PROVIDER_STRUCTURE.md).
+- **💱 Multi-Currency Foundation (IDR/MYR/USD)** — `BASE_CURRENCY` switch toko, currency-aware formatter, & Phase 1 USD display ready. Native USD gateway = Phase 3+ (roadmap internal, dapat dishare on-request).
+- **📱 PPOB Multi-Provider (Beta / In Development)** — Skeleton multi-provider PPOB (DigiFlazz, OkeConnect, SanPay, QiosPay) — adapter + admin sync + webhook **sudah dibuat tapi belum production-ready**, masih tahap hardening. Tidak default-on; dokumentasi lengkap tersedia on-request untuk early access.
 - **12+ Payment Gateway** — Pilih sesuai kebutuhan bisnis kamu (ID & MY) — `.env`-based instance, hot-reload via admin panel.
 
 ---
@@ -453,7 +453,7 @@ sequenceDiagram
 | --------------- | -------------- | ------ | ------- | ---------------------------------------------------------- |
 | `MYR`           | `ms-MY`        | `RM`   | 2       | Production (gateway: ToyyibPay, Billplz, CHIP)             |
 | `IDR`           | `id-ID`        | `Rp`   | 0       | Production (gateway: Pakasir, Qiospay, Sanpay, dll.)       |
-| `USD`           | `en-US`        | `$`    | 2       | **Phase 1**: display + config. Native gateway USD = Phase 3 (lihat [`docs/USD_INTEGRATION_PLAN.md`](docs/USD_INTEGRATION_PLAN.md)) |
+| `USD`           | `en-US`        | `$`    | 2       | **Phase 1**: display + config. Native gateway USD = Phase 3 (roadmap internal) |
 
 </details>
 
@@ -472,8 +472,7 @@ sequenceDiagram
 - **Atomic order processing** — anti partial-state (saldo deduct + stok claim + tx save dalam satu transaction)
 - **Envelope error standar** RFC 7807-style
 - Dokumentasi lengkap:
-  - [`docs/RESELLER_H2H_API_V2_SPEC.md`](docs/RESELLER_H2H_API_V2_SPEC.md) — spesifikasi
-  - [`docs/RESELLER_H2H_CONTRACT_QA_CHECKLIST.md`](docs/RESELLER_H2H_CONTRACT_QA_CHECKLIST.md) — checklist QA integrator siap pakai
+  - Spesifikasi lengkap & QA checklist H2H V2 tersedia **on-request** untuk integrator aktif (hubungi owner)
 - Cocok untuk supplier yang buka reseller / agregator
 
 </details>
@@ -501,7 +500,7 @@ sequenceDiagram
 - **Limit configurable** di admin (per-transaksi, per-hari, total)
 - **Anti double-transfer** idempotency layer
 - Channel notification opsional untuk transfer
-- Lihat: [`docs/TRANSFER_SALDO_PLAN.md`](docs/TRANSFER_SALDO_PLAN.md)
+- Detail teknis tersedia on-request untuk reseller / integrator.
 
 </details>
 
@@ -519,7 +518,7 @@ sequenceDiagram
 <details>
 <summary><b>📱 PPOB Multi-Provider — 🚧 Beta / In Development</b></summary>
 
-> ⚠️ **Catatan**: PPOB (Payment Point Online Bank) **belum production-ready / belum di-release**. Adapter & skeleton sudah dibuat tapi masih tahap hardening & QA. Tidak default-on di production. Roadmap go-live: lihat [`docs/DIGIFLAZZ_GO_LIVE_CHECKLIST.md`](docs/DIGIFLAZZ_GO_LIVE_CHECKLIST.md).
+> ⚠️ **Catatan**: PPOB (Payment Point Online Bank) **belum production-ready / belum di-release**. Adapter & skeleton sudah dibuat tapi masih tahap hardening & QA. Tidak default-on di production. Roadmap go-live & checklist internal tersedia on-request untuk early access.
 
 **Yang sudah ada (skeleton/beta):**
 - Multi-provider architecture (DigiFlazz, OkeConnect, SanPay, QiosPay) dengan interface unified — bisa switch provider tanpa ubah business logic
@@ -537,11 +536,7 @@ sequenceDiagram
 - Pricing & margin auto-update dari provider
 
 **Dokumentasi (untuk developer/early access):**
-- [`docs/PPOB_MULTI_PROVIDER_STRUCTURE.md`](docs/PPOB_MULTI_PROVIDER_STRUCTURE.md) — arsitektur
-- [`docs/DIGIFLAZZ_PPOB_PLAN.md`](docs/DIGIFLAZZ_PPOB_PLAN.md) — rencana implementasi DigiFlazz
-- [`docs/DIGIFLAZZ_BOT_FEATURE_ROADMAP.md`](docs/DIGIFLAZZ_BOT_FEATURE_ROADMAP.md) — roadmap fitur
-- [`docs/DIGIFLAZZ_USER_JOURNEY_AWAM.md`](docs/DIGIFLAZZ_USER_JOURNEY_AWAM.md) — user journey
-- [`docs/PPOB_CODE_REVIEW_CHECKLIST.md`](docs/PPOB_CODE_REVIEW_CHECKLIST.md) — code review checklist
+- Dokumentasi PPOB internal (arsitektur multi-provider, rencana implementasi DigiFlazz, roadmap fitur, user journey, code review checklist) **tersedia on-request** untuk early-access / beta tester.
 
 </details>
 
@@ -555,7 +550,7 @@ sequenceDiagram
 - **Security Audit Log** — Tiap aksi sensitif (login, gateway change, broadcast, refund) tercatat
 - **Encrypted Sensitive Data** — Encryption-at-rest untuk API key gateway, password admin (bcrypt)
 - **IP Whitelist** untuk callback webhook
-- **Anti-Spam Bot** — Rate limit per-user, ban/unban, auto-detect bot/scraper (lihat [`docs/ANTI-SPAM-CONFIG.md`](docs/ANTI-SPAM-CONFIG.md))
+- **Anti-Spam Bot** — Rate limit per-user, ban/unban, auto-detect bot/scraper (konfig & threshold internal — disetting per-deploy)
 - **Reset Password** flow dengan email + token expiry
 
 </details>
@@ -910,7 +905,7 @@ sequenceDiagram
     end
 ```
 
-> 📚 Spesifikasi lengkap (request/response schema, error codes, retry semantics): [`docs/RESELLER_H2H_API_V2_SPEC.md`](docs/RESELLER_H2H_API_V2_SPEC.md) · QA checklist: [`docs/RESELLER_H2H_CONTRACT_QA_CHECKLIST.md`](docs/RESELLER_H2H_CONTRACT_QA_CHECKLIST.md).
+> 📚 Spesifikasi lengkap H2H V2 (request/response schema, error codes, retry semantics, QA checklist integrator) tersedia **on-request** untuk reseller aktif — hubungi owner.
 
 ---
 
@@ -1120,7 +1115,7 @@ auto-order-bot/
 ├─ monitor/                        # Real-time monitor service (Socket.io)
 ├─ config/                         # Payment gateways config catalog
 ├─ utils/                          # Constants, role helpers, dll.
-├─ docs/                           # 📚 30+ technical docs (lihat docs/INDEX.md)
+├─ docs/                           # 📚 Public technical docs (PRD, arsitektur, state machine, dll. — lihat docs/INDEX.md)
 ├─ tests/                          # Jest unit + smoke tests
 │  ├─ broadcast/, cs/, payment/
 │  ├─ smoke/                       # Checkout, webhook signature
@@ -1215,7 +1210,7 @@ Klik berulang → `refId` identik → save kedua ditolak `code: 11000` → bot b
 <details>
 <summary><b>Apakah PPOB (pulsa, paket data, PLN, dll.) sudah jalan?</b></summary>
 
-🚧 **Belum.** Adapter PPOB multi-provider (DigiFlazz, OkeConnect, SanPay, QiosPay) sudah disiapkan secara struktur, tapi **masih dalam pengembangan & belum siap release**. Saat ini bot fokus ke produk digital (akun, voucher, license key, panel hosting). Roadmap & dokumentasi PPOB ada di [`docs/DIGIFLAZZ_GO_LIVE_CHECKLIST.md`](docs/DIGIFLAZZ_GO_LIVE_CHECKLIST.md).
+🚧 **Belum.** Adapter PPOB multi-provider (DigiFlazz, OkeConnect, SanPay, QiosPay) sudah disiapkan secara struktur, tapi **masih dalam pengembangan & belum siap release**. Saat ini bot fokus ke produk digital (akun, voucher, license key, panel hosting). Roadmap & checklist go-live tersedia on-request untuk early access.
 </details>
 
 <details>
@@ -1232,85 +1227,29 @@ Export Laporan Overview juga punya `?format=flat` (14 kolom RFC 4180). Semua via
 <details>
 <summary><b>Reseller H2H aman dari replay attack & race condition?</b></summary>
 
-Ya. Semua endpoint H2H V2 wajib `X-Api-Key` + `X-Signature` (HMAC-SHA256) + `X-Nonce` (replay-guard via Mongo TTL collection) + `Idempotency-Key`. Order processing atomic (saldo deduct + stok claim + tx save dalam 1 transaction). Audit log tiap request. Spesifikasi lengkap: [`docs/RESELLER_H2H_API_V2_SPEC.md`](docs/RESELLER_H2H_API_V2_SPEC.md).
+Ya. Semua endpoint H2H V2 wajib `X-Api-Key` + `X-Signature` (HMAC-SHA256) + `X-Nonce` (replay-guard via Mongo TTL collection) + `Idempotency-Key`. Order processing atomic (saldo deduct + stok claim + tx save dalam 1 transaction). Audit log tiap request. Spesifikasi lengkap tersedia **on-request** untuk reseller aktif.
 </details>
 
 ---
 
 ## 🧭 Dokumentasi Teknis (Developer)
 
-Dokumen ini membantu kamu (atau tim) memahami alur logic, struktur, API, data model, dan ops untuk maintenance/refactor ke depan:
+Dokumen public untuk memahami arsitektur, alur data, dan operasional bot. Mulai dari [`docs/INDEX.md`](docs/INDEX.md) untuk navigasi cepat.
 
-### 📍 Navigasi cepat
+| Prioritas | File | Isi |
+|-----------|------|-----|
+| 1 | [`docs/PRD.md`](docs/PRD.md) | Product Requirement — scope, persona pengguna, fitur utama |
+| 2 | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Arsitektur & alur order → payment → finalize → delivery |
+| 3 | [`docs/RUNTIME_MAP.md`](docs/RUNTIME_MAP.md) | Peta runtime: startup → checkout → webhook / polling → finalize |
+| 4 | [`docs/DATA_MODEL.md`](docs/DATA_MODEL.md) | Skema MongoDB / Mongoose (User, Product, Transaction, dll.) |
+| 5 | [`docs/STATE_MACHINE.md`](docs/STATE_MACHINE.md) | State machine transaksi (`pending` → `paid` → `delivered` / `refunded` / `expired`) |
+| 6 | [`docs/FLOWCHART.md`](docs/FLOWCHART.md) | Flowchart visual end-to-end (Mermaid) — checkout, refund, webhook |
+| 7 | [`docs/RUNBOOK.md`](docs/RUNBOOK.md) | Setup env, menjalankan bot, troubleshooting operasional |
+| 8 | [`CHANGELOG.md`](CHANGELOG.md) | Riwayat perubahan per versi |
 
-- [`docs/INDEX.md`](docs/INDEX.md) — **indeks navigasi** semua dokumen di `docs/` (disarankan dibaca dulu)
-- [`docs/PRD.md`](docs/PRD.md) — Product Requirement Documentation (source-of-truth requirement)
-- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — arsitektur & alur order → payment → finalize → delivery
-- [`docs/RUNBOOK.md`](docs/RUNBOOK.md) — setup/run & troubleshooting operasional
-- [`CHANGELOG.md`](CHANGELOG.md) — riwayat perubahan per versi
-
-### 🧱 Architecture & Data
-
-- [`docs/FLOWCHART.md`](docs/FLOWCHART.md) — flowchart visual end-to-end (checkout, refund, webhook)
-- [`docs/STATE_MACHINE.md`](docs/STATE_MACHINE.md) — state machine transaksi (`pending` → `success` / `failed` / `expired` / `refunded`)
-- [`docs/DATA_MODEL.md`](docs/DATA_MODEL.md) — ringkasan skema MongoDB (Mongoose)
-- [`docs/RUNTIME_MAP.md`](docs/RUNTIME_MAP.md) — peta runtime (file → fungsi → tanggung jawab)
-- [`docs/REFACTOR_ROADMAP.md`](docs/REFACTOR_ROADMAP.md) — rencana refactor bertahap (tanpa ubah behavior)
-- [`docs/MENGURANGI-BARIS-BOT-JS.md`](docs/MENGURANGI-BARIS-BOT-JS.md) / [`docs/BOT_JS_REDUCTION_PLAN.md`](docs/BOT_JS_REDUCTION_PLAN.md) — panduan modularisasi `bot.js`
-- [`docs/MULTI-PLATFORM-PLAN.md`](docs/MULTI-PLATFORM-PLAN.md) — rencana multi-platform (WA, Discord)
-- [`docs/WHATSAPP_WA_AUTO_ORDER.md`](docs/WHATSAPP_WA_AUTO_ORDER.md) — rencana WhatsApp auto-order
-
-### 🌐 API & Webhook
-
-- [`docs/API.md`](docs/API.md) — ringkasan endpoint HTTP (public/admin/H2H/webhook)
-- [`docs/RESELLER_H2H_API_V2_SPEC.md`](docs/RESELLER_H2H_API_V2_SPEC.md) — spesifikasi hardening H2H V2 (signature, nonce, idempotency, atomic)
-- [`docs/RESELLER_H2H_CONTRACT_QA_CHECKLIST.md`](docs/RESELLER_H2H_CONTRACT_QA_CHECKLIST.md) — checklist QA kontrak endpoint H2H (siap pakai untuk integrator)
-- [`docs/PAYMENT_CALLBACK_URL.md`](docs/PAYMENT_CALLBACK_URL.md) — URL callback webhook (termasuk Billplz & gateway lain)
-
-### 💳 Payment
-
-- [`docs/PAYMENT_DESIGN.md`](docs/PAYMENT_DESIGN.md) — arsitektur payment gateway
-- [`docs/PAYMENT_GATEWAY_CANDIDATES.md`](docs/PAYMENT_GATEWAY_CANDIDATES.md) — analisis kandidat gateway
-- [`docs/CHIP_INTEGRATION_PLAN.md`](docs/CHIP_INTEGRATION_PLAN.md) — integrasi CHIP (DuitNow QR Malaysia)
-- [`docs/TOYYIBPAY_OFFICIAL_NOTES.md`](docs/TOYYIBPAY_OFFICIAL_NOTES.md) — catatan integrasi ToyyibPay
-- [`docs/SANPAY_H2H_TRANSFER_BANK_PLAN.md`](docs/SANPAY_H2H_TRANSFER_BANK_PLAN.md) — rencana Sanpay H2H transfer bank
-- [`docs/MALAYSIA_RELEASE_CHECKLIST.md`](docs/MALAYSIA_RELEASE_CHECKLIST.md) — checklist release Malaysia
-- [`docs/FULL_MYR_MIGRATION_PLAN.md`](docs/FULL_MYR_MIGRATION_PLAN.md) — rencana migrasi `BASE_CURRENCY=MYR`
-- [`docs/examples/payment-integration.example.js`](docs/examples/payment-integration.example.js) — contoh integrasi adapter payment baru
-
-### 💵 Multi-Currency (USD)
-
-- [`docs/USD_INTEGRATION_PLAN.md`](docs/USD_INTEGRATION_PLAN.md) — rencana dukungan USD 4 fase
-- [`docs/USD_HYBRID_E2E_SMOKE_TEST.md`](docs/USD_HYBRID_E2E_SMOKE_TEST.md) — runbook smoke test USD hybrid (Phase 3)
-
-### 🩺 Operations & Performance
-
-- [`docs/ANTI-SPAM-CONFIG.md`](docs/ANTI-SPAM-CONFIG.md) — rate limit & anti-spam bot
-- [`docs/OWNER_SECURITY_MITIGATION.md`](docs/OWNER_SECURITY_MITIGATION.md) — mitigasi owner-key admin panel
-- [`docs/ROLE_BASED_ACCESS_PLAN.md`](docs/ROLE_BASED_ACCESS_PLAN.md) — RBAC admin panel (Owner/Admin/Staff dari env/Gmail)
-- [`docs/I18N_PROGRESS.md`](docs/I18N_PROGRESS.md) — progress lokalisasi 3 bahasa
-- [`docs/TEST_PLAN_MILESTONE_4.md`](docs/TEST_PLAN_MILESTONE_4.md) — test plan milestone
-
-### 💸 Fitur Bisnis
-
-- [`docs/TRANSFER_SALDO_PLAN.md`](docs/TRANSFER_SALDO_PLAN.md) — rencana transfer saldo antar user
-- [`docs/FORMAT_DATA_SEWA_BOT.md`](docs/FORMAT_DATA_SEWA_BOT.md) — format data sewa bot
-
-### 🤝 Customer Support (OpenClaw)
-
-- [`docs/OPENCLAW_CS_FLOW.md`](docs/OPENCLAW_CS_FLOW.md) — flow CS handoff
-- [`docs/OPENCLAW_HTTP_CONTRACT.md`](docs/OPENCLAW_HTTP_CONTRACT.md) — HTTP contract integrator
-
-### 📱 PPOB (🚧 Beta / In Development)
-
-> ⚠️ Belum production-ready / belum di-release. Dokumentasi disediakan untuk developer/early access saja.
-
-- [`docs/PPOB_MULTI_PROVIDER_STRUCTURE.md`](docs/PPOB_MULTI_PROVIDER_STRUCTURE.md) — arsitektur multi-provider
-- [`docs/DIGIFLAZZ_PPOB_PLAN.md`](docs/DIGIFLAZZ_PPOB_PLAN.md) — rencana implementasi DigiFlazz
-- [`docs/DIGIFLAZZ_BOT_FEATURE_ROADMAP.md`](docs/DIGIFLAZZ_BOT_FEATURE_ROADMAP.md) — roadmap fitur PPOB
-- [`docs/DIGIFLAZZ_USER_JOURNEY_AWAM.md`](docs/DIGIFLAZZ_USER_JOURNEY_AWAM.md) — user journey end-user
-- [`docs/DIGIFLAZZ_GO_LIVE_CHECKLIST.md`](docs/DIGIFLAZZ_GO_LIVE_CHECKLIST.md) — checklist go-live
-- [`docs/PPOB_CODE_REVIEW_CHECKLIST.md`](docs/PPOB_CODE_REVIEW_CHECKLIST.md) — checklist code review
+> 🔒 **Dokumen internal yang tidak dipublish di repo public**: roadmap fitur masa depan (WhatsApp / Discord, PPOB native, USD native), business plan & vendor-specific integration plan (CHIP, Sanpay, Qrispy), mitigasi keamanan owner, konfigurasi anti-spam, internal refactor roadmap, RBAC detail, QA milestone checklist, dll.
+>
+> Buyer aktif & integrator H2H yang butuh akses dokumen internal (mis. **spesifikasi Reseller H2H API V2 lengkap**, anti-spam config, RBAC plan) silakan hubungi owner via kontak di [Hubungi Saya](#-hubungi-saya).
 
 ## ▶️ Cara Menjalankan (Developer)
 
@@ -1319,7 +1258,7 @@ Dokumen ini membantu kamu (atau tim) memahami alur logic, struktur, API, data mo
    - **Payment umum**: `BASE_CURRENCY` (`IDR` / `MYR` / `USD`), `CURRENCY_LOCALE`, `SHOW_IDR_ESTIMATE`
    - **Gateway per-provider**: `PAKASIR_*`, `TOYYIBPAY_*`, `BILLPLZ_*`, `CHIP_*`, `ORDERKUOTA_*`, dll.
    - **Admin panel**: `ADMIN_SESSION_SECRET`, `ADMIN_OWNER_EMAILS` (opsional, untuk RBAC)
-   - **Anti-spam**: lihat [`docs/ANTI-SPAM-CONFIG.md`](docs/ANTI-SPAM-CONFIG.md)
+   - **Anti-spam**: rate limit & threshold disetting di env (konfig detail internal)
 2. Install dependency:
 
 ```bash
@@ -1348,7 +1287,7 @@ npm run dev
 - Pastikan file `storage/.encryption_key` dan `storage/.encryption_iv` **tidak ikut commit** (sudah di-`.gitignore`).
 - Endpoint webhook harus selalu **memverifikasi signature** (HMAC / x_signature / Bearer / IP whitelist) untuk provider yang mendukung.
 - Jika menambah fitur payment/delivery baru, pastikan flow finalisasi tetap **idempotent** (anti dobel-kirim/dobel-success) — pakai pattern `refId` deterministik + unique index seperti existing code.
-- Untuk Reseller H2H integrator, **selalu** validasi `X-Signature`, `X-Nonce` (replay-guard), dan `Idempotency-Key`. Lihat [`docs/RESELLER_H2H_API_V2_SPEC.md`](docs/RESELLER_H2H_API_V2_SPEC.md).
+- Untuk Reseller H2H integrator, **selalu** validasi `X-Signature`, `X-Nonce` (replay-guard), dan `Idempotency-Key`. Spesifikasi lengkap on-request.
 - Aktifkan **2FA admin** (TOTP / Telegram OTP) untuk akun owner & admin di production.
 
 <div align="center">
