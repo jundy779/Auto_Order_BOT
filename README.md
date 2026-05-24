@@ -10,7 +10,7 @@
 [![Telegram](https://img.shields.io/badge/Telegram-Bot_API-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://telegram.org/)
 [![License](https://img.shields.io/badge/License-Premium-gold?style=for-the-badge)](.)
 [![Version](https://img.shields.io/badge/Version-8.5.0-brightgreen?style=for-the-badge)](.)
-[![GitHub Stars](https://img.shields.io/github/stars/jundy7/Auto_Order_BOT?style=for-the-badge&logo=github)](https://github.com/jundy779/Auto_Order_BOT)
+[![GitHub Stars](https://img.shields.io/github/stars/jundy779/Auto_Order_BOT?style=for-the-badge&logo=github)](https://github.com/jundy779/Auto_Order_BOT)
 [![GitHub Forks](https://img.shields.io/github/forks/jundy779/Auto_Order_BOT?style=for-the-badge&logo=github)](https://github.com/jundy779/Auto_Order_BOT)
 
 **🎯 Jualan Autopilot 24/7 • 💳 13+ Payment Gateway • 🌏 Indonesia • Malaysia • India • 🖥️ Admin Panel Modern**
