@@ -10,10 +10,10 @@
 [![Telegram](https://img.shields.io/badge/Telegram-Bot_API-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://telegram.org/)
 [![License](https://img.shields.io/badge/License-Premium-gold?style=for-the-badge)](.)
 [![Version](https://img.shields.io/badge/Version-8.5.0-brightgreen?style=for-the-badge)](.)
-[![GitHub Stars](https://img.shields.io/github/stars/jundy780/Auto_Order_BOT?style=for-the-badge&logo=github)](https://github.com/jundy779/Auto_Order_BOT)
+[![GitHub Stars](https://img.shields.io/github/stars/jundy7/Auto_Order_BOT?style=for-the-badge&logo=github)](https://github.com/jundy779/Auto_Order_BOT)
 [![GitHub Forks](https://img.shields.io/github/forks/jundy779/Auto_Order_BOT?style=for-the-badge&logo=github)](https://github.com/jundy779/Auto_Order_BOT)
 
-**🎯 Jualan Autopilot 24/7 • 💳 12+ Payment Gateway • 🌏 Indonesia & Malaysia • 🖥️ Admin Panel Modern**
+**🎯 Jualan Autopilot 24/7 • 💳 13+ Payment Gateway • 🌏 Indonesia • Malaysia • India • 🖥️ Admin Panel Modern**
 
 [Demo Bot](https://t.me/FusionTempest_bot) • [Order Sekarang](#-order-sekarang) • [Hubungi Saya](#-hubungi-saya)
 
@@ -35,12 +35,16 @@
 | [🛠️ Tech Stack](#️-tech-stack) | [📈 Performance Benchmarks](#-performance-benchmarks) |
 | [🗺️ Roadmap](#-roadmap) | [📁 Folder Structure](#-folder-structure) |
 | [❓ FAQ](#-faq) | [🧭 Dokumentasi Teknis](#-dokumentasi-teknis-developer) |
-| [🛒 Paket Harga](#-paket-harga) | [📞 Hubungi Saya](#-hubungi-saya) |
+| [📋 Task & Progress](#-task--progress-developer) | [🛒 Paket Harga](#-paket-harga) |
+| [📞 Hubungi Saya](#-hubungi-saya) | |
 
 ---
 
 ## 🆕 Terbaru
 
+- **🇮🇳 India (INR + UPI)** — Gateway **UPIExpress** untuk checkout & top-up (GPay / PhonePe / Paytm). Set `BASE_CURRENCY=INR` + `UPIEXPRESS_API_KEY`. Bahasa bot **हिन्दी** (`hi`) — terjemahan alur utama; sisanya fallback English.
+- **🌍 Mode internasional** — Toko **MYR / INR / USD**: fokus **produk digital + panel Pterodactyl**; menu **PPOB disembunyikan** (PPOB khusus Indonesia).
+- **📱 PPOB hanya kalau siap** — Meskipun `BASE_CURRENCY=IDR`, tombol PPOB **tidak muncul** sampai `PPOB_DIGIFLAZZ_ENABLED=true` + username + API key Digiflazz terisi.
 - **🩺 Instance Health Dashboard** — Menu baru di **monitor panel** menampilkan status MongoDB, hit rate user cache (LRU + TTL), memory heap, dan PID/Node uptime per instance bot. Auto-refresh 10 detik + endpoint `GET /admin/health` (auth-protected) — **cocok untuk multi-tenant / multi-instance bot**.
 - **⚡ Performance & Cache Layer** — User cache LRU + TTL untuk reduce MongoDB round-trip, fire-and-forget username update, dan auto-migration index startup. **16+ instance** bot bisa share satu MongoDB tanpa beban berlebih.
 - **📊 BI-Ready CSV Export 3-mode** — Export analytics (`pretty` blok terbaca, `flat` single-sheet untuk Power BI/Tableau/Sheets, `timeseries` long-format per hari/minggu untuk chart tren). Export Laporan Overview juga dual-mode (pretty + flat 14-kolom RFC 4180).
@@ -271,9 +275,11 @@ sequenceDiagram
 | **CHIP** | 🇲🇾 Malaysia | DuitNow QR | ✅ Callback | - |
 | **GOPAY MERCHANT** | 🇮🇩 Indonesia | QRIS (Mutation) | ✅ Auto Detect | ✅ |
 | **Orderkuota** | 🇮🇩 Indonesia | QRIS Dynamic (mutasi) | ✅ Polling + cek status | ✅ |
+| **UPIExpress** | 🇮🇳 India | UPI (link + QR) | ✅ Webhook + cek status | - |
 
 > 💡 **Pro Tip:** Bisa aktifkan beberapa gateway sekaligus! Customer bebas pilih mau bayar lewat mana.  
-> 🌏 **Malaysia Support:** ToyyibPay (FPX / DuitNow), Billplz (halaman bayar: FPX, e-wallet, DuitNow termasuk QR — bot kirim **link** bill), CHIP (DuitNow QR) — sama tersedia untuk **produk digital**, **top-up saldo**, dan **beli / perpanjang panel Pterodactyl** (sesuai gateway yang diaktifkan).
+> 🌏 **Malaysia Support:** ToyyibPay (FPX / DuitNow), Billplz (halaman bayar: FPX, e-wallet, DuitNow termasuk QR — bot kirim **link** bill), CHIP (DuitNow QR) — sama tersedia untuk **produk digital**, **top-up saldo**, dan **beli / perpanjang panel Pterodactyl** (sesuai gateway yang diaktifkan).  
+> 🇮🇳 **India Support:** UPIExpress — set `BASE_CURRENCY=INR` di `.env`; checkout/top-up hanya gateway India.
 
 </div>
 
@@ -440,9 +446,10 @@ sequenceDiagram
 <details>
 <summary><b>🌐 Multi-Language & Multi-Region</b></summary>
 
-- **3 Bahasa:** Indonesia (`id`), English (`en`), Bahasa Melayu (`ms`)
-- **Indonesia:** Semua QRIS gateway (Pakasir, Qiospay, Sanpay, Midtrans, Tripay, Violetpay, iPaymu, GoPay Merchant, Orderkuota)
-- **Malaysia:** ToyyibPay, Billplz, CHIP (urutan & aktif/nonaktif lewat admin; mode `MYR` memfilter ke gateway Malaysia)
+- **5 Bahasa bot:** Indonesia (`id`), English (`en`), Bahasa Melayu (`ms`), 中文 (`zh`), हिन्दी (`hi` — India, partial + fallback EN)
+- **Indonesia (`IDR`):** QRIS gateway + **PPOB** (hanya jika DigiFlazz username & API key terisi)
+- **Malaysia (`MYR`):** ToyyibPay, Billplz, CHIP — tanpa PPOB
+- **India (`INR`):** UPIExpress — tanpa PPOB; fokus digital + panel Ptero
 - Exchange rate support untuk user internasional
 - Keyboard & pesan otomatis sesuai bahasa user
 - **Localization MS** — Term **"warranty"** (bukan "garansi") untuk customer Malaysia agar lebih natural
@@ -452,7 +459,8 @@ sequenceDiagram
 | `BASE_CURRENCY` | Locale default | Simbol | Desimal | Status                                                     |
 | --------------- | -------------- | ------ | ------- | ---------------------------------------------------------- |
 | `MYR`           | `ms-MY`        | `RM`   | 2       | Production (gateway: ToyyibPay, Billplz, CHIP)             |
-| `IDR`           | `id-ID`        | `Rp`   | 0       | Production (gateway: Pakasir, Qiospay, Sanpay, dll.)       |
+| `IDR`           | `id-ID`        | `Rp`   | 0       | Production (QRIS + PPOB opsional)                          |
+| `INR`           | `en-IN` / `hi-IN` | `₹` | 2       | Production kode (UPIExpress); uji E2E disarankan           |
 | `USD`           | `en-US`        | `$`    | 2       | **Phase 1**: display + config. Native gateway USD = Phase 3 (roadmap internal) |
 
 </details>
@@ -518,7 +526,7 @@ sequenceDiagram
 <details>
 <summary><b>📱 PPOB Multi-Provider — 🚧 Beta / In Development</b></summary>
 
-> ⚠️ **Catatan**: PPOB (Payment Point Online Bank) **belum production-ready / belum di-release**. Adapter & skeleton sudah dibuat tapi masih tahap hardening & QA. Tidak default-on di production. Roadmap go-live & checklist internal tersedia on-request untuk early access.
+> ⚠️ **Catatan**: PPOB (Payment Point Online Bank) **belum production-ready / belum di-release**. Adapter & skeleton sudah dibuat tapi masih tahap hardening & QA. **Hanya tenant `BASE_CURRENCY=IDR`** dan **hanya jika** `PPOB_DIGIFLAZZ_USERNAME` + `PPOB_DIGIFLAZZ_API_KEY` terisi — kalau belum, menu PPOB **tidak tampil**. Tenant MYR/INR/USD tidak menampilkan PPOB.
 
 **Yang sudah ada (skeleton/beta):**
 - Multi-provider architecture (DigiFlazz, OkeConnect, SanPay, QiosPay) dengan interface unified — bisa switch provider tanpa ubah business logic
@@ -1246,19 +1254,44 @@ Dokumen public untuk memahami arsitektur, alur data, dan operasional bot. Mulai 
 | 6 | [`docs/FLOWCHART.md`](docs/FLOWCHART.md) | Flowchart visual end-to-end (Mermaid) — checkout, refund, webhook |
 | 7 | [`docs/RUNBOOK.md`](docs/RUNBOOK.md) | Setup env, menjalankan bot, troubleshooting operasional |
 | 8 | [`CHANGELOG.md`](CHANGELOG.md) | Riwayat perubahan per versi |
+| 9 | [`docs/PROGRESS.md`](docs/PROGRESS.md) | Status fitur per pasar (ID/MY/IN), gateway, i18n — **update rutin** |
+| — | [`task.md`](task.md) | Task IN PROGRESS / TODO / DONE untuk dev & AI assistant |
+
+## 📋 Task & Progress (Developer)
+
+Agar status repo **selalu terlacak**, gunakan dua file ini (perbarui setiap sesi kerja besar):
+
+| File | Isi |
+|------|-----|
+| **[`task.md`](task.md)** | Backlog operasional: **IN PROGRESS**, **TODO**, **DONE** + versi bot |
+| **[`docs/PROGRESS.md`](docs/PROGRESS.md)** | Matriks pasar, gateway, bahasa, file kunci — referensi cepat |
+
+Workflow Cursor: baca `task.md` dulu → selesaikan → pindahkan ke DONE → sinkronkan `docs/PROGRESS.md` + bullet **Terbaru** di README ini.
 
 > 🔒 **Dokumen internal yang tidak dipublish di repo public**: roadmap fitur masa depan (WhatsApp / Discord, PPOB native, USD native), business plan & vendor-specific integration plan (CHIP, Sanpay, Qrispy), mitigasi keamanan owner, konfigurasi anti-spam, internal refactor roadmap, RBAC detail, QA milestone checklist, dll.
 >
 > Buyer aktif & integrator H2H yang butuh akses dokumen internal (mis. **spesifikasi Reseller H2H API V2 lengkap**, anti-spam config, RBAC plan) silakan hubungi owner via kontak di [Hubungi Saya](#-hubungi-saya).
 
+### 🤖 Konteks untuk AI Assistant
+
+Project ini punya **persistent memory file** untuk AI assistant (Cursor / Copilot / Claude / dll.) supaya tidak perlu re-explain dari nol setiap chat baru:
+
+| File | Tujuan |
+|------|--------|
+| **[`task.md`](task.md)** | Task aktif & riwayat DONE — **baca pertama** setiap sesi |
+| **[`docs/PROGRESS.md`](docs/PROGRESS.md)** | Status fitur per region & kelengkapan i18n |
+| **[`AGENTS.md`](AGENTS.md)** | Quick rules — bahasa, coding style, workflow, security defaults, common patterns |
+| **[`docs/PROJECT_CONTEXT.md`](docs/PROJECT_CONTEXT.md)** | Konteks lengkap — tech stack, target user, deployment constraint, decisions history, plan documents, active TODOs |
+
+AI tool yang masuk repo ini disarankan **baca dua file di atas dulu** sebelum coding apa pun. Update kedua file kalau ada decision major atau architecture change.
+
 ## ▶️ Cara Menjalankan (Developer)
 
-1. Salin `.env.example` → `.env`, lalu isi nilai sensitif (lihat juga [`docs/RUNBOOK.md`](docs/RUNBOOK.md)):
-   - **Bot & DB**: `BOT_TOKEN`, `MONGO_URI`, `OWNER_ID`, `CHANNEL_ID`
-   - **Payment umum**: `BASE_CURRENCY` (`IDR` / `MYR` / `USD`), `CURRENCY_LOCALE`, `SHOW_IDR_ESTIMATE`
-   - **Gateway per-provider**: `PAKASIR_*`, `TOYYIBPAY_*`, `BILLPLZ_*`, `CHIP_*`, `ORDERKUOTA_*`, dll.
-   - **Admin panel**: `ADMIN_SESSION_SECRET`, `ADMIN_OWNER_EMAILS` (opsional, untuk RBAC)
-   - **Anti-spam**: rate limit & threshold disetting di env (konfig detail internal)
+1. Buat file **`.env` lokal** (tidak ada di repo publik). Panduan variabel: [`docs/RUNBOOK.md`](docs/RUNBOOK.md). Template lengkap `.env.example` hanya dari **owner / paket privat**.
+   - **Bot & DB**: `BOT_TOKEN`, `MONGO_URI`, `ADMIN_IDS`, `CHANNEL_ID`
+   - **Payment umum**: `BASE_CURRENCY` (`IDR` / `MYR` / `INR` / `USD`), `CURRENCY_LOCALE`, `PUBLIC_URL`
+   - **Gateway per-provider**: sesuai negara (QRIS, ToyyibPay, UPIExpress, dll.)
+   - **Admin panel**: session secret & monitor login (lihat RUNBOOK)
 2. Install dependency:
 
 ```bash
@@ -1283,7 +1316,7 @@ npm run dev
 
 ## 🔐 Catatan Keamanan
 
-- **Jangan pernah** membagikan atau meng-commit `.env` (bot token, API key, private key, password admin, MongoDB URI).
+- **Jangan pernah** meng-commit `.env` atau `.env.example` ke repo publik (token, API key, URI, ID admin). Template env dibagikan **privat** ke buyer.
 - Pastikan file `storage/.encryption_key` dan `storage/.encryption_iv` **tidak ikut commit** (sudah di-`.gitignore`).
 - Endpoint webhook harus selalu **memverifikasi signature** (HMAC / x_signature / Bearer / IP whitelist) untuk provider yang mendukung.
 - Jika menambah fitur payment/delivery baru, pastikan flow finalisasi tetap **idempotent** (anti dobel-kirim/dobel-success) — pakai pattern `refId` deterministik + unique index seperti existing code.
