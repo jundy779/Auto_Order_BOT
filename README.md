@@ -9,11 +9,11 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-Ready-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com/)
 [![Telegram](https://img.shields.io/badge/Telegram-Bot_API-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://telegram.org/)
 [![License](https://img.shields.io/badge/License-Premium-gold?style=for-the-badge)](.)
-[![Version](https://img.shields.io/badge/Version-8.5.0-brightgreen?style=for-the-badge)](.)
+[![Version](https://img.shields.io/badge/Version-8.7.3-brightgreen?style=for-the-badge)](.)
 [![GitHub Stars](https://img.shields.io/github/stars/jundy779/Auto_Order_BOT?style=for-the-badge&logo=github)](https://github.com/jundy779/Auto_Order_BOT)
 [![GitHub Forks](https://img.shields.io/github/forks/jundy779/Auto_Order_BOT?style=for-the-badge&logo=github)](https://github.com/jundy779/Auto_Order_BOT)
 
-**🎯 Jualan Autopilot 24/7 • 💳 13+ Payment Gateway • 🌏 Indonesia • Malaysia • India • 🖥️ Admin Panel Modern**
+**🎯 Jualan Autopilot 24/7 • 💳 14+ Payment Gateway • 🌏 Indonesia • Malaysia • India • Crypto • 🖥️ Admin Panel Modern**
 
 [Demo Bot](https://t.me/FusionTempest_bot) • [Order Sekarang](#-order-sekarang) • [Hubungi Saya](#-hubungi-saya)
 
@@ -42,7 +42,30 @@
 
 ## 🆕 Terbaru
 
-- **🇮🇳 India (INR + UPI)** — Gateway **UPIExpress** untuk checkout & top-up (GPay / PhonePe / Paytm). Set `BASE_CURRENCY=INR` + `UPIEXPRESS_API_KEY`. Bahasa bot **हिन्दी** (`hi`) — terjemahan alur utama; sisanya fallback English.
+- **🔔 Watchlist + qty favorit (8.7.3)** — Pantau produk habis (DM pribadi saat restock); simpan jumlah order favorit (⭐) di layar qty.
+- **🔄 Beli lagi + bukti delivery (8.7.2)** — Tombol reorder dari riwayat/sukses; SLA garansi di checkout; hash bukti pengiriman 8 char di pesan sukses & riwayat.
+- **📊 Seller analytics actionable (8.7.1)** — Admin → Analitik: produk sering abandon (bayar/qty), jam puncak restock vs konversi (WIB), saran "naikkan stok varian X jam HH:00".
+- **🪙 Cryptomus USDT (8.7.0)** — Gateway kripto untuk checkout & top-up; invoice USD, default USDT/TRON; webhook `/cryptomus`; tab admin + env `CRYPTOMUS_*` + `PUBLIC_URL` HTTPS.
+- **🛠️ Hotfix Bot API UX (8.6.16)** — QRIS kembali 1 pesan (foto + caption); `sendRichMessage` fallback plain di Desktop; expired QR format tanggal+jam WIB; **Salin stok** salin semua baris (qty>1).
+- **🕐 Datetime rich + profil i18n (8.6.15)** — `tg://time` di invoice/riwayat/checkout; entity `date_time` plain; salin Ref ID + stok + efek confetti di sukses; `setMyName`/`Description` per bahasa (id/en/ms/zh/hi).
+- **📨 Rich Messages P1+ (8.6.14)** — Bot API 10.1 diperluas: invoice pembelian, top-up sukses, riwayat transaksi, QR pending (foto + detail rich); reaksi 🎉 `setMessageReaction`; poll opsi + link URL; helper `date_time` + toggle admin (default OFF).
+- **🗳️ Poll foto + deskripsi (8.6.13)** — header foto & deskripsi pada broadcast poll custom (bukan native `sendPoll`).
+- **📨 Rich Messages invoice (8.6.12)** — Bot API 10.1: tabel ringkasan + stok spoiler saat pembelian sukses; toggle admin (default OFF, auto-fallback Markdown).
+- **🔒 Force join join request (8.6.11)** — auto-approve channel/grup private dari admin panel; opsional Mini App HTTPS (Bot API 10.1 P3).
+- **📋 Salin Ref ID + 🎉 efek bayar (8.6.10)** — tombol `copy_text` salin Ref ID di pesan pembayaran; efek confetti `message_effect_id` saat delivery sukses.
+- **🧾 Tampilan produk katalog (8.6.9)** — daftar varian rapi (`1. Nama` + `💵 harga · ✅ stok/❌ Habis`), tombol nomor 1-N (5/baris), bisa ketik nomor manual.
+- **⚡ Telegram API quick wins (8.6.8)** — indikator typing saat checkout/Stars; link preview dimatikan di pesan pembayaran; **admin → Telegram Stars**: saldo bot live via `getMyStarBalance` + riwayat API.
+- **🎨 Tombol inline berwarna + emoji premium (8.6.7)** — `smartCallback` di seluruh keyboard bot (checkout, saldo, admin, PPOB, polling, dll.); **admin → Tombol Telegram**: validasi ID, preview ke Telegram, panduan operator; custom emoji di pesan biasa (auto HTML).
+- **📦 Multi-varian produk (8.6.4)** — Satu produk bisa punya beberapa varian (mis. 1 Bulan / 3 Bulan) dengan harga & stok terpisah; user pilih varian di bot sebelum qty & bayar; kelola via admin products (JSON varian).
+- **🔒 Reserve stok saat checkout (P1)** — Stok langsung di-hold saat user dapat link/invoice bayar (gateway + Stars), jadi tidak bisa oversell saat banyak orang checkout bersamaan.
+- **📦 Auto-release stok (P0)** — Reserve yang belum selesai otomatis dikembalikan saat transaksi dibatalkan, expired, gagal, atau refund disetujui.
+- **📊 Polling / vote broadcast (8.6.2)** — Admin buat polling **pilihan** atau **rating** dari bot (`/polling`) atau tab Broadcast admin web; user vote via tombol inline; hasil live di pesan yang di-vote; tutup otomatis/manual; **export CSV** suara dari bot (`/pollexport`) atau tombol **Export CSV** di panel hasil.
+- **💰 Refund calculator & pengajuan** — User hitung estimasi refund (sisa hari garansi otomatis), lalu **ajukan refund** ke admin; approve/reject inline + kredit saldo atomik + **audit log admin**. Status garansi tampil di riwayat pembelian.
+- **🧾 Refund Requests di admin panel** — Queue pengajuan refund kini bisa direview langsung dari web panel (filter status + approve/reject), sinkron dengan notifikasi user Telegram.
+- **🔄 Session bot persist (8.6.1)** — Alur checkout/admin/refund tetap lanjut setelah restart container (Mongo TTL, tanpa Redis).
+- **🛡️ Garansi refund (admin bot)** — Atur hari & fee % per tipe garansi lewat menu **Garansi Refund** atau `/garansiset` (tersimpan di database).
+- **🔒 Hardening 8.6.0** — Anti double refund, dedupe `gatewayTransactionId`, polling gateway claim atomik, monitor/banned guard fail-closed di production.
+- **🇮🇳 India (INR + UPI)** — Gateway **UPIExpress** untuk checkout & top-up (GPay / PhonePe / Paytm). Set `BASE_CURRENCY=INR` + `UPIEXPRESS_API_KEY`. Bahasa bot **हिन्दी** (`hi`) — **1017 key** alur Telegram (user + admin bot); regen: `node tools/generate-hi-user-texts.js && node tools/gen-hi-lang.js`.
 - **🌍 Mode internasional** — Toko **MYR / INR / USD**: fokus **produk digital + panel Pterodactyl**; menu **PPOB disembunyikan** (PPOB khusus Indonesia).
 - **📱 PPOB hanya kalau siap** — Meskipun `BASE_CURRENCY=IDR`, tombol PPOB **tidak muncul** sampai `PPOB_DIGIFLAZZ_ENABLED=true` + username + API key Digiflazz terisi.
 - **🩺 Instance Health Dashboard** — Menu baru di **monitor panel** menampilkan status MongoDB, hit rate user cache (LRU + TTL), memory heap, dan PID/Node uptime per instance bot. Auto-refresh 10 detik + endpoint `GET /admin/health` (auth-protected) — **cocok untuk multi-tenant / multi-instance bot**.
@@ -50,7 +73,10 @@
 - **📊 BI-Ready CSV Export 3-mode** — Export analytics (`pretty` blok terbaca, `flat` single-sheet untuk Power BI/Tableau/Sheets, `timeseries` long-format per hari/minggu untuk chart tren). Export Laporan Overview juga dual-mode (pretty + flat 14-kolom RFC 4180).
 - **🛡️ Anti Double-Order Idempotency** — RefId deterministik berbasis SHA-1 (userId+productKey+messageId+timeBucket) → klik berulang tombol bayar tidak akan pernah lagi menghasilkan transaksi ganda. Guarded di 3 lapisan: app cache + unique-index + atomic `$inc/$gte`.
 - **💸 Transfer Saldo antar User** — User bisa kirim saldo ke sesama user (atomic, audit-log, limit configurable di admin).
-- **📝 Manual Order System** — Untuk produk yang butuh data tambahan (username, email, server ID, dll.) — bot prompt user input → kirim ke channel admin → admin proses dari dashboard Pending Orders.
+- **📝 Manual Order System** — Untuk produk yang butuh data tambahan (username, email, server ID, dll.) — bot prompt user input → **stok langsung di-reserve saat order masuk** → kirim ke channel admin → admin proses dari dashboard Pending Orders.
+- **🧾 Manual Order Audit Trail** — Lifecycle manual order sekarang terekam detail (actor, source, channel, status dari→ke, catatan admin, timestamp) untuk investigasi dispute/refund.
+- **⏰ Manual Order SLA Reminder** — Scheduler otomatis ingatkan admin jika order manual terlalu lama di status `WAITING` (threshold/interval/cooldown configurable, anti-spam, optional broadcast ke channel admin).
+- **✅ Confirm Selesai via bot admin** — Notifikasi order manual ke admin sekarang punya tombol inline untuk menandai order selesai langsung dari Telegram (stok otomatis berkurang + notif selesai ke user/channel).
 - **🌏 Localization MS** — Term "garansi" diganti **"warranty"** di Bahasa Melayu (lebih natural untuk customer Malaysia).
 - **🇲🇾 Panel Pterodactyl & gateway Malaysia** — Pembelian & perpanjang panel memakai **urutan gateway yang sama** seperti checkout produk digital & top-up saldo (ToyyibPay, Billplz, CHIP, QRIS, dll. sesuai admin). Tombol metode bayar mengikuti `payment_gateway_order` / mode `BASE_CURRENCY=MYR`.
 - **💱 Multi-Currency Foundation (IDR/MYR/USD)** — `BASE_CURRENCY` switch toko, currency-aware formatter, & Phase 1 USD display ready. Native USD gateway = Phase 3+ (roadmap internal, dapat dishare on-request).
@@ -276,10 +302,12 @@ sequenceDiagram
 | **GOPAY MERCHANT** | 🇮🇩 Indonesia | QRIS (Mutation) | ✅ Auto Detect | ✅ |
 | **Orderkuota** | 🇮🇩 Indonesia | QRIS Dynamic (mutasi) | ✅ Polling + cek status | ✅ |
 | **UPIExpress** | 🇮🇳 India | UPI (link + QR) | ✅ Webhook + cek status | - |
+| **Cryptomus** | 🌍 Global | Kripto (USDT / multi-wallet) | ✅ Webhook + cek status | - |
 
 > 💡 **Pro Tip:** Bisa aktifkan beberapa gateway sekaligus! Customer bebas pilih mau bayar lewat mana.  
 > 🌏 **Malaysia Support:** ToyyibPay (FPX / DuitNow), Billplz (halaman bayar: FPX, e-wallet, DuitNow termasuk QR — bot kirim **link** bill), CHIP (DuitNow QR) — sama tersedia untuk **produk digital**, **top-up saldo**, dan **beli / perpanjang panel Pterodactyl** (sesuai gateway yang diaktifkan).  
-> 🇮🇳 **India Support:** UPIExpress — set `BASE_CURRENCY=INR` di `.env`; checkout/top-up hanya gateway India.
+> 🇮🇳 **India Support:** UPIExpress — set `BASE_CURRENCY=INR` di `.env`; checkout/top-up hanya gateway India.  
+> 🪙 **Crypto:** Cryptomus — invoice USD; nominal IDR/MYR/INR dikonversi otomatis; butuh `PUBLIC_URL` HTTPS untuk webhook.
 
 </div>
 
@@ -617,6 +645,7 @@ sequenceDiagram
 - **Stock broadcast** otomatis saat restock
 - **Best seller** auto-rank dari data transaksi
 - **Critical stock alert** ke admin channel
+- **Auto Recap** — ringkasan penjualan harian/mingguan/bulanan otomatis ke admin & channel (revenue, growth %, top produk, stok menipis)
 
 </details>
 
@@ -1047,6 +1076,7 @@ timeline
     section ✅ Sudah Release
         v8.0.0 (2025) : 12+ Payment Gateway : Pterodactyl integration : Multi-bahasa ID/EN/MS
         v8.3.0 (2026 Q1) : Multi-Currency IDR/MYR Phase 1-2 : Reseller H2H V2 hardened : Markdown-safe Telegram
+        v8.6.0 (2026 Q2) : Refund calculator + pengajuan : Garansi admin bot : Hardening P0/P1 payment & refund
         v8.5.0 (2026 Q2) : Instance Health Dashboard : BI-Ready CSV Export 3-mode : Anti Double-Order 3-layer : Transfer Saldo + Manual Order
     section 🚧 In Progress
         v8.6.0 : PPOB Multi-Provider production-ready : DigiFlazz / OkeConnect / SanPay / QiosPay : Reconciliation report
@@ -1058,6 +1088,7 @@ timeline
 
 | Status | Versi | Highlight |
 |:---:|:---|:---|
+| ✅ | **v8.6.0** | Refund calculator + request, garansi admin, hardening refund/payment |
 | ✅ | **v8.5.0** | Health dashboard, BI export, 3-layer idempotency, transfer saldo, manual order |
 | 🚧 | **v8.6.0** | PPOB go-live (DigiFlazz + OkeConnect + SanPay + QiosPay) |
 | 🚧 | **v8.7.0** | Native USD gateway (Phase 3) + reconciliation report |
@@ -1413,6 +1444,6 @@ npm run dev
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer&text=Thank%20You!&fontSize=40&fontColor=ffffff&animation=twinkling&fontAlignY=75" width="100%" alt="Footer"/>
 
-<sub>Made with ❤️ by **FusionTempest** • v8.5.0 • © 2024-2026</sub>
+<sub>Made with ❤️ by **FusionTempest** • v8.6.6 • © 2024-2026</sub>
 
 </div>
