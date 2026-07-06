@@ -9,11 +9,11 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-Ready-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com/)
 [![Telegram](https://img.shields.io/badge/Telegram-Bot_API-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://telegram.org/)
 [![License](https://img.shields.io/badge/License-Premium-gold?style=for-the-badge)](.)
-[![Version](https://img.shields.io/badge/Version-8.7.3-brightgreen?style=for-the-badge)](.)
+[![Version](https://img.shields.io/badge/Version-8.8.2-brightgreen?style=for-the-badge)](.)
 [![GitHub Stars](https://img.shields.io/github/stars/jundy779/Auto_Order_BOT?style=for-the-badge&logo=github)](https://github.com/jundy779/Auto_Order_BOT)
 [![GitHub Forks](https://img.shields.io/github/forks/jundy779/Auto_Order_BOT?style=for-the-badge&logo=github)](https://github.com/jundy779/Auto_Order_BOT)
 
-**🎯 Jualan Autopilot 24/7 • 💳 14+ Payment Gateway • 🌏 Indonesia • Malaysia • India • Crypto • 🖥️ Admin Panel Modern**
+**🎯 Jualan Autopilot 24/7 • 💳 15 Payment Gateway • 🌏 Indonesia • Malaysia • India • Crypto • 🖥️ Admin Panel Modern**
 
 [Demo Bot](https://t.me/FusionTempest_bot) • [Order Sekarang](#-order-sekarang) • [Hubungi Saya](#-hubungi-saya)
 
@@ -42,6 +42,17 @@
 
 ## 🆕 Terbaru
 
+- **🎨 Admin PG v8.8.2** — halaman `/admin/gateways` pakai sidebar seperti dashboard; badge gateway **X/15** (bukan 12); serve CSS `/css` fix UI rusak.
+- **🤖 Bot UX v8.8.2** — welcome `/start` aman untuk username dengan `_`; keyboard `/admin` grid 2 kolom.
+- **💳 Casaku v8.8.1** — payment gateway QRIS Indonesia (`api.casaku.id`): checkout/top-up, polling 3 detik, webhook HMAC, tab admin + **Diagnostik Casaku** (profil → QRIS probe → check-status). Webhook: `{PUBLIC_URL}/casaku-callback`.
+- **📱 PPOB v8.8.0** — cek saldo deposit DigiFlazz (admin + `/ppobsaldo`); submenu type Umum/Transfer; bayar prepaid via QRIS; riwayat inline + cek ulang.
+- **⚙️ Admin PPOB Provider** — atur kredensial DigiFlazz (dan placeholder 3 provider) dari panel; penyewa bot tidak perlu isi `PPOB_*` di `.env`.
+- **📱 PPOB prepaid hardening (8.7.9)** — polling status prepaid fix (re-topup); tampil SN/token ke user; `testing: true` saat `PPOB_DIGIFLAZZ_TESTING=true`.
+- **📱 PPOB katalog & navigasi (8.7.8)** — sync tagihan DigiFlazz (`cmd: pasca`); menu 3 level kategori → brand → produk (Pulsa/Data/Games/E-Money/Pascabayar).
+- **📱 PPOB tagihan postpaid (8.7.7)** — PLN/PDAM/internet via DigiFlazz: cek tagihan → konfirmasi harga dinamis → bayar dari saldo; sandbox `PPOB_DIGIFLAZZ_TESTING=true`.
+- **🧩 Flow PPOB modular (8.7.6)** — Logic PPOB dipindah ke `features/user/flowPpob.js`; `bot.js` lebih ringan.
+- **📱 PPOB markup + auto-sync (8.7.5)** — Admin atur markup %/biaya tetap; sync katalog otomatis terjadwal; toolbar PPOB admin hanya tampil di toko IDR; harga jual konsisten di bot & MongoDB.
+- **🔥 Flash Sale broadcast (8.7.4)** — Admin bisa push notifikasi promo ke semua user Telegram (per bahasa) saat simpan/aktifkan flash sale.
 - **🔔 Watchlist + qty favorit (8.7.3)** — Pantau produk habis (DM pribadi saat restock); simpan jumlah order favorit (⭐) di layar qty.
 - **🔄 Beli lagi + bukti delivery (8.7.2)** — Tombol reorder dari riwayat/sukses; SLA garansi di checkout; hash bukti pengiriman 8 char di pesan sukses & riwayat.
 - **📊 Seller analytics actionable (8.7.1)** — Admin → Analitik: produk sering abandon (bayar/qty), jam puncak restock vs konversi (WIB), saran "naikkan stok varian X jam HH:00".
@@ -81,7 +92,7 @@
 - **🇲🇾 Panel Pterodactyl & gateway Malaysia** — Pembelian & perpanjang panel memakai **urutan gateway yang sama** seperti checkout produk digital & top-up saldo (ToyyibPay, Billplz, CHIP, QRIS, dll. sesuai admin). Tombol metode bayar mengikuti `payment_gateway_order` / mode `BASE_CURRENCY=MYR`.
 - **💱 Multi-Currency Foundation (IDR/MYR/USD)** — `BASE_CURRENCY` switch toko, currency-aware formatter, & Phase 1 USD display ready. Native USD gateway = Phase 3+ (roadmap internal, dapat dishare on-request).
 - **📱 PPOB Multi-Provider (Beta / In Development)** — Skeleton multi-provider PPOB (DigiFlazz, OkeConnect, SanPay, QiosPay) — adapter + admin sync + webhook **sudah dibuat tapi belum production-ready**, masih tahap hardening. Tidak default-on; dokumentasi lengkap tersedia on-request untuk early access.
-- **12+ Payment Gateway** — Pilih sesuai kebutuhan bisnis kamu (ID & MY) — `.env`-based instance, hot-reload via admin panel.
+- **15 Payment Gateway** — Pilih sesuai kebutuhan bisnis kamu (ID, MY, IN, crypto) — `.env` atau admin panel, hot-reload.
 
 ---
 
@@ -246,7 +257,7 @@ Ganti setting payment gateway, promo, atau konfigurasi lainnya **langsung dari a
 
 ### ⚡ Yang Bikin Beda dari Bot Lain:
 
-- ✅ **12+ Payment Gateway** — Pakasir, Qiospay, Sanpay, Midtrans, Tripay, Violetpay, iPaymu, GoPay Merchant, Orderkuota (ID); **ToyyibPay**, **Billplz** (FPX / e-wallet / DuitNow di halaman bayar), **CHIP** (DuitNow QR) untuk Malaysia
+- ✅ **15 Payment Gateway** — Pakasir, Qiospay, Sanpay, **Casaku**, Midtrans, Tripay, Violetpay, iPaymu, GoPay Merchant, Orderkuota (ID); **ToyyibPay**, **Billplz** (FPX / e-wallet / DuitNow di halaman bayar), **CHIP** (DuitNow QR) untuk Malaysia; **UPIExpress** (IN); **Cryptomus** (kripto)
 - ✅ **Promo Spesial / Flash Sale** — Bikin urgency dengan countdown timer
 - ✅ **Logo di QRIS** — Branding profesional di setiap pembayaran
 - ✅ **Pterodactyl Integration** — Jualan hosting panel full otomatis + auto delete expired
@@ -292,6 +303,7 @@ sequenceDiagram
 | **Pakasir** | 🇮🇩 Indonesia | QRIS | ✅ 3 detik | ✅ |
 | **Qiospay** | 🇮🇩 Indonesia | QRIS Dynamic | ✅ 3 detik | ✅ |
 | **Sanpay** | 🇮🇩 Indonesia | QRIS | ✅ 3 detik | ✅ |
+| **Casaku** | 🇮🇩 Indonesia | QRIS Dynamic | ✅ 3 detik | ✅ |
 | **Midtrans** | 🇮🇩 Indonesia | QRIS | ✅ 3 detik | ✅ |
 | **Tripay** | 🇮🇩 Indonesia | QRIS | ✅ 5 detik | ✅ |
 | **Violetpay** | 🇮🇩 Indonesia | QRIS | ✅ Auto | ✅ |
@@ -343,7 +355,7 @@ sequenceDiagram
 **Fitur Admin Panel:**
 - 📊 Dashboard statistik real-time + Growth Analytics
 - 📦 Kelola produk, kategori, stok (drag-drop, bulk upload)
-- 💳 Payment gateway management (12+ gateway, hot reload)
+- 💳 Payment gateway management (15 gateway, hot reload)
 - 🎫 Voucher management
 - 🖥️ Panel package management (Pterodactyl)
 - 📢 Broadcast ke semua user (filter, media, scheduled, poll)
