@@ -4,7 +4,519 @@ Semua perubahan penting pada proyek ini didokumentasikan di file ini.
 
 ---
 
+---
+
+## [Unreleased] - 2026-07-07
+
+### Payment — OrderKuota QRIS
+
+- **WORKER-ORKUT compatibility** — mutasi OrderKuota sekarang mengirim credential dengan format lama (`username`/`token`) dan format worker terbaru (`USER_ORKUT`/`TOKEN_ORKUT`), mengikuti update `https://github.com/arivpnstores/WORKER-ORKUT` yang memperbaiki reCAPTCHA.
+- **Probe live** — `tools/probe-orkut-live.js` ikut memakai payload kompatibel agar test koneksi/mutasi sesuai worker terbaru.
+
+### Docs
+
+- **Category Appearance Plan** — tambah `docs/CATEGORY_APPEARANCE_PLAN.md` untuk roadmap custom tampilan daftar kategori produk Telegram.
+
+### Admin — Broadcast
+
+- **Stock broadcast** — fix endpoint kirim broadcast stok dengan override/template admin yang sebelumnya gagal `buildStockBroadcastMessageWithOverride is not defined`.
+
+### Admin — Payment Gateway
+
+- **Gateway order lengkap** — daftar **Urutan Prioritas Tampilan Gateway ke User** otomatis menambahkan provider baru yang belum ada di urutan tersimpan lama, termasuk Casaku, Billplz, UPIExpress, dan Cryptomus.
+- **Save config guard** — save payment gateway sekarang tahan terhadap dokumen `Setting` lama yang `value`-nya kosong/null, memperbaiki error `Cannot set properties of undefined (setting 'enabled')` saat simpan Casaku dari web panel.
+- **Casaku diagnostic** — field License Key/Webhook Secret yang tampil masked `***` sekarang diperlakukan sebagai placeholder dan fallback ke credential tersimpan/runtime, jadi test koneksi tidak false-fail setelah config disimpan.
+- **Casaku webhook** — signature `X-Casaku-Signature` diverifikasi dari raw body `Buffer`, mengikuti docs Casaku v2.1.
+
+### Admin — Bot Appearance Phase 1
+
+- **`/admin/bot-appearance`** — tombol Simpan Draft / Publish live sudah tersambung ke DB (`Setting`: `bot_appearance_draft_v1`, `bot_appearance_live_v1`).
+- **Tombol chat inline** — tab Tombol chat sekarang menjelaskan bahwa preview web hanya simulasi; tombol asli aktif di Telegram setelah **Publish ke live** dan user membuka `/start` lagi.
+- **Inline URL support** — action `Link HTTPS` masuk katalog backend dan dibangun sebagai URL button Telegram.
+- **Inline category shortcuts** — tombol chat bisa diarahkan langsung ke kategori produk tertentu dari `/start`, memakai callback pendek `ba_inline:N` dan dropdown kategori dari data produk admin.
+- **`/start` custom live** — welcome text per bahasa, label menu utama, dan inline shortcut dipakai saat config live aktif; fallback otomatis ke welcome lama jika config kosong/error.
+- **Media Phase 2** — upload banner foto + sticker WebP/GIF dari web panel ke Telegram untuk mendapatkan `file_id`; simpan ke `start_image_id` / `welcome_sticker_id` dan toggle media draft.
+- **Reset pabrik** — tombol admin untuk mematikan live custom, reset draft default, dan clear media welcome sehingga `/start` kembali ke bawaan script.
+- **Action catalog sync** — preview dan live custom menu sekarang mencakup semua tombol utama dari keyboard bawaan, termasuk **Reseller API** dan **Panel Pterodactyl**; action custom memanggil handler existing yang sama.
+- **Preview welcome default** — template pabrik Bot Appearance disamakan dengan `/start` bawaan: greeting, tanggal, ID Telegram, username, transaksi, saldo, BOT stats, dan shortcuts.
+- **Placeholder chips** — editor welcome sekarang menampilkan semua variabel yang didukung (`{userId}`, `{username}`, `{transactions}`, stats, tanggal, greeting, dll.) agar admin mudah sisipkan data dinamis.
+- **Inline shortcut default OFF** — mode pabrik tidak lagi menampilkan tombol inline di bawah bubble welcome; tombol inline hanya muncul jika admin mengaktifkan toggle.
+- **Inline button advanced** — tombol chat bisa tambah/hapus, pilih action internal lengkap, atau pilih `Link HTTPS` dengan validasi URL.
+- **Test preview + validation** — tombol **Kirim test** mengirim draft ke Telegram admin sebelum publish; save/publish/test menolak placeholder typo, label kosong/duplikat, action tidak dikenal, dan layout tombol melewati batas.
+- **Template preset** — dropdown template sekarang benar-benar mengubah komposisi menu: Default bot, Minimal, PPOB, Panel Ptero, dan Lengkap/Full.
+- **Menu ordering controls** — editor menu punya tombol naik/turun dan pindah baris (`R−/R+`); urutan menu disimpan dan dipakai runtime.
+- **Preview Telegram clearer** — preview membedakan area pesan `/start`, inline button di bawah pesan, dan reply keyboard bawah.
+- **Production-safe scope** — tidak mengubah flow checkout/payment/stock/delivery, hanya label/tampilan, shortcut, dan media welcome existing.
+
+---
+
+## [8.8.2] - 2026-07-06
+
+### Admin — Payment Gateway page polish
+
+- **`/admin/gateways`** — sidebar + topbar selaras dashboard utama (`admin-shell.js`, CSS sidebar di `admin-shared.css`).
+- **Static `/css`** — Express serve `public/css/` (perbaikan halaman PG logo besar / tanpa style).
+- **Badge gateway** — total **15** provider (bukan hardcode 12/11); `getTotalProviderCount()` di PaymentManager.
+
+### Bot UX
+
+- **Welcome `/start`** — escape `_` di @username Telegram (`escapeMarkdown`) — fix parse error Markdown legacy.
+- **Keyboard `/admin`** — layout grid 2 kolom (tombol panjang/destruktif full width).
+
+### Docs
+
+- **README** — tabel gateway + hitungan **15** provider; baris **Casaku**; bullet Terbaru diagnostik + polling 3 detik.
+- **PROGRESS / task.md** — sinkron entri Casaku (diagnostik admin, 12 unit test).
+
+## [8.8.1] - 2026-06-12
+
+### Payment — gateway Casaku (QRIS Indonesia)
+
+- **Adapter** — `services/payment/casaku.js`: API v2 generate QRIS, check-status (`paid`), webhook HMAC raw body (`sha256=` prefix), parser status defensif (`parseCasakuPaymentStatus`).
+- **Bot** — checkout/top-up, polling **3 detik**, manual cek status (`paymentReference` = `transactionId` Casaku); urutan gateway default setelah Sanpay.
+- **Admin** — tab Casaku (license key, QR ID, package IDs, webhook hint); **Diagnostik Casaku** (`POST /admin/payment-gateway/test-casaku`: profil → QRIS probe → check-status); test QRIS dari form tanpa wajib simpan dulu.
+- **Webhook** — `POST /casaku-callback` dengan verifikasi `X-Casaku-Signature`; toleransi amount unique code.
+- **Test** — `tests/payment/casaku.test.js` (12 skenario).
+
+### Admin — Payment Gateway halaman terpisah
+
+- **`/admin/gateways`** — halaman dedicated (15 gateway tabs); `public/admin-gateways.html` + `public/js/admin-gateways.js`.
+- **`admin.html`** — ~3.1k baris PG dihapus; sidebar/mobile link ke halaman baru; badge gateway summary tetap di dashboard.
+
+## [8.8.0] - 2026-06-12
+
+### Admin — tab PPOB Provider (kredensial tanpa .env)
+
+- **Panel PPOB Provider** — sidebar admin (IDR only): DigiFlazz form lengkap + placeholder Okeconnect/Sanpay/Qiospay; prioritas DB > `.env`.
+- **API** — `GET/POST /admin/settings/ppob-providers`; refresh `PpobManager` setelah simpan.
+- **Operasional** — markup, auto-sync, QRIS, saldo deposit, sync katalog di halaman yang sama.
+- **Test** — `tests/services/ppobProviderSettings.test.js`.
+
+### Docs — Bot Storefront Builder (DRAFT v0.3)
+
+- **Plan** — [`docs/BOT_STOREFRONT_BUILDER_PLAN.md`](docs/BOT_STOREFRONT_BUILDER_PLAN.md) v0.3: §25 unifikasi `getKeyboard`, §26 registry handler, §27 menuRouter vs userStates, §28 upload/import hardening, §29 error runtime.
+
+### Docs — Bot Storefront Builder (DRAFT v0.2)
+
+- **Plan** — [`docs/BOT_STOREFRONT_BUILDER_PLAN.md`](docs/BOT_STOREFRONT_BUILDER_PLAN.md) v0.2: tambah §18 migrasi `getMenuLabels`/`menuRouter`, §19 integrasi fitur existing (sticker, force join, telegramButtonSettings), §20 multi-bahasa, §21 edge cases runtime, §22 rate limit/export, §23 acceptance criteria, §24 template contoh; fix TOC monetisasi.
+
+### Docs — Bot Storefront Builder (DRAFT v0.1)
+
+- **Plan** — [`docs/BOT_STOREFRONT_BUILDER_PLAN.md`](docs/BOT_STOREFRONT_BUILDER_PLAN.md): kustom welcome + inline + reply menu lewat admin web + preview (Model A per instance); arsitektur, `actionId` catalog, security §11, optimasi §12, fase 0–5; monetisasi TBD.
+
+### PPOB — saldo deposit, type menu, QRIS prepaid, riwayat interaktif
+
+- **Saldo deposit DigiFlazz** — endpoint `/cek-saldo` (`cmd: deposit`); tombol di admin PPOB + command bot `/ppobsaldo` (admin).
+- **Menu level 4 (type)** — submenu Umum/Transfer setelah pilih brand bila katalog punya lebih dari satu `type`.
+- **QRIS checkout PPOB** — prepaid saja; toggle `ppob_qris_enabled` di admin; finalize gateway memicu `fulfillPpobAfterGatewayPayment`.
+- **Riwayat PPOB** — daftar inline per transaksi, pagination, tombol **cek ulang** status.
+- **i18n** — `ppob_choose_type`, `ppob_confirm_qris`, `ppob_deposit_balance`, dll. (5 bahasa).
+- **Test** — `tests/services/digiflazzDeposit.test.js`; perluasan `ppobCatalogRead.test.js`.
+
+---
+
+## [8.7.9] - 2026-06-12
+
+### PPOB prepaid — polling status, SN/token, sandbox
+
+- **Fix polling** — cek status prepaid = re-topup ke `/transaction` dengan `ref_id`, `buyer_sku_code`, `customer_no` (bukan endpoint `cmd: status` yang tidak valid).
+- **SN/token** — ekstrak `data.sn` dari response DigiFlazz; ditampilkan ke user saat transaksi sukses (`ppob_status_serial`) dan disimpan di `produkInfo`.
+- **Sandbox** — `PPOB_DIGIFLAZZ_TESTING=true` mengirim `testing: true` pada top-up prepaid (selaras postpaid); polling re-topup ikut kirim flag yang sama.
+- **Test** — `tests/services/digiflazzPrepaid.test.js`.
+- **QA CLI** — `node tools/ppob-sandbox-smoke.js [sku] [nomor] [ref_id]` untuk uji create + poll tanpa bot.
+
+---
+
+## [8.7.8] - 2026-06-12
+
+### PPOB — sync pasca + menu 3 level (kategori → brand → produk)
+
+- **Fix katalog** — `price-list` pascabayar memakai `cmd: "pasca"` (bukan `postpaid`) agar tagihan PLN/PDAM ikut tersinkron.
+- **Menu bot** — Pulsa, Data/Paket Data, Games, E-Money, dan Pascabayar: pilih kategori → pilih brand/operator → pilih produk.
+- **i18n** — key `ppob_choose_brand`, `ppob_back_to_brands` (id/en/ms/zh/hi).
+- **Test** — `tests/services/ppobCatalogRead.test.js`.
+
+---
+
+## [8.7.7] - 2026-06-12
+
+### PPOB postpaid DigiFlazz (tagihan)
+
+- **API** — inquiry (`inq-pasca`), bayar (`pay-pasca`), cek status (`status-pasca`) di adapter DigiFlazz.
+- **Katalog** — sync produk postpaid bersama prepaid; harga ditentukan saat inquiry.
+- **Bot** — alur: pilih produk tagihan → nomor pelanggan → cek tagihan → konfirmasi → potong saldo → bayar.
+- **Sandbox** — `PPOB_DIGIFLAZZ_TESTING=true` mengirim flag `testing` ke API.
+
+---
+
+## [8.7.6] - 2026-06-12
+
+### Refactor — flow PPOB keluar dari `bot.js`
+
+- **`features/user/flowPpob.js`** — logic user PPOB (menu, search, checkout saldo, cek status, history).
+- **`features/user/registerPpobBotHandlers.js`** — registrasi handler Telegraf PPOB (pola sama seperti Stars).
+- **`services/ppob/ppobRuntime.js`** — singleton manager + flag menu PPOB.
+- **`services/ppob/ppobCatalogRead.js`** — baca cache katalog DigiFlazz + helper pagination.
+- **`bot.js`** — entrypoint lebih ringan; `getPpobBotDeps()` untuk injeksi dependency.
+
+Tidak ada perubahan perilaku user-facing; fondasi untuk postpaid & test unit flow.
+
+---
+
+## [8.7.5] - 2026-06-12
+
+### PPOB DigiFlazz — markup, auto-sync, admin UX
+
+- **Markup harga** — `services/ppob/ppobPricing.js` + `ppobSettings.js`; harga jual = modal + % + biaya tetap (ceil); terapkan saat sync & checkout katalog live.
+- **Auto-sync katalog** — `services/ppob/ppobJobs.js` di startup Mongo; interval & toggle **hanya** dari admin panel (Produk → Markup & auto-sync).
+- **Sinkron terpusat** — `services/ppob/ppobCatalogSync.js` dipakai admin sync + auto-sync + cache Setting.
+- **Admin** — `GET/POST /admin/settings/ppob`; panel Produk: markup/auto-sync (hanya `BASE_CURRENCY=IDR`).
+- **UX bot** — hasil pencarian PPOB pakai `ppob_search_use_buttons` (bukan "coming soon").
+- **Test:** `tests/services/ppobPricing.test.js`.
+
+---
+
+## [8.7.4] - 2026-06-12
+
+### Flash Sale — broadcast notif ke semua user
+
+- **Admin Promo** — checkbox *Kirim notifikasi Flash Sale* saat simpan/aktifkan promo; antrian `broadcastQueue`.
+- **Pesan user** — ringkasan promo + tombol **Lihat Promo** (`goto_flash_sale`); teks per bahasa user.
+- **Dedupe** — promo identik tidak di-broadcast ulang dalam 5 menit.
+- **Refactor** — menu promo user dipindah ke `features/user/flowFlashSale.js`.
+- **Test:** `tests/services/flashSaleNotify.test.js`.
+
+---
+
+## [8.7.3] - 2026-06-12
+
+### Marketplace UX Sprint 2 — Watchlist stok + qty favorit
+
+- **Watchlist (A1)** — subscribe per produk/varian; DM pribadi saat stok naik (paralel broadcast restock global).
+- **Qty favorit (C2)** — simpan jumlah default; tombol ⭐ di layar qty; prompt setelah pilih jumlah.
+- **Menu** — **🔔 Watchlist** di keyboard utama; kelola/hapus item + beli langsung jika stok ada.
+- **Hook** — `onStockAdded` memanggil `watchlistNotifyService.notifyStockAvailable`.
+- **Admin panel** — tab Broadcast → **Watchlist Stok**: on/off, cooldown (jam), max item/user (MongoDB, bukan .env).
+- **Admin panel** — tab Broadcast → **Garansi & SLA Checkout**: jam batas refund (MongoDB, bukan `.env`).
+- **i18n** — id + en (`watchlist_*`, `favorite_qty_*`, `menu_watchlist`).
+- **Test:** `tests/services/marketplaceUxSprint2.test.js`.
+
+---
+
+## [8.7.2] - 2026-06-12
+
+### Marketplace UX Sprint 1 — Beli lagi + SLA/bukti delivery
+
+- **Beli lagi** — tombol `buy_again:{refId}` dari pesan sukses & riwayat pembelian; qty/varian dari transaksi SUCCESS.
+- **SLA checkout** — blok garansi + refund + delivery di layar konfirmasi bayar (`formatCheckoutSlaBlock`).
+- **Bukti delivery** — hash 8 char + timestamp di pesan sukses & riwayat; field `Transaction.deliveryProof`.
+- **Saldo + gateway** — parity `deliveryProof` di checkout saldo AUTO dan `transactionFinalize`.
+- **Admin panel** — Broadcast → Garansi & SLA Checkout (`trust_sla_refund_hours`, default 24 jam).
+- **i18n** — id + en (`buy_again_*`, `checkout_sla_*`, `delivery_proof_*`).
+- **Test:** `tests/services/deliveryProof.test.js`.
+
+---
+
+## [8.7.1] - 2026-06-12
+
+### Seller analytics actionable (tenant)
+
+- **Endpoint** `GET /admin/analytics/seller-insights.json` — abandon produk/varian (drop bayar + qty pending), jam puncak restock vs konversi (WIB), saran stok otomatis.
+- **`StockRestockLog`** — log penambahan stok via hook `onStockAdded` (admin web + Telegram).
+- **Admin UI** — section "Insight Seller" di tab Pertumbuhan & Analitik (kartu saran + tabel + chart).
+- **Test:** `tests/services/sellerInsights.test.js`.
+
+---
+
+## [8.7.0] - 2026-06-12
+
+### Cryptomus — pembayaran kripto (USDT)
+
+- **Gateway baru `cryptomus`:** invoice USD via Cryptomus API; default payout USDT / network TRON.
+- **Checkout produk + top-up saldo** — konversi otomatis dari IDR/MYR/INR ke USD.
+- **Webhook** `POST /cryptomus` — verifikasi signature MD5, finalize `paid` / `paid_over`.
+- **Admin panel** — tab Cryptomus (merchant UUID, payment API key, koin/network, lifetime).
+- **USD native** — masuk `USD_NATIVE_GATEWAYS` (toko USD tanpa hybrid local gateway).
+- **Test:** `tests/payment/cryptomus.test.js`.
+
+### Restock notify otomatis (per varian + Buy now)
+
+- **`services/restockNotify.js`** — broadcast otomatis saat stok ditambah (admin bot, admin web, bulk CSV, update varian).
+- Satu pesan per varian: Added + Current stock + inline **Beli sekarang** → pilih jumlah → bayar.
+- Pengaturan on/off + minimum stok **hanya Admin → Broadcast → Notifikasi Restock** (MongoDB Setting, bukan `.env`).
+- **Test:** `tests/services/restockNotify.test.js`.
+
+---
+
+## [8.6.16] - 2026-06-12
+
+### Bot API UX hotfix — Desktop compat, QR, salin stok
+
+- **sendRichMessage + Telegram Desktop:** fallback otomatis ke plain Markdown bila ada `plainText` (hindari placeholder "perbarui Telegram").
+- **QRIS checkout/top-up:** caption tagihan kembali **satu pesan** (foto QR + detail lengkap + tombol inline).
+- **Expired QR:** `formatQrisExpiryLabel` — tampil tanggal + jam WIB (`13 Jun 2026, 00:08 WIB`); parse `expiresAt` gateway lebih defensif.
+- **Salin stok multi-qty:** tombol `copy_text` salin **semua** baris stok (join `\n`), bukan hanya item pertama (batas API 256 char).
+- **Test:** compat rich + multi-baris `buildSuccessCopyKeyboard`.
+
+---
+
+## [8.6.15] - 2026-06-12
+
+### Admin panel — profil bot i18n (tanpa wajib .env)
+
+- **Admin → Tombol Telegram → Profil bot per bahasa:** toggle sync, edit nama/deskripsi per id/en/ms/zh/hi, tombol **Simpan & sinkron ke Telegram**.
+- **API:** `GET /admin/settings/bot-profile.json`.
+- `.env` `TELEGRAM_BOT_PROFILE_SYNC` opsional (CI/deploy); pengguna panel cukup centang di web.
+
+### Bot API UX — datetime rich, copy sukses, profil i18n
+
+- **date_time di riwayat + invoice:** rich markdown `tg://time?unix=…` di semua builder relevan; riwayat plain pakai entity `date_time` saat toggle ON.
+- **Checkout QR:** caption rich pending menyertakan `expiredAt` (Pakasir/Sanpay).
+- **copy_text + efek sukses:** `buildSuccessCopyKeyboard` — salin Ref ID + opsional baris stok pertama; `message_effect` celebrate di delivery & top-up sukses.
+- **Profil bot per bahasa:** `telegramBotProfile.js` sync `setMyName`/`setMyDescription` untuk id/en/ms/zh/hi; override per bahasa via Setting; `TELEGRAM_BOT_PROFILE_SYNC` di `.env`.
+- **Admin API:** `POST /admin/settings/bot-profile/sync`.
+- **Test:** coverage `formatRichDateTimeMarkdown`, `composeMessageWithSegments`, `buildSuccessCopyKeyboard`, history `dateAt`.
+
+---
+
+## [8.6.14] - 2026-06-12
+
+### Bot API P1 lanjutan — Rich Messages, reaksi, poll link, date_time
+
+- **Rich Messages (10.1) diperluas:** top-up sukses (`transactionFinalize`), riwayat pembelian/deposit (`flowHistory`), QR pending — foto pendek + detail rich terpisah (`paymentMessage` / `processCheckout`).
+- **Copy ref checkout:** tombol `copy_text` Ref ID (sudah ada di `paymentMessage.js`).
+- **Tombol inline modern (9.4):** `smartCallback` / styled URL di poll link (tanpa ubah pola existing).
+- **Poll link incremental:** `PollCampaign.linkUrl` / `linkLabel`, wizard `POLL_WAITING_LINK`, tombol `styledUrl` di keyboard vote; i18n `tools/patch-poll-phase5-link-i18n.js`.
+- **setMessageReaction (7.0):** `trySetMessageReaction` / `tryReactToCallbackMessage` di `telegramUx.js` — 🎉 sebelum hapus QR & saat cek status/delivery; toggle admin default OFF.
+- **Entity date_time (9.5):** `utils/telegramDateTime.js` + toggle admin; helper `sendTextWithOptionalDateTime` + test; riwayat pakai `formatDateLabel` (Markdown legacy).
+- **Admin:** checkbox reaksi + date_time di tab Tombol Telegram; i18n id/en/ms/zh.
+- **Test:** `telegramRichMessage`, `telegramUx`, `telegramDateTime`, `pollRichMedia` (7 test).
+
+---
+
+## [8.6.13] - 2026-06-12
+
+### Poll broadcast P2 quick win — foto header + deskripsi
+
+- **Model:** `PollCampaign.description`, `PollCampaign.headerPhotoFileId` (opsional, backward compatible).
+- **Admin flow `/polling`:** langkah deskripsi + upload foto header sebelum konfirmasi; skip dengan `-` / `lewati`.
+- **Kirim:** foto + caption + inline keyboard (vote tetap custom, bukan native `sendPoll`).
+- **Live vote / tutup poll:** `editMessageCaption` otomatis jika ada foto; caption dipotong aman ≤1024 karakter.
+- **i18n:** `node tools/patch-poll-phase4-media-i18n.js` (id/en/ms/zh/hi).
+- **Test:** `tests/poll/pollRichMedia.test.js`.
+
+---
+
+## [8.6.12] - 2026-06-12
+
+### Rich Messages (Bot API 10.1 P1) — invoice pembelian
+
+- **Helper:** `utils/telegramRichMessage.js` — `sendRichMessage` via `callApi`, fallback otomatis ke `sendMessage` Markdown legacy.
+- **Flow:** pesan sukses pembelian (≤15 item) pakai tabel ringkasan + stok per baris dalam spoiler `||...||`.
+- **Setting:** `telegram_rich_messages_enabled` (default OFF) di `services/telegramButtonSettings.js`.
+- **Admin:** toggle di tab **Tombol Telegram** + i18n id/en/ms/zh.
+- **Test:** `tests/utils/telegramRichMessage.test.js`.
+
+**Catatan:** butuh client Telegram yang mendukung Rich Messages; jika API/client lama, bot otomatis kirim format Markdown seperti sebelumnya.
+
+---
+
+## [8.6.11] - 2026-06-12
+
+### Force join: auto-approve join request + Mini App (Bot API 10.1 P3)
+
+- **Join request:** handler `chat_join_request` — auto-approve ke channel/grup private dengan "Approve new members".
+- **Admin panel:** checkbox auto-approve + field URL Mini App HTTPS (opsional) di tab Force Join.
+- **API:** `GET/POST /admin/settings/force-join` field `joinRequestAutoApprove`, `joinRequestWebAppUrl`.
+- **Service:** `services/forceJoinService.js` — settings cache, `answerChatJoinRequestQuery` / `sendChatJoinRequestWebApp`, fallback `approveChatJoinRequest`.
+- **UX:** setelah join via force join check, hapus prompt + tampilkan welcome `/start`; coba approve pending saat user klik "Sudah join".
+- **i18n:** admin id/en/ms/zh + bot id/en/ms/zh untuk validasi URL/target.
+- **Test:** `tests/services/forceJoinService.test.js`.
+
+**Catatan deploy:** bot harus **admin** di target + hak **invite users**. URL Mini App hanya membuka WebApp; approve final setelah validasi butuh backend Mini App tenant sendiri.
+
+---
+
+## [8.6.10] - 2026-06-08
+
+### copy_text button + message effect (Bot API 9.x–10.0)
+
+- **Salin Ref ID:** tombol `copy_text` (CopyTextButton) di pesan pembayaran — user tap untuk salin Ref ID, tidak salah ketik.
+- **Efek confetti:** `message_effect_id` 🎉 pada pesan sukses delivery (private chat); fail-safe auto kirim ulang tanpa effect jika ID invalid.
+- **Helper:** `copyTextButton()` (`telegramButtons.js`), `MESSAGE_EFFECTS`/`withMessageEffect`/`sendWithEffectFallback` (`telegramUx.js`).
+- **i18n:** `copy_ref_id_button` id/en/ms/zh/hi.
+- **Test:** perluasan `telegramButtons.test.js` + `telegramUx.test.js`.
+
+---
+
+## [8.6.9] - 2026-06-08
+
+### Tampilan produk: katalog tombol nomor (gaya ringkas)
+
+- **Daftar varian** diformat rapi di body: `1. Nama` + baris `💵 harga · ✅ N stok` / `❌ Habis`.
+- **Tombol nomor** (1-N, 5 per baris) menggantikan tombol nama panjang — lebih ringkas & rapi.
+- **Ketik manual nomor**: state `WAITING_PRODUCT_NUMBER` — user bisa ketik angka untuk pilih produk.
+- **i18n** id/en/ms/zh/hi: `user_stock_available`, `user_pick_product_hint`, `user_pick_product_invalid`; `user_variations_title` disederhanakan.
+
+---
+
+## [8.6.8] - 2026-06-03
+
+### Telegram API quick wins
+
+- **UX:** `pulseChatAction` (typing / upload_photo) di checkout, QR payment, dan invoice Stars.
+- **Link preview:** `link_preview_options.is_disabled` otomatis pada pesan/caption berisi URL (gateway, broadcast).
+- **Admin Stars:** `GET /admin/settings/telegram-stars/balance.json` — `getMyStarBalance` + `getStarTransactions`; kartu saldo di panel Telegram Stars.
+- **Rekonsiliasi:** `reconcileStarTransactions` + `GET .../reconcile.json` — cocokkan `getStarTransactions` (charge id) vs MongoDB; tombol **Periksa** menampilkan pembayaran masuk yang belum ter-record.
+- **Tombol berwarna 100%:** sisa tombol mentah (check_status/cancel gateway non-QR, force_join, manual_done, panel renew/cancel/back) dimigrasi ke `smartCallback`; `inferButtonOpts` diperluas.
+- **Konsistensi warna (belum merata fix):** navigasi/refresh/bahasa (`refresh_prod`, `goto_products`, `List Kategori`, `lang_set`, `show_checkout_options`) kini selalu **primary** (biru); produk tidak lagi salah dapat emoji "back".
+- **Panduan emoji:** `SLOT_RECOMMENDATIONS` (emoji unicode + warna per slot) + tabel rekomendasi di admin panel (slot → warna → emoji → fungsi).
+- **Test:** `telegramUx.test.js`, `telegramStarsBalance.test.js`, perluasan `telegramFormat.test.js` + `telegramButtons.test.js`.
+
+---
+
+## [8.6.7] - 2026-06-03
+
+### smartCallback — tombol berwarna/emoji di seluruh bot
+
+- **Helper:** `inferButtonOpts()` + `smartCallback()` — drop-in pengganti `Markup.button.callback` dengan style/emoji otomatis dari pola `callback_data`.
+- **Migrasi:** `bot.js` + flow saldo/topup/history/refund/transfer/checkout/stars/poll (~170 tombol).
+- **Override:** `styledCallback` eksplisit tetap dipakai di checkout payment, broadcast konfirmasi, admin delete/stock.
+- **Test:** perluasan `telegramButtons.test.js`.
+- **Default panel:** tombol berwarna **OFF**, emoji premium **ON** (instance baru / belum ada row `Setting`).
+
+---
+
+## [8.6.6] - 2026-06-03
+
+### Tombol Telegram — toolkit emoji + pesan biasa
+
+- **Admin panel:** panduan operator (collapsible), tempel ID + **Validasi** (`getCustomEmojiStickers`), **Kirim preview** ke Telegram admin.
+- **API:** `POST /admin/settings/telegram-buttons/validate-emoji`, `POST .../test-preview`.
+- **Service:** `services/telegramCustomEmoji.js` — parse ID, validasi, preview pesan HTML + tombol inline.
+- **Pesan biasa:** `broadcastQueue.sendPayloadToUser` auto-`enrichPayloadWithHtml` (custom emoji di teks/caption non-broadcast juga).
+- **Helper:** `prepareSendMessageOpts`, `buildHtmlMessageWithEmoji` di `utils/telegramFormat.js`.
+- **Test:** `tests/services/telegramCustomEmoji.test.js`, perluasan `telegramFormat.test.js`.
+- **Simpan:** verifikasi ID via `getCustomEmojiStickers` saat emoji premium aktif + ID terisi (bot harus online).
+- **UI:** tombol **Isi ke slot emoji** setelah validasi berhasil; auto-fill preview ID pertama.
+- **i18n bot:** key `telegram_buttons_*` di `utils/i18n/lang/id.js` & `en.js`.
+
+---
+
+## [8.6.5] - 2026-06-03
+
+### Telegram Bot API 9.4+ — tombol berwarna & emoji premium
+
+- **Helper:** `utils/telegramButtons.js` — `styledCallback()` dengan `style` (primary/success/danger) + `icon_custom_emoji_id` via env.
+- **HTML broadcast:** `utils/telegramFormat.js` — konversi entities → HTML (`<tg-emoji>`) untuk custom emoji di broadcast teks/media.
+- **UX:** checkout payment, QR cancel/check, varian picker, PPOB confirm, admin delete/stock confirm, stock broadcast, broadcast konfirmasi (tombol YA/BATAL + tetap ketik YA).
+- **Admin panel:** Settings → **Tombol Telegram** — toggle warna & emoji premium + ID per slot; disimpan di MongoDB `Setting` (tanpa variabel `.env`).
+- **Service:** `services/telegramButtonSettings.js` — cache startup + API `GET/POST /admin/settings/telegram-buttons`.
+- **Test:** `tests/utils/telegramButtons.test.js`, `tests/services/telegramButtonSettings.test.js`, `tests/utils/telegramFormat.test.js`, perluasan `flowBroadcast.test.js`.
+
+---
+
+## [8.6.4] - 2026-06-03
+
+### P2 — Multi-varian produk (harga & stok per varian)
+
+- **Schema:** `Product.variants[]` (label, harga, stok, priceStars, isActive); parent `harga`/`stok` disinkron dari varian aktif.
+- **Checkout bot:** pilih varian → qty → payment; backward compatible jika `variants` kosong.
+- **Stok:** `claimStockVariant`, reserve/release P0/P1 per `variantIndex`; deliver AUTO/MANUAL aware varian.
+- **Admin:** POST/PUT/GET produk + textarea JSON varian di halaman admin products.
+- **i18n:** key varian di 5 bahasa bot.
+- **Test:** `tests/product/productVariants.test.js`.
+
+---
+
+## [8.6.3] - 2026-06-03
+
+### P1 — Reserve stok saat checkout gateway masih PENDING
+
+- **Service:** `services/pendingCheckoutStock.js` — MANUAL potong `stok`/`totalTerjual`; AUTO `Product.claimStock()` → `pendingClaimedItems`.
+- **Checkout:** `saveGatewayProductTransaction()` di `features/checkout/processCheckout.js` (semua gateway produk); Stars product di `flowTelegramStars.js`.
+- **Finalize:** `transactionFinalize.js` — tidak double-reserve; AUTO deliver dari pre-claim.
+- **Release (P0):** `manualStockRelease.js` — restore item AUTO ke `kontenProduk` saat cancel/expired/refund.
+- **Test:** `tests/transaction/pendingCheckoutStock.test.js`.
+
+---
+
+## [8.6.2] - 2026-06-03
+
+### P0 — Auto-release stok manual (cancel / expired / refund)
+
+- **Service:** `services/manualStockRelease.js` — lepas flag `manualStockReserved` secara atomik, kembalikan `stok` + kurangi `totalTerjual`, catat audit `MANUAL_STOCK_RELEASED`.
+- **Trigger:** cancel transaksi user (`cancel_` / `cancel_trx:`), AutoGoPay polling `FAILED`, admin reject review, Stars expire/cancel batch, pre-checkout Stars expired, refund approve (bot + admin web).
+- **Test:** `tests/transaction/manualStockRelease.test.js`.
+
+### Polling / vote broadcast (bot + admin web)
+
+- **Poll campaign:** choice & rating (skala 1–5/1–10, numeric/stars); broadcast ke target user; tutup otomatis (scheduler) + manual (`/pollclose` / admin web).
+- **Vote UX:** inline `poll_vote:<pollId>:<optionId>`; live hitungan di pesan yang di-vote; tidak ada reply spam setelah vote; banned user ditolak.
+- **i18n:** pesan poll/hasil mengikuti `messageLang` campaign; key live stats & export di 5 bahasa bot.
+- **Export suara:** `/pollexport` (bot) + **`GET /admin/broadcast/polls/:id/export`** + tombol **Export CSV** di panel hasil polling admin web (kolom: userId, username, optionId, optionLabel, votedAt).
+- **Partisipasi:** baris `votes/targets (pct%)` di hasil poll, footer live, dan panel admin.
+- **Keyboard saat tutup:** tombol vote dicabut dari pesan sumber broadcast; klik pada poll tertutup juga menghapus keyboard di chat user tersebut.
+- **File utama:** `services/pollBroadcastService.js`, `features/admin/flowPollBroadcast.js`, `models/PollCampaign.js`, `models/PollVote.js`, `routes/admin/broadcast.js`, `public/admin.html`, `public/js/admin-i18n.js`.
+
+---
+
+## [8.6.1] - 2026-05-27
+
+### P1 audit refund + P2a session Mongo TTL
+
+- **Audit log refund (Telegram):** approve/reject refund menulis `REFUND_REQUEST_APPROVED` / `REFUND_REQUEST_REJECTED` ke `AdminAuditLog` (`logTelegramAdminAudit`).
+- **Session persist:** `models/BotSession.js` + `services/botSessionStore.js` — `userStates`, `adminStates`, `refundSessions` survive restart (hydrate on startup, TTL index).
+- **Enum audit:** tambah `STARS_REFUND`, `REFUND_REQUEST_*`.
+
+### I18N Hindi (bot) — penuh untuk scope Telegram
+
+- **1017/1017** key `t()` yang dipakai di `bot.js` / `features` / `services` ada di `tools/hi-user-texts.js` (dulu ~268, ~23%).
+- Skrip baru: `tools/generate-hi-user-texts.js`, audit `tools/list-hi-missing-bot-keys.js`.
+- Regen: `node tools/generate-hi-user-texts.js && node tools/gen-hi-lang.js`.
+
+### Refund Requests di Admin Web Panel
+
+- Endpoint baru: `GET /admin/refund-requests.json`, `POST /admin/refund-requests/:id/approve`, `POST /admin/refund-requests/:id/reject`.
+- UI baru di `public/admin.html`: sidebar **Refund Requests**, badge pending, filter status, daftar request, aksi approve/reject.
+- Approve dari web panel tetap atomik (status request + kredit saldo user) + kirim notifikasi ke user Telegram + audit log admin.
+- **Manual order stock reserve:** stok manual sekarang di-reserve saat order masuk (saldo + finalize gateway) dengan guard `$gte`, sehingga stok 0 langsung tidak bisa lanjut checkout/order manual.
+- **Backward compatibility:** transaksi manual lama (yang belum reserve) tetap aman karena masih fallback potong stok saat `complete`.
+- **Admin bot UX:** notifikasi order manual ke admin kini punya tombol inline **Confirm Selesai** (`manual_done:<trxId>`) untuk proses langsung dari Telegram admin (status COMPLETED + potong stok + notif user/admin/channel).
+- **Manual order idempotency:** aksi complete dari admin web & tombol bot sekarang atomic/idempotent (klik ganda/admin ganda tidak trigger completion ganda).
+- **Manual order audit trail:** log detail disimpan di transaksi (`manualAuditLogs`) berisi actor, source, channel, status dari→ke, note, timestamp untuk kebutuhan dispute/refund.
+- **Manual input validator:** `requiredFields` kini validasi format email/username/phone/username|id sebelum order masuk queue admin.
+- **Admin Pending Orders UX:** badge `Reserved` + qty reserve tampil per order; aksi complete support catatan admin (opsional) yang ikut masuk audit trail.
+- **Manual order SLA reminder:** scheduler baru mengingatkan admin saat order manual `WAITING` melewati SLA, anti-spam cooldown per order, optional kirim ke channel, dan tercatat di audit log (`MANUAL_SLA_REMINDER_SENT`).
+
+---
+
+## [8.6.0] - 2026-05-27
+
+### Refund calculator, pengajuan refund, garansi admin, hardening P0/P1
+
+- **Kalkulator refund (user):** sisa hari garansi dihitung otomatis dari tanggal beli (tanpa step input manual); disclaimer & notifikasi ke admin setelah hitung; status garansi (aktif/habis/none) di riwayat pembelian (`features/user/flowRefund.js`, `features/user/flowHistory.js`, i18n 5 bahasa).
+- **Pengajuan refund:** model `RefundRequest`; tombol ajuan setelah estimasi; admin approve/reject via inline keyboard; kredit saldo atomik (`session.withTransaction`); pesan admin dihapus setelah aksi; unique partial index cegah double refund per `userId+refId`.
+- **Garansi admin (bot):** konfigurasi hari/fee per tipe garansi disimpan di `Setting`; menu **Garansi Refund** + command `/garansiset`.
+- **Hardening P0:** `monitorAuth` fail-closed di `NODE_ENV=production`; `bannedGuard` fail-closed on error; anti double refund submit.
+- **Hardening P1:** unique partial index `gatewayTransactionId` pada `Transaction`; polling Qiospay/Sanpay/AutoGoPay pakai atomic claim; Tripay webhook `source: webhook_tripay`.
+- **File utama:** `models/RefundRequest.js`, `models/Transaction.js`, `bot.js`, `bot/middlewares/guards.js`, `services/payment/polling.js`, `routes/webhooks.js`.
+
+---
+
 ## [8.5.0] - 2026-05
+
+### Auto Recap Scheduler — Harian/Mingguan/Bulanan (2026-05-25)
+
+- **Fitur baru**: Bot otomatis mengirim ringkasan penjualan ke admin (dan opsional ke channel) secara terjadwal.
+- **3 jenis recap**:
+  - **Harian** — revenue, top-up, refund, user baru/aktif, gateway breakdown, top 3 produk, stok menipis.
+  - **Mingguan** — semua di atas + perbandingan vs minggu lalu (growth %), top 5 produk.
+  - **Bulanan** — semua di atas + total user, rata-rata revenue per hari, growth vs bulan lalu.
+- **Admin panel button**: Tombol "📊 Recap" di menu `/admin` → sub-menu pilih Harian/Mingguan/Bulanan.
+- **Zero config**: Tidak butuh ENV tambahan — langsung jalan dengan default (harian 23:55, mingguan Senin 08:00, bulanan tanggal 1 08:00).
+- **File baru**: `services/recapScheduler.js`
+- **File diubah**: `bot.js` (startup scheduler + admin panel button + action handlers)
 
 ### README.md — Engineering Deep-Dive + Performance Benchmarks + Roadmap (2026-05-12)
 

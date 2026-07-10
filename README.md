@@ -42,6 +42,7 @@
 
 ## 🆕 Terbaru
 
+- **🎨 Bot Appearance Phase 1/2** — Admin `/admin/bot-appearance` bisa simpan draft/publish live ke DB; `/start` memakai welcome text, label menu, inline shortcut, dan banner foto custom dengan fallback aman.
 - **🎨 Admin PG v8.8.2** — halaman `/admin/gateways` pakai sidebar seperti dashboard; badge gateway **X/15** (bukan 12); serve CSS `/css` fix UI rusak.
 - **🤖 Bot UX v8.8.2** — welcome `/start` aman untuk username dengan `_`; keyboard `/admin` grid 2 kolom.
 - **💳 Casaku v8.8.1** — payment gateway QRIS Indonesia (`api.casaku.id`): checkout/top-up, polling 3 detik, webhook HMAC, tab admin + **Diagnostik Casaku** (profil → QRIS probe → check-status). Webhook: `{PUBLIC_URL}/casaku-callback`.
