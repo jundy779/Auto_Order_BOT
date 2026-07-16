@@ -6,7 +6,109 @@ Semua perubahan penting pada proyek ini didokumentasikan di file ini.
 
 ---
 
-## [Unreleased] - 2026-07-07
+## [8.9.0] - 2026-07-13
+
+### Telegram Bot API 10.2 — Rich Message receipt
+
+- **Receipt produk + top-up aktif** — toggle Rich Messages kini benar-benar mencoba `sendRichMessage`; plain Markdown menjadi fallback aman pada seluruh error API tanpa mengulang finalisasi transaksi atau delivery.
+- **Payload + data aman** — keyboard dan efek pesan ikut diteruskan, sedangkan credential stok dinamis di-escape sebelum dirender sebagai spoiler.
+- **QR tidak berubah** — pembayaran QR tetap dikirim sebagai satu foto + caption sampai contract test Bot API 10.2 selesai.
+
+### Telegram Bot API 10.2 — Rich Message receipt
+
+- **Receipt produk + top-up aktif** — toggle Rich Messages kini benar-benar mencoba `sendRichMessage`; plain Markdown menjadi fallback aman pada seluruh error API tanpa mengulang finalisasi transaksi atau delivery.
+- **Payload + data aman** — keyboard dan efek pesan ikut diteruskan, sedangkan credential stok dinamis di-escape sebelum dirender sebagai spoiler.
+- **QR tidak berubah** — pembayaran QR tetap dikirim sebagai satu foto + caption sampai contract test Bot API 10.2 selesai.
+
+### Dokumentasi promosi sewa
+
+- **Halaman calon penyewa** — tambah `PROMOSI_SEWA_BOT.md` berisi manfaat, fitur, gateway, status layanan, paket harga, alur aktivasi, demo, dan kontak tanpa mengubah fungsi README sebagai overview/progress teknis.
+
+### Rental — Bot expiry production-safe
+
+- **Pterodactyl Client API source** — expiry instance dibaca dari Server Description memakai marker `Expired: YYYY-MM-DD`, ISO, atau legacy DD/MM; cache Setting dan `BOT_RENTAL_EXPIRES_AT` hanya fallback saat API gagal.
+- **Admin + reminder** — status read-only tampil pada shared sidebar seluruh halaman; scheduler 6 jam mengirim milestone per-admin dengan dedupe persisten dan aman terhadap kegagalan parsial.
+- **Enforcement aman** — status `INVALID`/`EXPIRED` memblokir kewajiban transaksi baru pada checkout retail/Stars/PPOB/reseller/panel/flash sale/web/WA/transfer, sedangkan webhook, polling, finalizer, delivery, refund, dan kredit deposit existing tetap berjalan.
+
+### Docs — Reseller System production plan
+
+- **Audit dan source of truth** — tambah `docs/RESELLER_SYSTEM_PLAN.md` untuk menyimpan hasil audit Reseller H2H existing, keputusan satu bot/dua role, satu saldo reseller, shared inventory untuk Telegram + API, desain `/admin/resellers`, target struktur service/feature agar `bot.js` tidak membengkak, security/database constraints, Phase 0–6, acceptance criteria, rollback, dan open decisions. Status masih DRAFT; belum mengklaim flow reseller production selesai.
+- **Plan v0.2 security/global currency** — tambah aturan identitas Telegram hanya dari `ctx.from.id`, closed ledger anti-manipulasi saldo, Telegram/API idempotency, H2H credential/RBAC/rate-limit baseline, anomaly reconciliation, satu instance = satu currency = satu wallet reseller, integer minor-unit untuk IDR/MYR/INR/USD, snapshot deposit cross-currency, migrasi dual-read/write, dan security test matrix.
+- **Plan v0.4 MongoDB/capacity** — freeze query budget per flow, cache matrix yang melarang saldo/stok/security-lock sebagai keputusan cached, index berbasis access pattern, cursor pagination dan larangan N+1, daily analytics rollup, reconciliation incremental, retention/TTL, connection-pool budget lintas instance, workload Pilot/Growth/Stretch, latency/reliability target, load/soak test, monitoring, dan rollout bertahap. Seluruh angka masih target validasi non-production, bukan klaim SLA.
+- **Phase 0 baseline (kode aditif)** — tambah `utils/resellerMoney.js` (integer minor-unit IDR/MYR/USD/INR + currency invariant), `services/reseller/resellerApiMode.js` (mode `disabled|sandbox|production`, default `disabled`, backward-compatible dengan flag lama), dan `services/reseller/replicaSetPreflight.js` (deteksi replica set/mongos/standalone, dipasang log-only non-blocking di startup `bot.js`). Helper money/mode belum dipasang ke endpoint H2H sehingga API reseller tetap default nonaktif dan checkout retail tidak berubah. Audit index model reseller: `Reseller`/idempotency/nonce solid, `ResellerTransaction.orderId` belum unique (ditunda Phase 3). Test baru `tests/reseller/*` 24/24 pass.
+- **Phase 1 extract domain (behavior-preserving)** — pindahkan seluruh handler Telegram reseller (registrasi OTP, api key, saldo, menu, docs, menu Reseller API) dari `bot.js` ke `features/reseller/registerResellerBotHandlers.js` (~488 baris keluar dari `bot.js`), dipanggil di posisi asli agar urutan `bot.on('text')` tidak berubah. Hapus endpoint inline `GET/POST /admin/reseller/settings` yang duplikat dengan `routes/admin/resellerSettings.js`; runtime flag `RESELLER_API_ENABLED` disinkron via callback, RBAC POST diperketat lewat role matrix. Tanpa perubahan UX/logika. Verifikasi: `jest tests/reseller tests/smoke` 28/28 pass.
+- **Phase 2 account + approval** — lifecycle status reseller (`PENDING_REVIEW|APPROVED|ACTIVE|SUSPENDED|REJECTED`) via field `status` + `utils/resellerStatus.js` (state machine, `deriveStatus` backward-compatible). Registrasi kini masuk antrean approval (bukan auto-aktif via deposit); admin approve/reject/suspend/reactivate lewat web panel (`services/reseller/resellerAccountService.js`, endpoint `/admin/reseller/applications` + `/admin/reseller/:id/action`, RBAC `reseller.approve`) dengan notif Telegram ke reseller + audit `RESELLER_STATUS_CHANGE`. Reseller Hub bot adaptif ke status (helper `buildHubState`). `isActive` tetap sumber kebenaran order; SUSPENDED/REJECTED paksa nonaktif. i18n 5 bahasa bot + 4 bahasa admin (skrip idempotent). Backward-compatible untuk reseller lama. Verifikasi: `jest tests/reseller tests/smoke` 50/50 pass.
+- **Phase 4A shared order service** — fondasi order reseller bersama supaya stok reseller & retail tidak terduplikasi. Tambah `resellerPrice` + `resellerEnabled` di `Product`; resolver memakai `resellerPrice ?? priceH2H` tanpa fallback `harga-2000`. Service order mengklaim stok retail yang sama, mendebit saldo, dan menulis ledger dalam MongoDB transaction. Jalur non-transaction kini ditolak; produk varian ditutup sementara.
+- **Phase 3 deposit production-safe** — perbaiki flaw lama: deposit reseller dulu nyasar ke `User.saldo` (dompet retail), kini punya jalur resmi ke `Reseller.balance`. Field opsional `resellerDeposit { isDeposit, resellerId, creditedAt }` di `Transaction`; ditandai saat checkout via suffix param `topup:<amt>:rsl` (wrapper `createTransactionObject` di `processCheckout`, satu titik, tidak menyentuh ~15 jalur gateway; hanya reseller APPROVED/ACTIVE). Finalize TOPUP dicabang ke `services/reseller/resellerDepositService.js`: kredit `Reseller.balance` + ledger `ResellerTransaction(type='deposit')` + aktivasi (`activateIfEligible`) — semua **idempotent** via compare-and-set `resellerDeposit.creditedAt` (anti double-credit webhook+polling, rollback klaim bila gagal). Secret key ditampilkan **sekali** saat aktivasi (plaintext hanya di memori; persist hash+last4). Tombol Deposit di Hub (`reseller_deposit_start` → gateway → nominal `:rsl`) menggantikan tombol lama yang nyasar ke retail. Web admin: `GET /admin/reseller/deposits` + `/:id/ledger` (RBAC `reseller.approve`) + panel "Laporan Deposit Reseller" di admin panel. i18n bot 5 bahasa + admin 4 label (skrip idempotent). Backward-compatible (field opsional). Verifikasi: `jest tests/reseller tests/smoke` 57/57 pass.
+- **Phase 4B code complete** — Telegram katalog dan H2H API memakai shared order service; harga reseller tersedia di admin produk. Order wajib MongoDB transaction dan idempotency Telegram/API dipersist dengan unique index. Telegram Hub kini punya riwayat 10 order serta ambil ulang data produk dengan ownership check. Produk varian ditutup sementara. Production sign-off masih menunggu concurrency/fault QA pada replica set nyata.
+- **Phase 5A Reseller Center** — tambah halaman dedicated `/admin/resellers` dengan shell admin konsisten dan tab Applications, Wallet/Deposit, serta Settings. Halaman memakai endpoint/RBAC existing, menampilkan mode API fail-closed, dan menggantikan link reseller pada sidebar admin utama, gateway, dan bot appearance.
+- **Phase 5B overview + directory** — Reseller Center kini menampilkan statistik database nyata, directory dengan pencarian, dan ledger read-only per reseller. Tidak ada balance editing langsung; endpoint dibatasi auth/RBAC dan projection.
+- **Phase 5C orders admin** — tambah tab order reseller read-only dengan pencarian order ID/produk serta metadata reseller, qty, total, channel, dan waktu. Delivery credential, product data, idempotency key, dan API secret tidak dikirim ke browser.
+- **Phase 5D reconciliation** — tambah laporan read-only yang membandingkan saldo reseller dengan saldo ledger terakhir dan menampilkan MATCH/MISMATCH/NO_LEDGER. Sistem tidak melakukan koreksi otomatis; hasil menjadi pagar sebelum adjustment saldo dibuka.
+- **Phase 5E wallet adjustment** — kredit/debit saldo reseller kini hanya melalui service transaction-safe dengan alasan wajib, guard saldo non-negatif, immutable ledger before/after, RBAC khusus, admin audit, konfirmasi UI, dan notifikasi reseller.
+- **Phase 5F credential security** — owner dapat generate/rotate/revoke credential API per reseller aktif. Secret hanya tampil sekali, disimpan sebagai hash+last4, status/API key di UI dimasking, dan revoke/rotate langsung menolak credential lama tanpa mengaktifkan H2H global.
+- **Reseller Center Phase 5 complete** — akses view/approval/wallet/security kini dipisahkan per role, metadata credential hanya tersedia untuk owner, dan mismatch saldo otomatis memicu alert Telegram admin dengan dedupe.
+- **Admin products cleanup** — halaman Produk duplikat dihapus; seluruh navigasi kembali ke section Produk bawaan `/admin`, sementara update overview tetap null-safe.
+- **Reseller Center shell sync** — sidebar Reseller kini memuat navigasi admin lengkap, badge runtime, versi bot, serta header status DB/currency dan profil seperti dashboard utama.
+- **Reseller global currency + i18n** — Reseller Center kini lengkap dalam bahasa id/en/ms/zh. Wallet dan ledger baru menyimpan currency tenant; deposit, order, adjustment, dan rekonsiliasi menolak currency kosong/berbeda sebelum mutasi finansial.
+- **Unified admin shell** — Dashboard, Payment Gateway, Reseller Center, dan Tampilan Bot kini memakai satu renderer sidebar/header shared dengan menu, badge, status, profil, mobile navigation, serta deep-link section yang konsisten.
+- **Reseller production hardening** — delivery data Telegram baru dilepas setelah commit; approval dan deposit kini konvergen; rekonsiliasi memakai anomaly cursor incremental; startup memverifikasi index kritis. H2H diperkeras dengan permanent request fingerprint, recovery idempotency, retry transient terbatas, bounded limiter, dan proteksi race credential.
+- **Status QA reseller** — suite reseller + smoke **98/98 lulus dalam 16 suite**. Telegram reseller IDR dinilai code-ready/production-ready berdasarkan hardening dan bukti otomatis; smoke interaktif Telegram/admin belum dilakukan. H2H publik tetap `disabled`/internal dan belum production sampai HTTPS/public rollout serta minor-unit cross-currency selesai.
+- **Dependency security** — `axios` diperbarui ke 1.18.1 dan `multer` ke 2.2.0. Audit masih menyisakan 2 high pada `tar` transitif melalui optional `canvas`, serta 4 moderate pada Jimp yang membutuhkan breaking upgrade; risiko ini belum dinyatakan selesai.
+
+### Admin — Bot Storefront Builder hardening
+
+- **Rotasi Banner Welcome (Phase 4B)** — admin dapat mengelola maksimal 5 banner `/start` dengan status aktif, bobot pemilihan, target bahasa, dan jadwal mulai/selesai. Upload banner otomatis menambahkannya ke rotasi; bot memilih secara random berbobot dengan cache 60 detik. Banner web lama tidak otomatis masuk rotasi. Jika rotasi kosong/gagal, bot fallback ke `start_image_id` lama lalu welcome teks sehingga `/start` tetap aman.
+- **Marketplace Theme JSON (Phase 4A)** — tema storefront kini dapat diekspor untuk backup/clone tenant dan diimpor ke bot lain sebagai draft. Export hanya membawa layout/copy/menu/inline per bahasa; status live, timestamp, dan media Telegram tidak disertakan. Import dibatasi 32 KB, memvalidasi format/version/config, menolak key prototype-pollution, mematikan media lintas-bot, dan tidak pernah publish otomatis.
+- **Audit MVP** — welcome text/placeholder, foto-banner, stiker, inline button (aksi/URL/kategori), reply menu custom, bahasa ID/EN/MS/ZH, preview, serta alur draft/publish/reset telah diverifikasi terhubung ke runtime.
+- **Live-config cache** — `/start`, resolver menu reply, dan inline target kini membaca konfigurasi storefront dari cache 60 detik, bukan query MongoDB pada setiap update. Publish dan Factory Reset langsung menginvalidasi cache sehingga perubahan live aktif tanpa restart.
+- **Test** — regression test cache memastikan read berulang hanya melakukan satu query dan invalidasi memaksa reload konfigurasi.
+
+### Payment — ShopeePay via AutoGoPay (checkout penuh)
+
+- **Gateway ShopeePay baru** — QRIS dinamis ShopeePay via AutoGoPay (`v1-gateway.autogopay.site`) untuk checkout produk, top-up saldo, dan panel Pterodactyl. Tersedia di admin panel (tab ShopeePay: API key, QRIS statis, theme/shape/frame/warna, test koneksi, preview) dan menu bayar bot (`🧡 ShopeePay (QRIS)`). Target pasar IDR.
+- **Deteksi pembayaran amount-match** — bot membuat nominal unik (nominal dasar + acak 1–99) lalu polling `/shopeepay/transactions` tiap 5 detik dan mencocokkan nominal + status `success` (mirip Orderkuota). Anti-bentrok nominal (retry 6x) + batas transaksi pending per user (`SHOPEEPAY_MAX_PENDING_PER_USER`, default 3) + auto-EXPIRED setelah 20 menit + klaim atomik `gatewayTransactionId` supaya tidak double-finalize.
+- **Konfigurasi** — `SHOPEEPAY_API_KEY` (fallback ke `AUTOGOPAY_API_KEY` — satu akun AutoGoPay), `SHOPEEPAY_QR_STATIC`, dan opsi styling QR. Provider `SHOPEEPAY` ditambahkan ke `Transaction` + `PaymentManager` + monitor.
+- **Catatan OVO** — endpoint OVO di AutoGoPay bersifat outbound (bayar ke pihak lain / transfer bank), bukan menerima pembayaran customer, sehingga belum dijadikan gateway checkout (perlu keputusan lanjut).
+- **Fix deteksi sesi expired** — bila sesi merchant ShopeePay di AutoGoPay timeout (`token_valid: false` / balasan `login timeout, please login again`), QRIS tetap tergenerate tetapi polling transaksi gagal sehingga pembayaran sukses selamanya tampil PENDING. Polling kini mendeteksi kondisi ini dan mencetak log jelas (throttle 60 detik) yang mengarahkan admin login ulang di dashboard AutoGoPay; pesan `getConnectionStatus` juga diperjelas untuk test koneksi di admin panel.
+
+### Payment — GoPay via AutoGoPay (webhook fix)
+
+- **Header `X-Callback-Signature`** — handler `POST /autogopay-callback` kini menerima header `X-Callback-Signature` (dokumen AutoGoPay terbaru) selain `x-signature` legacy, sesuai spesifikasi webhook resmi. Secret HMAC-SHA256 memakai `autogopay.apiKey` dengan fallback `shopeepay.apiKey`, dan handler aktif bila salah satu gateway (GoPay/ShopeePay) enabled. Mencegah webhook GoPay ditolak `401` di produksi.
+- **Docs** — `docs/AUTOGOPAY_API_REFERENCE.md` diperbarui: gap signature ditandai FIXED; README menyebut GoPay & ShopeePay sebagai gateway QRIS AutoGoPay (total gateway jadi 16).
+
+### Admin — Category Appearance Builder (Phase 1–4)
+
+- **Custom daftar kategori (runtime)** — service `services/telegramCategoryAppearance.js` memungkinkan tampilan layar "Lihat Produk" dikustom (judul, subtitle, teks halaman, format item, footer, style classic_box/clean/compact/premium, emoji per kategori, item per halaman 10/12/15/20). Placeholder didukung: `{number} {category} {stock} {emoji} {totalCategories} {page} {totalPages} {storeName} {date}`.
+- **Admin UI** — tab "Daftar kategori" di halaman `/admin/bot-appearance`: toggle aktif, pilih gaya & item/halaman, edit semua teks, editor emoji per kategori (+ impor dari produk), preview teks real-time (pakai kategori real, fallback contoh bila produk kosong), simpan draft, publish live, reset, dan kirim test ke Telegram admin. Badge status Live/Belum dipublish.
+- **API** — 6 endpoint `/admin/settings/category-appearance*` (get/draft/publish/reset/preview/test-preview), proteksi auth + privileged role, validasi placeholder/panjang/style.
+- **Fail-safe** — `displayCategoryList()` memakai konfigurasi live (cache 60s) hanya bila `enabled`; error/off → otomatis fallback ke tampilan bawaan. Nomor kategori global, reply keyboard angka, query produk/stok, dan flow checkout **tidak diubah**. Nama kategori & nama toko di-escape Markdown legacy.
+- **Tombol keyboard atas (Phase 5)** — admin memilih tombol yang muncul di baris atas keyboard daftar kategori (Best Seller, Saldo & Top Up, Promo Spesial, Bantuan, Cara Order) beserta urutannya. Label mengikuti bahasa bot sehingga tombol dijamin tetap berfungsi (handler match by teks i18n); off/error → default Best Seller + Top Up.
+- **Test** — `tests/services/categoryAppearance.test.js` (22 test). i18n ID/EN/MS/ZH.
+
+### Payment — ShopeePay via AutoGoPay (deteksi sesi expired)
+
+- **Fix silent PENDING** — bila sesi merchant ShopeePay di AutoGoPay timeout (`token_valid:false` / respons `login timeout, please login again`), QRIS tetap tergenerate tetapi polling transaksi gagal sehingga pembayaran sukses tampil PENDING selamanya. Polling kini mendeteksi kondisi ini dan mencetak log jelas 🔒 (throttle 60 detik) yang mengarahkan admin login ulang di dashboard AutoGoPay; `getConnectionStatus()` juga diperjelas.
+
+### Admin — QR Payment Appearance Builder (Phase 1–4)
+
+- **Dynamic expiry metadata** — toggle batas waktu kini memakai `Transaction.waktuExpired` aktual dan dirender sebagai tanggal+jam WIB. Checkout Pakasir, Midtrans, dan Sanpay menyimpan expiry absolut dari provider; gateway tanpa timestamp valid tetap mengosongkan overlay agar tidak menampilkan waktu palsu.
+- **QR dummy mask (Phase 4.2)** — background yang sudah memiliki QR placeholder/checkerboard dapat ditutup dengan mask independen (ukuran, posisi X/Y, warna, radius, shadow), lalu QR asli dirender di atasnya. Tombol align menyamakan mask dengan QR asli; warning muncul bila mask terlalu kecil.
+- **Production hardening (Phase 4.1)** — upload background kini diverifikasi lewat magic byte PNG/JPEG/WebP (file palsu dihapus), Publish Live mewajibkan ukuran QR minimal 34% sementara draft tetap 28%, tersedia Preview Draft vs Live, Factory Reset draft+live, dan warning saat keluar dengan perubahan belum disimpan.
+- **Preset & template JSON (Phase 4)** — tersedia 5 preset layout (Minimal Clean, Gaming Neon, Premium Store, PPOB Counter, Panel Hosting), plus Export/Import JSON antar-tenant. Preset/import hanya mengubah draft dan mempertahankan background lokal; export membuang path file, timestamp, serta status live. Import dibatasi 64 KB, wajib format/version valid, dan tidak pernah menerima path background dari JSON.
+- **Text overlay poster (Phase 3)** — poster QR bisa menampilkan strip info di tepi (atas/bawah): nama toko (custom atau `STORE_NAME`), nominal (otomatis dari `Transaction.totalPayment`, format `formatMoney`), dan Ref ID. Warna teks light/dark dengan strip semi-transparan agar tetap terbaca; card putih tetap ON + warning otomatis bila QR ketiban strip. Render aman-fallback (font gagal → QR tetap terkirim). Editor + preview strip live + i18n `qrApText*` (id/en/ms/zh). File tambahan: `drawTextOverlay`/`buildQrPosterTextData`.
+- **Custom background QR pembayaran** — admin bisa upload background poster, menggeser posisi QR (drag mouse/touch di preview), dan mengatur ukuran QR (28–70%) agar pas dengan desain background. Setting draft/live tersimpan di `Setting` (`payment_qr_appearance_*`).
+- **Guardrail scanability** — card putih di belakang QR default ON (padding/radius/shadow), ukuran minimal dijaga, warning otomatis bila QR terlalu kecil atau card dimatikan.
+- **Render aman-fallback** — `composeQrPoster` menempel QR ke background saat live aktif; error apa pun otomatis fallback ke QR asli sehingga checkout tidak pernah gagal karena fitur tampilan.
+- **Preview final PNG** — tombol Preview di panel admin memanggil render server dengan QR dummy, jadi admin lihat hasil persis sebelum publish.
+- **Phase 2 gateway coverage** — semua QR image gateway utama masuk lewat `sendQRPayment`, termasuk VioletPay yang sebelumnya bypass lewat `ctx.replyWithPhoto(targetUrl)`.
+- **Hosted QR aman** — sumber QR URL diambil sebagai Buffer dengan timeout 8 detik, MIME PNG/JPEG/WebP, dan limit 5 MB sebelum dirender ke poster. Fetch/render gagal otomatis memakai source provider asli; hosted payment link tanpa QR tetap memakai fallback link existing.
+- **UI/UX admin diselaraskan** — QR builder kini memakai struktur kartu admin yang konsisten, panel Pengaturan/Preview, label yang lebih jelas, preview responsif lebih besar, badge koordinat, focus state, dan seluruh key i18n `qrAp*` agar teks tidak tampil sebagai nama key mentah.
+- File: `services/payment/qrAppearance.js`, `services/payment/qrStyleRenderer.js` (`composeQrPoster`), `routes/admin/settings.js` (API + upload + preview), `public/admin-gateways.html` + `public/js/admin-gateways.js`, `features/checkout/paymentMessage.js`, `tests/payment/qrAppearance.test.js`.
+
+### Customer Support
+
+- **Hermest Agent migration** — adapter CS legacy dicabut dari support flow; CS sekarang memakai adapter netral `aiSupportAdapter` dengan implementasi `hermestAgentAdapter` HTTP read-only, redaction context, timeout/retry terbatas, dan fallback lokal/admin handoff.
 
 ### Payment — OrderKuota QRIS
 
@@ -571,7 +673,7 @@ Tidak ada perubahan perilaku user-facing; fondasi untuk postpaid & test unit flo
   - **Cara Menjalankan (Developer)** — diperluas dengan env yang lebih lengkap, multi-instance/multi-tenant tip, health check endpoint, perintah `npm run dev`, akses admin panel.
   - **Catatan Keamanan** — diperluas: jangan commit `storage/.encryption_key`, verifikasi signature webhook, idempotency pattern wajib, validasi `X-Signature` + `X-Nonce` + `Idempotency-Key` untuk H2H, aktifkan 2FA admin.
   - **FAQ** — tambah 5 Q&A baru: multi-tenant readiness, anti double-order mechanism, PPOB status (eksplisit "belum jalan, masih dalam pengembangan"), Power BI / Tableau export, Reseller H2H security.
-  - **🧭 Dokumentasi Teknis (Developer)** — ditulis ulang dengan sub-kategori jelas: Navigasi cepat, Architecture & Data, API & Webhook, Payment, Multi-Currency (USD), Operations & Performance, Fitur Bisnis, Customer Support (OpenClaw), PPOB (🚧 Beta dengan warning). Semua referensi `docs/*.md` dikonversi jadi proper Markdown link relatif.
+  - **🧭 Dokumentasi Teknis (Developer)** — ditulis ulang dengan sub-kategori jelas: Navigasi cepat, Architecture & Data, API & Webhook, Payment, Multi-Currency (USD), Operations & Performance, Fitur Bisnis, Customer Support, PPOB (🚧 Beta dengan warning). Semua referensi `docs/*.md` dikonversi jadi proper Markdown link relatif.
 - **Catatan PPOB** — sesuai permintaan user, **semua** menyebut PPOB di README sekarang punya tanda "🚧 Beta / In Development" + warning `⚠️ belum production-ready / belum di-release`. Dokumentasi PPOB tetap di-link untuk developer/early access tapi diberi disclaimer eksplisit. Bagian utama README (Hero, fitur unggulan, paket harga) tidak menonjolkan PPOB sebagai selling point.
 - **Verifikasi** — `README.md` & `package.json` lint bersih; semua link relatif valid (file-file di `docs/` sudah ada di working tree).
 

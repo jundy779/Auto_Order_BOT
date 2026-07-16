@@ -9,13 +9,15 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-Ready-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com/)
 [![Telegram](https://img.shields.io/badge/Telegram-Bot_API-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://telegram.org/)
 [![License](https://img.shields.io/badge/License-Premium-gold?style=for-the-badge)](.)
-[![Version](https://img.shields.io/badge/Version-8.8.2-brightgreen?style=for-the-badge)](.)
+[![Version](https://img.shields.io/badge/Version-8.9.0-brightgreen?style=for-the-badge)](.)
 [![GitHub Stars](https://img.shields.io/github/stars/jundy779/Auto_Order_BOT?style=for-the-badge&logo=github)](https://github.com/jundy779/Auto_Order_BOT)
 [![GitHub Forks](https://img.shields.io/github/forks/jundy779/Auto_Order_BOT?style=for-the-badge&logo=github)](https://github.com/jundy779/Auto_Order_BOT)
 
-**🎯 Jualan Autopilot 24/7 • 💳 15 Payment Gateway • 🌏 Indonesia • Malaysia • India • Crypto • 🖥️ Admin Panel Modern**
+**🎯 Jualan Autopilot 24/7 • 💳 16 Payment Gateway • 🌏 Indonesia • Malaysia • India • Crypto • 🖥️ Admin Panel Modern**
 
 [Demo Bot](https://t.me/FusionTempest_bot) • [Order Sekarang](#-order-sekarang) • [Hubungi Saya](#-hubungi-saya)
+
+> 🛒 Ingin melihat informasi khusus calon penyewa? Buka **[Halaman Promosi Sewa Bot](PROMOSI_SEWA_BOT.md)**.
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
@@ -42,8 +44,15 @@
 
 ## 🆕 Terbaru
 
+- **⏳ Bot Rental Expiry** — masa sewa instance dibaca otomatis dari Server Description Pterodactyl Client API, tampil read-only di seluruh sidebar admin, mengingatkan `ADMIN_IDS`, dan menghentikan kewajiban transaksi baru saat invalid/expired tanpa mengganggu pembayaran lama, webhook, finalisasi, delivery, atau refund.
+
+- **🤝 Reseller Telegram IDR production hardening** — katalog memakai stok retail yang sama, delivery hanya setelah commit, approval/deposit konvergen, rekonsiliasi incremental, dan startup index preflight. **98/98 test otomatis (16 suite) lulus**; code-ready/production-ready, dengan smoke interaktif Telegram/admin masih tersisa dan belum dilakukan.
+- **🔒 H2H reseller tetap internal** — permanent request fingerprint, recovery/retry terbatas, bounded limiter, dan credential race sudah diperkeras, tetapi API publik tetap disabled dan **belum production** sampai HTTPS/public rollout serta minor-unit cross-currency selesai.
+- **🎨 QR Payment Appearance Phase 4.2** — 5 preset + template JSON, Preview Draft/Live, hardening upload/publish, serta penutup QR dummy independen agar placeholder QR pada background bisa ditutup sebelum QR asli ditempel.
+- **🧡 ShopeePay QRIS (via AutoGoPay)** — Gateway QRIS Indonesia baru: checkout & top-up dengan **nominal unik** + polling 5 detik (deteksi bayar via daftar transaksi merchant). Satu API key AutoGoPay untuk **GoPay & ShopeePay** sekaligus.
+- **💳 GoPay QRIS webhook fix** — Handler `autogopay-callback` kini menerima header **`X-Callback-Signature`** (dokumen AutoGoPay terbaru) selain `x-signature` legacy, jadi konfirmasi pembayaran GoPay lebih andal.
 - **🎨 Bot Appearance Phase 1/2** — Admin `/admin/bot-appearance` bisa simpan draft/publish live ke DB; `/start` memakai welcome text, label menu, inline shortcut, dan banner foto custom dengan fallback aman.
-- **🎨 Admin PG v8.8.2** — halaman `/admin/gateways` pakai sidebar seperti dashboard; badge gateway **X/15** (bukan 12); serve CSS `/css` fix UI rusak.
+- **🎨 Admin PG v8.8.2** — halaman `/admin/gateways` pakai sidebar seperti dashboard; badge gateway **X/16** (total gateway aktif); serve CSS `/css` fix UI rusak.
 - **🤖 Bot UX v8.8.2** — welcome `/start` aman untuk username dengan `_`; keyboard `/admin` grid 2 kolom.
 - **💳 Casaku v8.8.1** — payment gateway QRIS Indonesia (`api.casaku.id`): checkout/top-up, polling 3 detik, webhook HMAC, tab admin + **Diagnostik Casaku** (profil → QRIS probe → check-status). Webhook: `{PUBLIC_URL}/casaku-callback`.
 - **📱 PPOB v8.8.0** — cek saldo deposit DigiFlazz (admin + `/ppobsaldo`); submenu type Umum/Transfer; bayar prepaid via QRIS; riwayat inline + cek ulang.
@@ -60,7 +69,7 @@
 - **🪙 Cryptomus USDT (8.7.0)** — Gateway kripto untuk checkout & top-up; invoice USD, default USDT/TRON; webhook `/cryptomus`; tab admin + env `CRYPTOMUS_*` + `PUBLIC_URL` HTTPS.
 - **🛠️ Hotfix Bot API UX (8.6.16)** — QRIS kembali 1 pesan (foto + caption); `sendRichMessage` fallback plain di Desktop; expired QR format tanggal+jam WIB; **Salin stok** salin semua baris (qty>1).
 - **🕐 Datetime rich + profil i18n (8.6.15)** — `tg://time` di invoice/riwayat/checkout; entity `date_time` plain; salin Ref ID + stok + efek confetti di sukses; `setMyName`/`Description` per bahasa (id/en/ms/zh/hi).
-- **📨 Rich Messages P1+ (8.6.14)** — Bot API 10.1 diperluas: invoice pembelian, top-up sukses, riwayat transaksi, QR pending (foto + detail rich); reaksi 🎉 `setMessageReaction`; poll opsi + link URL; helper `date_time` + toggle admin (default OFF).
+- **📨 Rich Message receipts (8.9.0)** — Bot API 10.2 untuk receipt pembelian dan top-up, dengan keyboard/efek pesan serta fallback Markdown otomatis; QR tetap foto + caption sampai contract test lengkap.
 - **🗳️ Poll foto + deskripsi (8.6.13)** — header foto & deskripsi pada broadcast poll custom (bukan native `sendPoll`).
 - **📨 Rich Messages invoice (8.6.12)** — Bot API 10.1: tabel ringkasan + stok spoiler saat pembelian sukses; toggle admin (default OFF, auto-fallback Markdown).
 - **🔒 Force join join request (8.6.11)** — auto-approve channel/grup private dari admin panel; opsional Mini App HTTPS (Bot API 10.1 P3).
@@ -93,7 +102,7 @@
 - **🇲🇾 Panel Pterodactyl & gateway Malaysia** — Pembelian & perpanjang panel memakai **urutan gateway yang sama** seperti checkout produk digital & top-up saldo (ToyyibPay, Billplz, CHIP, QRIS, dll. sesuai admin). Tombol metode bayar mengikuti `payment_gateway_order` / mode `BASE_CURRENCY=MYR`.
 - **💱 Multi-Currency Foundation (IDR/MYR/USD)** — `BASE_CURRENCY` switch toko, currency-aware formatter, & Phase 1 USD display ready. Native USD gateway = Phase 3+ (roadmap internal, dapat dishare on-request).
 - **📱 PPOB Multi-Provider (Beta / In Development)** — Skeleton multi-provider PPOB (DigiFlazz, OkeConnect, SanPay, QiosPay) — adapter + admin sync + webhook **sudah dibuat tapi belum production-ready**, masih tahap hardening. Tidak default-on; dokumentasi lengkap tersedia on-request untuk early access.
-- **15 Payment Gateway** — Pilih sesuai kebutuhan bisnis kamu (ID, MY, IN, crypto) — `.env` atau admin panel, hot-reload.
+- **16 Payment Gateway** — Pilih sesuai kebutuhan bisnis kamu (ID, MY, IN, crypto) — `.env` atau admin panel, hot-reload.
 
 ---
 
@@ -112,7 +121,7 @@ graph LR
     end
     
     subgraph Payment[Payment Layer]
-        PG[12+ Payment Gateway<br/><sub>QRIS / FPX / DuitNow</sub>]
+        PG[16 Payment Gateway<br/><sub>QRIS / FPX / DuitNow</sub>]
     end
     
     subgraph Data
@@ -151,7 +160,7 @@ graph LR
 
 Deteksi bayar &lt;3 detik
 <br>Webhook real-time
-<br>12+ gateway paralel
+<br>16 gateway paralel
 
 </td>
 <td align="center" width="33%">
@@ -228,7 +237,7 @@ Ganti setting payment gateway, promo, atau konfigurasi lainnya **langsung dari a
 |:---|:---:|:---:|:---:|
 | **Order 24/7** | ✅ | ❌ | ✅ |
 | **Auto kirim produk** | ✅ <3 detik | ❌ | Varies |
-| **12+ Payment Gateway** | ✅ ID + MY | ❌ | Terbatas |
+| **16 Payment Gateway** | ✅ ID + MY | ❌ | Terbatas |
 | **Admin panel modern** | ✅ Real-time | ❌ | Sederhana |
 | **Hot reload config** | ✅ Tanpa restart | - | Jarang |
 | **Pterodactyl integration** | ✅ Full | ❌ | Jarang |
@@ -251,14 +260,14 @@ Ganti setting payment gateway, promo, atau konfigurasi lainnya **langsung dari a
 | 🔥 Auto Payment | 🎁 Promo System | 🖥️ Admin Panel | 🔒 Super Secure |
 |:---:|:---:|:---:|:---:|
 | Deteksi bayar <3 detik | Flash Sale & Diskon | Real-time Dashboard | 2FA + Encryption |
-| 12+ Payment Gateway | Voucher & Kupon | Push Notifications | CSRF Protection |
+| 16 Payment Gateway | Voucher & Kupon | Push Notifications | CSRF Protection |
 | ID + MY support | Timer countdown | Hot Reload Config | Security Logging |
 
 </div>
 
 ### ⚡ Yang Bikin Beda dari Bot Lain:
 
-- ✅ **15 Payment Gateway** — Pakasir, Qiospay, Sanpay, **Casaku**, Midtrans, Tripay, Violetpay, iPaymu, GoPay Merchant, Orderkuota (ID); **ToyyibPay**, **Billplz** (FPX / e-wallet / DuitNow di halaman bayar), **CHIP** (DuitNow QR) untuk Malaysia; **UPIExpress** (IN); **Cryptomus** (kripto)
+- ✅ **16 Payment Gateway** — Pakasir, Qiospay, Sanpay, **Casaku**, Midtrans, Tripay, Violetpay, iPaymu, **GoPay QRIS** & **ShopeePay QRIS** (via AutoGoPay), Orderkuota (ID); **ToyyibPay**, **Billplz** (FPX / e-wallet / DuitNow di halaman bayar), **CHIP** (DuitNow QR) untuk Malaysia; **UPIExpress** (IN); **Cryptomus** (kripto)
 - ✅ **Promo Spesial / Flash Sale** — Bikin urgency dengan countdown timer
 - ✅ **Logo di QRIS** — Branding profesional di setiap pembayaran
 - ✅ **Pterodactyl Integration** — Jualan hosting panel full otomatis + auto delete expired
@@ -312,7 +321,8 @@ sequenceDiagram
 | **ToyyibPay** | 🇲🇾 Malaysia | FPX / DuitNow | ✅ Auto Detect | - |
 | **Billplz** | 🇲🇾 Malaysia | FPX / e-wallet / DuitNow (di halaman bill) | ✅ Callback (`x_signature`) | - |
 | **CHIP** | 🇲🇾 Malaysia | DuitNow QR | ✅ Callback | - |
-| **GOPAY MERCHANT** | 🇮🇩 Indonesia | QRIS (Mutation) | ✅ Auto Detect | ✅ |
+| **GoPay Merchant (AutoGoPay)** | 🇮🇩 Indonesia | QRIS Dynamic | ✅ Webhook + polling | ✅ |
+| **ShopeePay (AutoGoPay)** | 🇮🇩 Indonesia | QRIS Dynamic (nominal unik) | ✅ Polling 5 detik | ✅ |
 | **Orderkuota** | 🇮🇩 Indonesia | QRIS Dynamic (mutasi) | ✅ Polling + cek status | ✅ |
 | **UPIExpress** | 🇮🇳 India | UPI (link + QR) | ✅ Webhook + cek status | - |
 | **Cryptomus** | 🌍 Global | Kripto (USDT / multi-wallet) | ✅ Webhook + cek status | - |
@@ -356,7 +366,7 @@ sequenceDiagram
 **Fitur Admin Panel:**
 - 📊 Dashboard statistik real-time + Growth Analytics
 - 📦 Kelola produk, kategori, stok (drag-drop, bulk upload)
-- 💳 Payment gateway management (15 gateway, hot reload)
+- 💳 Payment gateway management (16 gateway, hot reload)
 - 🎫 Voucher management
 - 🖥️ Panel package management (Pterodactyl)
 - 📢 Broadcast ke semua user (filter, media, scheduled, poll)
@@ -469,8 +479,8 @@ sequenceDiagram
 <details>
 <summary><b>💳 Payment System</b></summary>
 
-- **12+ payment gateway** terintegrasi
-- **Indonesia (QRIS):** Pakasir, Qiospay, Sanpay, Midtrans, Tripay, Violetpay, iPaymu, GoPay Merchant, Orderkuota
+- **16 payment gateway** terintegrasi
+- **Indonesia (QRIS):** Pakasir, Qiospay, Sanpay, Casaku, Midtrans, Tripay, Violetpay, iPaymu, **GoPay QRIS** & **ShopeePay QRIS** (via AutoGoPay), Orderkuota
 - **Malaysia:** ToyyibPay (FPX / DuitNow), **Billplz** (FPX / e-wallet / DuitNow di halaman Billplz), CHIP (DuitNow QR)
 - Auto detect pembayaran < 3 detik
 - **Anti Duplicate Payment** — Sistem Mutation ID tracking
@@ -901,7 +911,7 @@ sequenceDiagram
 ```mermaid
 flowchart TD
     Start[Customer klik 'Bayar'] --> CC{BASE_CURRENCY?}
-    CC -->|IDR| IDR[Tampilkan gateway IDR aktif:<br/>Pakasir / Qiospay / Sanpay /<br/>Midtrans / Tripay / Violetpay /<br/>iPaymu / GoPay / Orderkuota]
+    CC -->|IDR| IDR[Tampilkan gateway IDR aktif:<br/>Pakasir / Qiospay / Sanpay / Casaku /<br/>Midtrans / Tripay / Violetpay / iPaymu /<br/>GoPay QRIS / ShopeePay QRIS / Orderkuota]
     CC -->|MYR| MYR[Tampilkan gateway MYR aktif:<br/>ToyyibPay / Billplz / CHIP]
     CC -->|USD| USD[Phase 1: display USD<br/>+ fallback ke IDR/MYR gateway<br/>Phase 3: native USD gateway]
 
@@ -1096,7 +1106,7 @@ timeline
         v8.7.0 : Native USD Gateway (Phase 3) : USD smoke test e2e : Pricing auto-update
     section 📋 Planned
         v9.0.0 : WhatsApp Channel auto-order : Discord channel adapter : Unified inbox admin panel
-        v9.x : AI-powered customer support (OpenClaw deep integration) : Multi-region failover : Pgw decision engine A/B test
+        v9.x : AI-powered customer support (Hermest Agent integration) : Multi-region failover : Pgw decision engine A/B test
 ```
 
 | Status | Versi | Highlight |
@@ -1130,13 +1140,13 @@ auto-order-bot/
 │  └─ integrations/                # Pterodactyl, dll.
 │
 ├─ services/                       # Business logic core
-│  ├─ payment/                     # 12+ gateway adapters (pakasir, billplz, dll.)
+│  ├─ payment/                     # 16 gateway adapters (pakasir, billplz, shopeepay, dll.)
 │  │  ├─ INTERFACE.md              # Contract adapter baru
 │  │  └─ <gateway>.js              # Adapter masing-masing
 │  ├─ ppob/ 🚧                     # PPOB multi-provider (beta)
 │  │  ├─ core/                     # interfaces, statusMapper, syncScheduler
 │  │  └─ providers/                # digiflazz, okeconnect, sanpay, qiospay
-│  ├─ cs/                          # OpenClaw CS handoff
+│  ├─ cs/                          # Hermest-ready CS + admin handoff
 │  ├─ transactionFinalize.js       # ⭐ Idempotent finalize (3-layer guard)
 │  ├─ transactionHelpers.js        # refId deterministik + helpers
 │  ├─ balanceTransfer.js           # Atomic transfer saldo
@@ -1193,30 +1203,7 @@ auto-order-bot/
 
 ---
 
-## 📋 Requirements
-
-| Kebutuhan | Keterangan | Biaya |
-|:---|:---|:---:|
-| VPS / Panel | Minimal 2GB RAM, Node.js 18+ (LTS) | ~50rb/bulan (OPSIONAL)|
-| MongoDB | MongoDB Atlas (cloud) | **GRATIS** |
-| Bot Token | Dari @BotFather Telegram | **GRATIS** |
-| Payment Gateway | Pilih salah satu atau lebih | Varies |
-
----
-
 ## ❓ FAQ
-
-<details>
-<summary><b>Apakah harus punya VPS?</b></summary>
-
-Ya, bot perlu jalan 24/7. Minimal VPS 1GB RAM (~50rb/bulan) atau panel hosting yang support Node.js. Bisa juga pakai Railway, Render, atau VPS gratis (dengan batasan).
-</details>
-
-<details>
-<summary><b>Bisa pakai hosting shared?</b></summary>
-
-Tergantung. Hosting shared biasanya tidak allow long-running process. Lebih cocok pakai VPS, cloud (MongoDB Atlas gratis), atau panel yang support Node.js.
-</details>
 
 <details>
 <summary><b>Bagaimana cara ganti payment gateway?</b></summary>
@@ -1399,7 +1386,7 @@ npm run dev
 
 - ✓ Bot fully functional & tested
 - ✓ Admin panel lengkap (responsive)
-- ✓ 12+ payment gateway siap pakai
+- ✓ 16 payment gateway siap pakai
 - ✓ Multi-bahasa (ID/EN/MS)
 - ✓ Panduan instalasi detail
 - ✓ Bantuan setup awal
