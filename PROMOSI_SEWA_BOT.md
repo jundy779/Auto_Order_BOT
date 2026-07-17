@@ -261,11 +261,6 @@ Demi privasi, checkout, saldo, receipt, dan credential produk sebaiknya tetap di
 
 Agar tidak terjadi salah paham, biaya paket standar belum mencakup:
 
-- Server, VPS, atau hosting
-- Domain, reverse proxy, dan layanan tunnel
-- Pendaftaran atau biaya akun merchant payment gateway
-- Deposit dan saldo provider PPOB
-- Biaya transaksi yang dibebankan provider
 - Migrasi khusus dari sistem atau database lain
 - Pengembangan fitur custom di luar fitur standar
 - Layanan pihak ketiga berbayar lainnya
