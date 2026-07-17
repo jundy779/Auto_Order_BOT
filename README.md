@@ -44,6 +44,7 @@
 
 ## 🆕 Terbaru
 
+- **🛒 Halaman promosi sewa diperbarui** — alur baca kini lebih ringkas dan meyakinkan: manfaat utama, target bisnis, alasan menyewa, paket, proses aktivasi, support, FAQ, status kesiapan, dan CTA dengan batas layanan yang transparan.
 - **⏳ Bot Rental Expiry** — masa sewa instance dibaca otomatis dari Server Description Pterodactyl Client API, tampil read-only di seluruh sidebar admin, mengingatkan `ADMIN_IDS`, dan menghentikan kewajiban transaksi baru saat invalid/expired tanpa mengganggu pembayaran lama, webhook, finalisasi, delivery, atau refund.
 
 - **🤝 Reseller Telegram IDR production hardening** — katalog memakai stok retail yang sama, delivery hanya setelah commit, approval/deposit konvergen, rekonsiliasi incremental, dan startup index preflight. **98/98 test otomatis (16 suite) lulus**; code-ready/production-ready, dengan smoke interaktif Telegram/admin masih tersisa dan belum dilakukan.
@@ -1370,7 +1371,7 @@ npm run dev
 
 | | 🚀 INSTALASI | 🔄 PERPANJANGAN | 💎 BELI SC | ⚡ CUSTOM |
 |:---|:---:|:---:|:---:|:---:|
-| **Harga** | **Rp 40.000** | **Rp 25.000**/bulan | **Rp 2.675.000** | Nego |
+| **Harga** | **Rp 40.000** | **Rp 25.000**/bulan | **Rp 3.575.000** | Nego |
 | Keterangan | Bulan pertama | Bulan ke-2 dst | Lifetime | Request |
 | Source Code | ❌ | ❌ | ✅ Full akses | ✅ |
 | Free Update | ✅ | ✅ | ❌ | ❌ |
@@ -1444,6 +1445,6 @@ npm run dev
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer&text=Thank%20You!&fontSize=40&fontColor=ffffff&animation=twinkling&fontAlignY=75" width="100%" alt="Footer"/>
 
-<sub>Made with ❤️ by **FusionTempest** • v8.6.6 • © 2024-2026</sub>
+<sub>Made with ❤️ by **FusionTempest** • v8.9.0 • © 2024-2026</sub>
 
 </div>
