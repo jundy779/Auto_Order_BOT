@@ -1,243 +1,328 @@
-# Sewa Bot Auto Order Telegram
+# Sewa FUSIONIFY BOT — Auto Order Telegram
 
 <div align="center">
 
-![Auto Order Bot](https://capsule-render.vercel.app/api?type=waving&height=180&text=Auto%20Order%20Bot&fontSize=58&fontAlignY=35&color=gradient&customColorList=6,11,20&animation=twinkling&fontColor=ffffff)
+![FUSIONIFY BOT](https://capsule-render.vercel.app/api?type=waving&height=190&text=FUSIONIFY%20BOT&fontSize=52&fontAlignY=36&color=gradient&customColorList=6,11,20&animation=twinkling&fontColor=ffffff)
 
-## Jualan otomatis 24 jam langsung dari Telegram
+## Tokomu tetap menerima dan memproses pesanan saat kamu offline
 
-Kelola produk, terima pembayaran, kirim pesanan, dan pantau penjualan dari satu bot dengan admin panel modern.
+Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan dalam satu bot Telegram dengan admin panel modern.
 
-[🤖 Coba Demo](https://t.me/FusionTempest_bot) · [💬 Konsultasi Telegram](https://t.me/TempestVPNOfficial) · [📱 Pesan via WhatsApp](https://wa.me/6283111380628)
+**Mulai dari Rp40.000 untuk setup dan bulan pertama.**
+
+[![Coba Demo](https://img.shields.io/badge/Coba_Demo-Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/FusionTempest_bot)
+[![Konsultasi](https://img.shields.io/badge/Konsultasi-Telegram-5865F2?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/TempestVPNOfficial)
+[![Pesan](https://img.shields.io/badge/Pesan-WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/6283111380628)
 
 </div>
 
 ---
 
-## Cocok untuk jualan apa?
+## 🚀 Kenapa Memilih FUSIONIFY BOT?
 
-- Akun premium dan produk digital
-- Voucher, lisensi, serial key, dan kode redeem
-- Panel hosting Pterodactyl
-- Pulsa, paket data, PLN, e-money, dan PPOB DigiFlazz
-- Produk dengan pilihan varian dan jumlah pembelian
-- Produk manual yang membutuhkan username, email, UID, atau data tambahan
-- Layanan berlangganan dengan garansi
-- Toko reseller melalui Telegram
+FUSIONIFY BOT membantu seller digital mengubah proses jualan manual menjadi alur yang lebih cepat dan teratur.
+Customer dapat memilih produk, membayar, dan menerima pesanan langsung melalui Telegram.
 
-## Kenapa menyewa bot ini?
+- ⚡ **Auto order 24 jam** — transaksi tetap berjalan meskipun admin sedang offline
+- 💳 **Banyak pilihan pembayaran** — sesuaikan gateway dengan negara dan akun merchant
+- 📦 **Auto delivery** — produk digital dikirim setelah pembayaran terkonfirmasi
+- 🖥️ **Admin panel lengkap** — kelola operasional tanpa mengedit kode
+- 🎨 **Tampilan fleksibel** — sesuaikan banner, menu, kategori, tombol, dan QR
+- 🌏 **Siap lintas pasar** — mendukung IDR, MYR, INR, atau USD sebagai mata uang utama toko
+- 🔄 **Terus dikembangkan** — penyempurnaan versi standar tersedia selama masa sewa aktif
 
-### Jualan tetap berjalan saat kamu offline
+> FUSIONIFY BOT mulai dikembangkan pada **26 November 2025** dan diperbarui secara aktif berdasarkan kebutuhan operasional toko digital.
 
-Customer memilih produk, membayar, lalu menerima pesanan tanpa menunggu admin membalas chat.
+## 👥 Cocok untuk Bisnis Kamu?
 
-### Semua dikelola dari admin panel
+FUSIONIFY BOT cocok untuk:
 
-Tambah produk, atur stok, aktifkan payment gateway, buat promo, cek transaksi, kirim broadcast, dan lihat laporan melalui browser.
-
-### Saldo dan stok lebih aman
-
-Bot memiliki perlindungan terhadap klik berulang, pembayaran ganda, dan pengiriman produk lebih dari sekali.
-
-### Tampilan toko bisa disesuaikan
-
-Atur pesan pembuka, banner, label menu, tombol, kategori, dan tampilan QR agar sesuai dengan identitas tokomu.
-
-### Siap melayani beberapa pasar
-
-Satu toko menggunakan satu mata uang utama: IDR, MYR, INR, atau USD. Bahasa bot tersedia dalam Indonesia, English, Melayu, 中文, dan हिन्दी dengan fallback aman.
+- ✅ Seller akun premium dan produk digital
+- ✅ Penjual voucher, lisensi, serial key, dan kode redeem
+- ✅ Penjual panel hosting Pterodactyl
+- ✅ Toko pulsa, paket data, PLN, e-money, dan PPOB
+- ✅ Toko dengan varian, kuantitas, garansi, atau input UID
+- ✅ Seller yang ingin membangun jaringan reseller Telegram
+- ✅ UMKM digital dan agensi yang mengelola toko online
 
 ---
 
-## Fitur untuk customer
+## 💙 Mengapa Menyewa?
 
-### Belanja dan produk
+Tidak semua bisnis perlu langsung membeli dan mengelola source code sendiri. Sistem sewa memberi akses ke otomasi dengan biaya awal yang lebih ringan.
 
-- Katalog produk berdasarkan kategori
-- Pencarian dan tampilan stok
-- Produk digital otomatis
-- Produk manual dengan input data customer
+- Biaya awal lebih terjangkau
+- Setup dan konfigurasi awal dibantu
+- Mendapat update versi standar selama masa sewa aktif
+- Mendapat bantuan penggunaan dan troubleshooting
+- Tidak perlu membangun sistem dari nol
+- Dapat mencoba alur bisnis sebelum memilih investasi yang lebih besar
+
+Butuh kontrol penuh? Opsi pembelian source code tetap tersedia.
+
+### Kenapa harganya terjangkau?
+
+Model sewa bulanan dirancang agar seller digital dapat mulai menggunakan otomasi tanpa biaya awal besar.
+Biaya berulang membantu pengembangan, pemeliharaan, dan dukungan tetap berjalan.
+
+Harga terjangkau bukan berarti semua layanan pihak ketiga sudah termasuk. Akun merchant, saldo provider, domain, dan kebutuhan khusus mengikuti kesepakatan.
+
+---
+
+## ✨ Pengalaman Customer yang Lebih Praktis
+
+### 🛍️ Temukan dan beli produk
+
+- Katalog berdasarkan kategori, pencarian, dan informasi stok
+- Produk digital otomatis maupun pesanan manual
 - Pilihan varian dan jumlah pembelian
-- Beli lagi dari riwayat transaksi
+- Beli lagi melalui riwayat transaksi
 - Jumlah pembelian favorit
 - Watchlist produk habis dan notifikasi restock
-- Flash sale, promo, voucher, dan kupon
-- Rekomendasi produk best seller
+- Flash sale, promo, voucher, kupon, dan rekomendasi best seller
 
-### Pembayaran dan saldo
+### 💳 Bayar tanpa keluar dari Telegram
 
-- Checkout langsung melalui Telegram
-- Top-up dan pembayaran dengan saldo bot
+- Checkout langsung melalui bot
+- Top-up dan pembayaran menggunakan saldo bot
 - Transfer saldo antar-user
 - Status pembayaran otomatis melalui webhook atau polling
 - Riwayat pembelian dan deposit
 - Receipt pembelian dan top-up
-- Telegram Stars untuk flow yang diaktifkan
-- Pembayaran kripto melalui Cryptomus
+- Telegram Stars dan pembayaran kripto untuk flow yang diaktifkan
 
-### Setelah transaksi
+### 📦 Terima pesanan otomatis
 
-- Produk dikirim otomatis setelah pembayaran terkonfirmasi
+- Produk dikirim setelah pembayaran terkonfirmasi
 - Bukti delivery dan referensi transaksi
 - Garansi produk
 - Kalkulator dan pengajuan refund
 - Notifikasi status pesanan
-- Pengambilan ulang data produk sesuai kepemilikan transaksi
+- Pengambilan ulang produk berdasarkan kepemilikan transaksi
 
 ---
 
-## Payment gateway
+## 🖥️ Satu Admin Panel untuk Operasional Toko
 
-Gateway yang dapat dipakai mengikuti negara, mata uang toko, akun merchant, dan konfigurasi penyewa.
+### Kelola penjualan
 
-- **Indonesia:** Pakasir, QiosPay, Sanpay, Casaku, Midtrans, Tripay, VioletPay, iPaymu, OrderKuota, AutoGoPay GoPay QRIS, dan AutoGoPay ShopeePay QRIS
-- **Malaysia:** ToyyibPay, Billplz, dan CHIP
-- **India:** UPIExpress
-- **Global/alternatif:** Cryptomus dan Telegram Stars
+- Produk, kategori, harga, stok, dan varian
+- Transaksi, pembayaran, pending order, dan refund
+- User, saldo, voucher, promo, serta flash sale
+- Payment gateway dan jaringan reseller
 
-> Tidak semua gateway harus diaktifkan. Pilih yang sesuai dengan akun merchant dan target customer tokomu.
+### Jalankan pemasaran
 
-## PPOB Indonesia
+- Broadcast pesan, stok, polling, dan voting
+- Jadwal broadcast
+- Banner dan tampilan bot
+- Notifikasi restock serta watchlist
+- Insight produk dan waktu penjualan
 
-Untuk toko IDR dengan akun DigiFlazz yang sudah dikonfigurasi:
+### Pantau kondisi toko
+
+- Ringkasan transaksi dan statistik penjualan
+- Analytics produk dan export CSV
+- Status bot, database, memory, cache, dan uptime
+- Jejak aktivitas admin
+- Pengingat masa sewa kepada admin
+
+---
+
+## 🎨 Buat Bot Terasa Seperti Milik Brand Kamu
+
+- Welcome text, banner, dan rotasi banner
+- Label menu, reply keyboard, serta tombol inline
+- Custom emoji tombol yang didukung Telegram
+- Tampilan daftar kategori
+- Preset tema dan import/export JSON
+- Background pembayaran QR
+- Pengaturan posisi, ukuran, rasio, dan text overlay QR
+- Preview draft sebelum dipublikasikan
+- Factory reset ke tampilan bawaan
+
+> Dukungan custom emoji dan media mengikuti kemampuan Bot API serta hak akun Telegram pemilik bot. Fallback teks tetap tersedia ketika konten khusus tidak didukung.
+
+## 🌐 Bahasa dan Mata Uang
+
+Setiap toko memakai satu mata uang utama agar pencatatan saldo dan transaksi tetap konsisten.
+
+- **Mata uang utama:** IDR, MYR, INR, atau USD
+- **Bahasa bot:** Indonesia, English, Melayu, 中文, dan हिन्दी
+- **Fallback bahasa:** tersedia apabila terjemahan tertentu belum lengkap
+
+---
+
+## 💳 Pilih Gateway Sesuai Pasar
+
+Gateway yang tersedia bergantung pada negara, mata uang toko, approval merchant, dan konfigurasi penyewa.
+
+- 🇮🇩 **Indonesia:** Pakasir, QiosPay, Sanpay, Casaku, Midtrans, Tripay, VioletPay, iPaymu, OrderKuota, AutoGoPay GoPay QRIS, dan AutoGoPay ShopeePay QRIS
+- 🇲🇾 **Malaysia:** ToyyibPay, Billplz, dan CHIP
+- 🇮🇳 **India:** UPIExpress
+- 🌍 **Global/alternatif:** Cryptomus dan Telegram Stars
+
+> Kamu tidak perlu mengaktifkan semuanya. Pilih gateway yang sesuai dengan pasar dan akun merchant tokomu.
+
+### PPOB Indonesia
+
+Untuk toko IDR dengan akun DigiFlazz yang telah dikonfigurasi:
 
 - Pulsa, paket data, voucher game, token listrik, dan e-money
-- Produk prepaid
-- Cek dan bayar tagihan postpaid yang didukung
-- Sinkronisasi katalog
+- Produk prepaid serta tagihan postpaid yang didukung
+- Sinkronisasi katalog dan pengecekan ulang transaksi
 - Markup persentase atau biaya tetap
-- Riwayat dan pengecekan ulang transaksi
 
-> Aktivasi PPOB memerlukan akun provider dan pengujian kredensial milik penyewa.
+Aktivasi PPOB memerlukan akun provider, saldo, kredensial, dan pengujian transaksi milik penyewa.
 
 ---
 
-## Fitur reseller Telegram
+## 🤝 Bangun Jaringan Reseller di Telegram
 
 - Pendaftaran dan persetujuan reseller
 - Deposit ke dompet reseller
-- Katalog dengan harga reseller khusus
-- Stok reseller menggunakan inventori toko yang sama
+- Katalog dengan harga khusus
+- Inventori reseller terhubung dengan stok toko
 - Pemesanan melalui Reseller Hub
 - Riwayat order dan deposit
 - Pengiriman produk setelah transaksi berhasil
-- Reseller Center di admin panel
+- Reseller Center pada admin panel
 - Penyesuaian saldo dengan alasan dan jejak audit
 - Rekonsiliasi saldo dan ledger
 
-> Reseller Telegram IDR sudah melalui pengujian otomatis. Aktivasi production tetap memerlukan smoke test pada bot dan database milik penyewa. API H2H publik tidak termasuk paket sewa standar.
+> Reseller Telegram IDR telah melalui pengujian otomatis. Aktivasi pada instance penyewa tetap memerlukan smoke test bot dan database. API H2H publik tidak termasuk paket sewa standar.
 
----
+## 🔐 Perlindungan untuk Operasional Penting
 
-## Admin panel
-
-### Operasional toko
-
-- Dashboard overview
-- Kelola produk, kategori, harga, stok, dan varian
-- Kelola transaksi dan pembayaran
-- Pending manual order dan refund
-- User, saldo, voucher, promo, dan flash sale
-- Payment gateway dan reseller
-
-### Pemasaran
-
-- Broadcast pesan dan stok
-- Polling dan voting
-- Penjadwalan broadcast
-- Banner dan tampilan bot
-- Notifikasi restock dan watchlist
-- Insight produk dan waktu penjualan
-
-### Laporan dan monitoring
-
-- Statistik penjualan dan ringkasan transaksi
-- Analytics produk
-- Export CSV
-- Status database, bot, cache, memory, dan uptime
-- Audit aktivitas admin
-- Pengingat masa sewa bot kepada admin
-
----
-
-## Tampilan yang dapat dikustom
-
-- Welcome text dan welcome banner
-- Label menu dan reply keyboard
-- Tombol inline
-- Tampilan kategori
-- Preset tema dan import/export JSON
-- Rotasi banner
-- Background pembayaran QR
-- Posisi, ukuran, rasio, dan text overlay QR
-- Preview draft sebelum publish
-- Factory reset ke tampilan bawaan
-
-## Keamanan transaksi
-
-- Perlindungan pesanan dan pembayaran ganda
-- Klaim stok dan perubahan saldo secara atomik pada flow yang mendukung
+- Perlindungan dari pesanan, pembayaran, dan pengiriman ganda
+- Klaim stok dan perubahan saldo atomik pada flow yang mendukung
 - Verifikasi signature webhook
-- Session admin dan role-based access
-- Audit log aktivitas penting
-- Rate limit dan perlindungan login
+- Session admin, kontrol peran, dan perlindungan login
+- Audit aktivitas penting
 - Credential sensitif tidak ditampilkan kembali
-- Transaksi lama tetap dapat difinalisasi ketika masa sewa berakhir
+- Transaksi lama tetap dapat diselesaikan ketika masa sewa berakhir
 
-## Grup Telegram
+Keamanan tetap bergantung pada konfigurasi yang benar, kredensial yang dijaga, serta provider yang digunakan.
 
-Bot mendukung grup dan supergroup melalui opsi Group Reply. Demi privasi, penggunaan production disarankan untuk katalog, bantuan, dan informasi publik; checkout, saldo, receipt, serta credential produk sebaiknya dilakukan melalui private chat.
+## 👥 Dukungan Grup Telegram
 
----
+Bot dapat merespons di grup dan supergroup melalui opsi Group Reply.
+Katalog, bantuan, dan informasi publik cocok digunakan di grup.
 
-## Status layanan
-
-- ✅ **Siap digunakan:** produk digital, checkout, top-up, saldo, promo, refund, admin panel, custom appearance, dan mayoritas gateway yang sudah dikonfigurasi
-- ✅ **Reseller Telegram IDR:** kode dan test otomatis siap; perlu smoke test pada instance penyewa
-- 🧪 **PPOB:** memerlukan akun DigiFlazz dan pengujian transaksi provider
-- 🧪 **Gateway:** kesiapan akhir bergantung approval, saldo, callback, dan kredensial merchant penyewa
-- 🔒 **Reseller H2H publik:** tidak termasuk paket standar dan belum ditawarkan sebagai API publik production
+Demi privasi, checkout, saldo, receipt, dan credential produk sebaiknya tetap dikirim melalui private chat.
 
 ---
 
-## Paket sewa
+## 📦 Paket dan Harga
 
 | Paket | Harga | Isi |
 |:---|:---:|:---|
 | Instalasi + bulan pertama | **Rp40.000** | Setup bot dan penggunaan bulan pertama |
 | Perpanjangan | **Rp25.000/bulan** | Melanjutkan instance bot aktif |
 | Beli source code | **Rp2.675.000** | Akses source code penuh |
-| Custom | Nego | Penyesuaian sesuai kebutuhan |
+| Custom | **Nego** | Penyesuaian berdasarkan hasil penilaian scope |
 
-### Paket sewa mendapatkan
+### Yang kamu dapatkan selama menyewa
 
-- Setup awal bot
-- Admin panel
-- Pemilihan fitur dan gateway sesuai kebutuhan
-- Update selama masa sewa aktif
-- Bantuan penggunaan
-- Support Telegram
-- Akses grup diskusi
+- ✅ Instance Bot Auto Order Telegram
+- ✅ Akses admin panel
+- ✅ Setup dan konfigurasi awal
+- ✅ Pemilihan fitur serta gateway sesuai kebutuhan
+- ✅ Update versi standar selama masa sewa aktif
+- ✅ Bantuan penggunaan
+- ✅ Support Telegram dan akses grup diskusi
 
-> Biaya akun merchant, deposit provider, domain, atau layanan pihak ketiga tidak termasuk kecuali disepakati sebelumnya.
+> Biaya akun merchant, deposit provider, domain, server, atau layanan pihak ketiga tidak termasuk kecuali disepakati sebelumnya.
 
-## Cara mulai
+---
 
-1. Hubungi admin dan jelaskan jenis produk yang dijual.
-2. Pilih paket dan payment gateway yang dibutuhkan.
-3. Kirim data bot dan konfigurasi melalui jalur privat.
-4. Admin menyiapkan serta menguji instance bot.
-5. Kamu menerima akses bot dan admin panel.
-6. Masukkan produk, stok, lalu mulai jualan.
+## ⚙️ Proses Aktivasi
+
+1. **Konsultasi** — jelaskan jenis produk, pasar, dan alur penjualanmu.
+2. **Pilih paket** — tentukan fitur serta payment gateway yang dibutuhkan.
+3. **Kirim data privat** — token dan kredensial dikirim melalui jalur yang disepakati.
+4. **Setup bot** — admin menyiapkan konfigurasi instance.
+5. **Pengujian** — alur utama dan gateway yang dipilih diuji.
+6. **Serah terima** — kamu menerima akses bot dan admin panel.
+7. **Mulai jualan** — masukkan produk, stok, lalu promosikan tokomu.
+
+## 🛠️ Dukungan Selama Masa Sewa
+
+Kami membantu:
+
+- Instalasi dan konfigurasi awal
+- Panduan penggunaan bot serta admin panel
+- Troubleshooting fungsi standar
+- Update versi standar selama masa sewa aktif
+- Bantuan pemeriksaan konfigurasi gateway
+
+Pengembangan fitur khusus, migrasi besar, domain, server, dan pekerjaan pihak ketiga dapat memerlukan biaya atau kesepakatan terpisah.
+
+---
+
+## ❓ Pertanyaan yang Sering Ditanyakan
+
+### Apakah saya harus mengerti coding?
+
+Tidak. Operasional harian dilakukan melalui bot dan admin panel. Setup awal juga dibantu.
+
+### Apa yang perlu saya siapkan?
+
+Minimal siapkan akun Bot Telegram, daftar produk, dan data toko. Jika memakai pembayaran otomatis atau PPOB, kamu juga perlu akun provider yang sesuai.
+
+### Apakah bot bisa dipakai selain untuk produk digital?
+
+Bisa untuk alur yang sesuai dengan fitur bot. Konsultasikan jenis produk dan proses pengirimannya terlebih dahulu.
+
+### Apakah tampilannya bisa disesuaikan?
+
+Bisa. Welcome message, banner, menu, tombol, kategori, dan tampilan QR dapat dikustom melalui fitur yang tersedia.
+
+### Apakah bisa meminta fitur custom?
+
+Bisa diajukan. Kelayakan, waktu pengerjaan, dan biaya ditentukan setelah scope diperiksa.
+
+### Apakah saya mendapat update?
+
+Ya, update versi standar tersedia selama masa sewa aktif. Permintaan fitur khusus tidak otomatis termasuk.
+
+### Apakah transaksi dan data terlindungi?
+
+Bot dilengkapi kontrol akses dan perlindungan transaksi berlapis. Keamanan akhir juga bergantung pada konfigurasi server, provider, dan kerahasiaan kredensial.
+
+### Apakah bisa pindah server?
+
+Bisa dibantu setelah kondisi server, database, file, dan konfigurasi tujuan diperiksa.
+
+### Apakah semua payment gateway langsung aktif?
+
+Tidak. Gateway harus sesuai dengan mata uang toko dan memerlukan akun merchant, approval, saldo, callback, serta kredensial yang valid.
+
+### Apakah tersedia versi beli putus?
+
+Ya. Tersedia opsi pembelian source code untuk kebutuhan kontrol penuh.
+
+---
+
+## 🧪 Status Kesiapan Layanan
+
+- ✅ **Siap digunakan:** produk digital, checkout, top-up, saldo, promo, refund, admin panel, dan custom appearance
+- ✅ **Reseller Telegram IDR:** kode dan pengujian otomatis siap; perlu smoke test pada instance penyewa
+- 🧪 **PPOB:** memerlukan akun DigiFlazz dan pengujian transaksi provider
+- 🧪 **Payment gateway:** kesiapan akhir bergantung pada provider dan kredensial merchant
+- 🔒 **Reseller H2H publik:** belum termasuk paket standar dan belum ditawarkan sebagai API production
 
 ---
 
 <div align="center">
 
-## Siap membuat tokomu berjalan otomatis?
+## Siap Mengubah Toko Telegram Menjadi Lebih Otomatis?
 
-[![Telegram](https://img.shields.io/badge/Konsultasi-Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/TempestVPNOfficial)
-[![WhatsApp](https://img.shields.io/badge/Pesan-WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/6283111380628)
+**Coba demo atau ceritakan kebutuhan tokomu. Konsultasi awal tidak mengikat.**
+
+[![Coba Demo](https://img.shields.io/badge/Coba_Demo-Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/FusionTempest_bot)
+[![Konsultasi](https://img.shields.io/badge/Konsultasi-Telegram-5865F2?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/TempestVPNOfficial)
+[![Pesan](https://img.shields.io/badge/Pesan-WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/6283111380628)
 
 **Jam layanan: 09.00–22.00 WIB**
 
@@ -245,4 +330,4 @@ Bot mendukung grup dan supergroup melalui opsi Group Reply. Demi privasi, penggu
 
 ---
 
-Catatan: fitur mengikuti versi bot, pasar, dan konfigurasi instance. Lihat [`README.md`](README.md) untuk progress teknis terbaru.
+*Fitur mengikuti versi bot, pasar, provider, dan konfigurasi setiap instance. Lihat [`README.md`](README.md) untuk progress teknis terbaru.*
