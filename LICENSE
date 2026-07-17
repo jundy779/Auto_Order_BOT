@@ -1,53 +1,134 @@
-PROPRIETARY SOFTWARE LICENSE
-Auto Order Bot — Premium Commercial License
+FUSIONIFY BOT PROPRIETARY SOFTWARE LICENSE
 
-Copyright (c) 2024-2026 FusionTempest. All Rights Reserved.
+Copyright (c) 2025-2026 PT FUSIONIFY DIGITAL GROUP.
+All rights reserved.
 
-This software and all associated files, documentation, and materials
-(the "Software") are proprietary and confidential. The Software is
-licensed, not sold, only to customers who obtained it through authorized
-channels.
+This license governs FUSIONIFY BOT, including its source code, compiled or
+packaged copies, updates, documentation, templates, and related materials
+(collectively, the "Software").
 
-GRANT OF LICENSE
+The Software is proprietary and confidential. It is licensed, not sold, except
+for ownership of the physical or digital copy lawfully delivered to an
+authorized customer. No intellectual-property rights are transferred.
 
-Upon valid purchase, the licensee is granted a limited, non-exclusive,
-non-transferable right to deploy and operate one (1) instance of the
-Software for their own business use, subject to the restrictions below.
+1. AUTHORIZED CHANNELS
 
-RESTRICTIONS
+A license is valid only when issued or confirmed by PT FUSIONIFY DIGITAL GROUP
+or an authorized representative through an official sales or support channel.
+Payment to an unauthorized party does not create a license.
 
-You may NOT, without prior written permission from the copyright holder:
+2. RENTAL LICENSE
 
-- Copy, redistribute, resell, lease, or sublicense the Software or source code
-- Publish the Software or derivative works as open source
-- Share source code, deployment packages, or credentials with third parties
-- Remove or alter copyright, license, or proprietary notices
-- Use the Software to create a competing product or template for resale
-- Reverse engineer, decompile, or disassemble the Software except where
-  expressly permitted by applicable law
+During an active rental period, the customer receives a limited, revocable,
+non-exclusive, non-transferable license to operate one (1) authorized bot
+instance for the customer's own store or business.
 
-PERMITTED USE
+The rental license:
 
-- Deploy and configure the Software for the licensee's own store or service
-- Modify the Software for the licensee's own deployment, without redistribution
-- Create backups for disaster recovery of the licensee's own instance
+- Remains valid only for the paid rental period
+- Does not include ownership or delivery of the source code
+- Includes standard updates and support only as stated in the agreed package
+- May not be shared across multiple stores, customers, or instances unless
+  separately authorized in writing
 
-DISCLAIMER
+3. SOURCE-CODE LICENSE
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS
-FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING
-FROM USE OF THE SOFTWARE.
+An authorized source-code purchaser receives a perpetual, non-exclusive,
+non-transferable license to:
 
-TERMINATION
+- Operate the Software for the purchaser's own store or business
+- Modify the Software for the purchaser's own authorized deployment
+- Create reasonable backup copies for disaster recovery
 
-This license terminates automatically if you breach any term. Upon termination,
-you must cease use and destroy all copies in your possession.
+Unless a written invoice or agreement states otherwise, the source-code license
+covers one (1) production store or bot instance. Additional instances,
+white-label distribution, managed-service use for third parties, or resale
+rights require separate written permission.
 
-LICENSING INQUIRIES
+Purchasing source code does not transfer copyright, trademark, authorship, or
+the right to redistribute the Software.
 
-Telegram: https://t.me/TempestVPNOfficial
+4. RESTRICTIONS
+
+Without prior written permission from the copyright holder, you may not:
+
+- Copy, publish, redistribute, resell, rent, sublicense, or share the Software
+  or source code with any third party
+- Upload the Software or derivative works to a public or shared repository
+- Sell, distribute, or provide modified or derivative versions to third parties
+- Use the Software as a template, codebase, or foundation for a competing
+  product offered to third parties
+- Share deployment packages, credentials, license data, or confidential
+  documentation
+- Remove or alter copyright, license, trademark, or proprietary notices
+- Bypass rental expiry, licensing controls, access restrictions, or other
+  authorization measures
+- Reverse engineer, decompile, or disassemble components not delivered as
+  source code, except where applicable law expressly permits it
+
+5. CUSTOMER RESPONSIBILITIES
+
+The customer is responsible for:
+
+- Protecting bot tokens, passwords, API keys, merchant credentials, and backups
+- Using lawful products, content, payment accounts, and customer data
+- Obtaining required permissions from payment, hosting, Telegram, and other
+  third-party providers
+- Maintaining an appropriate server environment and applying provided updates
+- Ensuring staff and contractors comply with this license
+
+6. THIRD-PARTY COMPONENTS
+
+Third-party libraries, services, APIs, trademarks, and content remain subject
+to their respective owners' terms and licenses. This license does not grant
+rights to Telegram, payment providers, hosting providers, or other third-party
+services.
+
+7. UPDATES AND SUPPORT
+
+Updates, installation, migration, custom development, and support are provided
+only according to the active package or a separate written agreement. Purchase
+or rental does not guarantee every future feature, third-party compatibility,
+or uninterrupted availability.
+
+8. CONFIDENTIALITY
+
+Source code, private documentation, credentials, non-public technical
+information, and deployment materials must be kept confidential. Access may be
+given only to personnel who need it for the customer's authorized use and who
+are bound by equivalent confidentiality obligations.
+
+9. TERMINATION
+
+This license terminates automatically upon a material breach. A rental license
+also terminates when the paid rental period ends.
+
+Upon termination, the customer must stop using the Software and delete all
+unauthorized copies. Sections concerning ownership, restrictions,
+confidentiality, disclaimer, and liability survive termination.
+
+10. DISCLAIMER AND LIMITATION OF LIABILITY
+
+THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTIES OF ANY
+KIND, EXPRESS OR IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE, NON-INFRINGEMENT, OR CONTINUOUS AVAILABILITY.
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE COPYRIGHT HOLDER WILL NOT BE LIABLE
+FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR BUSINESS-INTERRUPTION
+DAMAGES, LOSS OF PROFITS, LOSS OF DATA, PROVIDER OUTAGES, OR UNAUTHORIZED USE
+OF CUSTOMER CREDENTIALS.
+
+Nothing in this license excludes rights or liabilities that cannot lawfully be
+excluded under applicable law.
+
+11. NO WAIVER
+
+Failure to enforce any provision does not waive the right to enforce it later.
+If any provision is unenforceable, the remaining provisions remain effective.
+
+12. LICENSING CONTACT
+
 PT FUSIONIFY DIGITAL GROUP
+Telegram: https://t.me/TempestVPNOfficial
 
-Unauthorized use, reproduction, or distribution is strictly prohibited.
+Unauthorized use, reproduction, disclosure, or distribution is prohibited.
