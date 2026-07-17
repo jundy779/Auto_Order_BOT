@@ -242,7 +242,7 @@ Demi privasi, checkout, saldo, receipt, dan credential produk sebaiknya tetap di
 |:---|:---:|:---|
 | Instalasi + bulan pertama | **Rp40.000** | Setup bot dan penggunaan bulan pertama |
 | Perpanjangan | **Rp25.000/bulan** | Melanjutkan instance bot aktif |
-| Beli source code | **Rp2.675.000** | Akses source code penuh |
+| Beli source code | **Rp3.500.000** | Akses source code penuh |
 | Custom | **Nego** | Penyesuaian berdasarkan hasil penilaian scope |
 
 ### Yang kamu dapatkan selama menyewa
