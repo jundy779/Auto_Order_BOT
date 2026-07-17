@@ -18,6 +18,18 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan dalam satu
 
 ---
 
+## 📊 FUSIONIFY BOT dalam Angka
+
+| | |
+|:---|:---|
+| 🚀 **Dikembangkan sejak** | 26 November 2025 |
+| 💳 **Integrasi pembayaran** | 16 |
+| 🌏 **Cakupan pasar** | Indonesia, Malaysia, India, dan Global |
+| 🌐 **Bahasa bot** | 5 bahasa |
+| 💱 **Mata uang utama** | IDR, MYR, INR, atau USD |
+| 🖥️ **Admin panel** | Termasuk dalam paket sewa |
+| 🔄 **Pengembangan** | Aktif diperbarui |
+
 ## 🚀 Kenapa Memilih FUSIONIFY BOT?
 
 FUSIONIFY BOT membantu seller digital mengubah proses jualan manual menjadi alur yang lebih cepat dan teratur.
@@ -32,6 +44,17 @@ Customer dapat memilih produk, membayar, dan menerima pesanan langsung melalui T
 - 🔄 **Terus dikembangkan** — penyempurnaan versi standar tersedia selama masa sewa aktif
 
 > FUSIONIFY BOT mulai dikembangkan pada **26 November 2025** dan diperbarui secara aktif berdasarkan kebutuhan operasional toko digital.
+
+## ⚖️ Jualan Manual vs FUSIONIFY BOT
+
+| Jualan manual | Dengan FUSIONIFY BOT |
+|---|---|
+| Balas customer satu per satu | Customer memilih produk langsung melalui bot |
+| Periksa pembayaran secara manual | Status diperiksa otomatis oleh gateway/provider yang dikonfigurasi |
+| Kirim produk satu per satu | Produk digital dikirim setelah pembayaran terkonfirmasi |
+| Catat transaksi sendiri | Riwayat transaksi tersimpan dan dapat dipantau |
+| Pantau stok secara manual | Stok terhubung dengan proses checkout dan delivery |
+| Kelola promo dari banyak tempat | Promo, voucher, dan broadcast dikelola dari satu panel |
 
 ## 👥 Cocok untuk Bisnis Kamu?
 
@@ -233,6 +256,21 @@ Demi privasi, checkout, saldo, receipt, dan credential produk sebaiknya tetap di
 - ✅ Support Telegram dan akses grup diskusi
 
 > Biaya akun merchant, deposit provider, domain, server, atau layanan pihak ketiga tidak termasuk kecuali disepakati sebelumnya.
+
+## 📌 Yang Tidak Termasuk dalam Harga Sewa
+
+Agar tidak terjadi salah paham, biaya paket standar belum mencakup:
+
+- Server, VPS, atau hosting
+- Domain, reverse proxy, dan layanan tunnel
+- Pendaftaran atau biaya akun merchant payment gateway
+- Deposit dan saldo provider PPOB
+- Biaya transaksi yang dibebankan provider
+- Migrasi khusus dari sistem atau database lain
+- Pengembangan fitur custom di luar fitur standar
+- Layanan pihak ketiga berbayar lainnya
+
+Kebutuhan tambahan dapat dibicarakan saat konsultasi dan hanya dikerjakan setelah scope serta biayanya disepakati.
 
 ---
 
