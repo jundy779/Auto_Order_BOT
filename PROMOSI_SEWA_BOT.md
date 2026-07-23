@@ -25,7 +25,7 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan dalam satu
 | 🚀 **Dikembangkan sejak** | 26 November 2025 |
 | 💳 **Integrasi pembayaran** | 16 |
 | 🌏 **Cakupan pasar** | Indonesia, Malaysia, India, dan Global |
-| 🌐 **Bahasa bot** | 5 bahasa |
+| 🌐 **Bahasa bot** | 6 bahasa |
 | 💱 **Mata uang utama** | IDR, MYR, INR, atau USD |
 | 🖥️ **Admin panel** | Termasuk dalam paket sewa |
 | 🔄 **Pengembangan** | Aktif diperbarui |
@@ -171,7 +171,7 @@ Harga terjangkau bukan berarti semua layanan pihak ketiga sudah termasuk. Akun m
 Setiap toko memakai satu mata uang utama agar pencatatan saldo dan transaksi tetap konsisten.
 
 - **Mata uang utama:** IDR, MYR, INR, atau USD
-- **Bahasa bot:** Indonesia, English, Melayu, 中文, dan हिन्दी
+- **Bahasa bot:** Indonesia, English, Melayu, 中文, हिन्दी, dan Tiếng Việt
 - **Fallback bahasa:** tersedia apabila terjemahan tertentu belum lengkap
 
 ---

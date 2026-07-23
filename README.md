@@ -13,7 +13,7 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 [![Auto Order](https://img.shields.io/badge/AUTO_ORDER-24%2F7-0EA5E9?style=flat-square)](#kenapa-memilih-fusionify-bot)
 [![Multi Region](https://img.shields.io/badge/MULTI_REGION-4_PASAR-38BDF8?style=flat-square)](#bahasa-dan-mata-uang)
 [![Multi Currency](https://img.shields.io/badge/MULTI_CURRENCY-4_MATA_UANG-0284C7?style=flat-square)](#bahasa-dan-mata-uang)
-[![Languages](https://img.shields.io/badge/BAHASA-5-0369A1?style=flat-square)](#bahasa-dan-mata-uang)
+[![Languages](https://img.shields.io/badge/BAHASA-6-0369A1?style=flat-square)](#bahasa-dan-mata-uang)
 [![Maintained](https://img.shields.io/badge/STATUS-AKTIF_DIKEMBANGKAN-22C55E?style=flat-square)](#status-kesiapan)
 
 [![Coba Demo](https://img.shields.io/badge/Coba_Demo-Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/FusionTempest_bot)
@@ -41,27 +41,38 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 
 ## Yang Terbaru
 
+### 🎨 Tampilan Bot Custom
+
+Atur welcome, label, urutan, dan tombol menu sesuai karakter toko tanpa coding.
+
 <table>
 <tr>
-<td width="33%" align="center">
+<td width="25%" align="center">
 
-### 🎨 Tampilan Lebih Fleksibel
+### ⭐ Broadcast Lebih Menarik
 
-Sesuaikan identitas bot dan tampilan pembayaran agar selaras dengan brand toko.
+Gunakan emoji Telegram Premium pada pengumuman agar promosi toko lebih ekspresif.
 
 </td>
-<td width="33%" align="center">
+<td width="25%" align="center">
+
+### 📦 Minimum Order & Bulk
+
+Atur jumlah minimum dan harga bertingkat agar pembelian grosir lebih rapi.
+
+</td>
+<td width="25%" align="center">
 
 ### 🤝 Reseller Telegram
 
 Bangun jaringan reseller dengan katalog, dompet, riwayat, dan pengelolaan terpusat.
 
 </td>
-<td width="33%" align="center">
+<td width="25%" align="center">
 
-### 🧾 Receipt Lebih Rapi
+### 🇻🇳 Tiếng Việt
 
-Informasi pembelian dan top-up lebih mudah dibaca pada perangkat yang mendukung.
+Layani customer Vietnam langsung melalui bot dan admin panel.
 
 </td>
 </tr>
@@ -227,7 +238,7 @@ Setiap toko memakai satu mata uang utama agar pencatatan transaksi tetap konsist
 [![INR](https://img.shields.io/badge/INR-India-22C55E?style=for-the-badge)](#pilihan-pembayaran)
 [![USD](https://img.shields.io/badge/USD-Global-0EA5E9?style=for-the-badge)](#pilihan-pembayaran)
 
-**Indonesia**　•　**English**　•　**Melayu**　•　**中文**　•　**हिन्दी**
+**Indonesia**　•　**English**　•　**Melayu**　•　**中文**　•　**हिन्दी**　•　**Tiếng Việt**
 
 *Fallback tersedia untuk teks tertentu yang belum lengkap.*
 
