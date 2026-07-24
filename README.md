@@ -41,6 +41,10 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 
 ## Yang Terbaru
 
+### 🪙 Pembayaran USDC di Jaringan Base
+
+Customer dapat bayar dengan USDC langsung ke wallet toko di jaringan Base. Nominal dicek otomatis, sehingga pesanan lebih cepat diproses tanpa menunggu konfirmasi manual.
+
 ### 💳 Metode Pembayaran Lebih Stabil
 
 Metode pembayaran yang sudah tidak andal dihentikan dari pilihan checkout, sementara pesanan lama tetap bisa dicek dan diselesaikan manual bila diperlukan.
