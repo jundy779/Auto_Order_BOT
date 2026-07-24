@@ -41,6 +41,10 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 
 ## Yang Terbaru
 
+### 💳 Metode Pembayaran Lebih Stabil
+
+Metode pembayaran yang sudah tidak andal dihentikan dari pilihan checkout, sementara pesanan lama tetap bisa dicek dan diselesaikan manual bila diperlukan.
+
 ### 📊 Monitor Lebih Andal
 
 Dashboard operasional kini lebih modern dan mudah dibaca, dengan ringkasan kondisi bot, pembayaran, penjualan, dan hal yang perlu diperiksa dalam bagian yang rapi.
@@ -254,7 +258,7 @@ Gateway yang dapat digunakan mengikuti negara, mata uang toko, akun merchant, ap
 
 | Pasar | Pilihan pembayaran |
 |:---:|---|
-| <img src="https://flagcdn.com/w20/id.png" width="20" alt="Bendera Indonesia"> **Indonesia** | Pakasir · QiosPay · Sanpay · Casaku · Midtrans · Tripay · VioletPay · iPaymu · OrderKuota · AutoGoPay GoPay · AutoGoPay ShopeePay |
+| <img src="https://flagcdn.com/w20/id.png" width="20" alt="Bendera Indonesia"> **Indonesia** | Pakasir · QiosPay · Sanpay · Casaku · Midtrans · Tripay · VioletPay · iPaymu · AutoGoPay GoPay · AutoGoPay ShopeePay |
 | <img src="https://flagcdn.com/w20/my.png" width="20" alt="Bendera Malaysia"> **Malaysia** | ToyyibPay · Billplz · CHIP |
 | <img src="https://flagcdn.com/w20/in.png" width="20" alt="Bendera India"> **India** | UPIExpress |
 | 🌍 **Global** | Cryptomus · USDT BEP20 direct wallet · Telegram Stars |
