@@ -41,6 +41,10 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 
 ## Yang Terbaru
 
+### 📊 Monitor Lebih Andal
+
+Dashboard operasional kini lebih modern dan mudah dibaca, dengan ringkasan kondisi bot, pembayaran, penjualan, dan hal yang perlu diperiksa dalam bagian yang rapi.
+
 ### 🎨 Tampilan Bot Custom
 
 Atur welcome, label, urutan, dan tombol menu sesuai karakter toko tanpa coding.
