@@ -23,7 +23,7 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan dalam satu
 | | |
 |:---|:---|
 | 🚀 **Dikembangkan sejak** | 26 November 2025 |
-| 💳 **Integrasi pembayaran** | 16 |
+| 💳 **Integrasi pembayaran** | 17 |
 | 🌏 **Cakupan pasar** | Indonesia, Malaysia, India, dan Global |
 | 🌐 **Bahasa bot** | 6 bahasa |
 | 💱 **Mata uang utama** | IDR, MYR, INR, atau USD |
@@ -112,7 +112,7 @@ Harga terjangkau bukan berarti semua layanan pihak ketiga sudah termasuk. Akun m
 - Status pembayaran otomatis melalui webhook atau polling
 - Riwayat pembelian dan deposit
 - Receipt pembelian dan top-up
-- Telegram Stars dan pembayaran kripto untuk flow yang diaktifkan
+- Telegram Stars dan pembayaran kripto (termasuk USDT BEP20 serta USDC Base) untuk flow yang diaktifkan
 
 ### 📦 Terima pesanan otomatis
 
@@ -183,7 +183,7 @@ Gateway yang tersedia bergantung pada negara, mata uang toko, approval merchant,
 - 🇮🇩 **Indonesia:** Pakasir, QiosPay, Sanpay, Casaku, Midtrans, Tripay, VioletPay, iPaymu, AutoGoPay GoPay QRIS, dan AutoGoPay ShopeePay QRIS
 - 🇲🇾 **Malaysia:** ToyyibPay, Billplz, dan CHIP
 - 🇮🇳 **India:** UPIExpress
-- 🌍 **Global/alternatif:** Cryptomus dan Telegram Stars
+- 🌍 **Global/alternatif:** Cryptomus, USDT BEP20, USDC Base, dan Telegram Stars
 
 > Kamu tidak perlu mengaktifkan semuanya. Pilih gateway yang sesuai dengan pasar dan akun merchant tokomu.
 

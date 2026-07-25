@@ -265,7 +265,7 @@ Gateway yang dapat digunakan mengikuti negara, mata uang toko, akun merchant, ap
 | <img src="https://flagcdn.com/w20/id.png" width="20" alt="Bendera Indonesia"> **Indonesia** | Pakasir · QiosPay · Sanpay · Casaku · Midtrans · Tripay · VioletPay · iPaymu · AutoGoPay GoPay · AutoGoPay ShopeePay |
 | <img src="https://flagcdn.com/w20/my.png" width="20" alt="Bendera Malaysia"> **Malaysia** | ToyyibPay · Billplz · CHIP |
 | <img src="https://flagcdn.com/w20/in.png" width="20" alt="Bendera India"> **India** | UPIExpress |
-| 🌍 **Global** | Cryptomus · USDT BEP20 direct wallet · Telegram Stars |
+| 🌍 **Global** | Cryptomus · USDT BEP20 · USDC Base · Telegram Stars |
 
 Tidak semua gateway harus diaktifkan. Kamu dapat memilih yang sesuai dengan target customer dan akun merchant tokomu.
 
