@@ -13,7 +13,7 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 [![Auto Order](https://img.shields.io/badge/AUTO_ORDER-24%2F7-0EA5E9?style=flat-square)](#kenapa-memilih-fusionify-bot)
 [![Multi Region](https://img.shields.io/badge/MULTI_REGION-4_PASAR-38BDF8?style=flat-square)](#bahasa-dan-mata-uang)
 [![Multi Currency](https://img.shields.io/badge/MULTI_CURRENCY-4_MATA_UANG-0284C7?style=flat-square)](#bahasa-dan-mata-uang)
-[![Languages](https://img.shields.io/badge/BAHASA-6-0369A1?style=flat-square)](#bahasa-dan-mata-uang)
+[![Languages](https://img.shields.io/badge/BAHASA_BOT-8-0369A1?style=flat-square)](#bahasa-dan-mata-uang)
 [![Maintained](https://img.shields.io/badge/STATUS-AKTIF_DIKEMBANGKAN-22C55E?style=flat-square)](#status-kesiapan)
 
 [![Coba Demo](https://img.shields.io/badge/Coba_Demo-Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/FusionTempest_bot)
@@ -40,6 +40,10 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 </div>
 
 ## Yang Terbaru
+
+### 🌏 Bahasa Rusia dan Thailand
+
+Customer kini dapat memakai menu dan alur Bot Telegram dalam bahasa Rusia atau Thailand. Panel admin tetap tersedia dalam lima bahasa seperti sebelumnya.
 
 ### 🪙 Pembayaran USDC di Jaringan Base
 
@@ -250,9 +254,9 @@ Setiap toko memakai satu mata uang utama agar pencatatan transaksi tetap konsist
 [![INR](https://img.shields.io/badge/INR-India-22C55E?style=for-the-badge)](#pilihan-pembayaran)
 [![USD](https://img.shields.io/badge/USD-Global-0EA5E9?style=for-the-badge)](#pilihan-pembayaran)
 
-**Indonesia**　•　**English**　•　**Melayu**　•　**中文**　•　**हिन्दी**　•　**Tiếng Việt**
+**Indonesia**　•　**English**　•　**Melayu**　•　**中文**　•　**हिन्दी**　•　**Tiếng Việt**　•　**Русский**　•　**ไทย**
 
-*Fallback tersedia untuk teks tertentu yang belum lengkap.*
+*Rusia dan Thailand tersedia pada Bot Telegram. Panel admin tersedia dalam Indonesia, English, Melayu, 中文, dan Tiếng Việt. Fallback tersedia untuk teks tertentu yang belum lengkap.*
 
 </div>
 
