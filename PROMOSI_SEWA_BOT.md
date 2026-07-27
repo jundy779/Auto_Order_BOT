@@ -42,6 +42,7 @@ Customer dapat memilih produk, membayar, dan menerima pesanan langsung melalui T
 - 🖥️ **Admin panel lengkap** — kelola operasional tanpa mengedit kode
 - 🎨 **Tampilan fleksibel** — sesuaikan banner, menu, kategori, tombol, dan QR
 - 🌏 **Siap lintas pasar** — mendukung IDR, MYR, INR, atau USD sebagai mata uang utama toko
+- 🤖 **AI Support Beta** — bantu menjawab pertanyaan umum dan teruskan ke admin saat diperlukan
 - 🔄 **Terus dikembangkan** — penyempurnaan versi standar tersedia selama masa sewa aktif
 
 > FUSIONIFY BOT mulai dikembangkan pada **26 November 2025** dan diperbarui secara aktif berdasarkan kebutuhan operasional toko digital.
@@ -124,6 +125,14 @@ Harga terjangkau bukan berarti semua layanan pihak ketiga sudah termasuk. Akun m
 - Notifikasi status pesanan
 - Pengambilan ulang produk berdasarkan kepemilikan transaksi
 
+### 🤖 AI Support Beta
+
+- Membantu menjawab pertanyaan umum seputar produk, pembayaran, dan kendala pesanan
+- Meneruskan bantuan kepada admin ketika informasi belum cukup
+- Bersifat opsional dan diaktifkan setelah pengujian pada instance penyewa
+
+> AI Support masih Beta, belum termasuk paket standar, dan dapat memerlukan provider serta biaya layanan AI terpisah.
+
 ---
 
 ## 🖥️ Satu Admin Panel untuk Operasional Toko
@@ -150,6 +159,7 @@ Harga terjangkau bukan berarti semua layanan pihak ketiga sudah termasuk. Akun m
 - Status bot, database, memory, cache, dan uptime
 - Jejak aktivitas admin
 - Pengingat masa sewa kepada admin
+- Konfigurasi AI Support Beta untuk owner
 
 ---
 
@@ -265,6 +275,7 @@ Agar tidak terjadi salah paham, biaya paket standar belum mencakup:
 
 - Migrasi khusus dari sistem atau database lain
 - Pengembangan fitur custom di luar fitur standar
+- Aktivasi AI Support Beta dan biaya provider AI
 - Layanan pihak ketiga berbayar lainnya
 
 Kebutuhan tambahan dapat dibicarakan saat konsultasi dan hanya dikerjakan setelah scope serta biayanya disepakati.
@@ -321,6 +332,10 @@ Bisa diajukan. Kelayakan, waktu pengerjaan, dan biaya ditentukan setelah scope d
 
 Ya, update versi standar tersedia selama masa sewa aktif. Permintaan fitur khusus tidak otomatis termasuk.
 
+### Apakah AI Support sudah termasuk paket standar?
+
+Belum. AI Support masih Beta dan tersedia sebagai fitur opsional. Aktivasi, provider, kuota, serta biaya layanan AI mengikuti kesepakatan terpisah.
+
 ### Apakah transaksi dan data terlindungi?
 
 Bot dilengkapi kontrol akses dan perlindungan transaksi berlapis. Keamanan akhir juga bergantung pada konfigurasi server, provider, dan kerahasiaan kredensial.
@@ -345,6 +360,7 @@ Ya. Tersedia opsi pembelian source code untuk kebutuhan kontrol penuh.
 - ✅ **Reseller Telegram IDR:** kode dan pengujian otomatis siap; perlu smoke test pada instance penyewa
 - 🧪 **PPOB:** memerlukan akun DigiFlazz dan pengujian transaksi provider
 - 🧪 **Payment gateway:** kesiapan akhir bergantung pada provider dan kredensial merchant
+- 🧪 **AI Support Beta:** kode tersedia; aktivasi opsional memerlukan provider AI dan pengujian pada instance penyewa
 - 🔒 **Reseller H2H publik:** belum termasuk paket standar dan belum ditawarkan sebagai API production
 
 ---

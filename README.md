@@ -41,6 +41,10 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 
 ## Yang Terbaru
 
+### 🤖 AI Support Beta
+
+Customer dapat memperoleh jawaban lebih cepat untuk pertanyaan umum seputar produk, pembayaran, dan kendala pesanan. Jika informasinya belum cukup, bantuan diteruskan kepada admin. Fitur ini opsional, masih Beta, dan belum termasuk paket standar.
+
 ### 🌏 Bahasa Rusia dan Thailand
 
 Customer kini dapat memakai menu dan alur Bot Telegram dalam bahasa Rusia atau Thailand. Pemilik toko juga dapat memilih bahasa Rusia atau Thailand pada panel admin.
@@ -214,6 +218,7 @@ Siap untuk Indonesia, Malaysia, India, dan kebutuhan global.
 - Pengajuan refund
 - Notifikasi status
 - Ambil ulang produk
+- Bantuan pertanyaan umum melalui AI Support Beta
 
 </td>
 </tr>
@@ -225,7 +230,7 @@ Siap untuk Indonesia, Malaysia, India, dan kebutuhan global.
 |---|---|---|
 | Produk, kategori, harga, stok, dan varian | Broadcast, promo, voucher, dan flash sale | Ringkasan transaksi dan penjualan |
 | Transaksi, pembayaran, pending order, dan refund | Polling, voting, restock, dan watchlist | Analytics produk dan export laporan |
-| User, saldo, gateway, dan reseller | Banner dan tampilan toko | Status layanan dan masa sewa |
+| User, saldo, gateway, dan reseller | Banner dan tampilan toko | Status layanan, masa sewa, dan konfigurasi AI Support Beta |
 
 ## Tampilan Sesuai Brand Toko
 
@@ -329,7 +334,8 @@ Demi privasi, checkout, saldo, receipt, serta isi produk sebaiknya tetap dikirim
 |:---:|---|
 | ✅ **Siap digunakan** | Produk digital, checkout, top-up, saldo, promo, refund, admin panel, dan tampilan |
 | 🧪 **Diuji per instance** | Gateway, PPOB, Telegram Stars, reseller, dan pengingat masa sewa |
-| 🔒 **Di luar paket standar** | API reseller publik |
+| 🧪 **Beta opsional** | AI Support untuk pertanyaan umum dan eskalasi ke admin |
+| 🔒 **Di luar paket standar** | AI Support, biaya provider AI, dan API reseller publik |
 
 Setiap toko memiliki kombinasi pasar, provider, dan konfigurasi berbeda. Karena itu, fitur yang bergantung pada pihak ketiga diuji sebelum digunakan untuk transaksi nyata.
 
@@ -358,6 +364,7 @@ Setiap toko memiliki kombinasi pasar, provider, dan konfigurasi berbeda. Karena 
 
 - Migrasi khusus dari sistem atau database lain
 - Pengembangan fitur custom di luar fitur standar
+- Aktivasi AI Support Beta dan biaya provider AI
 - Layanan pihak ketiga berbayar lainnya
 
 Kebutuhan tambahan hanya dikerjakan setelah scope dan biaya disepakati.
@@ -427,6 +434,15 @@ Tidak. Aktivasi bergantung pada mata uang toko, akun merchant, approval, kredens
 <br>
 
 Bisa. Welcome message, banner, menu, tombol, kategori, dan tampilan QR dapat disesuaikan melalui fitur yang tersedia.
+
+</details>
+
+<details>
+<summary><strong>Apakah AI Support sudah termasuk paket standar?</strong></summary>
+
+<br>
+
+Belum. AI Support masih Beta dan tersedia sebagai fitur opsional. Aktivasi, provider, kuota, serta biaya layanan AI disepakati terpisah.
 
 </details>
 
