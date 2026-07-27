@@ -25,7 +25,8 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan dalam satu
 | 🚀 **Dikembangkan sejak** | 26 November 2025 |
 | 💳 **Integrasi pembayaran** | 17 |
 | 🌏 **Cakupan pasar** | Indonesia, Malaysia, India, dan Global |
-| 🌐 **Bahasa bot** | 6 bahasa |
+| 🌐 **Bahasa bot** | 8 bahasa |
+| 🌐 **Bahasa admin panel** | 7 bahasa |
 | 💱 **Mata uang utama** | IDR, MYR, INR, atau USD |
 | 🖥️ **Admin panel** | Termasuk dalam paket sewa |
 | 🔄 **Pengembangan** | Aktif diperbarui |
@@ -171,7 +172,8 @@ Harga terjangkau bukan berarti semua layanan pihak ketiga sudah termasuk. Akun m
 Setiap toko memakai satu mata uang utama agar pencatatan saldo dan transaksi tetap konsisten.
 
 - **Mata uang utama:** IDR, MYR, INR, atau USD
-- **Bahasa bot:** Indonesia, English, Melayu, 中文, हिन्दी, dan Tiếng Việt
+- **Bahasa bot:** Indonesia, English, Melayu, 中文, हिन्दी, Tiếng Việt, Русский, dan ไทย
+- **Bahasa admin panel:** Indonesia, English, Melayu, 中文, Tiếng Việt, Русский, dan ไทย
 - **Fallback bahasa:** tersedia apabila terjemahan tertentu belum lengkap
 
 ---
@@ -217,12 +219,12 @@ Aktivasi PPOB memerlukan akun provider, saldo, kredensial, dan pengujian transak
 
 ## 🔐 Perlindungan untuk Operasional Penting
 
-- Perlindungan dari pesanan, pembayaran, dan pengiriman ganda
-- Klaim stok dan perubahan saldo atomik pada flow yang mendukung
-- Verifikasi signature webhook
-- Session admin, kontrol peran, dan perlindungan login
-- Audit aktivitas penting
-- Credential sensitif tidak ditampilkan kembali
+- Pesanan lebih terlindungi dari pemrosesan ganda
+- Stok dan saldo dijaga tetap konsisten
+- Pembayaran diperiksa sebelum produk dikirim
+- Akses admin dapat dibatasi sesuai peran
+- Aktivitas penting dapat ditelusuri
+- Informasi sensitif tidak ditampilkan secara terbuka
 - Transaksi lama tetap dapat diselesaikan ketika masa sewa berakhir
 
 Keamanan tetap bergantung pada konfigurasi yang benar, kredensial yang dijaga, serta provider yang digunakan.

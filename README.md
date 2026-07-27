@@ -43,7 +43,7 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 
 ### 🌏 Bahasa Rusia dan Thailand
 
-Customer kini dapat memakai menu dan alur Bot Telegram dalam bahasa Rusia atau Thailand. Panel admin tetap tersedia dalam lima bahasa seperti sebelumnya.
+Customer kini dapat memakai menu dan alur Bot Telegram dalam bahasa Rusia atau Thailand. Pemilik toko juga dapat memilih bahasa Rusia atau Thailand pada panel admin.
 
 ### 🪙 Pembayaran USDC di Jaringan Base
 
@@ -256,7 +256,7 @@ Setiap toko memakai satu mata uang utama agar pencatatan transaksi tetap konsist
 
 **Indonesia**　•　**English**　•　**Melayu**　•　**中文**　•　**हिन्दी**　•　**Tiếng Việt**　•　**Русский**　•　**ไทย**
 
-*Rusia dan Thailand tersedia pada Bot Telegram. Panel admin tersedia dalam Indonesia, English, Melayu, 中文, dan Tiếng Việt. Fallback tersedia untuk teks tertentu yang belum lengkap.*
+*Bot Telegram tersedia dalam 8 bahasa. Panel admin tersedia dalam Indonesia, English, Melayu, 中文, Tiếng Việt, Русский, dan ไทย. Hindi tetap tersedia khusus pada Bot Telegram.*
 
 </div>
 
