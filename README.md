@@ -41,6 +41,18 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 
 ## Yang Terbaru
 
+### 🌐 Top Up Global dalam Dollar
+
+Metode pembayaran global kini menampilkan pilihan top up dalam USD, sementara saldo toko tetap dikreditkan sesuai mata uang yang digunakan toko. Untuk operasional stablecoin yang stabil, tersedia pemeriksaan koneksi sebelum metode pembayaran diaktifkan.
+
+### 📝 Deskripsi Produk Lebih Rapi
+
+Susunan baris deskripsi dari panel admin kini tetap tampil rapi di katalog Bot Telegram, sehingga informasi produk lebih mudah dibaca customer.
+
+### ✅ Pembayaran Otomatis Lebih Aman
+
+Pemeriksaan pembayaran kini lebih ketat terhadap nominal, waktu pembayaran, dan masa berlaku invoice. Pembayaran yang terlambat atau tidak sesuai tidak langsung memproses pesanan dan masuk pemeriksaan admin.
+
 ### 🤖 AI Support Beta
 
 Customer dapat memperoleh jawaban lebih cepat untuk pertanyaan umum seputar produk, pembayaran, dan kendala pesanan. Jika informasinya belum cukup, bantuan diteruskan kepada admin. Fitur ini opsional, masih Beta, dan belum termasuk paket standar.
