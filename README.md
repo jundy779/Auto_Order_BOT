@@ -41,6 +41,10 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 
 ## Yang Terbaru
 
+### 🎁 Program Referral
+
+Bagikan link referral, kumpulkan poin dari transaksi produk digital yang sukses, lalu ajukan penukaran tunai atau akun untuk diproses manual oleh admin. Fitur ini tersedia sesuai paket dan konfigurasi toko.
+
 ### 🌐 Top Up Global dalam Dollar
 
 Metode pembayaran global kini menampilkan pilihan top up dalam USD, sementara saldo toko tetap dikreditkan sesuai mata uang yang digunakan toko. Untuk operasional stablecoin yang stabil, tersedia pemeriksaan koneksi sebelum metode pembayaran diaktifkan.
@@ -48,6 +52,10 @@ Metode pembayaran global kini menampilkan pilihan top up dalam USD, sementara sa
 ### 📝 Deskripsi Produk Lebih Rapi
 
 Susunan baris deskripsi dari panel admin kini tetap tampil rapi di katalog Bot Telegram, sehingga informasi produk lebih mudah dibaca customer.
+
+### 📱 Harga PPOB Lebih Fleksibel
+
+Atur harga PPOB secara lebih fleksibel dari panel admin: gunakan margin global sebagai default, tetapkan margin khusus untuk SKU tertentu, atau masukkan harga jual manual untuk produk prepaid. Produk tagihan postpaid tetap mengikuti nominal inquiry agar tagihan customer akurat.
 
 ### ✅ Pembayaran Otomatis Lebih Aman
 
