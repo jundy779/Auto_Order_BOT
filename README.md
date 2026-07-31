@@ -41,6 +41,18 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 
 ## Yang Terbaru
 
+### 📦 Stok Manual Lebih Tahan Gangguan
+
+Jika pesanan manual dibatalkan atau kedaluwarsa, stok dapat kembali tersedia dengan aman meskipun terjadi gangguan singkat pada proses penyimpanan.
+
+### 📱 Katalog PPOB Lebih Stabil
+
+Katalog PPOB tetap tersedia saat layanan provider mengalami gangguan singkat, sehingga customer tidak mendadak melihat daftar produk kosong ketika toko masih aktif.
+
+### 💳 Pembayaran PPOB Lebih Fleksibel
+
+Customer dapat memilih metode pembayaran PPOB dari gateway yang aktif di toko, sama praktisnya seperti saat membeli produk digital. Pilihan ini tersedia untuk produk prepaid dan tagihan postpaid sesuai konfigurasi toko.
+
 ### 🎁 Program Referral
 
 Bagikan link referral, kumpulkan poin dari transaksi produk digital yang sukses, lalu ajukan penukaran tunai atau akun untuk diproses manual oleh admin. Fitur ini tersedia sesuai paket dan konfigurasi toko.
