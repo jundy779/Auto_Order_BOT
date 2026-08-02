@@ -192,7 +192,7 @@ Setiap toko memakai satu mata uang utama agar pencatatan saldo dan transaksi tet
 
 Gateway yang tersedia bergantung pada negara, mata uang toko, approval merchant, dan konfigurasi penyewa.
 
-- 🇮🇩 **Indonesia:** Pakasir, QiosPay, Sanpay, Casaku, Midtrans, Tripay, VioletPay, iPaymu, AutoGoPay GoPay QRIS, dan AutoGoPay ShopeePay QRIS
+- 🇮🇩 **Indonesia:** Pakasir, QiosPay, Sanpay, Casaku, Midtrans, Tripay, iPaymu, AutoGoPay GoPay QRIS, dan AutoGoPay ShopeePay QRIS
 - 🇲🇾 **Malaysia:** ToyyibPay, Billplz, dan CHIP
 - 🇮🇳 **India:** UPIExpress
 - 🌍 **Global/alternatif:** Cryptomus, USDT BEP20, USDC Base, dan Telegram Stars

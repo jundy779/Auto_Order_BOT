@@ -41,9 +41,49 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 
 ## Yang Terbaru
 
-### 📦 Stok Manual Lebih Tahan Gangguan
+### 🧭 Pengaturan Pembayaran Lebih Mudah Dicari
 
-Jika pesanan manual dibatalkan atau kedaluwarsa, stok dapat kembali tersedia dengan aman meskipun terjadi gangguan singkat pada proses penyimpanan.
+Daftar metode pembayaran kini langsung terlihat, dapat dicari, dan difilter berdasarkan status sehingga pengaturan tidak lagi tersembunyi di daftar geser.
+
+### ✍️ Teks Pembayaran QR Bisa Diatur
+
+Pemilik toko dapat menyusun informasi pembayaran, mengganti label, dan menyesuaikannya untuk delapan bahasa langsung dari panel admin.
+
+### 🧾 Nominal QRIS Bisa Diposisikan Bebas
+
+Pemilik toko dapat menggeser nominal pembayaran, mengatur posisi presisi, serta memilih gaya dan ukuran teks langsung dari editor poster QR.
+
+### 🧾 Tampilan PPOB Lebih Profesional
+
+Customer hanya melihat katalog, status, dan pilihan pembayaran yang relevan tanpa detail layanan operasional toko.
+
+### 🎨 Tombol Referral Makin Fleksibel
+
+Pemilik toko dapat mengatur warna, label, posisi, dan emoji Premium tombol Program Referral dari pengaturan tampilan bot.
+
+### 🛡️ Pesanan Reseller Lebih Tahan Gangguan
+
+Pesanan reseller yang terputus karena restart atau gangguan sementara kini dapat dilanjutkan dengan pemeriksaan otomatis; kondisi yang tidak pasti ditahan untuk pemeriksaan admin agar saldo dan stok tidak diproses sembarangan.
+
+### 🎁 Komisi Referral Bisa Diatur
+
+Admin dapat menentukan target transaksi untuk memperoleh poin serta nilai penukaran setiap poin langsung dari Referral Center.
+
+### 📦 Stok Pesanan Batal Kembali Otomatis
+
+Stok produk yang sempat dipesan lalu dibatalkan, gagal, kedaluwarsa, atau direfund kini dapat kembali otomatis dengan perlindungan agar jumlahnya tidak bertambah dua kali.
+
+### 🤝 Harga Reseller Lebih Mudah Diatur
+
+Admin dapat menentukan harga reseller per produk dan langsung melihat perkiraan komisinya dari panel produk.
+
+### 🎛️ Menu Customer Lebih Konsisten
+
+Susunan dan tampilan tombol setelah pesanan manual kini sama dengan menu utama saat `/start`, dan tombol Program Referral kembali tampil dengan nama yang benar.
+
+### 🎁 Referral Center Lebih Lengkap
+
+Admin dapat memantau atribusi, pembelian referral, clawback, serta memproses permintaan penukaran dengan catatan review yang lebih rapi.
 
 ### 📱 Katalog PPOB Lebih Stabil
 
@@ -303,7 +343,7 @@ Gateway yang dapat digunakan mengikuti negara, mata uang toko, akun merchant, ap
 
 | Pasar | Pilihan pembayaran |
 |:---:|---|
-| <img src="https://flagcdn.com/w20/id.png" width="20" alt="Bendera Indonesia"> **Indonesia** | Pakasir · QiosPay · Sanpay · Casaku · Midtrans · Tripay · VioletPay · iPaymu · AutoGoPay GoPay · AutoGoPay ShopeePay |
+| <img src="https://flagcdn.com/w20/id.png" width="20" alt="Bendera Indonesia"> **Indonesia** | Pakasir · QiosPay · Sanpay · Casaku · Midtrans · Tripay · iPaymu · AutoGoPay GoPay · AutoGoPay ShopeePay |
 | <img src="https://flagcdn.com/w20/my.png" width="20" alt="Bendera Malaysia"> **Malaysia** | ToyyibPay · Billplz · CHIP |
 | <img src="https://flagcdn.com/w20/in.png" width="20" alt="Bendera India"> **India** | UPIExpress |
 | 🌍 **Global** | Cryptomus · USDT BEP20 · USDC Base · Telegram Stars |
