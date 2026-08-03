@@ -41,6 +41,14 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 
 ## Yang Terbaru
 
+### 💙 Nama Pembayaran Lebih Ringkas
+
+Pilihan pembayaran di bot kini memakai nama yang lebih mudah dikenali customer, seperti **QRIS GoPay** dan **QRIS ShopeePay**.
+
+### 🛡️ Pilihan Pembayaran Diperbarui
+
+Metode pembayaran yang layanannya sudah tidak tersedia telah dihapus dari bot dan panel admin. Riwayat transaksi lama tetap aman untuk kebutuhan laporan.
+
 ### 🧭 Pengaturan Pembayaran Lebih Mudah Dicari
 
 Daftar metode pembayaran kini langsung terlihat, dapat dicari, dan difilter berdasarkan status sehingga pengaturan tidak lagi tersembunyi di daftar geser.
