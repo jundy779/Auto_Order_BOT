@@ -1,4 +1,4 @@
-# Sewa FUSIONIFY BOT — Auto Order Telegram
+# Sewa FUSIONIFY BOT v8.20.6 — Auto Order Telegram
 
 <div align="center">
 
@@ -23,13 +23,27 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan dalam satu
 | | |
 |:---|:---|
 | 🚀 **Dikembangkan sejak** | 26 November 2025 |
-| 💳 **Integrasi pembayaran** | 17 |
+| 🏷️ **Versi saat ini** | v8.20.6 |
+| 🤝 **Tenant aktif tercatat** | 5–20 instance |
+| 💳 **Integrasi pembayaran** | 18 |
 | 🌏 **Cakupan pasar** | Indonesia, Malaysia, India, dan Global |
 | 🌐 **Bahasa bot** | 8 bahasa |
 | 🌐 **Bahasa admin panel** | 7 bahasa |
 | 💱 **Mata uang utama** | IDR, MYR, INR, atau USD |
 | 🖥️ **Admin panel** | Termasuk dalam paket sewa |
 | 🔄 **Pengembangan** | Aktif diperbarui |
+
+> Angka tenant adalah kisaran operasional terakhir yang tercatat, bukan klaim seluruh pengguna sepanjang waktu. Jumlah transaksi publik belum ditampilkan karena belum ada rekap yang disetujui untuk dipublikasikan.
+
+## 👀 Lihat Sebelum Menyewa
+
+- **Demo bot publik:** [@FusionTempest_bot](https://t.me/FusionTempest_bot)
+- **Walkthrough admin panel:** minta sesi lihat panel melalui [Telegram](https://t.me/TempestVPNOfficial)
+- **Tampilan sesuai brand:** banner, tombol, kategori, dan poster QR dapat diperlihatkan saat konsultasi
+- **Bukti tambahan:** screenshot tenant dan testimoni hanya ditampilkan setelah ada izin pemilik toko
+
+[![Coba Alur Customer](https://img.shields.io/badge/Coba_Alur_Customer-Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/FusionTempest_bot)
+[![Minta Demo Admin Panel](https://img.shields.io/badge/Minta_Demo-Admin_Panel-F97316?style=for-the-badge)](https://t.me/TempestVPNOfficial)
 
 ## 🚀 Kenapa Memilih FUSIONIFY BOT?
 
@@ -192,10 +206,10 @@ Setiap toko memakai satu mata uang utama agar pencatatan saldo dan transaksi tet
 
 Gateway yang tersedia bergantung pada negara, mata uang toko, approval merchant, dan konfigurasi penyewa.
 
-- 🇮🇩 **Indonesia:** Pakasir, QiosPay, Sanpay, Casaku, Midtrans, Tripay, iPaymu, AutoGoPay GoPay QRIS, dan AutoGoPay ShopeePay QRIS
+- 🇮🇩 **Indonesia:** AutoGoPay GoPay QRIS, AutoGoPay ShopeePay QRIS, OrderKuota, Sanpay, QiosPay, Pakasir, Casaku, Tripay, Midtrans, dan iPaymu
 - 🇲🇾 **Malaysia:** ToyyibPay, Billplz, dan CHIP
 - 🇮🇳 **India:** UPIExpress
-- 🌍 **Global/alternatif:** Cryptomus, USDT BEP20, USDC Base, dan Telegram Stars
+- 🌍 **Global/alternatif:** CryptoBot, Cryptomus, USDT BEP20, USDC Base, dan Telegram Stars
 
 > Kamu tidak perlu mengaktifkan semuanya. Pilih gateway yang sesuai dengan pasar dan akun merchant tokomu.
 
@@ -369,7 +383,7 @@ Ya. Tersedia opsi pembelian source code untuk kebutuhan kontrol penuh.
 
 ## Siap Mengubah Toko Telegram Menjadi Lebih Otomatis?
 
-**Coba demo atau ceritakan kebutuhan tokomu. Konsultasi awal tidak mengikat.**
+**Coba demo customer, minta walkthrough admin panel, atau langsung ceritakan kebutuhan tokomu. Konsultasi awal tidak mengikat.**
 
 [![Coba Demo](https://img.shields.io/badge/Coba_Demo-Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/FusionTempest_bot)
 [![Konsultasi](https://img.shields.io/badge/Konsultasi-Telegram-5865F2?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/TempestVPNOfficial)
@@ -381,4 +395,4 @@ Ya. Tersedia opsi pembelian source code untuk kebutuhan kontrol penuh.
 
 ---
 
-*Fitur mengikuti versi bot, pasar, provider, dan konfigurasi setiap instance. Lihat [`README.md`](README.md) untuk progress teknis terbaru.*
+*Materi ini mengikuti FUSIONIFY BOT v8.20.6. Fitur aktif tetap menyesuaikan pasar, provider, paket, dan konfigurasi setiap instance.*

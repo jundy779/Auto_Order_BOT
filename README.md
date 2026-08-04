@@ -4,6 +4,8 @@
 
 # Bot Auto Order Telegram untuk Toko Digital
 
+**FUSIONIFY BOT v8.20.6**
+
 <img src="https://readme-typing-svg.demolab.com?font=DM+Sans&weight=700&size=22&duration=2600&pause=900&color=26A5E4&center=true&vCenter=true&width=760&lines=Tokomu+tetap+berjualan+saat+kamu+offline;Pembayaran+lebih+praktis+langsung+di+Telegram;Produk+digital+dikirim+secara+otomatis;Kelola+semuanya+dari+satu+admin+panel" alt="Animasi manfaat FUSIONIFY BOT">
 
 Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Telegram dan satu admin panel.
@@ -15,6 +17,7 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 [![Multi Currency](https://img.shields.io/badge/MULTI_CURRENCY-4_MATA_UANG-0284C7?style=flat-square)](#bahasa-dan-mata-uang)
 [![Languages](https://img.shields.io/badge/BAHASA_BOT-8-0369A1?style=flat-square)](#bahasa-dan-mata-uang)
 [![Maintained](https://img.shields.io/badge/STATUS-AKTIF_DIKEMBANGKAN-22C55E?style=flat-square)](#status-kesiapan)
+[![Version](https://img.shields.io/badge/VERSI-v8.20.6-0EA5E9?style=flat-square)](#yang-terbaru)
 
 [![Coba Demo](https://img.shields.io/badge/Coba_Demo-Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/FusionTempest_bot)
 [![Konsultasi](https://img.shields.io/badge/Konsultasi-Telegram-5865F2?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/TempestVPNOfficial)
@@ -39,27 +42,26 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 
 </div>
 
+## Bukti yang Bisa Dicek
+
+| Bukti | Tersedia |
+|---|---|
+| Demo alur customer | [@FusionTempest_bot](https://t.me/FusionTempest_bot) |
+| Tenant aktif tercatat | Kisaran 5–20 instance |
+| Dikembangkan sejak | 26 November 2025 |
+| Walkthrough admin panel | [Minta sesi demo](https://t.me/TempestVPNOfficial) |
+
+Jumlah transaksi publik, screenshot tenant, dan testimoni tidak ditampilkan sebelum ada rekap serta izin publikasi yang valid.
+
 ## Yang Terbaru
 
-### 💳 Pembayaran GoPay & ShopeePay Lebih Andal
+### 💳 GoPay, ShopeePay & OrderKuota Lebih Lengkap
 
-Checkout GoPay kini bisa membuka halaman bayar resmi, dan ShopeePay mendeteksi pembayaran lebih tepat tanpa perlu QRIS statis di panel — cukup hubungkan akun di penyedia pembayaran.
-
-### 🎉 Sticker Sukses Juga untuk PPOB & Panel
-
-Sticker notifikasi transaksi sukses kini ikut terkirim setelah pembelian PPOB dan panel Pterodactyl berhasil — sama seperti produk digital.
+Checkout GoPay dapat membuka halaman bayar resmi, ShopeePay mendeteksi pembayaran per pesanan, dan OrderKuota tersedia dengan nominal QRIS unik agar pembayaran lebih mudah dicocokkan otomatis.
 
 ### ✨ Tombol Bot Lebih Konsisten dengan Emoji Premium
 
 Setelah emoji Premium diisi di panel Tombol Telegram, hampir semua tombol bot (termasuk Transfer Bank dan menu utama) ikut memakai ikon itu — tidak lagi hanya sebagian tombol.
-
-### 🔗 Cek Status USDT / USDC Lebih Andal
-
-Setelah customer mengirim hash transaksi, bot menyimpannya dan memeriksa status lewat transaksi tersebut — jadi konfirmasi tidak gagal hanya karena batasan jaringan RPC publik.
-
-### 💎 Emoji Premium Per Metode Pembayaran
-
-Setiap metode pembayaran kini bisa memakai emoji Premium berbeda di tombol bot — misalnya ShopeePay dan GoPay punya ikon masing-masing — langsung dari panel Payment Gateway.
 
 ### 🌍 Pembayaran CryptoBot untuk Customer Global
 
@@ -238,7 +240,7 @@ Gateway yang dapat digunakan mengikuti negara, mata uang toko, akun merchant, ap
 
 | Pasar | Pilihan pembayaran |
 |:---:|---|
-| <img src="https://flagcdn.com/w20/id.png" width="20" alt="Bendera Indonesia"> **Indonesia** | Pakasir · QiosPay · Sanpay · Casaku · Midtrans · Tripay · iPaymu · AutoGoPay GoPay · AutoGoPay ShopeePay |
+| <img src="https://flagcdn.com/w20/id.png" width="20" alt="Bendera Indonesia"> **Indonesia** | AutoGoPay GoPay · AutoGoPay ShopeePay · OrderKuota · Sanpay · QiosPay · Pakasir · Casaku · Tripay · Midtrans · iPaymu |
 | <img src="https://flagcdn.com/w20/my.png" width="20" alt="Bendera Malaysia"> **Malaysia** | ToyyibPay · Billplz · CHIP |
 | <img src="https://flagcdn.com/w20/in.png" width="20" alt="Bendera India"> **India** | UPIExpress |
 | 🌍 **Global** | CryptoBot · Cryptomus · USDT BEP20 · USDC Base · Telegram Stars |
@@ -467,7 +469,7 @@ Ya. Opsi pembelian source code tersedia untuk kebutuhan kontrol penuh.
 
 <br>
 
-*Fitur mengikuti pasar, provider, paket, dan konfigurasi setiap instance.*
+*README ini mengikuti FUSIONIFY BOT v8.20.6. Fitur aktif tetap menyesuaikan pasar, provider, paket, dan konfigurasi setiap instance.*
 
 ![Penutup FUSIONIFY BOT](https://capsule-render.vercel.app/api?type=waving&height=130&section=footer&color=gradient&customColorList=6,11,20)
 
