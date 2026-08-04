@@ -41,142 +41,29 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 
 ## Yang Terbaru
 
-### 💙 Nama Pembayaran Lebih Ringkas
+### 💳 Pembayaran GoPay & ShopeePay Lebih Andal
 
-Pilihan pembayaran di bot kini memakai nama yang lebih mudah dikenali customer, seperti **QRIS GoPay** dan **QRIS ShopeePay**.
+Checkout GoPay kini bisa membuka halaman bayar resmi, dan ShopeePay mendeteksi pembayaran lebih tepat tanpa perlu QRIS statis di panel — cukup hubungkan akun di penyedia pembayaran.
 
-### 🛡️ Pilihan Pembayaran Diperbarui
+### 🎉 Sticker Sukses Juga untuk PPOB & Panel
 
-Metode pembayaran yang layanannya sudah tidak tersedia telah dihapus dari bot dan panel admin. Riwayat transaksi lama tetap aman untuk kebutuhan laporan.
+Sticker notifikasi transaksi sukses kini ikut terkirim setelah pembelian PPOB dan panel Pterodactyl berhasil — sama seperti produk digital.
 
-### 🧭 Pengaturan Pembayaran Lebih Mudah Dicari
+### ✨ Tombol Bot Lebih Konsisten dengan Emoji Premium
 
-Daftar metode pembayaran kini langsung terlihat, dapat dicari, dan difilter berdasarkan status sehingga pengaturan tidak lagi tersembunyi di daftar geser.
+Setelah emoji Premium diisi di panel Tombol Telegram, hampir semua tombol bot (termasuk Transfer Bank dan menu utama) ikut memakai ikon itu — tidak lagi hanya sebagian tombol.
 
-### ✍️ Teks Pembayaran QR Bisa Diatur
+### 🔗 Cek Status USDT / USDC Lebih Andal
 
-Pemilik toko dapat menyusun informasi pembayaran, mengganti label, dan menyesuaikannya untuk delapan bahasa langsung dari panel admin.
+Setelah customer mengirim hash transaksi, bot menyimpannya dan memeriksa status lewat transaksi tersebut — jadi konfirmasi tidak gagal hanya karena batasan jaringan RPC publik.
 
-### 🧾 Nominal QRIS Bisa Diposisikan Bebas
+### 💎 Emoji Premium Per Metode Pembayaran
 
-Pemilik toko dapat menggeser nominal pembayaran, mengatur posisi presisi, serta memilih gaya dan ukuran teks langsung dari editor poster QR.
+Setiap metode pembayaran kini bisa memakai emoji Premium berbeda di tombol bot — misalnya ShopeePay dan GoPay punya ikon masing-masing — langsung dari panel Payment Gateway.
 
-### 🧾 Tampilan PPOB Lebih Profesional
+### 🌍 Pembayaran CryptoBot untuk Customer Global
 
-Customer hanya melihat katalog, status, dan pilihan pembayaran yang relevan tanpa detail layanan operasional toko.
-
-### 🎨 Tombol Referral Makin Fleksibel
-
-Pemilik toko dapat mengatur warna, label, posisi, dan emoji Premium tombol Program Referral dari pengaturan tampilan bot.
-
-### 🛡️ Pesanan Reseller Lebih Tahan Gangguan
-
-Pesanan reseller yang terputus karena restart atau gangguan sementara kini dapat dilanjutkan dengan pemeriksaan otomatis; kondisi yang tidak pasti ditahan untuk pemeriksaan admin agar saldo dan stok tidak diproses sembarangan.
-
-### 🎁 Komisi Referral Bisa Diatur
-
-Admin dapat menentukan target transaksi untuk memperoleh poin serta nilai penukaran setiap poin langsung dari Referral Center.
-
-### 📦 Stok Pesanan Batal Kembali Otomatis
-
-Stok produk yang sempat dipesan lalu dibatalkan, gagal, kedaluwarsa, atau direfund kini dapat kembali otomatis dengan perlindungan agar jumlahnya tidak bertambah dua kali.
-
-### 🤝 Harga Reseller Lebih Mudah Diatur
-
-Admin dapat menentukan harga reseller per produk dan langsung melihat perkiraan komisinya dari panel produk.
-
-### 🎛️ Menu Customer Lebih Konsisten
-
-Susunan dan tampilan tombol setelah pesanan manual kini sama dengan menu utama saat `/start`, dan tombol Program Referral kembali tampil dengan nama yang benar.
-
-### 🎁 Referral Center Lebih Lengkap
-
-Admin dapat memantau atribusi, pembelian referral, clawback, serta memproses permintaan penukaran dengan catatan review yang lebih rapi.
-
-### 📱 Katalog PPOB Lebih Stabil
-
-Katalog PPOB tetap tersedia saat layanan provider mengalami gangguan singkat, sehingga customer tidak mendadak melihat daftar produk kosong ketika toko masih aktif.
-
-### 💳 Pembayaran PPOB Lebih Fleksibel
-
-Customer dapat memilih metode pembayaran PPOB dari gateway yang aktif di toko, sama praktisnya seperti saat membeli produk digital. Pilihan ini tersedia untuk produk prepaid dan tagihan postpaid sesuai konfigurasi toko.
-
-### 🎁 Program Referral
-
-Bagikan link referral, kumpulkan poin dari transaksi produk digital yang sukses, lalu ajukan penukaran tunai atau akun untuk diproses manual oleh admin. Fitur ini tersedia sesuai paket dan konfigurasi toko.
-
-### 🌐 Top Up Global dalam Dollar
-
-Metode pembayaran global kini menampilkan pilihan top up dalam USD, sementara saldo toko tetap dikreditkan sesuai mata uang yang digunakan toko. Untuk operasional stablecoin yang stabil, tersedia pemeriksaan koneksi sebelum metode pembayaran diaktifkan.
-
-### 📝 Deskripsi Produk Lebih Rapi
-
-Susunan baris deskripsi dari panel admin kini tetap tampil rapi di katalog Bot Telegram, sehingga informasi produk lebih mudah dibaca customer.
-
-### 📱 Harga PPOB Lebih Fleksibel
-
-Atur harga PPOB secara lebih fleksibel dari panel admin: gunakan margin global sebagai default, tetapkan margin khusus untuk SKU tertentu, atau masukkan harga jual manual untuk produk prepaid. Produk tagihan postpaid tetap mengikuti nominal inquiry agar tagihan customer akurat.
-
-### ✅ Pembayaran Otomatis Lebih Aman
-
-Pemeriksaan pembayaran kini lebih ketat terhadap nominal, waktu pembayaran, dan masa berlaku invoice. Pembayaran yang terlambat atau tidak sesuai tidak langsung memproses pesanan dan masuk pemeriksaan admin.
-
-### 🤖 AI Support Beta
-
-Customer dapat memperoleh jawaban lebih cepat untuk pertanyaan umum seputar produk, pembayaran, dan kendala pesanan. Jika informasinya belum cukup, bantuan diteruskan kepada admin. Fitur ini opsional, masih Beta, dan belum termasuk paket standar.
-
-### 🌏 Bahasa Rusia dan Thailand
-
-Customer kini dapat memakai menu dan alur Bot Telegram dalam bahasa Rusia atau Thailand. Pemilik toko juga dapat memilih bahasa Rusia atau Thailand pada panel admin.
-
-### 🪙 Pembayaran USDC di Jaringan Base
-
-Customer dapat bayar dengan USDC langsung ke wallet toko di jaringan Base. Nominal dicek otomatis, sehingga pesanan lebih cepat diproses tanpa menunggu konfirmasi manual.
-
-### 💳 Metode Pembayaran Lebih Stabil
-
-Metode pembayaran yang sudah tidak andal dihentikan dari pilihan checkout, sementara pesanan lama tetap bisa dicek dan diselesaikan manual bila diperlukan.
-
-### 📊 Monitor Lebih Andal
-
-Dashboard operasional kini lebih modern dan mudah dibaca, dengan ringkasan kondisi bot, pembayaran, penjualan, dan hal yang perlu diperiksa dalam bagian yang rapi.
-
-### 🎨 Tampilan Bot Custom
-
-Atur welcome, label, urutan, dan tombol menu sesuai karakter toko tanpa coding.
-
-<table>
-<tr>
-<td width="25%" align="center">
-
-### ⭐ Broadcast Lebih Menarik
-
-Gunakan emoji Telegram Premium pada pengumuman agar promosi toko lebih ekspresif.
-
-</td>
-<td width="25%" align="center">
-
-### 📦 Minimum Order & Bulk
-
-Atur jumlah minimum dan harga bertingkat agar pembelian grosir lebih rapi.
-
-</td>
-<td width="25%" align="center">
-
-### 🤝 Reseller Telegram
-
-Bangun jaringan reseller dengan katalog, dompet, riwayat, dan pengelolaan terpusat.
-
-</td>
-<td width="25%" align="center">
-
-### 🇻🇳 Tiếng Việt
-
-Layani customer Vietnam langsung melalui bot dan admin panel.
-
-</td>
-</tr>
-</table>
+Pemilik toko dapat menyiapkan pembayaran berdenominasi USD melalui CryptoBot untuk checkout dan top-up saldo, lengkap dengan pilihan aset, status pembayaran, serta pengaturan terpisah dari satu panel. Aktivasi tetap opsional sesuai kebijakan platform yang berlaku.
 
 ## Kenapa Memilih FUSIONIFY BOT?
 
@@ -354,7 +241,7 @@ Gateway yang dapat digunakan mengikuti negara, mata uang toko, akun merchant, ap
 | <img src="https://flagcdn.com/w20/id.png" width="20" alt="Bendera Indonesia"> **Indonesia** | Pakasir · QiosPay · Sanpay · Casaku · Midtrans · Tripay · iPaymu · AutoGoPay GoPay · AutoGoPay ShopeePay |
 | <img src="https://flagcdn.com/w20/my.png" width="20" alt="Bendera Malaysia"> **Malaysia** | ToyyibPay · Billplz · CHIP |
 | <img src="https://flagcdn.com/w20/in.png" width="20" alt="Bendera India"> **India** | UPIExpress |
-| 🌍 **Global** | Cryptomus · USDT BEP20 · USDC Base · Telegram Stars |
+| 🌍 **Global** | CryptoBot · Cryptomus · USDT BEP20 · USDC Base · Telegram Stars |
 
 Tidak semua gateway harus diaktifkan. Kamu dapat memilih yang sesuai dengan target customer dan akun merchant tokomu.
 
