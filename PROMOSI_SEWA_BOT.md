@@ -1,4 +1,4 @@
-# Sewa FUSIONIFY BOT v8.21.0 — Auto Order Telegram
+# Sewa FUSIONIFY BOT v8.21.2 — Auto Order Telegram
 
 <div align="center">
 
@@ -23,7 +23,7 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan dalam satu
 | | |
 |:---|:---|
 | 🚀 **Dikembangkan sejak** | 26 November 2025 |
-| 🏷️ **Versi saat ini** | v8.21.0 |
+| 🏷️ **Versi saat ini** | v8.21.2 |
 | 🤝 **Tenant aktif tercatat** | 5–20 instance |
 | 💳 **Integrasi pembayaran** | 18 |
 | 🌏 **Cakupan pasar** | Indonesia, Malaysia, India, dan Global |
@@ -396,4 +396,4 @@ Ya. Tersedia opsi pembelian source code untuk kebutuhan kontrol penuh.
 
 ---
 
-*Materi ini mengikuti FUSIONIFY BOT v8.21.0. Fitur aktif tetap menyesuaikan pasar, provider, paket, dan konfigurasi setiap instance.*
+*Materi ini mengikuti FUSIONIFY BOT v8.21.2. Fitur aktif tetap menyesuaikan pasar, provider, paket, dan konfigurasi setiap instance.*
