@@ -1,7 +1,7 @@
 {
   "name": "auto-order-payment-bot",
-  "version": "8.9.0",
-  "description": "Private multi-tenant Telegram auto-order bot with 16 payment gateways, digital product delivery, PPOB, admin analytics, multi-currency support, Pterodactyl integration, and Telegram reseller tools.",
+  "version": "8.25.0",
+  "description": "Private multi-tenant Telegram auto-order bot with 18 payment gateways, digital product delivery, PPOB, admin analytics, multi-currency support, Pterodactyl integration, and Telegram reseller tools.",
   "main": "bot.js",
   "engines": {
     "node": ">=20"
@@ -81,8 +81,7 @@
     "web-push": "^3.6.7"
   },
   "optionalDependencies": {
-    "@qr-styled/node": "^1.1.1",
-    "autoft-qris": "^0.0.13"
+    "@qr-styled/node": "^1.1.1"
   },
   "devDependencies": {
     "jest": "^30.2.0"

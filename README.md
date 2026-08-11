@@ -4,7 +4,7 @@
 
 # Bot Auto Order Telegram untuk Toko Digital
 
-**FUSIONIFY BOT v8.21.6**
+**FUSIONIFY BOT v8.25.0**
 
 <img src="https://readme-typing-svg.demolab.com?font=DM+Sans&weight=700&size=22&duration=2600&pause=900&color=26A5E4&center=true&vCenter=true&width=760&lines=Tokomu+tetap+berjualan+saat+kamu+offline;Pembayaran+lebih+praktis+langsung+di+Telegram;Produk+digital+dikirim+secara+otomatis;Kelola+semuanya+dari+satu+admin+panel" alt="Animasi manfaat FUSIONIFY BOT">
 
@@ -17,7 +17,7 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 [![Multi Currency](https://img.shields.io/badge/MULTI_CURRENCY-4_MATA_UANG-0284C7?style=flat-square)](#bahasa-dan-mata-uang)
 [![Languages](https://img.shields.io/badge/BAHASA_BOT-8-0369A1?style=flat-square)](#bahasa-dan-mata-uang)
 [![Maintained](https://img.shields.io/badge/STATUS-AKTIF_DIKEMBANGKAN-22C55E?style=flat-square)](#status-kesiapan)
-[![Version](https://img.shields.io/badge/VERSI-v8.21.6-0EA5E9?style=flat-square)](#yang-terbaru)
+[![Version](https://img.shields.io/badge/VERSI-v8.25.0-0EA5E9?style=flat-square)](#yang-terbaru)
 
 [![Coba Demo](https://img.shields.io/badge/Coba_Demo-Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/FusionTempest_bot)
 [![Konsultasi](https://img.shields.io/badge/Konsultasi-Telegram-5865F2?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/TempestVPNOfficial)
@@ -55,6 +55,14 @@ Jumlah transaksi publik, screenshot tenant, dan testimoni tidak ditampilkan sebe
 
 ## Yang Terbaru
 
+### 🖥️ Tampilan Bot Lebih Mudah Diatur
+
+Pengaturan daftar kategori kini punya Mode Mudah dengan satu tombol untuk menyimpan sekaligus menerapkan perubahan. Emoji kategori juga dapat tampil otomatis tanpa perlu memahami kode template.
+
+### ✨ Emoji Premium Berbeda untuk Setiap Produk
+
+Kategori dan produk digital dapat memakai Emoji Premium masing-masing, dari katalog dan promo hingga pemberitahuan stok serta ringkasan pembelian. Produk bisa mengikuti emoji kategori, menggunakan emoji khusus, atau tampil tanpa emoji; pelanggan tetap melihat emoji biasa saat Premium tidak tersedia.
+
 ### 🎨 List Produk Lebih Branded
 
 Setelah pembeli pilih kategori, tampilan daftar produk bisa dikustom dari Admin (header, format baris, label stok) tanpa mengubah cara checkout.
@@ -66,14 +74,6 @@ Produk digital kini dapat memakai satu file yang sama untuk semua pembeli atau f
 ### 💳 GoPay, ShopeePay & OrderKuota Lebih Rapi
 
 Checkout GoPay dapat membuka halaman bayar resmi. ShopeePay dan OrderKuota tetap tersedia sebagai metode terpisah — hanya muncul jika kamu aktifkan, supaya toko yang fokus GoPay tidak ikut menampilkan tombol yang tidak dipakai.
-
-### ✨ Tombol Bot Lebih Konsisten dengan Emoji Premium
-
-Setelah emoji Premium diisi di panel Tombol Telegram, hampir semua tombol bot (termasuk Transfer Bank dan menu utama) ikut memakai ikon itu — tidak lagi hanya sebagian tombol.
-
-### 🌍 Pembayaran CryptoBot untuk Customer Global
-
-Pemilik toko dapat menyiapkan pembayaran berdenominasi USD melalui CryptoBot untuk checkout dan top-up saldo, lengkap dengan pilihan aset, status pembayaran, serta pengaturan terpisah dari satu panel. Aktivasi tetap opsional sesuai kebijakan platform yang berlaku.
 
 ## Kenapa Memilih FUSIONIFY BOT?
 
@@ -477,7 +477,7 @@ Ya. Opsi pembelian source code tersedia untuk kebutuhan kontrol penuh.
 
 <br>
 
-*README ini mengikuti FUSIONIFY BOT v8.21.6. Fitur aktif tetap menyesuaikan pasar, provider, paket, dan konfigurasi setiap instance.*
+*README ini mengikuti FUSIONIFY BOT v8.25.0. Fitur aktif tetap menyesuaikan pasar, provider, paket, dan konfigurasi setiap instance.*
 
 ![Penutup FUSIONIFY BOT](https://capsule-render.vercel.app/api?type=waving&height=130&section=footer&color=gradient&customColorList=6,11,20)
 
