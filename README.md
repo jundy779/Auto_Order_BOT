@@ -4,7 +4,7 @@
 
 # Bot Auto Order Telegram untuk Toko Digital
 
-**FUSIONIFY BOT v8.25.0**
+**FUSIONIFY BOT v8.28.12**
 
 <img src="https://readme-typing-svg.demolab.com?font=DM+Sans&weight=700&size=22&duration=2600&pause=900&color=26A5E4&center=true&vCenter=true&width=760&lines=Tokomu+tetap+berjualan+saat+kamu+offline;Pembayaran+lebih+praktis+langsung+di+Telegram;Produk+digital+dikirim+secara+otomatis;Kelola+semuanya+dari+satu+admin+panel" alt="Animasi manfaat FUSIONIFY BOT">
 
@@ -17,7 +17,7 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 [![Multi Currency](https://img.shields.io/badge/MULTI_CURRENCY-4_MATA_UANG-0284C7?style=flat-square)](#bahasa-dan-mata-uang)
 [![Languages](https://img.shields.io/badge/BAHASA_BOT-8-0369A1?style=flat-square)](#bahasa-dan-mata-uang)
 [![Maintained](https://img.shields.io/badge/STATUS-AKTIF_DIKEMBANGKAN-22C55E?style=flat-square)](#status-kesiapan)
-[![Version](https://img.shields.io/badge/VERSI-v8.25.0-0EA5E9?style=flat-square)](#yang-terbaru)
+[![Version](https://img.shields.io/badge/VERSI-v8.28.12-0EA5E9?style=flat-square)](#yang-terbaru)
 
 [![Coba Demo](https://img.shields.io/badge/Coba_Demo-Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/FusionTempest_bot)
 [![Konsultasi](https://img.shields.io/badge/Konsultasi-Telegram-5865F2?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/TempestVPNOfficial)
@@ -55,25 +55,25 @@ Jumlah transaksi publik, screenshot tenant, dan testimoni tidak ditampilkan sebe
 
 ## Yang Terbaru
 
-### 🖥️ Tampilan Bot Lebih Mudah Diatur
+### 💰 Saldo Top Up Langsung Akurat
 
-Pengaturan daftar kategori kini punya Mode Mudah dengan satu tombol untuk menyimpan sekaligus menerapkan perubahan. Emoji kategori juga dapat tampil otomatis tanpa perlu memahami kode template.
+Setelah top up berhasil, struk dan menu saldo langsung menampilkan total terbaru tanpa perlu membuka menu ulang.
 
-### ✨ Emoji Premium Berbeda untuk Setiap Produk
+### 💸 Transfer Saldo Lebih Andal
 
-Kategori dan produk digital dapat memakai Emoji Premium masing-masing, dari katalog dan promo hingga pemberitahuan stok serta ringkasan pembelian. Produk bisa mengikuti emoji kategori, menggunakan emoji khusus, atau tampil tanpa emoji; pelanggan tetap melihat emoji biasa saat Premium tidak tersedia.
+Transfer saldo antar pengguna kembali diproses utuh dalam satu langkah aman, sehingga saldo pengirim, saldo penerima, dan riwayat transaksi tetap konsisten.
 
-### 🎨 List Produk Lebih Branded
+### 🧾 Informasi Produk Lebih Bersih
 
-Setelah pembeli pilih kategori, tampilan daftar produk bisa dikustom dari Admin (header, format baris, label stok) tanpa mengubah cara checkout.
+Label teknis yang sempat muncul di atas data akun pada bukti pengiriman sudah dihapus, sehingga informasi produk langsung tampil tanpa teks pengganggu.
 
-### 📁 Kirim File ZIP/CSV Otomatis
+### 📶 Cek Kuota XL dan AXIS
 
-Produk digital kini dapat memakai satu file yang sama untuk semua pembeli atau file berbeda untuk setiap pesanan. Aktifkan dan atur channel penyimpanan langsung dari tombol **Stok** di Admin Panel; file dikirim otomatis ke customer setelah pembayaran berhasil.
+Pembeli dapat mengecek informasi paket XL/AXIS langsung dari menu paket internet ketika toko mengaktifkan layanan ini. Nomor diperiksa sebelum dikirim dan hasil kuota tidak disimpan oleh bot.
 
-### 💳 GoPay, ShopeePay & OrderKuota Lebih Rapi
+### 🌍 Metode Bayar Global Lebih Mudah Disiapkan
 
-Checkout GoPay dapat membuka halaman bayar resmi. ShopeePay dan OrderKuota tetap tersedia sebagai metode terpisah — hanya muncul jika kamu aktifkan, supaya toko yang fokus GoPay tidak ikut menampilkan tombol yang tidak dipakai.
+Admin kini memberi panduan langkah demi langkah untuk CryptoBot, Cryptomus, USDT, USDC, dan Telegram Stars—mulai dari akun yang dipakai, data yang perlu disalin, sampai pengujian sebelum metode ditampilkan kepada pembeli.
 
 ## Kenapa Memilih FUSIONIFY BOT?
 
@@ -248,7 +248,7 @@ Gateway yang dapat digunakan mengikuti negara, mata uang toko, akun merchant, ap
 
 | Pasar | Pilihan pembayaran |
 |:---:|---|
-| <img src="https://flagcdn.com/w20/id.png" width="20" alt="Bendera Indonesia"> **Indonesia** | AutoGoPay GoPay · AutoGoPay ShopeePay · OrderKuota · Sanpay · QiosPay · Pakasir · Casaku · Tripay · Midtrans · iPaymu |
+| <img src="https://flagcdn.com/w20/id.png" width="20" alt="Bendera Indonesia"> **Indonesia** | AutoGoPay GoPay · AutoGoPay ShopeePay · Sanpay · QiosPay · Pakasir · Casaku · Tripay · Midtrans · iPaymu |
 | <img src="https://flagcdn.com/w20/my.png" width="20" alt="Bendera Malaysia"> **Malaysia** | ToyyibPay · Billplz · CHIP |
 | <img src="https://flagcdn.com/w20/in.png" width="20" alt="Bendera India"> **India** | UPIExpress |
 | 🌍 **Global** | CryptoBot · Cryptomus · USDT BEP20 · USDC Base · Telegram Stars |
@@ -477,7 +477,7 @@ Ya. Opsi pembelian source code tersedia untuk kebutuhan kontrol penuh.
 
 <br>
 
-*README ini mengikuti FUSIONIFY BOT v8.25.0. Fitur aktif tetap menyesuaikan pasar, provider, paket, dan konfigurasi setiap instance.*
+*README ini mengikuti FUSIONIFY BOT v8.28.12. Fitur aktif tetap menyesuaikan pasar, provider, paket, dan konfigurasi setiap instance.*
 
 ![Penutup FUSIONIFY BOT](https://capsule-render.vercel.app/api?type=waving&height=130&section=footer&color=gradient&customColorList=6,11,20)
 
