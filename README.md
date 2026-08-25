@@ -4,7 +4,7 @@
 
 # Bot Auto Order Telegram untuk Toko Digital
 
-**FUSIONIFY BOT v8.28.12**
+**FUSIONIFY BOT v8.29.11**
 
 <img src="https://readme-typing-svg.demolab.com?font=DM+Sans&weight=700&size=22&duration=2600&pause=900&color=26A5E4&center=true&vCenter=true&width=760&lines=Tokomu+tetap+berjualan+saat+kamu+offline;Pembayaran+lebih+praktis+langsung+di+Telegram;Produk+digital+dikirim+secara+otomatis;Kelola+semuanya+dari+satu+admin+panel" alt="Animasi manfaat FUSIONIFY BOT">
 
@@ -17,7 +17,7 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 [![Multi Currency](https://img.shields.io/badge/MULTI_CURRENCY-4_MATA_UANG-0284C7?style=flat-square)](#bahasa-dan-mata-uang)
 [![Languages](https://img.shields.io/badge/BAHASA_BOT-8-0369A1?style=flat-square)](#bahasa-dan-mata-uang)
 [![Maintained](https://img.shields.io/badge/STATUS-AKTIF_DIKEMBANGKAN-22C55E?style=flat-square)](#status-kesiapan)
-[![Version](https://img.shields.io/badge/VERSI-v8.28.12-0EA5E9?style=flat-square)](#yang-terbaru)
+[![Version](https://img.shields.io/badge/VERSI-v8.29.11-0EA5E9?style=flat-square)](#yang-terbaru)
 
 [![Coba Demo](https://img.shields.io/badge/Coba_Demo-Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/FusionTempest_bot)
 [![Konsultasi](https://img.shields.io/badge/Konsultasi-Telegram-5865F2?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/TempestVPNOfficial)
@@ -55,25 +55,46 @@ Jumlah transaksi publik, screenshot tenant, dan testimoni tidak ditampilkan sebe
 
 ## Yang Terbaru
 
-### 💰 Saldo Top Up Langsung Akurat
+### 🔒 Stok Aman Saat Edit Produk
 
-Setelah top up berhasil, struk dan menu saldo langsung menampilkan total terbaru tanpa perlu membuka menu ulang.
+Mengubah nama, deskripsi, harga, atau pengaturan produk tidak lagi mengirim ulang stok lama dari browser. Stok, akun/kode, dan jumlah terjual hanya berubah melalui transaksi atau tombol Stok.
+
+### ☀️ Mode Terang Menyeluruh
+
+Mode terang kini konsisten hingga Monitor, halaman login, lupa/reset password, layar loading, tabel, tab aktif, dan tombol setelah diklik. Pilihan tema tetap sama saat berpindah halaman dan pembaruan tampilan tidak tertahan cache lama.
+
+### 📦 Pembelian Manual Multi-item
+
+Produk manual yang dibeli lebih dari satu kini meminta data untuk setiap unit secara berurutan dan menampilkannya lengkap kepada Admin. Stok manual bervarian juga selalu memakai counter stok terbaru, termasuk saat checkout dengan saldo.
+
+### 🛠️ Laporan Masalah Lebih Jelas
+
+Tombol Bantuan kini bernama Laporkan Masalah. Pembeli memilih kendala produk/garansi, pembayaran/deposit, atau masalah lain sebelum mengirim detail dan bukti kepada Admin.
+
+### 🔎 Admin Panel Lebih Mudah Digunakan
+
+Kolom pencarian di header kini dapat membuka menu dan fitur dengan cepat. Mode terang sudah dirapikan hingga panduan, tab, tabel, modal stok, popup, badge, tombol, dan chart, serta tetap mengingat pilihan pada perangkat yang digunakan.
+
+### 🔔 Status PPOB Lebih Jelas
+
+Pembeli langsung menerima hasil gagal dan pengembalian saldo meski perubahan datang dari provider. Pemilik toko juga mendapat pemberitahuan otomatis untuk gangguan layanan penting dan dapat melihat kode, alasan, tujuan, serta pesan provider di panel.
+
+### 🛡️ Transaksi PPOB Pending Lebih Aman
+
+Status yang belum pasti tidak lagi dianggap gagal terlalu cepat. Pemeriksaan provider mengikuti jeda resmi, perubahan status diterima secara aman, dan kenaikan harga supplier di luar batas ditolak sebelum merugikan toko.
+
+### 📱 Nomor PPOB Diperiksa Lebih Awal
+
+Untuk pulsa dan paket data, ketidaksesuaian operator yang dapat dikenali dari nomor sekarang ditolak sebelum pembayaran. Jika provider tetap menolak transaksi, pembeli mendapat alasan yang lebih jelas sesuai respons resmi.
+
+### ↩️ Pesanan PPOB Gagal Lebih Aman
+
+Jika provider tidak dapat menyelesaikan pesanan setelah pembayaran diterima, nilai pesanan otomatis dikembalikan satu kali ke saldo akun agar pembeli dapat memilih produk lain tanpa menunggu proses manual.
+
 
 ### 💸 Transfer Saldo Lebih Andal
 
 Transfer saldo antar pengguna kembali diproses utuh dalam satu langkah aman, sehingga saldo pengirim, saldo penerima, dan riwayat transaksi tetap konsisten.
-
-### 🧾 Informasi Produk Lebih Bersih
-
-Label teknis yang sempat muncul di atas data akun pada bukti pengiriman sudah dihapus, sehingga informasi produk langsung tampil tanpa teks pengganggu.
-
-### 📶 Cek Kuota XL dan AXIS
-
-Pembeli dapat mengecek informasi paket XL/AXIS langsung dari menu paket internet ketika toko mengaktifkan layanan ini. Nomor diperiksa sebelum dikirim dan hasil kuota tidak disimpan oleh bot.
-
-### 🌍 Metode Bayar Global Lebih Mudah Disiapkan
-
-Admin kini memberi panduan langkah demi langkah untuk CryptoBot, Cryptomus, USDT, USDC, dan Telegram Stars—mulai dari akun yang dipakai, data yang perlu disalin, sampai pengujian sebelum metode ditampilkan kepada pembeli.
 
 ## Kenapa Memilih FUSIONIFY BOT?
 
@@ -477,7 +498,7 @@ Ya. Opsi pembelian source code tersedia untuk kebutuhan kontrol penuh.
 
 <br>
 
-*README ini mengikuti FUSIONIFY BOT v8.28.12. Fitur aktif tetap menyesuaikan pasar, provider, paket, dan konfigurasi setiap instance.*
+*README ini mengikuti FUSIONIFY BOT v8.29.2. Fitur aktif tetap menyesuaikan pasar, provider, paket, dan konfigurasi setiap instance.*
 
 ![Penutup FUSIONIFY BOT](https://capsule-render.vercel.app/api?type=waving&height=130&section=footer&color=gradient&customColorList=6,11,20)
 
