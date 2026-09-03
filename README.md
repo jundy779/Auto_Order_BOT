@@ -4,7 +4,7 @@
 
 # Bot Auto Order Telegram untuk Toko Digital
 
-**FUSIONIFY BOT v8.29.11**
+**FUSIONIFY BOT v8.29.39**
 
 <img src="https://readme-typing-svg.demolab.com?font=DM+Sans&weight=700&size=22&duration=2600&pause=900&color=26A5E4&center=true&vCenter=true&width=760&lines=Tokomu+tetap+berjualan+saat+kamu+offline;Pembayaran+lebih+praktis+langsung+di+Telegram;Produk+digital+dikirim+secara+otomatis;Kelola+semuanya+dari+satu+admin+panel" alt="Animasi manfaat FUSIONIFY BOT">
 
@@ -17,7 +17,7 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 [![Multi Currency](https://img.shields.io/badge/MULTI_CURRENCY-4_MATA_UANG-0284C7?style=flat-square)](#bahasa-dan-mata-uang)
 [![Languages](https://img.shields.io/badge/BAHASA_BOT-8-0369A1?style=flat-square)](#bahasa-dan-mata-uang)
 [![Maintained](https://img.shields.io/badge/STATUS-AKTIF_DIKEMBANGKAN-22C55E?style=flat-square)](#status-kesiapan)
-[![Version](https://img.shields.io/badge/VERSI-v8.29.11-0EA5E9?style=flat-square)](#yang-terbaru)
+[![Version](https://img.shields.io/badge/VERSI-v8.29.39-0EA5E9?style=flat-square)](#yang-terbaru)
 
 [![Coba Demo](https://img.shields.io/badge/Coba_Demo-Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/FusionTempest_bot)
 [![Konsultasi](https://img.shields.io/badge/Konsultasi-Telegram-5865F2?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/TempestVPNOfficial)
@@ -55,46 +55,61 @@ Jumlah transaksi publik, screenshot tenant, dan testimoni tidak ditampilkan sebe
 
 ## Yang Terbaru
 
+### Merchant QRIS Segera Hadir
+
+Pemilik toko dapat menyiapkan tombol Merchant QRIS dari Dekorasi Bot. Susunan menu dapat digeser, diatur hingga lima tombol per baris, dan diurungkan jika salah mengubah.
+
+### Tampilan Katalog PPOB Lebih Rapi
+
+Emoji kategori PPOB kini dapat dihapus sepenuhnya, dan tombol nomor pilihan kembali tersusun ringkas agar nyaman digunakan.
+
+### Foto Pembuka Bisa Dimatikan
+
+Pemilik toko kini dapat mematikan foto maupun stiker pembuka langsung dari Telegram tanpa menghapus media yang sudah tersimpan, lalu mengaktifkannya kembali kapan saja.
+
+### QRIS Tanpa Nama Provider
+
+Customer kini melihat **QRIS** tanpa nama provider. Jika beberapa jalur QRIS aktif, pilihan tampil sebagai **QRIS 1**, **QRIS 2**, dan seterusnya sesuai urutan gateway di Admin sehingga setiap jalur tetap dapat dipilih.
+
+### Perbaikan Top-up Casaku
+
+Casaku kini dikenali penuh pada alur top-up saldo. Integrasi mengikuti API v5.0.0 untuk QRIS v2, cek status, listener Android, dan webhook HMAC-SHA256 raw body; diagnostik Admin juga memeriksa status listener.
+
+### Broadcast Personal
+
+Broadcast mendukung bold/italic dan placeholder `{USERNAME}` untuk menyapa buyer secara personal. Web Admin menyediakan tombol format dan sisip username; handle yang tidak tersedia memakai sapaan “Kak”.
+
+### Jawaban Hermes Streaming + Stop
+
+Saat Bot API 10.3 aktif, jawaban Asisten Toko tampil bertahap sebagai draft dengan tombol Stop bawaan Telegram. Jika dihentikan, bagian jawaban yang sudah aman dipertahankan; perangkat/API lama otomatis kembali ke jawaban final biasa.
+
+### Input Telegram Lebih Praktis
+
+Saat tampilan Bot API 10.3 aktif, kolom balasan otomatis terbuka ketika customer diminta memasukkan jumlah produk, nominal top-up, atau laporan masalah. Tombol batal tetap tersedia dan perangkat lama otomatis memakai keyboard biasa.
+
+### 💬 Pesan Customer Terpusat
+
+Laporan customer sekarang masuk ke menu Pesan Pelanggan di Web Admin. Owner/Admin dapat melihat riwayat serta media customer, mengirim balasan teks atau media ke Telegram, mengatur penanganan tim, dan memantau ringkasan layanan.
+
+### 📈 Performa Toko Lebih Lengkap
+
+Pemilik toko kini dapat melihat performa kemarin, membandingkan hasil dengan periode sebelumnya, memantau rata-rata nilai pesanan, serta mengetahui produk dan kategori yang paling banyak menyumbang pendapatan.
+
+### 🏪 Dekorasi Bot Lebih Mudah
+
+Pemilik toko kini dapat mulai dari tiga bagian yang jelas dengan contoh tampilan ringkas untuk halaman utama bot, kategori produk, dan pilihan toko. Pengaturan lama tetap aman dan baru tampil kepada pelanggan setelah diterapkan.
+
+### ↕️ Urutan Produk PPOB Lebih Rapi
+
+Pemilik toko dapat menampilkan nominal PPOB dari yang terkecil ke terbesar atau sebaliknya. Produk layanan tanpa nominal tetap dipisahkan di bagian akhir agar pelanggan lebih cepat memilih.
+
+### 🌍 Tampilan Mata Uang Lebih Akurat
+
+Bahasa Hindi kini menampilkan harga dan saldo dalam Rupee berdasarkan konversi kurs, sementara bahasa Rusia dan Thailand memakai tampilan USD agar nominal tidak sekadar berganti simbol.
+
 ### 🔒 Stok Aman Saat Edit Produk
 
 Mengubah nama, deskripsi, harga, atau pengaturan produk tidak lagi mengirim ulang stok lama dari browser. Stok, akun/kode, dan jumlah terjual hanya berubah melalui transaksi atau tombol Stok.
-
-### ☀️ Mode Terang Menyeluruh
-
-Mode terang kini konsisten hingga Monitor, halaman login, lupa/reset password, layar loading, tabel, tab aktif, dan tombol setelah diklik. Pilihan tema tetap sama saat berpindah halaman dan pembaruan tampilan tidak tertahan cache lama.
-
-### 📦 Pembelian Manual Multi-item
-
-Produk manual yang dibeli lebih dari satu kini meminta data untuk setiap unit secara berurutan dan menampilkannya lengkap kepada Admin. Stok manual bervarian juga selalu memakai counter stok terbaru, termasuk saat checkout dengan saldo.
-
-### 🛠️ Laporan Masalah Lebih Jelas
-
-Tombol Bantuan kini bernama Laporkan Masalah. Pembeli memilih kendala produk/garansi, pembayaran/deposit, atau masalah lain sebelum mengirim detail dan bukti kepada Admin.
-
-### 🔎 Admin Panel Lebih Mudah Digunakan
-
-Kolom pencarian di header kini dapat membuka menu dan fitur dengan cepat. Mode terang sudah dirapikan hingga panduan, tab, tabel, modal stok, popup, badge, tombol, dan chart, serta tetap mengingat pilihan pada perangkat yang digunakan.
-
-### 🔔 Status PPOB Lebih Jelas
-
-Pembeli langsung menerima hasil gagal dan pengembalian saldo meski perubahan datang dari provider. Pemilik toko juga mendapat pemberitahuan otomatis untuk gangguan layanan penting dan dapat melihat kode, alasan, tujuan, serta pesan provider di panel.
-
-### 🛡️ Transaksi PPOB Pending Lebih Aman
-
-Status yang belum pasti tidak lagi dianggap gagal terlalu cepat. Pemeriksaan provider mengikuti jeda resmi, perubahan status diterima secara aman, dan kenaikan harga supplier di luar batas ditolak sebelum merugikan toko.
-
-### 📱 Nomor PPOB Diperiksa Lebih Awal
-
-Untuk pulsa dan paket data, ketidaksesuaian operator yang dapat dikenali dari nomor sekarang ditolak sebelum pembayaran. Jika provider tetap menolak transaksi, pembeli mendapat alasan yang lebih jelas sesuai respons resmi.
-
-### ↩️ Pesanan PPOB Gagal Lebih Aman
-
-Jika provider tidak dapat menyelesaikan pesanan setelah pembayaran diterima, nilai pesanan otomatis dikembalikan satu kali ke saldo akun agar pembeli dapat memilih produk lain tanpa menunggu proses manual.
-
-
-### 💸 Transfer Saldo Lebih Andal
-
-Transfer saldo antar pengguna kembali diproses utuh dalam satu langkah aman, sehingga saldo pengirim, saldo penerima, dan riwayat transaksi tetap konsisten.
 
 ## Kenapa Memilih FUSIONIFY BOT?
 
@@ -216,7 +231,7 @@ Siap untuk Indonesia, Malaysia, India, dan kebutuhan global.
 - Pengajuan refund
 - Notifikasi status
 - Ambil ulang produk
-- Bantuan pertanyaan umum melalui AI Support Beta
+- Bantuan toko read-only melalui Hermes (opsional), tampil ke customer sebagai **Tanya Seputar Toko** hanya saat layanan terverifikasi siap
 
 </td>
 </tr>
@@ -269,7 +284,7 @@ Gateway yang dapat digunakan mengikuti negara, mata uang toko, akun merchant, ap
 
 | Pasar | Pilihan pembayaran |
 |:---:|---|
-| <img src="https://flagcdn.com/w20/id.png" width="20" alt="Bendera Indonesia"> **Indonesia** | AutoGoPay GoPay · AutoGoPay ShopeePay · Sanpay · QiosPay · Pakasir · Casaku · Tripay · Midtrans · iPaymu |
+| <img src="https://flagcdn.com/w20/id.png" width="20" alt="Bendera Indonesia"> **Indonesia** | AutoGoPay GoPay · AutoGoPay QRIS Interactive · AutoGoPay ShopeePay · Sanpay · QiosPay · Pakasir · Casaku · Tripay · Midtrans · iPaymu |
 | <img src="https://flagcdn.com/w20/my.png" width="20" alt="Bendera Malaysia"> **Malaysia** | ToyyibPay · Billplz · CHIP |
 | <img src="https://flagcdn.com/w20/in.png" width="20" alt="Bendera India"> **India** | UPIExpress |
 | 🌍 **Global** | CryptoBot · Cryptomus · USDT BEP20 · USDC Base · Telegram Stars |
