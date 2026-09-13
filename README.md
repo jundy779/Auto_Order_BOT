@@ -55,9 +55,17 @@ Jumlah transaksi publik, screenshot tenant, dan testimoni tidak ditampilkan sebe
 
 ## Yang Terbaru
 
-### Merchant QRIS Segera Hadir
+### Ulasan Lebih Mudah Dijelajahi
 
-Pemilik toko dapat menyiapkan tombol Merchant QRIS dari Dekorasi Bot. Susunan menu dapat digeser, diatur hingga lima tombol per baris, dan diurungkan jika salah mengubah.
+Customer dapat memfilter Ulasan Toko berdasarkan produk dan bintang, melihat indikator halaman, serta mengurutkan ulasan berdasarkan Like terbanyak. Pilihan Like/Dislike dapat diubah atau dibatalkan, sementara identitas pemberi suara tetap privat.
+
+### Logo Tengah QR Bisa Dimatikan
+
+Pemilik toko dapat menampilkan atau menyembunyikan logo di tengah QR pembayaran dari pengaturan Logo Toko. Logo tetap tersimpan dan dapat dinyalakan kembali kapan saja.
+
+### Ulasan Produk Lebih Mudah Dicari
+
+Customer dapat mengurutkan ulasan produk berdasarkan terbaru, rating tertinggi, rating terendah, atau hanya ulasan yang memiliki komentar. Pemilik toko juga mendapat ringkasan kesan pelanggan agar lebih cepat melihat bagian yang dinilai baik.
 
 ### Tampilan Katalog PPOB Lebih Rapi
 
@@ -70,10 +78,6 @@ Pemilik toko kini dapat mematikan foto maupun stiker pembuka langsung dari Teleg
 ### QRIS Tanpa Nama Provider
 
 Customer kini melihat **QRIS** tanpa nama provider. Jika beberapa jalur QRIS aktif, pilihan tampil sebagai **QRIS 1**, **QRIS 2**, dan seterusnya sesuai urutan gateway di Admin sehingga setiap jalur tetap dapat dipilih.
-
-### Perbaikan Top-up Casaku
-
-Casaku kini dikenali penuh pada alur top-up saldo. Integrasi mengikuti API v5.0.0 untuk QRIS v2, cek status, listener Android, dan webhook HMAC-SHA256 raw body; diagnostik Admin juga memeriksa status listener.
 
 ### Broadcast Personal
 
