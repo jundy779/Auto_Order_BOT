@@ -4,7 +4,7 @@
 
 # Bot Auto Order Telegram untuk Toko Digital
 
-**FUSIONIFY BOT v8.29.51**
+**FUSIONIFY BOT v8.29.53**
 
 <img src="https://readme-typing-svg.demolab.com?font=DM+Sans&weight=700&size=22&duration=2600&pause=900&color=26A5E4&center=true&vCenter=true&width=760&lines=Tokomu+tetap+berjualan+saat+kamu+offline;Pembayaran+lebih+praktis+langsung+di+Telegram;Produk+digital+dikirim+secara+otomatis;Kelola+semuanya+dari+satu+admin+panel" alt="Animasi manfaat FUSIONIFY BOT">
 
@@ -17,7 +17,7 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 [![Multi Currency](https://img.shields.io/badge/MULTI_CURRENCY-4_MATA_UANG-0284C7?style=flat-square)](#bahasa-dan-mata-uang)
 [![Languages](https://img.shields.io/badge/BAHASA_BOT-8-0369A1?style=flat-square)](#bahasa-dan-mata-uang)
 [![Maintained](https://img.shields.io/badge/STATUS-AKTIF_DIKEMBANGKAN-22C55E?style=flat-square)](#status-kesiapan)
-[![Version](https://img.shields.io/badge/VERSI-v8.29.51-0EA5E9?style=flat-square)](#yang-terbaru)
+[![Version](https://img.shields.io/badge/VERSI-v8.29.53-0EA5E9?style=flat-square)](#yang-terbaru)
 
 [![Coba Demo](https://img.shields.io/badge/Coba_Demo-Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/FusionTempest_bot)
 [![Konsultasi](https://img.shields.io/badge/Konsultasi-Telegram-5865F2?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/TempestVPNOfficial)
@@ -55,6 +55,14 @@ Jumlah transaksi publik, screenshot tenant, dan testimoni tidak ditampilkan sebe
 
 ## Yang Terbaru
 
+### Garansi Produk Seumur Hidup (1B)
+
+Admin bisa memilih opsi garansi **1B** (seumur hidup) saat mengatur produk, selain jangka waktu singkat, 3 bulan, 6 bulan, atau full.
+
+### Detail Produk Panjang Dikirim sebagai File
+
+Jika isi akun yang dibeli terlalu panjang untuk satu pesan Telegram, bot otomatis mengirim file teks supaya buyer tetap menerima seluruh detail tanpa error.
+
 ### Omzet Toko MYR Lebih Akurat
 
 Ringkasan keuangan toko Malaysia menampilkan total dalam Ringgit sesuai penjualan, bukan angka yang terpotong atau hampir nol karena salah baca mata uang.
@@ -66,46 +74,6 @@ Customer dapat memfilter Ulasan Toko berdasarkan produk dan bintang, melihat ind
 ### Logo Tengah QR Bisa Dimatikan
 
 Pemilik toko dapat menampilkan atau menyembunyikan logo di tengah QR pembayaran dari pengaturan Logo Toko. Logo tetap tersimpan dan dapat dinyalakan kembali kapan saja.
-
-### Ulasan Produk Lebih Mudah Dicari
-
-Customer dapat mengurutkan ulasan produk berdasarkan terbaru, rating tertinggi, rating terendah, atau hanya ulasan yang memiliki komentar. Pemilik toko juga mendapat ringkasan kesan pelanggan agar lebih cepat melihat bagian yang dinilai baik.
-
-### Tampilan Katalog PPOB Lebih Rapi
-
-Emoji kategori PPOB kini dapat dihapus sepenuhnya, dan tombol nomor pilihan kembali tersusun ringkas agar nyaman digunakan.
-
-### Jawaban Hermes Streaming + Stop
-
-Saat Bot API 10.3 aktif, jawaban Asisten Toko tampil bertahap sebagai draft dengan tombol Stop bawaan Telegram. Jika dihentikan, bagian jawaban yang sudah aman dipertahankan; perangkat/API lama otomatis kembali ke jawaban final biasa.
-
-### Input Telegram Lebih Praktis
-
-Saat tampilan Bot API 10.3 aktif, kolom balasan otomatis terbuka ketika customer diminta memasukkan jumlah produk, nominal top-up, atau laporan masalah. Tombol batal tetap tersedia dan perangkat lama otomatis memakai keyboard biasa.
-
-### 💬 Pesan Customer Terpusat
-
-Laporan customer sekarang masuk ke menu Pesan Pelanggan di Web Admin. Owner/Admin dapat melihat riwayat serta media customer, mengirim balasan teks atau media ke Telegram, mengatur penanganan tim, dan memantau ringkasan layanan.
-
-### 📈 Performa Toko Lebih Lengkap
-
-Pemilik toko kini dapat melihat performa kemarin, membandingkan hasil dengan periode sebelumnya, memantau rata-rata nilai pesanan, serta mengetahui produk dan kategori yang paling banyak menyumbang pendapatan.
-
-### 🏪 Dekorasi Bot Lebih Mudah
-
-Pemilik toko kini dapat mulai dari tiga bagian yang jelas dengan contoh tampilan ringkas untuk halaman utama bot, kategori produk, dan pilihan toko. Pengaturan lama tetap aman dan baru tampil kepada pelanggan setelah diterapkan.
-
-### ↕️ Urutan Produk PPOB Lebih Rapi
-
-Pemilik toko dapat menampilkan nominal PPOB dari yang terkecil ke terbesar atau sebaliknya. Produk layanan tanpa nominal tetap dipisahkan di bagian akhir agar pelanggan lebih cepat memilih.
-
-### 🌍 Tampilan Mata Uang Lebih Akurat
-
-Bahasa Hindi kini menampilkan harga dan saldo dalam Rupee berdasarkan konversi kurs, sementara bahasa Rusia dan Thailand memakai tampilan USD agar nominal tidak sekadar berganti simbol.
-
-### 🔒 Stok Aman Saat Edit Produk
-
-Mengubah nama, deskripsi, harga, atau pengaturan produk tidak lagi mengirim ulang stok lama dari browser. Stok, akun/kode, dan jumlah terjual hanya berubah melalui transaksi atau tombol Stok.
 
 ## Kenapa Memilih FUSIONIFY BOT?
 
@@ -509,7 +477,7 @@ Ya. Opsi pembelian source code tersedia untuk kebutuhan kontrol penuh.
 
 <br>
 
-*README ini mengikuti FUSIONIFY BOT v8.29.51. Fitur aktif tetap menyesuaikan pasar, provider, paket, dan konfigurasi setiap instance.*
+*README ini mengikuti FUSIONIFY BOT v8.29.53. Fitur aktif tetap menyesuaikan pasar, provider, paket, dan konfigurasi setiap instance.*
 
 ![Penutup FUSIONIFY BOT](https://capsule-render.vercel.app/api?type=waving&height=130&section=footer&color=gradient&customColorList=6,11,20)
 
