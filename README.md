@@ -4,7 +4,7 @@
 
 # Bot Auto Order Telegram untuk Toko Digital
 
-**FUSIONIFY BOT v8.29.54**
+**FUSIONIFY BOT v8.30.0**
 
 <img src="https://readme-typing-svg.demolab.com?font=DM+Sans&weight=700&size=22&duration=2600&pause=900&color=26A5E4&center=true&vCenter=true&width=760&lines=Tokomu+tetap+berjualan+saat+kamu+offline;Pembayaran+lebih+praktis+langsung+di+Telegram;Produk+digital+dikirim+secara+otomatis;Kelola+semuanya+dari+satu+admin+panel" alt="Animasi manfaat FUSIONIFY BOT">
 
@@ -17,7 +17,7 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 [![Multi Currency](https://img.shields.io/badge/MULTI_CURRENCY-4_MATA_UANG-0284C7?style=flat-square)](#bahasa-dan-mata-uang)
 [![Languages](https://img.shields.io/badge/BAHASA_BOT-8-0369A1?style=flat-square)](#bahasa-dan-mata-uang)
 [![Maintained](https://img.shields.io/badge/STATUS-AKTIF_DIKEMBANGKAN-22C55E?style=flat-square)](#status-kesiapan)
-[![Version](https://img.shields.io/badge/VERSI-v8.29.54-0EA5E9?style=flat-square)](#yang-terbaru)
+[![Version](https://img.shields.io/badge/VERSI-v8.30.0-0EA5E9?style=flat-square)](#yang-terbaru)
 
 [![Coba Demo](https://img.shields.io/badge/Coba_Demo-Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/FusionTempest_bot)
 [![Konsultasi](https://img.shields.io/badge/Konsultasi-Telegram-5865F2?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/TempestVPNOfficial)
@@ -55,25 +55,23 @@ Jumlah transaksi publik, screenshot tenant, dan testimoni tidak ditampilkan sebe
 
 ## Yang Terbaru
 
-### Garansi Produk 1 Bulan (1B)
+### Asisten AI Kini Diatur dari Admin Panel
 
-Admin bisa memilih opsi garansi **1B** (1 bulan) saat mengatur produk, selain 7 hari, 3 bulan, 6 bulan, atau full.
+Pemilik toko dapat menghubungkan, menguji, dan mengaktifkan Asisten AI dari menu khusus. Perubahan langsung berlaku tanpa restart bot, dan kunci akses disimpan aman tanpa ditampilkan kembali.
 
-### Detail Produk Panjang Dikirim sebagai File
+### Admin Panel 8 Bahasa Lebih Konsisten
 
-Jika isi akun yang dibeli terlalu panjang untuk satu pesan Telegram, bot otomatis mengirim file teks supaya buyer tetap menerima seluruh detail tanpa error.
+Teks penting, status unggah, pengaturan tampilan, dan Jaminan & SLA kini lebih rapi di seluruh bahasa Admin aktif tanpa campuran bahasa yang membingungkan.
 
-### Omzet Toko MYR Lebih Akurat
+### Jaminan Checkout Bisa Disesuaikan
 
-Ringkasan keuangan toko Malaysia menampilkan total dalam Ringgit sesuai penjualan, bukan angka yang terpotong atau hampir nol karena salah baca mata uang.
+Pemilik toko dapat mengubah judul dan kalimat Jaminan & SLA per bahasa dari menu Tampilan Bot, melihat pratinjau, atau menyembunyikan bloknya bila tidak diperlukan.
 
-### Ulasan Lebih Mudah Dijelajahi
+### Stok Bisa Dipasang ke Website Sendiri
 
-Customer dapat memfilter Ulasan Toko berdasarkan produk dan bintang, melihat indikator halaman, serta mengurutkan ulasan berdasarkan Like terbanyak. Pilihan Like/Dislike dapat diubah atau dibatalkan, sementara identitas pemberi suara tetap privat.
+Katalog dan stok bot bisa dibaca lewat API supaya website di domain kamu menampilkan etalase yang sama dengan Telegram (tanpa menyalin stok manual).
 
-### Logo Tengah QR Bisa Dimatikan
-
-Pemilik toko dapat menampilkan atau menyembunyikan logo di tengah QR pembayaran dari pengaturan Logo Toko. Logo tetap tersimpan dan dapat dinyalakan kembali kapan saja.
+Panduan teknisi (setelah bot jalan): buka `https://DOMAIN-BOT-KAMU/docs/catalog-api` — contoh cek cepat: `/api/catalog/health`.
 
 ## Kenapa Memilih FUSIONIFY BOT?
 
@@ -477,7 +475,7 @@ Ya. Opsi pembelian source code tersedia untuk kebutuhan kontrol penuh.
 
 <br>
 
-*README ini mengikuti FUSIONIFY BOT v8.29.54. Fitur aktif tetap menyesuaikan pasar, provider, paket, dan konfigurasi setiap instance.*
+*README ini mengikuti FUSIONIFY BOT v8.29.56. Fitur aktif tetap menyesuaikan pasar, provider, paket, dan konfigurasi setiap instance.*
 
 ![Penutup FUSIONIFY BOT](https://capsule-render.vercel.app/api?type=waving&height=130&section=footer&color=gradient&customColorList=6,11,20)
 
