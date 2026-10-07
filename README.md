@@ -322,7 +322,7 @@ Setiap toko memiliki kombinasi pasar, provider, dan konfigurasi berbeda. Karena 
 |:---|---:|---|
 | 🚀 **Mulai** | **Rp40.000** | Setup dan penggunaan bulan pertama |
 | 🔄 **Perpanjangan** | **Rp25.000/bulan** | Melanjutkan instance bot aktif |
-| 💎 **Source Code** | **Rp3.575.000** | Akses source code penuh |
+| 💎 **Source Code** | **Rp4.575.000** | Akses source code penuh |
 | 🧩 **Custom** | **Nego** | Penyesuaian berdasarkan scope |
 
 ### Paket sewa mendapatkan
