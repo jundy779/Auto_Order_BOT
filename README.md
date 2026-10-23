@@ -4,7 +4,7 @@
 
 # Bot Auto Order Telegram untuk Toko Digital
 
-**FUSIONIFY BOT v8.30.0**
+**FUSIONIFY BOT v8.33.6**
 
 <img src="https://readme-typing-svg.demolab.com?font=DM+Sans&weight=700&size=22&duration=2600&pause=900&color=26A5E4&center=true&vCenter=true&width=760&lines=Tokomu+tetap+berjualan+saat+kamu+offline;Pembayaran+lebih+praktis+langsung+di+Telegram;Produk+digital+dikirim+secara+otomatis;Kelola+semuanya+dari+satu+admin+panel" alt="Animasi manfaat FUSIONIFY BOT">
 
@@ -17,7 +17,7 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 [![Multi Currency](https://img.shields.io/badge/MULTI_CURRENCY-4_MATA_UANG-0284C7?style=flat-square)](#bahasa-dan-mata-uang)
 [![Languages](https://img.shields.io/badge/BAHASA_BOT-8-0369A1?style=flat-square)](#bahasa-dan-mata-uang)
 [![Maintained](https://img.shields.io/badge/STATUS-AKTIF_DIKEMBANGKAN-22C55E?style=flat-square)](#status-kesiapan)
-[![Version](https://img.shields.io/badge/VERSI-v8.30.0-0EA5E9?style=flat-square)](#yang-terbaru)
+[![Version](https://img.shields.io/badge/VERSI-v8.33.6-0EA5E9?style=flat-square)](#yang-terbaru)
 
 [![Coba Demo](https://img.shields.io/badge/Coba_Demo-Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/FusionTempest_bot)
 [![Konsultasi](https://img.shields.io/badge/Konsultasi-Telegram-5865F2?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/TempestVPNOfficial)
@@ -55,23 +55,25 @@ Jumlah transaksi publik, screenshot tenant, dan testimoni tidak ditampilkan sebe
 
 ## Yang Terbaru
 
-### Asisten AI Kini Diatur dari Admin Panel
+### Menu Cara Order Bisa Ditulis Sendiri
 
-Pemilik toko dapat menghubungkan, menguji, dan mengaktifkan Asisten AI dari menu khusus. Perubahan langsung berlaku tanpa restart bot, dan kunci akses disimpan aman tanpa ditampilkan kembali.
+Pesan Cara Order sekarang otomatis menjelaskan langkah beli produk digital dan PPOB secara terpisah. Lewat Dekorasi Bot di Admin Panel, kamu juga bisa menulis panduan sendiri per bahasa, menambahkan foto, dan menampilkan tombol pintasan ke Lihat Produk, Produk PPOB, atau Saldo & Top Up, lengkap dengan pratinjau sebelum diterapkan ke pembeli.
 
-### Admin Panel 8 Bahasa Lebih Konsisten
+### Beli Pulsa dan Token Semudah Aplikasi Isi Ulang
 
-Teks penting, status unggah, pengaturan tampilan, dan Jaminan & SLA kini lebih rapi di seluruh bahasa Admin aktif tanpa campuran bahasa yang membingungkan.
+Menu PPOB bisa tampil seperti aplikasi isi ulang: pembeli memilih Pulsa, Paket Data, E-Wallet, atau Token PLN, mengetik nomor, lalu menekan nominal. Operator terdeteksi otomatis, nama pelanggan PLN dicek sebelum bayar, dan saldo langsung terlihat di layar konfirmasi. SN atau token di struk cukup disalin dengan satu tombol. Fitur ini dinyalakan pemilik toko dari Admin Panel.
 
-### Jaminan Checkout Bisa Disesuaikan
+### Tampilan Panel Bisa Diganti
 
-Pemilik toko dapat mengubah judul dan kalimat Jaminan & SLA per bahasa dari menu Tampilan Bot, melihat pratinjau, atau menyembunyikan bloknya bila tidak diperlukan.
+Di header Admin ada pemilih tampilan. Gelap dan terang tetap ada. Slush menawarkan kertas pastel bergaris hitam, sedangkan Discord menghadirkan nuansa biru kosmik yang nyaman untuk panel operasional. Tabel serta status sukses atau gagal tetap mudah dibaca.
 
-### Stok Bisa Dipasang ke Website Sendiri
+### Status Pulsa di Admin Lebih Jelas
 
-Katalog dan stok bot bisa dibaca lewat API supaya website di domain kamu menampilkan etalase yang sama dengan Telegram (tanpa menyalin stok manual).
+Transaksi pulsa atau paket data yang sudah berhasil tidak lagi menampilkan pesan gagal di daftar transaksi Admin.
 
-Panduan teknisi (setelah bot jalan): buka `https://DOMAIN-BOT-KAMU/docs/catalog-api` — contoh cek cepat: `/api/catalog/health`.
+### Atur Tombol di Chat Lebih Mudah
+
+Di Tampilan Bot, kamu langsung melihat berapa tombol yang aktif, ada tombol "Nyalakan sekarang" bila tombol sudah dicentang tapi belum menyala, dan setiap tombol menampilkan sisa huruf serta petunjuk jika link atau kategorinya belum benar.
 
 ## Kenapa Memilih FUSIONIFY BOT?
 
@@ -322,7 +324,7 @@ Setiap toko memiliki kombinasi pasar, provider, dan konfigurasi berbeda. Karena 
 |:---|---:|---|
 | 🚀 **Mulai** | **Rp40.000** | Setup dan penggunaan bulan pertama |
 | 🔄 **Perpanjangan** | **Rp25.000/bulan** | Melanjutkan instance bot aktif |
-| 💎 **Source Code** | **Rp4.575.000** | Akses source code penuh |
+| 💎 **Source Code** | **Rp3.575.000** | Akses source code penuh |
 | 🧩 **Custom** | **Nego** | Penyesuaian berdasarkan scope |
 
 ### Paket sewa mendapatkan

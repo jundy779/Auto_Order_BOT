@@ -1,4 +1,4 @@
-# Sewa FUSIONIFY BOT v8.30.0 — Auto Order Telegram
+# Sewa FUSIONIFY BOT v8.33.1 — Auto Order Telegram
 
 <div align="center">
 
@@ -23,7 +23,7 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan dalam satu
 | | |
 |:---|:---|
 | 🚀 **Dikembangkan sejak** | 26 November 2025 |
-| 🏷️ **Versi saat ini** | v8.30.0 |
+| 🏷️ **Versi saat ini** | v8.33.1 |
 | 🤝 **Tenant aktif tercatat** | 5–20 instance |
 | 💳 **Integrasi pembayaran** | 18 |
 | 🌏 **Cakupan pasar** | Indonesia, Malaysia, India, dan Global |
@@ -55,6 +55,7 @@ Customer dapat memilih produk, membayar, dan menerima pesanan langsung melalui T
 - 📦 **Auto delivery** — produk digital dikirim setelah pembayaran terkonfirmasi
 - 📁 **File ZIP/CSV otomatis** — gunakan satu file untuk semua pembeli atau file unik per pesanan
 - 🖥️ **Admin panel lengkap** — kelola operasional tanpa mengedit kode
+- 🌐 **Checkout website opsional** — website milikmu dapat memakai stok Bot, membuat tagihan QRIS, dan memberi link klaim sekali pakai
 - 🎨 **Tampilan fleksibel** — sesuaikan banner, menu, kategori, tombol, dan QR
 - 🌏 **Siap lintas pasar** — mendukung IDR, MYR, INR, atau USD sebagai mata uang utama toko
 - 🤖 **AI Support Beta** — bantu menjawab pertanyaan umum dan teruskan ke admin saat diperlukan
@@ -155,6 +156,7 @@ Harga terjangkau bukan berarti semua layanan pihak ketiga sudah termasuk. Akun m
 ### Kelola penjualan
 
 - Produk, kategori, harga, stok, dan varian
+- Stok pesanan manual cukup isi jumlah per produk/varian, tanpa wajib memasukkan akun atau kode
 - Transaksi, pembayaran, pending order, dan refund
 - User, saldo, voucher, promo, serta flash sale
 - Payment gateway dan jaringan reseller
@@ -375,6 +377,7 @@ Ya. Tersedia opsi pembelian source code untuk kebutuhan kontrol penuh.
 - ✅ **Reseller Telegram IDR:** kode dan pengujian otomatis siap; perlu smoke test pada instance penyewa
 - 🧪 **PPOB:** memerlukan akun DigiFlazz dan pengujian transaksi provider
 - 🧪 **Payment gateway:** kesiapan akhir bergantung pada provider dan kredensial merchant
+- 🧪 **Checkout website:** default mati; khusus produk AUTO teks dan QRIS IDR, memerlukan HTTPS serta uji order kecil
 - 🧪 **AI Support Beta:** kode tersedia; aktivasi opsional memerlukan provider AI dan pengujian pada instance penyewa
 - 🔒 **Reseller H2H publik:** belum termasuk paket standar dan belum ditawarkan sebagai API production
 
@@ -396,4 +399,4 @@ Ya. Tersedia opsi pembelian source code untuk kebutuhan kontrol penuh.
 
 ---
 
-*Materi ini mengikuti FUSIONIFY BOT v8.30.0. Fitur aktif tetap menyesuaikan pasar, provider, paket, dan konfigurasi setiap instance.*
+*Materi ini mengikuti FUSIONIFY BOT v8.33.1. Fitur aktif tetap menyesuaikan pasar, provider, paket, dan konfigurasi setiap instance.*
