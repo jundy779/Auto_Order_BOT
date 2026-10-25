@@ -248,7 +248,7 @@ Gateway yang dapat digunakan mengikuti negara, mata uang toko, akun merchant, ap
 
 | Pasar | Pilihan pembayaran |
 |:---:|---|
-| <img src="https://flagcdn.com/w20/id.png" width="20" alt="Bendera Indonesia"> **Indonesia** | AutoGoPay GoPay · AutoGoPay QRIS Interactive · AutoGoPay ShopeePay · Sanpay · QiosPay · Pakasir · Casaku · Tripay · Midtrans · iPaymu |
+| <img src="https://flagcdn.com/w20/id.png" width="20" alt="Bendera Indonesia"> **Indonesia** | AutoGoPay GoPay · AutoGoPay QRIS Interactive · AutoGoPay ShopeePay · Sanpay · QiosPay · Casaku · Tripay · Midtrans · iPaymu |
 | <img src="https://flagcdn.com/w20/my.png" width="20" alt="Bendera Malaysia"> **Malaysia** | ToyyibPay · Billplz · CHIP |
 | <img src="https://flagcdn.com/w20/in.png" width="20" alt="Bendera India"> **India** | UPIExpress |
 | 🌍 **Global** | CryptoBot · Cryptomus · USDT BEP20 · USDC Base · Telegram Stars |
