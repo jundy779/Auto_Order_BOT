@@ -1,14 +1,24 @@
 {
   "name": "auto-order-payment-bot",
-  "version": "8.25.0",
-  "description": "Private multi-tenant Telegram auto-order bot with 18 payment gateways, digital product delivery, PPOB, admin analytics, multi-currency support, Pterodactyl integration, and Telegram reseller tools.",
+  "version": "8.34.1",
+  "description": "Private multi-tenant Telegram auto-order bot with 17 payment gateways, digital product delivery, PPOB, admin analytics, multi-currency support, Pterodactyl integration, and Telegram reseller tools.",
   "main": "bot.js",
   "engines": {
     "node": ">=20"
   },
   "scripts": {
     "start": "node bot.js",
-    "test": "jest"
+    "test": "jest",
+    "demo:resolve": "node tools/demo-fusionify-resolve.js",
+    "test:mobile-bridge": "node --test tests/mobile/mobileBridge.node.test.js",
+    "test:control-api": "npm --prefix control-api test"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/control-api/",
+      "\\.node\\.test\\.js$"
+    ]
   },
   "keywords": [
     "telegram",

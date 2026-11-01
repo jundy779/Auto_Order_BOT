@@ -4,7 +4,7 @@
 
 # Bot Auto Order Telegram untuk Toko Digital
 
-**FUSIONIFY BOT v8.33.6**
+**FUSIONIFY BOT v8.34.1**
 
 <img src="https://readme-typing-svg.demolab.com?font=DM+Sans&weight=700&size=22&duration=2600&pause=900&color=26A5E4&center=true&vCenter=true&width=760&lines=Tokomu+tetap+berjualan+saat+kamu+offline;Pembayaran+lebih+praktis+langsung+di+Telegram;Produk+digital+dikirim+secara+otomatis;Kelola+semuanya+dari+satu+admin+panel" alt="Animasi manfaat FUSIONIFY BOT">
 
@@ -17,7 +17,7 @@ Kelola produk, pembayaran, pengiriman, promosi, dan laporan penjualan melalui Te
 [![Multi Currency](https://img.shields.io/badge/MULTI_CURRENCY-4_MATA_UANG-0284C7?style=flat-square)](#bahasa-dan-mata-uang)
 [![Languages](https://img.shields.io/badge/BAHASA_BOT-8-0369A1?style=flat-square)](#bahasa-dan-mata-uang)
 [![Maintained](https://img.shields.io/badge/STATUS-AKTIF_DIKEMBANGKAN-22C55E?style=flat-square)](#status-kesiapan)
-[![Version](https://img.shields.io/badge/VERSI-v8.33.6-0EA5E9?style=flat-square)](#yang-terbaru)
+[![Version](https://img.shields.io/badge/VERSI-v8.34.1-0EA5E9?style=flat-square)](#yang-terbaru)
 
 [![Coba Demo](https://img.shields.io/badge/Coba_Demo-Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/FusionTempest_bot)
 [![Konsultasi](https://img.shields.io/badge/Konsultasi-Telegram-5865F2?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/TempestVPNOfficial)
@@ -55,25 +55,29 @@ Jumlah transaksi publik, screenshot tenant, dan testimoni tidak ditampilkan sebe
 
 ## Yang Terbaru
 
-### Menu Cara Order Bisa Ditulis Sendiri
+### Petunjuk Pesanan Manual Lebih Tepat Sasaran
 
-Pesan Cara Order sekarang otomatis menjelaskan langkah beli produk digital dan PPOB secara terpisah. Lewat Dekorasi Bot di Admin Panel, kamu juga bisa menulis panduan sendiri per bahasa, menambahkan foto, dan menampilkan tombol pintasan ke Lihat Produk, Produk PPOB, atau Saldo & Top Up, lengkap dengan pratinjau sebelum diterapkan ke pembeli.
+Saat menambah atau mengedit produk manual, penjual bisa menulis petunjuk khusus untuk pembeli secara terpisah dari catatan internal admin. Petunjuk pembeli muncul sebelum pembeli mengirim data yang diminta. Tersedia pilihan meminta password akun bila memang diperlukan, serta catatan toko yang dikirim setelah pesanan manual selesai.
 
-### Beli Pulsa dan Token Semudah Aplikasi Isi Ulang
+### Admin Panel Lebih Mudah untuk Pemula
 
-Menu PPOB bisa tampil seperti aplikasi isi ulang: pembeli memilih Pulsa, Paket Data, E-Wallet, atau Token PLN, mengetik nomor, lalu menekan nominal. Operator terdeteksi otomatis, nama pelanggan PLN dicek sebelum bayar, dan saldo langsung terlihat di layar konfirmasi. SN atau token di struk cukup disalin dengan satu tombol. Fitur ini dinyalakan pemilik toko dari Admin Panel.
+Menu harian kini lebih ringkas, sedangkan alat teknis tersimpan di bagian Lanjutan. Panduan hari pertama membantu menyiapkan logo, tampilan, pembayaran, produk, stok, uji pembelian, dan notifikasi. Saat mengatur tampilan bot, pemilik toko bisa mulai dari sambutan dan menu atau langsung menuju bagian lain, dengan petunjuk singkat dan contoh yang sesuai sebelum menyimpan. Panduan Cara Order dan Jaminan juga dapat dicoba langsung di Telegram pribadi terlebih dahulu; contoh nominal sambutan mengikuti pilihan bahasa, sementara perubahan menu yang belum disimpan tidak hilang saat pindah bagian. Form Qiospay langsung terbuka dengan panduan pengisian sederhana; saat pertama disimpan, kunci API wajib diisi agar pengaturan tidak tersimpan setengah lengkap. Konfirmasi pesanan serta penggantian stok menampilkan dampaknya sebelum diproses.
 
-### Tampilan Panel Bisa Diganti
+### Aktivitas Mencurigakan Lebih Mudah Diketahui
 
-Di header Admin ada pemilih tampilan. Gelap dan terang tetap ada. Slush menawarkan kertas pastel bergaris hitam, sedangkan Discord menghadirkan nuansa biru kosmik yang nyaman untuk panel operasional. Tabel serta status sukses atau gagal tetap mudah dibaca.
+Percobaan masuk berulang, akses area privat tanpa izin, pemindaian alamat sensitif, callback pembayaran yang ditolak, dan spam bot kini dirangkum di Riwayat keamanan. Risiko tinggi juga dapat memberi peringatan ke admin tanpa memenuhi panel dengan request gagal biasa.
 
-### Status Pulsa di Admin Lebih Jelas
+### Log Operasional Lebih Aman
 
-Transaksi pulsa atau paket data yang sudah berhasil tidak lagi menampilkan pesan gagal di daftar transaksi Admin.
+Informasi rahasia bot kini otomatis disensor dari log operasional. Tampilan sambutan juga dibuat konsisten antara pratinjau Admin dan pesan Telegram.
 
-### Atur Tombol di Chat Lebih Mudah
+### Pilihan Pembayaran Tetap Terawat
 
-Di Tampilan Bot, kamu langsung melihat berapa tombol yang aktif, ada tombol "Nyalakan sekarang" bila tombol sudah dicentang tapi belum menyala, dan setiap tombol menampilkan sisa huruf serta petunjuk jika link atau kategorinya belum benar.
+Metode pembayaran yang layanannya berhenti telah dikeluarkan dari pilihan toko, sehingga pembeli hanya melihat metode yang masih didukung.
+
+### Pesanan Manual Lebih Jelas dan Aman
+
+Pemilik toko bisa meminta email dan password sementara sesuai kebutuhan produk, memberi petunjuk sebelum pembeli mengirim data, serta mengatur satu catatan purnajual yang otomatis berlaku untuk semua produk manual. Syarat produk dan catatan toko dikirim terpisah agar lebih mudah dibaca.
 
 ## Kenapa Memilih FUSIONIFY BOT?
 
@@ -248,7 +252,6 @@ Gateway yang dapat digunakan mengikuti negara, mata uang toko, akun merchant, ap
 
 | Pasar | Pilihan pembayaran |
 |:---:|---|
-| <img src="https://flagcdn.com/w20/id.png" width="20" alt="Bendera Indonesia"> **Indonesia** | AutoGoPay GoPay · AutoGoPay QRIS Interactive · AutoGoPay ShopeePay · Sanpay · QiosPay · Casaku · Tripay · Midtrans · iPaymu |
 | <img src="https://flagcdn.com/w20/my.png" width="20" alt="Bendera Malaysia"> **Malaysia** | ToyyibPay · Billplz · CHIP |
 | <img src="https://flagcdn.com/w20/in.png" width="20" alt="Bendera India"> **India** | UPIExpress |
 | 🌍 **Global** | CryptoBot · Cryptomus · USDT BEP20 · USDC Base · Telegram Stars |
